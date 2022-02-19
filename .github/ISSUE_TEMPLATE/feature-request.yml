@@ -11,7 +11,7 @@ body:
       value: |
         Thanks for taking the time to suggest an idea for Framely!
         
-        An important design goal of Framely is approaching problems from first principle, which means we dig down first (foundation), before we build up actual thing. In general, we only consider adding new features that solve a problem that cannot be easily dealt with using existing usages (i.e. not just an alternative way of doing things that can already be done). The problem should also be common enough to justify the addition.
+        An important design principle of Framely is approaching problems from first principle, which means we dig down first (foundation), before we build up actual thing. In general, we only consider adding new features that solve a problem that cannot be easily dealt with using existing usages (i.e. not just an alternative way of doing things that can already be done). The problem should also be common enough to justify the addition.
 
   - type: checkboxes
     attributes:
