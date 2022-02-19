@@ -1,0 +1,89 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - Zeng666666
+  
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+      - label: I have searched the existing issues
+        required: true
+        
+  - type: textarea
+    attributes:
+      label: Use Case
+      description: A concise description of your use case.
+    validations:
+      required: true
+      
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A concise description of what you expected to happen.
+    validations:
+      required: true
+      
+  - type: textarea
+    attributes:
+      label: Current Behavior
+      description: A concise description of what you're experiencing.
+    validations:
+      required: true
+      
+  - type: textarea
+    attributes:
+      label: Steps To Reproduce
+      description: |
+        Steps to reproduce the behavior.
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+      placeholder: |
+        Example: 
+          1. In this environment...
+          2. With this config...
+          3. Run '...'
+          4. See error...
+    validations:
+      required: true
+  
+  - type: input
+    attributes:
+      label: Label of org.project
+      description: Your org and project label
+      placeholder: orgLabel.projectLabel
+    validations:
+      required: true
+ 
+  - type: input
+    attributes:
+      label: Framely Link
+      description: Please copy and paste relevant link from brower.
+      placeholder: Ensure that your project privacy is PUBLIC
+    validations:
+      required: true
+ 
+  - type: input
+    attributes:
+      label: Test Case
+      description: Save test case, copy and paste relevant link from brower.
+      placeholder: Ensure that your project privacy is PUBLIC
+    validations:
+      required: false
+ 
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: |
+        Links? References? Anything that will give us more context about the issue you are encountering!
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+    validations:
+      required: false
