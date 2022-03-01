@@ -1,4 +1,4 @@
-name: docs
+name: src
 
 on:
   # trigger deployment on every push to main branch
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  docs:
+  src:
     runs-on: ubuntu-latest
 
     steps:
@@ -51,7 +51,7 @@ jobs:
           # deploy to gh-pages branch
           target_branch: gh-pages
           # deploy the default output dir of VuePress
-          build_dir: docs/src/.vuepress/dist
+          build_dir: /src/.vuepress/dist
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
