@@ -1,14 +1,11 @@
 const { description } = require('../../package')
 
 module.exports = {
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#title
-   */
+ 
   title: 'Framely Docs',
-  /**
-   * Ref：https://v1.vuepress.vuejs.org/config/#description
-   */
+
   description: description,
+  base:'/community/',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
