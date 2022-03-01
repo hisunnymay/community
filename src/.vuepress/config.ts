@@ -5,7 +5,6 @@ module.exports = {
   title: 'Framely Docs',
 
   description: description,
-  base:'/community/',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
