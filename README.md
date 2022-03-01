@@ -1,7 +1,6 @@
 # Steps
 
 - Install `2.0.0-beta.35`
-- Create `doc` directory
 -  Create `src` directory inside the doc folder
 - in the package.json file add
 
