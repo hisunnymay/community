@@ -1,0 +1,19 @@
+{
+  "name": "Docs",
+  "version": "0.0.1",
+  "description": "Docs for framely",
+  "main": "index.js",
+  "authors": {
+    "name": "Framely",
+    "email": ""
+  },
+  "repository": "/Docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.35"
+  }
+}
