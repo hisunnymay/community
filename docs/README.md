@@ -26,7 +26,9 @@ features:
     details: Omnichannel made easy, the universal messages you defined once will get automatically translated into native message for each channel.  
   - title: Support 
     details: Ran into conversations that bot can't handle, hand over to live agent with easy. We support integration with any contact center software.
-  - title: Missing What?
+  - title: Multi-language Ready
+    details: The same interaction logic should be shared between all the different languages, so that you can use people with entirely different skillsets for this. 
+  - title: Look for More?
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
 footer: MIT Licensed | Copyright © 2018-present framely.io
 ---
