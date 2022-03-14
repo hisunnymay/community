@@ -18,7 +18,7 @@ features:
     details: Focus on how you want your chatbot to behave instead of how such behavior should be implemented imperatively, you got Framely for that. 
   - title: Component-First
     details: Never build from scratch, build complex behavior using imported components so your chatbot can automatically improve with each update.
-  - title: Hot Fix Your NLU 
+  - title: Hot Fix NLU, You Can 
     details: We don't need computer graphics expert to build great GUI application, regular engineering team should be able to build effective CUI and fix it.
   - title: Open Source Runtime
     details: Reactjs enable teams to focus on their application logic, instead of reinventing GUI wheels. Framely is doing the same for chatbot. 
