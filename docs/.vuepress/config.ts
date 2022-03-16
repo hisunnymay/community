@@ -71,7 +71,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@vuepress/vite',
 
   themeConfig: {
-    logo: '/images/hero.png',
+    logo: '/images/logo.png',
 
     repo: 'framely/community',
 
