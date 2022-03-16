@@ -30,7 +30,7 @@ features:
     details: The same interaction logic should be shared between all the different languages, so that you can use people with entirely different skillsets for this. 
   - title: Look for More?
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
-footer: MIT Licensed | Copyright © 2018-present framely.io
+footer: Copyright © 2018-present framely.io
 ---
 
 ### As Easy as 1, 2, 3

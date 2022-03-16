@@ -28,8 +28,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     ],
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
-    ['meta', { name: 'application-name', content: 'VuePress' }],
-    ['meta', { name: 'apple-mobile-web-app-title', content: 'VuePress' }],
+    ['meta', { name: 'application-name', content: 'Framely' }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: 'Framely' }],
     [
       'meta',
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
@@ -54,13 +54,13 @@ export default defineUserConfig<DefaultThemeOptions>({
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VuePress',
-      description: 'Vue-powered Static Site Generator',
+      title: 'Framely',
+      description: 'Conversational Service Made Easy',
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'VuePress',
-      description: 'Vue 驱动的静态网站生成器',
+      title: 'Framely',
+      description: '让天下没有难的对话式服务',
     },
   },
 
