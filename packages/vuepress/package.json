@@ -1,20 +1,20 @@
 {
-  "name": "vuepress",
+  "name": "Framely",
   "version": "2.0.0-beta.36",
-  "description": "Vue-powered Static Site Generator",
+  "description": "Conversational Service Made Easy",
   "keywords": [
     "documentation",
     "generator",
     "vue",
     "vuepress"
   ],
-  "homepage": "https://github.com/vuepress",
+  "homepage": "https://github.com/framely/community",
   "bugs": {
-    "url": "https://github.com/vuepress/vuepress-next/issues"
+    "url": "https://github.com/framely/community/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress/vuepress-next.git"
+    "url": "git+https://github.com/framely/community.git"
   },
   "license": "MIT",
   "author": "Evan You",
