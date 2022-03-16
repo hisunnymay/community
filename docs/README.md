@@ -28,7 +28,7 @@ features:
     details: Ran into conversations that bot can't handle, hand over to live agent with easy. We support integration with any contact center software.
   - title: Multi-language Ready
     details: The same interaction logic should be shared between all the different languages, so that you can use people with entirely different skillsets for this. 
-  - title: Look for More?
+  - title: Still Not Convinced?
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
 footer: Copyright © 2018-present framely.io
 ---
