@@ -28,8 +28,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     ],
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
-    ['meta', { name: 'application-name', content: 'VuePress' }],
-    ['meta', { name: 'apple-mobile-web-app-title', content: 'VuePress' }],
+    ['meta', { name: 'application-name', content: 'Framely' }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: 'Framely' }],
     [
       'meta',
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },

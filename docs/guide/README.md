@@ -1,10 +1,14 @@
 # Introduction
 
-VuePress is a markdown-centered static site generator. You can write your content (documentations, blogs, etc.) in [Markdown](https://en.wikipedia.org/wiki/Markdown), then VuePress will help you to generate a static site to host them.
+We started Framely after we realized that building and operating chatbot is unnecessarily hard and expensive, especially if we consider chatbot is just application with conversational user interface. After all, building app with graphical user interface nowadays is a lot more manageable in comparison. There are many reasons for this, but ignoring all the principles and best practices we learned over many years in building GUI application, thus not having tools with high level abstractions is a crucial one.
 
-The purpose of creating VuePress was to support the documentation of Vue.js and its sub-projects, but now it has been helping a large amount of users to build their documentation, blogs, and other static sites.
+## The Goal
+Framely is designed to make building effective conversational user interface (CUI) easy. There are two aspects worth mentioning. First, conversation is not the goal, but a means. The goal is to deliver service through conversation. Furthermore, we mainly focus on serving collaborative users, who are more interested in get served with the least effort on their part. Which means we should focus on understanding the common instead of obscure user utterances, and adopt dialog policy that try to bring the conversation toward serving as quickly as possible.
 
-## How It Works
+Second, while end user experience is the key reason for business to work on conversational services, we actually focus on builder experience when it comes to Framely design. We think it is builder's job to trade off between cost and user experience, and Framely just need to provide tools so builder can build user experience they want. Of course, we always try to provide the best possible default user experience when builder want to be lazy.
+
+## How?
+
 
 A VuePress site is in fact a single-page application (SPA) powered by [Vue](https://v3.vuejs.org/) and [Vue Router](https://next.router.vuejs.org).
 
