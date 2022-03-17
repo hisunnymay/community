@@ -154,7 +154,6 @@ export default defineUserConfig<DefaultThemeOptions>({
   },
 
   extendsMarkdown: (md) => {
-    md.use(require('markdown-it-deflist'))
     md.use(require('markdown-it-container'))
   },
 
