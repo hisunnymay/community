@@ -377,7 +377,7 @@ When user mentioned a value that can fill more than one open slot, we can use th
 When DU can not commit to one understanding, we can use this component to get user commit to one intent.
 
 ### SlotUpdate
-User can modify the a slot with new value.
+User can update a slot with new value.
 
 
 

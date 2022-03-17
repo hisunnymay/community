@@ -109,6 +109,10 @@ export const en: NavbarConfig = [
         ],
       },
       {
+        text: 'Glossary',
+        link: '/advanced/glossary.md',
+      },
+      {
         text: 'Resources',
         children: [
           '/contributing.md',

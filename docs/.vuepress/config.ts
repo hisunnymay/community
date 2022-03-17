@@ -57,11 +57,11 @@ export default defineUserConfig<DefaultThemeOptions>({
       title: 'Framely',
       description: 'Conversational Service Made Easy',
     },
-    '/zh/': {
-      lang: 'zh-CN',
-      title: 'Framely',
-      description: '让天下没有难的对话式服务',
-    },
+    // '/zh/': {
+    //  lang: 'zh-CN',
+    //  title: 'Framely',
+    //  description: '让天下没有难的对话式服务',
+    // },
   },
 
   bundler:
@@ -151,6 +151,10 @@ export default defineUserConfig<DefaultThemeOptions>({
           path.resolve(__dirname, '../../packages/@vuepress')
         ),
     },
+  },
+
+  extendsMarkdown: (md) => {
+    md.use(require('markdown-it-container'))
   },
 
   plugins: [
