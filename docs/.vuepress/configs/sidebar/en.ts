@@ -40,6 +40,10 @@ export const en: SidebarConfig = {
         '/advanced/cookbook/markdown-and-vue-sfc.md',
       ],
     },
+    {
+      text: 'Glossary',
+      link: '/advanced/glossary.md',
+    },
   ],
   '/reference/': [
     {

@@ -109,10 +109,6 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: 'Glossary',
-        link: '/advanced/glossary.md',
-      },
-      {
         text: 'Resources',
         children: [
           '/contributing.md',
@@ -121,6 +117,10 @@ export const en: NavbarConfig = [
             link: 'https://github.com/vuepress/awesome-vuepress',
           },
         ],
+      },
+      {
+        text: 'Glossary',
+        link: '/advanced/glossary.md',
       },
     ],
   },

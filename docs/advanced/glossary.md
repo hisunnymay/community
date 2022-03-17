@@ -1,8 +1,7 @@
 
-# Glossary
-## Introduction
+## Glossary
 Framely is a component based declarative platform and repository for building conversational user interface for cooperative users to access your services. It is a low code platform for building personalized service, include chatbot and corresponding backend. The chatbot and backend defined on the platform will be first code-generated into Kotlin source code, which can be compiled and executed on top of Framely runtime anywhere.
-## Background knowledge
+
 ### Abbreviation
 #### CUI
 Conversational user interface
@@ -22,7 +21,6 @@ Builders describe to computer how things are done
 
 ### Declarative
 Builders describe to computer what are needed and computer figure out how to do it.
-
 
 ### Syntax
 The arrangement rules of words and phrases to create well-formed sentences in a language.
@@ -367,16 +365,16 @@ One of the design goal of Framely is to automatically handle many conversational
 ### Clarification
 Often time, user might say something that dialog understanding did not fully understand, for example, there are multiple possibilities. These are the time where we can trigger System intent to engage in the conversation for user to clarify what they really meant. There are couple variants of this:
 
-### Value clarification
+#### Value clarification
 During the slot filling, particularly when we try to find value from the conversation history, there might be multiple values that can be used to fill the slot. This CUI component is used to ask user decide which one is what they want.
 
-### Slot clarification
+#### Slot clarification
 When user mentioned a value that can fill more than one open slot, we can use this to figure out which slot user want to fill.
 
-### Intent clarification
+#### Intent clarification
 When DU can not commit to one understanding, we can use this component to get user commit to one intent.
 
-### SlotUpdate
+#### SlotUpdate
 User can update a slot with new value.
 
 
