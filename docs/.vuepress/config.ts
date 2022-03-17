@@ -72,8 +72,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: '/images/logo.png',
-
-    repo: 'framely/community',
+    repo: 'https://framely.naturali.io',
 
     docsDir: 'docs',
 
@@ -135,9 +134,13 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     },
 
+    // For now, hide the contributor
+    contributors: false,
+
     themePlugins: {
       // only enable git plugin in production mode
       git: isProd,
+      externalLinkIcon: false,
       // use shiki plugin in production mode instead
       prismjs: !isProd,
     },

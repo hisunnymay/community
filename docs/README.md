@@ -3,11 +3,11 @@ home: true
 title: Home
 heroImage: /images/hero.png
 actions:
-  - text: Get Started
+  - text: Introduction
     link: /guide/getting-started.html
     type: primary
-  - text: Introduction
-    link: /guide/
+  - text: Get Started
+    link: https://framely.naturali.io
     type: secondary
 features:
   - title: CUI for your service
@@ -32,43 +32,3 @@ features:
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
 footer: Copyright © 2018-present framely.io
 ---
-
-### As Easy as 1, 2, 3
-
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
-
-```bash
-# install in your project
-yarn add -D vuepress@next
-
-# create a markdown file
-echo '# Hello VuePress' > README.md
-
-# start writing
-yarn vuepress dev
-
-# build to static files
-yarn vuepress build
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-  
-```bash
-# install in your project
-npm install -D vuepress@next
-
-# create a markdown file
-echo '# Hello VuePress' > README.md
-
-# start writing
-npx vuepress dev
-
-# build to static files
-npx vuepress build
-```
-
-  </CodeGroupItem>
-</CodeGroup>
