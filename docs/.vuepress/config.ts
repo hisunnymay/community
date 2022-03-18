@@ -72,8 +72,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: '/images/logo.png',
-
-    repo: 'framely/community',
+    repo: 'https://framely.naturali.io',
 
     docsDir: 'docs',
 
@@ -135,9 +134,15 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     },
 
+    // For now, hide the contributor
+    contributors: false,
+
     themePlugins: {
       // only enable git plugin in production mode
       git: isProd,
+
+      externalLinkIcon: false,
+
       // use shiki plugin in production mode instead
       prismjs: !isProd,
     },
@@ -224,6 +229,16 @@ export default defineUserConfig<DefaultThemeOptions>({
         componentsDir: path.resolve(__dirname, './components'),
       },
     ],
+    // new container.
+    [
+      '@vuepress/plugin-container',
+      {
+        type: 'story',
+        before: info => `<div class="story"><p class="title">${info}</p>`,
+        after: () => '</div>',
+      },
+    ],
+
     // only enable shiki plugin in production mode
     [
       '@vuepress/plugin-shiki',
