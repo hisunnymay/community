@@ -2,6 +2,7 @@
 home: true
 title: Home
 heroImage: /images/hero.png
+
 actions:
   - text: Introduction
     link: /guide/getting-started.html
