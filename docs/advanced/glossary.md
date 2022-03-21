@@ -452,5 +452,3 @@ When DU can not commit to one understanding, we can use this component to get us
 #### SlotUpdate
 User can update a slot with new value.
 ***
-
-
