@@ -1,114 +1,44 @@
-# Getting Started
+# Get Started
+Although one can use Framely to serve user's informational need, we designed Framely to help 
+you to provide transactional service conversationally as well, so that your conversational services can potentially become a revenue center instead of a cost center for you business, and you can follow simple industrial standard three steps to get there. 
 
-## Prerequisites
+## Build
+To provide transactional services via chatbot, it is natural to think chatbot as conversational user interface for your services. 
 
-- [Node.js v12+](https://nodejs.org/)
-- [Yarn v1 classic](https://classic.yarnpkg.com/en/) (Optional)
+### Service as Schema
 
-::: tip
-- With [pnpm](https://pnpm.io/), you need to set `shamefully-hoist=true` in your [`.npmrc`](https://pnpm.io/npmrc#shamefully-hoist) file.
-- With [yarn 2](https://yarnpkg.com/), you need to set `nodeLinker: 'node-modules'` in your [`.yarnrc.yml`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) file.
+### Interaction as Annotation
+
+### Language Template and Exemplar
+
+## Test
+
+
+## Deploy
+
+### Hosted
+
+### Self Deployed
+
+
+It consists of two parts: Framely platform is a web interface whether conversational component is declaratively defined and composed into bigger and bigger conversational experience definition. These definitions are then generated into kotlin code, and together with Framely runtime, the generated chatbot can be deployed anywhere builder wants. 
+Chatbots, the application with conversational user interface, are developed to deliver good user experiences. But, delivering good user experience alone can not justify the effort for business. For example, as a coffee shop owner, you may not like to hear this conversation between your barista bot and your customer:
+
+::: story
+User: *I like some iced coffee.*
+
+Barista: *Sorry, we ran out , the Starbucks next dapoor has some excellent choice.*
 :::
 
-## Manual Installation
 
-This section will help you build a basic VuePress documentation site from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 3.
+Two things jump out from this short exchange between user and service agent. First, we have to teach or program our service chatbot our business rules so that it helps our cause. Second, this teaching or programming need to be efficient so that we can react quickly to ever-changing business conditions. 
 
-- **Step 1**: Create and change into a new directory
 
-```bash
-mkdir vuepress-starter
-cd vuepress-starter
-```
+So what happens if your customer asks your barista bot for a haircut? It can simply say "I am only trained to help you with your coffee needs. What do you want to drink today?" Nobody will fault your service bot here.
 
-- **Step 2**: Initialize your project
+When our customers' step out of our service boundary, bot can safely play ignorance without resulting in loss of user experience. This allows us to focus on a much simpler problem of modeling conversation around limited services we offer, instead of all possible conversations. From a business perspective, this means we do not really have to wait for conversational AI. Instead, all we need is some conversational UI that can be easily programmed to do the following things:
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
 
-```bash
-git init
-yarn init
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
-git init
-npm init
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-- **Step 3**: Install VuePress locally
-
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
-
-```bash
-yarn add -D vuepress@next
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
-npm install -D vuepress@next
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-- **Step 4**: Add some [scripts](https://classic.yarnpkg.com/en/docs/package-json#toc-scripts) to `package.json`
-
-```json
-{
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  }
-}
-```
-
-- **Step 5**: Add the default temp and cache directory to `.gitignore` file
-
-```bash
-echo 'node_modules' >> .gitignore
-echo '.temp' >> .gitignore
-echo '.cache' >> .gitignore
-```
-
-- **Step 6**: Create your first document
-
-```bash
-mkdir docs
-echo '# Hello VuePress' > docs/README.md
-```
-
-- **Step 7**: Serve the documentation site in the local server
-
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
-
-```bash
-yarn docs:dev
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
-npm run docs:dev
-```
-
-  </CodeGroupItem>
-</CodeGroup>
-
-  VuePress will start a hot-reloading development server at [http://localhost:8080](http://localhost:8080). When you modify your markdown files, the content in the browser will be auto updated.
-
-By now, you should have a basic but functional VuePress documentation site. Next, learn about the basics of [configuration](./configuration.md) in VuePress.
+Identify customers' intent, understand their preferences (in terms of the slots) efficiently. 
+Offer suggestions when users are stuck, and provide value recommendations so that they can zero in on their choice quickly. 
+If users move out of scope, remind them of the boundary, bring the conversation back. 
