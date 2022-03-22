@@ -19,3 +19,6 @@ After you specify what conversational behavior you want your chatbot to deliver,
 
 ## Deploy
 When chatbot pass the test, you can deploy your chat to production environment, either Framely hosted or public/private cloud of your choice. 
+
+
+For the impatient, [you can get started now](https://framely.naturali.io). For the curious, read on.
