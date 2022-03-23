@@ -18,7 +18,7 @@ Bot: *We open every day from 5:00pm to 9:00pm.*
 :::
 Such frame has no structure to it, so its expressive power is limited. For example, if you have multiple branches, then you need to have one frame for each branch to field the hours question. Since the response is always atomic and context independent, and text generation simply forward the actual answer to the user without any processing.
 
-## Frame with slots, single topic
+## Frame with Slots
 In this level, user frame has structure, or it is parameterized with slots. For example, buying flight ticket needs information on departure, destination and date. when there are missing information in the user's initial utterance, the chatbot will conduct conversations to collect them, potentially in multiple turns. 
 
 ::: story
@@ -34,7 +34,7 @@ Bot: *...*
 Chatbot can only talk about single topic at a time. Also, this level is happy path only, no support for modification yet. But this does not mean this level is easy. When there are polymorphic use case, i.e, different symptom requires different conversation, and then multi value, i.e, what other symptoms do you have, support for this level can already be involved.  When there is not a lot of slots, this is OK as the cost of starting over is not that prohibiting. Many existing service oriented chatbots are in this level.  
 In this level, a chatbot can generate response based on frame. For example, based on time, user sex and last name, we can generate following response: "Good morning (could be afternoon or evening), Mr. (or Ms, Mrs) Page (any other last name), how can I help you?". There are two possible implementations for this kind of text generation, template based for exact wording but less diversity and model based for more diversity.
 
-## Frame with slots, single topic, CRUD support. 
+## CRUD Support 
 One of the limitations of last level is that a user can not make mistakes or change mind, this can be a problem when there are many slots in the frame. Conversational UI in this level can conduct conversations so that user can correct their mistake or change their mind on the fly, removes the need to start from scratch every time there is an issue.
 ::: story
 User: *I like to buy a ticket to Shanghai.*
@@ -48,7 +48,7 @@ Bot: *Shenzhen it is. When do you want to leave?*
 
 When there are many slots, or multiple values in an single multi-value slot involved, user will bound  to make mistakes or change mind. Be able to hold modification conversation can greatly increase the effectiveness for conversation UI thus improve overall user experience. This level is considered as minimum usable level for many real world use cases. Unfortunately, the cost of building and operating these CRUD (create, read, update and delete, with create and delete mostly useful for multi value slots) operation is still high, so they are not as commonly available as it should be. To illustrate the degree of potential difficulty associated with CRUD, think about the following case, after user put three drinks in the shopping cart, the user can say "can you add sugar to the large code drink?". The same text generation as last level is required.
 
-## Frame with slots, CRUD support, multiple topic.
+##  Multiple Topics
 When the task user want to achieve become even more complex, they might need to juggle between multiple services at the same time. In this level, a chatbot can naturally switch between different frames, user can switch frame without providing all the information needed, chatbot can and will use conversational history to automatically complete these user utterance, and and figure out what they want. 
 ::: story
 User: *I like to buy a ticket to Shanghai.*
@@ -62,7 +62,7 @@ Bot: *It is clear sky in Shanghai this friday, in mid 20s.*
 
 Clarification is another example of topic switching. For service oriented conversations, this level presents a very usable user experience. Building this type conversational experience imperatively still requires significant effort. But if we can do it, we will finally pass the stage where chatbots are artificially retarded. The same text generation as last level is required.
 
-## Sentimental analysis and other aspects.
+## Sentimental analysis
 There are actually not enough use cases for this level yet, so this is a bit speculating. But In addition to what user explicitly told us, we can extract sentiments and other aspects about user through their wording and their tone (when in voice based channel) and used that to change how we deliver the service they care about. In this level, the text generation can be done by additional control like style, for example, based on user's demographic or sentiment. In particular, depending on who the user is, we can select different style, so the same semantics can be expression differently for different type of user. For example, for younger audience, we might use emoji more. 
 
 It is a lot more constructive to leave content of service aside and just model conversational user interface based on the complexity of the services that user want to access. The resulting conversational UI maturity model can then be applied to any services to reach business's goal. Of course, there are still many other considerations if we want to operate a usable conversational experiences: input modality like text or voice, omni-channel considerations, NLU accuracy, and human support system. But these orthogonal aspects can be reasoned independently, so our hope the proposed maturity model on the conversational UI can be useful for chatbot planning and building, by making it easy for business to trade off between user experiences and building cost.
