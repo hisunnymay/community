@@ -2,7 +2,7 @@
 
 If you want to provide all your services at where your users are: imessage, messenger, etc, but worried that building and operating such chatbot is unnecessarily hard and expensive, then you come to the right place. At Framely, we understand your goal is to provide service and chatbot is just a user facing application with conversational user interface, by making user of all the principles and best practices we learned over many years in building GUI application, we can help you to build capable conversation experience in cost-effective fashion.
 
-## Why Framely
+## Why We Build Framely
 Man kind has fantasized about talking robot for so long. In deed, chatbot is attractive broad interest across many industries because it can provide their user direct access to service without need users to jump though hoops. However, why are these magical conversational experience not ubiquitous as we see in the StarWars? Based on first principle thinking, here are the principles that we feel it is important but have been overlooked.
 
 ### Conversation is a means to service
