@@ -7,6 +7,8 @@ export const en: SidebarConfig = {
       children: [
         '/guide/README.md',
         '/guide/getting-started.md',
+        '/guide/cui.md',
+        '/guide/5levels-cui.md',
         '/guide/glossary.md',
       ],
     },
