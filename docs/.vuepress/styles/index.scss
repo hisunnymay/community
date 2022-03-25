@@ -12,7 +12,8 @@ html.dark {
 }
 
 .story {
-	margin: 0rem 10rem;
+	max-width: 24rem;
+	margin: auto;
 	padding: 0.005rem 1.5rem;
 	border-radius: 0.4rem;
 	background-color: var(--c-tip-bg);
