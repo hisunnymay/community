@@ -4,10 +4,10 @@ title: Home
 heroImage: /images/hero.png
 
 actions:
-  - text: Introduction
+  - text: Introduction💡
     link: /guide/getting-started.html
     type: primary
-  - text: Get Started
+  - text: Get Started🛠
     link: https://framely.naturali.io
     type: secondary
 features:

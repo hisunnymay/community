@@ -1,7 +1,7 @@
 import { defineUserConfig } from '@vuepress/cli'
-import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
+
 import { defineHopeConfig } from "vuepress-theme-hope";
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -56,7 +56,7 @@ export default defineHopeConfig({
     '/': {
       lang: 'en-US',
       title: 'Framely',
-      description: 'Conversational Service Made Easy',
+      description: 'Build, Share and Use Conversational Components for Better User Experience.',
     },
     // '/zh/': {
     //  lang: 'zh-CN',
@@ -75,6 +75,8 @@ export default defineHopeConfig({
     logo: '/images/logo.png',
     repo: 'https://framely.naturali.io',
 
+    darkmode: 'force-dark',
+
     docsDir: 'docs',
 
     // theme-level locales config
@@ -91,7 +93,7 @@ export default defineHopeConfig({
 
         // sidebar
         // @ts-ignore
-        sidebar: sidebar.en,
+        // sidebar: sidebar.en,
 
         // page meta
         editLinkText: 'Edit this page on GitHub',
@@ -109,7 +111,7 @@ export default defineHopeConfig({
 
         // sidebar
         // @ts-ignore
-        sidebar: sidebar.zh,
+        // sidebar: sidebar.zh,
 
         // page meta
         editLinkText: '在 GitHub 上编辑此页',
@@ -139,12 +141,11 @@ export default defineHopeConfig({
 
     // For now, hide the contributor
     contributors: false,
+    externalLinkIcon: false,
 
     themePlugins: {
       // only enable git plugin in production mode
       git: isProd,
-
-      // externalLinkIcon: false,
 
       // use shiki plugin in production mode instead
       prismjs: !isProd,
