@@ -34,7 +34,7 @@ export const en: NavbarConfig = [
       {
         text: 'Channels',
         children: [
-          '/reference/plugin/wpa.md',
+          '/reference/channels/wpa.md',
         ],
       },
       {
