@@ -1,5 +1,5 @@
 import { defineUserConfig } from '@vuepress/cli'
-import type { DefaultThemeOptions } from '@vuepress/theme-default'
+import type { DefaultThemeOptions } from '@lando/vuepress-theme-default-plus'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 
