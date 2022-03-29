@@ -43,7 +43,7 @@ export const en: SidebarConfig = {
   ],
   '/reference/': [
     {
-      text: 'VuePress Reference',
+      text: 'Annotation Reference',
       collapsible: true,
       children: [
         '/reference/cli.md',
@@ -57,12 +57,12 @@ export const en: SidebarConfig = {
       ],
     },
     {
-      text: 'Bundlers Reference',
+      text: 'Channel Reference',
       collapsible: true,
-      children: ['/reference/bundler/vite.md', '/reference/bundler/webpack.md'],
+      children: ['/reference/plugin/wpa.md'],
     },
     {
-      text: 'Default Theme Reference',
+      text: 'Support Reference',
       collapsible: true,
       children: [
         '/reference/default-theme/config.md',
