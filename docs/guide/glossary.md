@@ -392,16 +392,16 @@ All semantics in Framely can be referenced in multiple languages, and expression
 
 These expression exemplars are used by NLU model to hotfix the understanding issues. Notice expression exemplar are normally only useful under the given context, so it is easy for Framely to convert the same utterance into different frame representation under different context. Builder can provide expression exemplar for any semantics: do-not-care, negation, positive and negative under yes-no questions, for example,  There are different kinds of expression:
 
-### Type expression(currently knowns as alias on platform)
+### Type expression (currently knowns as alias on platform)
 The example of how entity, frame types are mentioned in different languages.
 
-### Value expression: (currently known as expression on platform)
+### Value expression (currently known as expression on platform)
 The example of how entity and frame instance are mentioned in different languages.
 
-### Partial expression(experimental)
+### Partial expression (experimental)
 Exemplar that specify how to find value for given slot from the conversation history, in order to full understand user utterance when there are pronoun in there, i.e. "what is the weather over there" implies user want to to know weather of the $city$?
 
-### Pronoun Expression(experimental)
+### Pronoun Expression (experimental)
 For each slot, entity, builder can specify which pronoun is used to refer these, so that builder do not need to supply partial expression.
 
 
