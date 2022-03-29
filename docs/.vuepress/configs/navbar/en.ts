@@ -12,7 +12,7 @@ export const en: NavbarConfig = [
       {
         text: 'Annotations',
         children: [
-          '/reference/plugin/channelConfiguration.md',
+          '/reference/plugin/wpa.md',
         ],
       },
       {
@@ -34,7 +34,7 @@ export const en: NavbarConfig = [
       {
         text: 'Channels',
         children: [
-          '/reference/plugin/channelConfiguration.md',
+          '/reference/plugin/wpa.md',
         ],
       },
       {
