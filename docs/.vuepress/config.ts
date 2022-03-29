@@ -2,11 +2,10 @@ import { defineUserConfig } from '@vuepress/cli'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
-import { defineHopeConfig } from "vuepress-theme-hope";
 
 const isProd = process.env.NODE_ENV === 'production'
 
-export default defineHopeConfig({
+export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
 
   head: [
@@ -90,7 +89,6 @@ export default defineHopeConfig({
         navbar: navbar.en,
 
         // sidebar
-        // @ts-ignore
         sidebar: sidebar.en,
 
         // page meta
@@ -108,7 +106,6 @@ export default defineHopeConfig({
         selectLanguageAriaLabel: '选择语言',
 
         // sidebar
-        // @ts-ignore
         sidebar: sidebar.zh,
 
         // page meta
