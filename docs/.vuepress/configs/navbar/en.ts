@@ -10,7 +10,13 @@ export const en: NavbarConfig = [
     text: 'Reference',
     children: [
       {
-        text: 'VuePress',
+        text: 'Annotations',
+        children: [
+          '/reference/plugin/channelConfiguration.md',
+        ],
+      },
+      {
+        text: 'Services',
         children: [
           {
             text: 'CLI',
@@ -26,21 +32,15 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: 'Bundlers',
+        text: 'Channels',
         children: [
-          '/reference/bundler/vite.md',
-          '/reference/bundler/webpack.md',
+          '/reference/plugin/channelConfiguration.md',
         ],
       },
       {
-        text: 'Default Theme',
+        text: 'Supports',
         children: [
-          '/reference/default-theme/config.md',
-          '/reference/default-theme/frontmatter.md',
-          '/reference/default-theme/components.md',
-          '/reference/default-theme/markdown.md',
-          '/reference/default-theme/styles.md',
-          '/reference/default-theme/extending.md',
+          '/reference/support/chatwoot.md'
         ],
       },
     ],
