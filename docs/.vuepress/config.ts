@@ -7,6 +7,9 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
+  alias:{
+    '@theme/HomeFooter.vue':path.resolve(__dirname, './components/homefooter/homefooter.vue')
+  },
 
   head: [
     [
