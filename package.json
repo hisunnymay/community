@@ -32,6 +32,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
+    "@lando/vuepress-theme-default-plus": "^1.0.0-beta.30",
     "@types/jest": "^27.4.0",
     "anywhere": "^1.5.0",
     "cpx2": "^4.1.2",
