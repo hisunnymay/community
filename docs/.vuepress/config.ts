@@ -12,6 +12,8 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   alias:{
     '@theme/HomeFooter.vue':path.resolve(__dirname, './components/homefooter/homefooter.vue'),
+    '@theme/HomeHero.vue':path.resolve(__dirname, './components/hero/hero.vue'),
+
   },
 
   head: [

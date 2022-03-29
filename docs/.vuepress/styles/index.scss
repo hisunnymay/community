@@ -38,7 +38,7 @@ html.dark {
 	.home{
 		max-width: var(--homepagewidth);
 	}
-	.feature{
-		width: auto;
+	.home .features{
+		max-width: 100%;
 	}
 }

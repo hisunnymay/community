@@ -78,7 +78,7 @@ import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
     display: flex;
     flex-direction: column;
 }
-a{
+.links-col a{
      color: #4e6e8e;
     margin: 5px;
 }
