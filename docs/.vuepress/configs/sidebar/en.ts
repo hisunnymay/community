@@ -59,7 +59,7 @@ export const en: SidebarConfig = {
     {
       text: 'Channel Reference',
       collapsible: true,
-      children: [],
+      children: ['/reference/channels/wpa.md'],
     },
     {
       text: 'Support Reference',
