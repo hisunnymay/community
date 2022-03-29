@@ -24,3 +24,21 @@ html.dark {
 		font-weight: bold;
 	}
 }
+.home{
+	max-width: 100%;
+
+
+}
+.features{
+	width: var(--homepage-width);
+	
+	margin: auto;
+}
+@media (max-width:719px){
+	.home{
+		max-width: var(--homepagewidth);
+	}
+	.features{
+		width: auto;
+	}
+}
