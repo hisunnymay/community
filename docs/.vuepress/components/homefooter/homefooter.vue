@@ -71,7 +71,6 @@
     <hr>
     <div class="copyrights">
             <p style="text-align:center;">copyright &copy; framely {{new Date().getFullYear()}} </p>
-
     </div>
 
 </section>

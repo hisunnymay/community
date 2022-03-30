@@ -5,8 +5,7 @@ import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 <template>
   <ParentLayout>
     <template #navbar-after>
-      <button class="btn-nav">Sign Up</button>
-      <button class="btn-nav">Sign In</button>
+      <button class="btn-nav">Start Building</button>
     </template>
     <template #page-bottom>
       <div class="footer">
@@ -49,12 +48,11 @@ import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
         </div>
         <hr>
         <div class="copyright">
-            <p style="text-align:center;">copyright &copy; framely {{new Date().getFullYear()}} </p>
+            <p style="text-align:center;">copyright &copy; Framely {{new Date().getFullYear()}} </p>
         </div>
       </div>
     </template>
   </ParentLayout>
-
 </template>
 
 <style lang="css">
@@ -67,8 +65,6 @@ import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  
-
 }
 .links{
     display: flex;

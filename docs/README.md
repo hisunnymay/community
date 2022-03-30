@@ -60,7 +60,6 @@ footer: Copyright © 2018-present framely.io
  - Documention
  - API Reference
  - Guides
-
 :::
 ::: four company
  - Blog
