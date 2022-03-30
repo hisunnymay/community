@@ -3,18 +3,26 @@ import type { SidebarConfig } from '@vuepress/theme-default'
 export const en: SidebarConfig = {
   '/guide/': [
     {
-      text: 'Guide',
+      text: 'Getting Started',
       children: [
         '/guide/README.md',
         '/guide/getting-started.md',
+      ],
+    },
+    {
+      text: "Essentials",
+      children: [
         '/guide/cui.md',
         '/guide/structured.md',
         '/guide/5levels-cui.md',
         '/guide/components.md',
         '/guide/architecture.md',
-        '/guide/glossary.md',
-      ],
+      ]
     },
+    {
+      text: "Glossary",
+      link: '/guide/glossary.md',
+    }
   ],
   '/advanced/': [
     {
@@ -35,10 +43,6 @@ export const en: SidebarConfig = {
         '/advanced/cookbook/passing-data-to-client-code.md',
         '/advanced/cookbook/markdown-and-vue-sfc.md',
       ],
-    },
-    {
-      text: 'Glossary',
-      link: '/advanced/glossary.md',
     },
   ],
   '/reference/': [
