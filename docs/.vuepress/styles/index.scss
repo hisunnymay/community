@@ -35,6 +35,29 @@ html.dark {
 	margin: auto;
 }
 .custom-container {
+	&.four{ 
+		 width: 20%;
+		padding: 1px;
+		display: inline-block;
+		vertical-align: top;
+		box-sizing: border-box;
+		margin: auto;
+		img{
+			width: 100px;
+			height: 100px;
+		}
+		ul{
+			text-align: left;
+		}
+		li{
+			list-style: none;
+			text-decoration: none;
+		}
+		p{
+			padding-left: 1.2em;
+		}
+
+	}
 	&.third {
 	  width: 33%;
 	  padding: 1px;
@@ -86,6 +109,10 @@ html.dark {
 		max-width: 100%;
 	}
 	.custom-container {
+		&.four{
+			width: 100%;
+
+		}
 		&.third {
 		  margin: 0 auto;
 		  width: 100%;

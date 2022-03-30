@@ -296,6 +296,12 @@ export default defineUserConfig<DefaultThemeOptions>({
 
       }
     ],
+    [
+      '@vuepress/plugin-container',{
+        type:'four',
+
+      }
+    ],
 
 
 
