@@ -77,6 +77,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: '/images/logo.png',
+
     repo: 'https://framely.naturali.io',
 
     docsDir: 'docs',
@@ -154,7 +155,6 @@ export default defineUserConfig<DefaultThemeOptions>({
   },
 
   markdown: {
-
     importCode: {
       handleImportPath: (str) =>
         str.replace(
@@ -240,56 +240,41 @@ export default defineUserConfig<DefaultThemeOptions>({
       '@vuepress/plugin-container',
       {
         type:'story',
-        
       },
-  
-     
     ],
     [
       '@vuepress/plugin-container',{
         type:'half',
-
-        
       }
     ],
     [
       '@vuepress/plugin-container',{
         type:'third',
-
-        
       }
     ],
     [
       '@vuepress/plugin-container',{
         type:'right',
-
-        
       }
     ],
     [
       '@vuepress/plugin-container',{
         type:'left',
-
-        
       }
     ],
     [
       '@vuepress/plugin-container',{
         type:'center',
-
-        
       }
     ],
     [
       '@vuepress/plugin-container',{
         type:'card',
-
       }
     ],
     [
       '@vuepress/plugin-container',{
         type:'thumbnail',
-
       }
     ],
     [
@@ -298,9 +283,6 @@ export default defineUserConfig<DefaultThemeOptions>({
 
       }
     ],
-
-
-
 
     // only enable shiki plugin in production mode
     [

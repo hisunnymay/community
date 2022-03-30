@@ -5,7 +5,7 @@ import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 <template>
   <ParentLayout>
     <template #navbar-after>
-      <button class="btn-nav">Start Building</button>
+      <button class="btn-nav">Get Started</button>
     </template>
     <template #page-bottom>
       <div class="footer">
