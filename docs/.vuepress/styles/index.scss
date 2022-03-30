@@ -11,23 +11,8 @@ html.dark {
   --c-brand-light: #1295f7;
 }
 
-.story {
-	max-width: 24rem;
-	margin: auto;
-	padding: 0.005rem 1.5rem;
-	border-radius: 0.4rem;
-	background-color: var(--c-tip-bg);
-	border-left-width: .5rem;
-	border-left-style: solid;
-	border-left-color: #42bdea;
-	.title {
-		font-weight: bold;
-	}
-}
 .home{
 	max-width: 100%;
-
-
 }
 .features{
 	width: var(--homepage-width);
@@ -35,8 +20,21 @@ html.dark {
 	margin: auto;
 }
 .custom-container {
+	&.story {
+		max-width: 24rem;
+		margin: auto;
+		padding: 0.005rem 1.5rem;
+		border-radius: 0.4rem;
+		background-color: var(--c-tip-bg);
+		border-left-width: .5rem;
+		border-left-style: solid;
+		border-left-color: #42bdea;
+		.title {
+			font-weight: bold;
+		}
+	}
 	&.four{ 
-		 width: 20%;
+		width: 20%;
 		padding: 1px;
 		display: inline-block;
 		vertical-align: top;
@@ -56,7 +54,6 @@ html.dark {
 		p{
 			padding-left: 1.2em;
 		}
-
 	}
 	&.third {
 	  width: 33%;
@@ -131,8 +128,7 @@ html.dark {
 			width: 100%
 		  }
 		}
-	  }
-	
+	}
 }
 @media (max-width: 419px) {
 	.custom-container {

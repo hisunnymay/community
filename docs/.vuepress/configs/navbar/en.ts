@@ -12,7 +12,7 @@ export const en: NavbarConfig = [
       {
         text: 'Annotations',
         children: [
-          '/reference/plugin/wpa.md',
+          '/reference/annotations/vr.md',
         ],
       },
       {
@@ -22,13 +22,6 @@ export const en: NavbarConfig = [
             text: 'CLI',
             link: '/reference/cli.html',
           },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
-          '/reference/client-api.md',
-          '/reference/node-api.md',
         ],
       },
       {
@@ -72,4 +65,8 @@ export const en: NavbarConfig = [
       },
     ],
   },
+  {
+    text: 'Blog',
+    link: ''
+  }
 ]
