@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # WeChat Official Account
 A WeChat Official Account exists in the form of a Wechat user's contact, and chat is the basis for the interaction between the Official Account and its users. Follow these steps to config WeChat Official Account.
 
