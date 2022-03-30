@@ -34,6 +34,50 @@ html.dark {
 	
 	margin: auto;
 }
+.custom-container {
+	&.third {
+	  width: 33%;
+	  padding: 1px;
+	  display: inline-block;
+	  vertical-align: top;
+	  box-sizing: border-box;
+	}
+	&.half {
+	  width: 50%;
+	  padding: 1px;
+	  display: inline-block;
+	  vertical-align: top;
+	  box-sizing: border-box;
+	}
+	&.center {
+	  text-align: center;
+	  padding: 3em;
+	}
+	&.right {
+	  float: right;
+	  padding: 1em;
+	  width: auto;
+	  text-align: center;
+	}
+	&.left {
+	  float: left;
+	  padding: 1em 2em;
+	  padding-left: 0;
+	  width: auto;
+	  text-align: center;
+	}
+	&.card {
+	  text-align: center;
+	  background-color: var(--c-bg-lighter);
+	  border-top: 1px solid var(--c-border);
+	  border-bottom: 1px solid var(--c-border);
+	  img {
+		max-width: 90%;
+	  }
+	}
+  }
+  
+
 @media (max-width:719px){
 	.home{
 		max-width: var(--homepagewidth);
@@ -41,4 +85,49 @@ html.dark {
 	.home .features{
 		max-width: 100%;
 	}
+	.custom-container {
+		&.third {
+		  margin: 0 auto;
+		  width: 100%;
+		  padding: 0;
+		  margin-bottom: 10px;
+		  img {
+			width: 100%
+		  }
+		}
+		&.half {
+		  margin: 0 auto;
+		  width: 100%;
+		  padding: 0;
+		  margin-bottom: 10px;
+		  img {
+			width: 100%
+		  }
+		}
+	  }
+	
 }
+@media (max-width: 419px) {
+	.custom-container {
+	  &.left {
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 10px;
+		img {
+		  width: 100%
+		}
+	  }
+	  &.right {
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 10px;
+		img {
+		  width: 100%
+		}
+	  }
+	}
+  }
