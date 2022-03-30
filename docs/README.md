@@ -33,3 +33,41 @@ features:
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
 footer: Copyright © 2018-present framely.io
 ---
+
+***
+
+::: four
+- ![logo](./.vuepress/public/images/logo.png)
+
+:::
+::: four Product
+ - Database
+ - Auth
+ - Storage
+ - Functions
+ - Pricing
+:::
+::: four Resources
+ - Support
+ - Brand Assets
+ - Integrations
+ - Experts
+ - Systems Status
+ - Terms of service
+ - privacy policy
+:::
+::: four Developers
+ - Documention
+ - API Reference
+ - Guides
+
+:::
+::: four company
+ - Blog
+ - Open Source
+ - Careers
+ - Company
+ - Humans.txt
+ - Lawyers.txt
+ - Security.txt
+:::

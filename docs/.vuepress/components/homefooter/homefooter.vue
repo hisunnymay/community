@@ -55,13 +55,13 @@
                 <p>company</p>
                 <div class="link-col">
 
-                <a href="#">Blog</a>
-                <a href="#">Open Source</a>
-                <a href="#">careers</a>
-                <a href="#">company</a>
-                <a href="#">Human.txt</a>
-                <a href="#">Lawyer.txt</a>
-                <a href="#">Security.txt</a>
+                <a  href="#" class="link-f">Blog</a>
+                <a href="#" class="link-f">Open Source</a>
+                <a href="#" class="link-f">careers</a>
+                <a href="#" class="link-f">company</a>
+                <a href="#" class="link-f">Human.txt</a>
+                <a href="#" class="link-f">Lawyer.txt</a>
+                <a href="#" class="link-f">Security.txt</a>
                 </div>
 
             </div>
@@ -112,7 +112,7 @@
     /* margin-left: 35px; */
     /* width: fit-content; */
 }
-a{
+.link-col a{
     color: #4e6e8e;
     margin: 5px;
 }

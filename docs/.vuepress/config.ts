@@ -1,4 +1,5 @@
 import { defineUserConfig } from '@vuepress/cli'
+// @ts-ignore
 import type { DefaultThemeOptions } from '@lando/vuepress-theme-default-plus'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
@@ -7,8 +8,13 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
+  // theme: '@lando/vuepress-theme-default-plus',
+  theme: path.resolve(__dirname, './theme'),
+
   alias:{
-    '@theme/HomeFooter.vue':path.resolve(__dirname, './components/homefooter/homefooter.vue')
+    // '@theme/HomeFooter.vue':path.resolve(__dirname, './components/homefooter/homefooter.vue'),
+    '@theme/HomeHero.vue':path.resolve(__dirname, './components/hero/hero.vue'),
+
   },
 
   head: [
@@ -237,11 +243,68 @@ export default defineUserConfig<DefaultThemeOptions>({
     [
       '@vuepress/plugin-container',
       {
-        type: 'story',
-        before: info => `<div class="story"><p class="title">${info}</p>`,
-        after: () => '</div>',
+        type:'story',
+        
       },
+  
+     
     ],
+    [
+      '@vuepress/plugin-container',{
+        type:'half',
+
+        
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'third',
+
+        
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'right',
+
+        
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'left',
+
+        
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'center',
+
+        
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'card',
+
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'thumbnail',
+
+      }
+    ],
+    [
+      '@vuepress/plugin-container',{
+        type:'four',
+
+      }
+    ],
+
+
+
 
     // only enable shiki plugin in production mode
     [
