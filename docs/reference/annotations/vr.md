@@ -46,6 +46,10 @@
     
 
 ### Optional
+::: tip 小贴士：
+ 虽然我并不依赖于他们，但如果可以，我还是很愿意和他们在一起的。就像你们人类，虽有一日三餐，但总还是要吃些水果滴。
+:::
+
   ##### 1. Value Check
   
   用以校验 end-user 的选择是否满足业务范围，若不满足可以使用 Value Check 默认表现提示 end-user，允许 end-user 修改已选内容或重选内容，或根据业务场景客制化默认表现，see more click here （待补充 Value Check）；
@@ -70,9 +74,9 @@ Then you can commit, test or change, commit and test.
 👇 在你开始前，一定要了解的一些概念：
 
 
-### Input
+ Input
 
-#### 1. Source Type
+### Source Type
 
 Source 即推荐列表来源，当你为你的 end-user 推荐一组内容时，这些内容一定是有一个来源的，即你需要告诉 chatbot 为 end-user 展示的列表内容应当从哪里获取。显然，不同的 slot 推荐的内容是不同，source 理应也是不同的。
 
@@ -80,7 +84,7 @@ Source 即推荐列表来源，当你为你的 end-user 推荐一组内容时，
 
 而在 Value Rec 这里，你其实无需关心复杂的逻辑，只需要在 Source Type 处关联好 source 即可。Source 可以通过 Function 与 Intent 来实现调用：
 
-##### 1. Function
+### Function
 
 若 Source Type 选择 Code Expression，则表示你将通过 kotlin code 调用 function，调用 function 的 code 非常简单，输入你要调用的 function label 即可，记得要加上 ()：
 
@@ -108,9 +112,9 @@ org.chatbot.slot!!.getAllInstances()
 （待补充）
 
 
-### Outputs：
+Outputs：
 
-#### 2. Display
+### Display
 
 Display 是 Value Rec 向 end-user 展示推荐内容的主体，包括：
 - Header、Body、Footer：负责展示内容的部分；
@@ -146,7 +150,7 @@ ${it!!.value}
 但事事总有例外。总会有那么个场景，你的 end-user 遇到可选内容有且仅有一个或没有的时候，如果没有特殊的需求，大可以放心的使用 Single-entry Prompts 和 Zero-entry Prompts  的默认表现，来处理这两个特殊场景。
 
 
-#### 3. Single-entry Prompts
+### Single-entry Prompts
 
 
 当 Value Rec 为 end-user 推荐内容有且只有一条时，你可以通过 Single-entry Prompts 成功引起 end-user 的注意。当 end-user 可选的内容有且只有一个时，如果 end-user 选择则可以顺利完成服务，如果 end-user 不选择则无法完成任务。因此针对不同场景，你可以为 end-user 提供不同的 Single-entry Prompts 提示：
@@ -162,7 +166,7 @@ Tips：Implicit 隐式提示，end-user 无法拒绝选项，选择后会进入�
 
 
 
-#### 4. Zero-entry Prompts
+### Zero-entry Prompts
 
 当 Value Rec 为 end-user 推荐内容刚好为空、或因为一些原因（如拒绝 Single-entry Prompts 的 explicit 追问）走到这里时，chatbot 会陷入困境。而拯救 chatbot 的最简单方法，就是定义好 Zero-entry Prompts 的提示语句，这样当再次遇到类似场景时，chatbot 会开始执行默认表现，并退出当前 intent，这样你的 end-user 和 chatbot 都不会大惊失措，他们可以携手重新开始。
 
@@ -172,7 +176,7 @@ Tips：Implicit 隐式提示，end-user 无法拒绝选项，选择后会进入�
 🤦‍♀️ 竟然没 work。。。
 
 
-#### 5. Hard Toggle
+### Hard Toggle
 
 Hard 是用来声明“业务范围”与“推荐列表”之间关系的：
 - 若开关开启，则表“强限制”，即你的“业务范围”与 Value Rec 的推荐列表内容严丝合缝、完全吻合。因此若 end-user 想要的内容不在当前列表，chatbot 会给 end-user 一个超出范围的默认回复，当然你可以客制化这个回复，或者添加更多的默认回复。
@@ -192,7 +196,6 @@ Hard 是用来声明“业务范围”与“推荐列表”之间关系的：
 
 End-user Input：
 
-#### 6. Expressions
+### Expressions
 
-🤦‍♀️ 这个得测一下
-see more about DU click here （待补充 DU doc）
+⛽️ coming soon
