@@ -10,6 +10,60 @@ html.dark {
   --c-brand: #4282fd;
   --c-brand-light: #1295f7;
 }
+// footer
+.grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding-left: 5rem;
+	padding-right: 5rem;
+
+}
+.grid-2{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.logo-img{
+	text-align: left;
+}
+.logo-img>img{
+	width: 70px;
+	height: 70px;
+}
+.logo-socials{
+	display: flex;
+	flex-direction: column;
+	padding-top: 38px;
+}
+.socials{
+	display: flex;
+	align-items: center;
+	height: 40px;
+	margin-top: 30px;
+	padding-left: 10px;
+
+}
+.socials a svg{
+	width: 25px;
+	height: 25px;
+	margin-right: 15px;
+
+}
+.grid-2 div ul li{
+	list-style: none;
+	font-size: .875rem;
+	font-weight: lighter;
+	line-height: 2rem;
+	text-align: left;
+}
+.grid-2 div h6{
+	padding-left: 1.2em;
+	text-align: left;
+}
+.grid-2 div ul li a{
+	color: var(--c-text-lighter);
+}
+// end footer
+
 
 .home{
 	max-width: 100%;
@@ -19,6 +73,7 @@ html.dark {
 	
 	margin: auto;
 }
+
 .custom-container {
 	&.story {
 		max-width: 24rem;
@@ -99,11 +154,17 @@ html.dark {
   
 
 @media (max-width:719px){
-	.home{
-		max-width: var(--homepagewidth);
-	}
+	
 	.home .features{
 		max-width: 100%;
+	}
+	.home .footer{
+		padding: 0;
+	}
+	.grid{
+		grid-template-columns: 1fr;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	.custom-container {
 		&.four{
