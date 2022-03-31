@@ -70,7 +70,6 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <NavbarItems class="can-hide" />
       <slot name="after" />
       <ToggleDarkModeButton v-if="enableDarkMode" />
-      <NavbarSearch />
     </div>
   </header>
 </template>

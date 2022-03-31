@@ -12,23 +12,7 @@ export const en: NavbarConfig = [
       {
         text: 'Annotations',
         children: [
-          '/reference/plugin/wpa.md',
-        ],
-      },
-      {
-        text: 'Services',
-        children: [
-          {
-            text: 'CLI',
-            link: '/reference/cli.html',
-          },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
-          '/reference/client-api.md',
-          '/reference/node-api.md',
+          '/reference/annotations/vr.md',
         ],
       },
       {
@@ -46,30 +30,7 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: 'Learn More',
-    children: [
-      {
-        text: 'Advanced',
-        children: [
-          '/advanced/architecture.md',
-          '/advanced/plugin.md',
-          '/advanced/theme.md',
-          {
-            text: 'Cookbook',
-            link: '/advanced/cookbook/',
-          },
-        ],
-      },
-      {
-        text: 'Resources',
-        children: [
-          '/contributing.md',
-          {
-            text: 'Awesome VuePress',
-            link: 'https://github.com/vuepress/awesome-vuepress',
-          },
-        ],
-      },
-    ],
-  },
+    text: 'Blog',
+    link: ''
+  }
 ]

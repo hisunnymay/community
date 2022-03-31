@@ -60,7 +60,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '/': {
       lang: 'en-US',
       title: 'Framely',
-      description: 'Conversational Service Made Easy',
+      description: 'Composable Conversational Services Made Easy',
     },
     // '/zh/': {
     //  lang: 'zh-CN',
@@ -77,9 +77,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     logo: '/images/logo.png',
-
-    repo: 'https://framely.naturali.io',
-
+    heroImage: '',
     docsDir: 'docs',
 
     // theme-level locales config
