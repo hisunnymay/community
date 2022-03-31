@@ -1,6 +1,6 @@
 ---
 home: true
-title: Home
+title: Framely
 heroImage: /images/hero.png
 
 actions:

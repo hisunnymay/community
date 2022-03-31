@@ -60,7 +60,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '/': {
       lang: 'en-US',
       title: 'Framely',
-      description: 'Build, Share and Use Conversational Components for Effective Customer Experiences',
+      description: 'Composable Conversational Services Made Easy',
     },
     // '/zh/': {
     //  lang: 'zh-CN',
