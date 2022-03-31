@@ -11,6 +11,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   theme: path.resolve(__dirname, './theme'),
 
   alias:{
+    '@theme/ToggleDarkModeButton.vue': path.resolve(__dirname, 'components/darkmode/darkmode.vue')
   },
 
   head: [
