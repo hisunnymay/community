@@ -13,6 +13,9 @@ export default defineUserConfig<DefaultThemeOptions>({
   alias:{
   },
 
+  define: {
+  },
+
   head: [
     [
       'link',
@@ -60,7 +63,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '/': {
       lang: 'en-US',
       title: 'Framely',
-      description: 'Composable Conversational Services Made Easy',
+      description: 'Composable Conversational Interface for Services',
     },
     // '/zh/': {
     //  lang: 'zh-CN',
@@ -97,6 +100,8 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // page meta
         editLinkText: 'Edit this page on GitHub',
+
+        darkMode: true,
       },
 
       /**
@@ -149,6 +154,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
       // use shiki plugin in production mode instead
       prismjs: !isProd,
+
     },
   },
 

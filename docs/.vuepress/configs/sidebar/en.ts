@@ -10,6 +10,10 @@ export const en: SidebarConfig = {
       ],
     },
     {
+      text: "Key Concepts",
+      link: '/guide/concepts.md',
+    },
+    {
       text: "Essentials",
       children: [
         '/guide/cui.md',
@@ -29,6 +33,7 @@ export const en: SidebarConfig = {
       text: 'Annotation Reference',
       collapsible: true,
       children: [
+        '/reference/annotations/overview.md',
         '/reference/annotations/vr.md',
       ],
     },
