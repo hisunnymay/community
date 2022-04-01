@@ -3,14 +3,15 @@
 [[toc]]
 
 ## Overview
-::: tip 我能做什么？
- - 帮助你的用户了解业务范围与边界，快速锁定心仪内容；  
- - Preferred, but not required。
+::: tip What can I do？
+ - Help your end-user to understand the business boundaries.
+ - Help your end-user focus on what they really want. 
+ - Preferred, but not required.
 :::
 
 使用 Value Recommendation（简称 Value Rec 下同），可以为你的用户提供部分或全部业务内容，使用户快速了解业务范围与边界，并可以根据自己的偏好，做出特定场景下的最优选择。  
 
-如：当你的用户想喝“cold drink”，但此刻“冷萃”已经售罄，只有“冰拿铁”可以提供，通过 Value Rec 的展示，用户可以迅速了解门店供货现状，并决定继续选购“冰拿铁”还是没有“冷萃”就不喝了。
+如：你的用户来买咖啡，但此刻门店只有“拿铁”可以提供，通过 Value Rec，用户可以迅速了解门店供货现状，并决定是否继续选购“拿铁”。
 
 ### Value Rec Features
   - 支持翻页功能，如：“下一页”、“上一页”；  
@@ -21,36 +22,34 @@
     - 推荐内容数量为 single entry 与 zero entry 的默认行为；
   - 支持客制化系统默认表现。
   
-
-### Required Components
-::: tip Related Component
- 虽然我并不依赖于他们，但如果可以，我还是很愿意和他们在一起的。就像你们人类，虽有一日三餐，但总还是要吃些水果滴。
-:::
-
-### Prompt
+### Related Module
   
-Value Rec 总是会同 Prompt 一起出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至更佳热情的解释和说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
+#### Prompt <Badge type="warning" text="Required" />
+Value Rec 总是会在 Prompt 之后出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至热情的解释说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
+  
+#### Value Check <Badge text="Preferred" />
+配合 Value Check ，可以给你的用户更好的体验。Value Check 用以校验用户的选择是否满足业务范围，若不满足可以使用系统默认表现提示给用户，并允许他们修改已选内容或重选内容。当然，你可以根据具体场景，来客制化系统默认表现。
 
-### Optional Components
-::: tip Related Component 
- 我是一个依赖性很强的家伙，总是需要一些支持，才能够很好地工作。就像你们人类，虽有一日三餐，但总不能不喝水不是。
-:::
-
-#### Value Check
-用以校验 end-user 的选择是否满足业务范围，若不满足可以使用 Value Check 默认表现提示 end-user，允许 end-user 修改已选内容或重选内容，或根据业务场景客制化默认表现，see more click here （待补充 Value Check）；
-
-#### Confirmation
-用以与 end-user 确认想要选择的内容是否与 chatbot 得到的内容一致，若不一致，可以使用 Confirmation 默认表现追问 end-user 下一步指示，或客制化默认表现，see more click here （待补充 Confirmation）。
+#### Confirmation <Badge text="Preferred" />
+配合 Confirmation，可以给你的用户更强的信任感。Confirmation 用以与用户确认他选择的内容是否与 chatbot 得到的一致，若不一致，系统会使用 Confirmation 默认表现询问用户下一步指示。当然，你同样可以根据具体场景，客制化系统默认表现。
 
 ## How to use
-First click agent link: what_to_watch, and clone it to your own org. 
-Then you can commit, test or change, commit and test.
+::: tip Tips
+ - First clone this project： [What To Watch](https://framely.naturali.io/org/60741b6733676cd2b36dd460/agent/62415124b883426466b121b3/intent?page=0&imported=false&search=)  
+ - Then try to commit, run test, or make some little change and commit, test.
+:::
 
-一些 Dialog Annotation 既存在于 Slot Level，也存在于 Frame Level，不过你不用担心，无论在哪个 Level 定义，在这里暂时不会影响你理解如何定义 Value Rec。因为每一个 Level 的定义方式都是一致的，不同的只是这个 Dialog Annotation 所能影响的范围，是只影响 Slot，还是会波及整个 Frame。
+像其他 Dialog Annotation 一样，Value Rec 既存在于 Slot Level，也存在于 Frame Level。不过你不用担心，无论在哪个 Level 定义，不同 Level 只是影响 Value Rec 所能波及的范围，是只影响 Slot，还是整个 Frame，但定义方式都是一致的。
 
-👇 在你开始前，一定要了解的一些概念：
+![value-rec](/images/annotation/vr/value-rec.png)
+
+Value Rec 既可以作用于
+
+![vr-popup](/images/annotation/vr/vr-popup.png)
 
 ### Source
+
+![vr-source](/images/annotation/vr/vr-source.png)
 
 Source 即推荐列表来源，当你为你的 end-user 推荐一组内容时，这些内容一定是有一个来源的，即你需要告诉 chatbot 为 end-user 展示的列表内容应当从哪里获取。显然，不同的 slot 推荐的内容是不同，source 理应也是不同的。
 
@@ -79,29 +78,25 @@ slot!!.getAllInstances() // slot level
 org.chatbot.slot!!.getAllInstances()
 ```
 
-不过不用担心，Framely 内部已在所有涉及纯 raw code 的输入框中，都内置了相对应的 auto completion，包括 SQL、kotlin、json，无论是你自定义的 type label 或 slot label 还是 language sytax 都可以 auto completion，就使用 IDE 一样。See more about Code Expression，click here （待补充 Code Expression ）
-
-
-##### 2. Intent
-（待补充）
-
-
-
+不过不用担心，Framely 内部已在所有涉及纯 raw code 的输入框中，都内置了相对应的 auto completion，包括 SQL、kotlin、json，无论是你自定义的 type label 或 slot label 还是 language sytax 都可以 auto completion，就使用 IDE 一样。
 
 ### Display
+
+![vr-display](/images/annotation/vr/vr-display.png)
 
 Display 是 Value Rec 向 end-user 展示推荐内容的主体，包括：
 - Header、Body、Footer：负责展示内容的部分；
 - Number of entries：负责单页条目数量的部分，默认值为 5，你可以修改成任意你想要的范围，但数值不宜过大，可以想象一下你最终部署的终端长度，符合你的范围即可；
 - Delimiter：负责每个条目间、条目末的定界符，其中条目间默认为“\n”，即每一个条目换行显示，如果你不想用换行，可以更换成任意想要的符号；
 - Template：负责终端样式展示的，see more about template click here：Generic Message Json Format 及样式 。
+
 通过 Try-It-Now 打印出一个基础的 Display，样式如下图所示👇
 
+![vr-display](/images/annotation/vr/vr-display-show.png)
 
 如果默认值的表现可以满足你的应用场景，那么 Display 对你而言，只需关注并定义 3 部分内容；如果只关注必需区域的话，你就只需关注 Body 了：
 - Header（非必需）：text area，定义推荐卡片的标题内容，如：“Top picks for you: ”、“Recommended for you: ”等；
-- Body（必需）：text with code expression embedded，定义推荐内容主体，body 循环体的引用许遵守以下规则：
-
+- Body（必需）：text with code expression embedded，定义推荐内容主体，body 循环体的引用需遵守以下规则：
 
 ```kotlin
 // index
@@ -116,38 +111,44 @@ ${it!!.value}
 ```
 
 - Footer（非必需）：text area，定义推荐卡片的底部内容或提示，如：“You can tell me the order or the name.”等；
-理论上，Header、Footer 你可以定义成任意你想呈现的内容，但如果你有准备去复用 Value Rec，那么从话术角度，你可以定义得更通用一些：
-- 如下图所示👇：
+理论上，Header、Footer 你可以定义成任意你想呈现的内容，但如果你有准备去复用 Value Rec，那么从话术角度，你可以定义得更通用一些，如下图所示👇
 
-- 效果展示👇：
+![vr-dispaly-full](/images/annotation/vr/vr-dispaly-full.png)
 
-但事事总有例外。总会有那么个场景，你的 end-user 遇到可选内容有且仅有一个或没有的时候，如果没有特殊的需求，大可以放心的使用 Single-entry Prompts 和 Zero-entry Prompts  的默认表现，来处理这两个特殊场景。
-
+但事事总有例外。总会有那么个场景，你的 end-user 遇到可选内容有且仅有一个或没有的时候，如果没有特殊的需求，大可以放心的使用 Single-entry Prompts 和 Zero-entry Prompts 的默认表现，来处理这两个特殊场景。
 
 ### Single-entry Prompts
 
-
 当 Value Rec 为 end-user 推荐内容有且只有一条时，你可以通过 Single-entry Prompts 成功引起 end-user 的注意。当 end-user 可选的内容有且只有一个时，如果 end-user 选择则可以顺利完成服务，如果 end-user 不选择则无法完成任务。因此针对不同场景，你可以为 end-user 提供不同的 Single-entry Prompts 提示：
 - Implicit：隐式提示。如果你的目的是想帮助 end-user 成功完成任务，那么隐式提示是你的最佳选择。选择后，当遇到条目为一的场景时，chatbot 会自动为  end-user 进行选择，并通过隐式提示的方式告知 end-user。
+
+![vr-sep-implicit](/images/annotation/vr/vr-sep-implicit.png)
+
 - Explicit：显式提示。如果你并不确定 end-user 的预期，或者对 end-user 是否完成任务没有迫切需求，那么你可以使用显式提示的方式。显式提示下，chatbot 并不会主动为 end-user 进行选择，而是会以确认的方式询问他，end-user 可以确认选项，也可以放弃选项。放弃选项后便会进入 Zero-entry Prompts 的状态。
 
+![vr-sep-explict](/images/annotation/vr/vr-sep-explict.png)
+
+::: tip Tips
+- Implicit 隐式提示，end-user 无法拒绝选项，选择后会进入下一个业务流程。
+- 在 Single-entry Prompts 中引用条目时需遵守以下规则：
 ```kotlin
- // VR SEP 引用条目
-${it.name()}
+${it.name()} // VR SEP 引用条目
 ```
+:::
+  
+Explicit (Left) vs Implicit (Right)，如下图所示 👇 
 
-Tips：Implicit 隐式提示，end-user 无法拒绝选项，选择后会进入下一个业务流程。
-
-
+![vr-sep-show](/images/annotation/vr/vr-sep-show.png)
 
 ### Zero-entry Prompts
+
+![vr-zep](/images/annotation/vr/vr-zep.png)
 
 当 Value Rec 为 end-user 推荐内容刚好为空、或因为一些原因（如拒绝 Single-entry Prompts 的 explicit 追问）走到这里时，chatbot 会陷入困境。而拯救 chatbot 的最简单方法，就是定义好 Zero-entry Prompts 的提示语句，这样当再次遇到类似场景时，chatbot 会开始执行默认表现，并退出当前 intent，这样你的 end-user 和 chatbot 都不会大惊失措，他们可以携手重新开始。
 
 当然，如果 Zero-entry Prompts 的默认表现不能满足你的业务需求，或者你不希望你的 end-user 和 chatbot 携手走入这一步，别担心，你完全可以在不想发生这样状态的 slot 的前一个 slot 设置与之相应的 Value Check，就像使用“挽尊卡”一样，把对话及时挽救回来，给予 end-user 和 chatbot 更新鲜的体验。See more about Value Check click here （待补充 Value Check）
 
-- 如下图所示👇：
-🤦‍♀️ 竟然没 work。。。
+如下图所示👇
 
 
 ### Hard Toggle
@@ -158,18 +159,14 @@ Hard 是用来声明“业务范围”与“推荐列表”之间关系的：
 
 通常涉及库存或 slot 之间有各种关联及限制的场景下，我们建议使用 Hard 模式，比如不同的电影院放映的电影是不同的，Hard 模式可以帮助你的 end-user 了解放映或排片情况，而不致于每次超出选择范围、每次都得不到想要的。
 
-- 如下图所示👇：
-
-
 当然，有一点你无需担心。如果你的推荐列表有 20 个条目，即使每页只展示 5 个，除了进行翻页操作外，你的 end-user 一样可以直接表达目前没有展示出来的 15 个条目中的任意一个。
 
-- 如下图所示👇：
-🤦‍♀️ 竟然不 work 了。。。
+如下图所示👇
 
-
-
-End-user Input：
+![vr-hard-show](/images/annotation/vr/vr-hard-show.png)
 
 ### Expressions
+
+![vr-expression](/images/annotation/vr/vr-expression.png)
 
 ⛽️ coming soon
