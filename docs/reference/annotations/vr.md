@@ -3,14 +3,9 @@
 [[toc]]
 
 ## Overview
-::: tip 我能做什么？
- - 帮助你的用户了解业务范围与边界，快速锁定心仪内容；  
- - Preferred, but not required。
-:::
-
 使用 Value Recommendation（简称 Value Rec 下同），可以为你的用户提供部分或全部业务内容，使用户快速了解业务范围与边界，并可以根据自己的偏好，做出特定场景下的最优选择。  
 
-如：当你的用户想喝“冷萃”，但此刻“冷萃”已经售罄，只有“冰拿铁”可以提供，通过 Value Rec 的展示，用户可以迅速了解门店供货现状，并决定继续选购“冰拿铁”还是没有“冷萃”就不喝了。
+如：当你的用户想喝“cold drink”，但此刻“冷萃”已经售罄，只有“冰拿铁”可以提供，通过 Value Rec 的展示，用户可以迅速了解门店供货现状，并决定继续选购“冰拿铁”还是没有“冷萃”就不喝了。
 
 ### Value Rec Features
 
@@ -22,61 +17,30 @@
     - 推荐内容数量为 single entry 与 zero entry 的默认行为；
   - 支持客制化系统默认表现。
   
+## Related Features
 
-### Required
-::: tip 小贴士：
- 我是一个依赖性很强的家伙，总是需要一些支持，才能够很好地工作。就像你们人类，虽有一日三餐，但总不能不喝水不是。
-:::
+### Prompt <Badge text="Required" />
+  
+Value Rec 总是会同 Prompt 一起出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至更佳热情的解释和说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
 
-  ##### 1. Prompt
-  
-  Value Rec 总是会同 Prompt 一起出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至更佳热情的解释和说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。  
-  
-  ##### 2. Function
-  
-  Value Rec 总是需要 Function 的支持，才能开始行动起来。因此，你需要把准备推荐给用户的条目、或想要展示的内容，通过 function 声明一下实现方式，再交给 Value Rec 去运行。Function 的实现可以通过以下两种形式声明：
-  - Native Function：use kotlin code； 
-  - Service / Provider：use Postgres；
-    
-  至于选择哪种方式，取决于你的数据是如何储存的。如果你已经活准备选用 Framely Hosting 方案，那么恭喜你，使用常规的 SQL 语句就可以啦。  
-  
-  ##### 3. Intent
-  
-  （还没有用过待补充）
-    
+### Value Check <Badge text="Optional" />
 
-### Optional
-::: tip 小贴士：
- 虽然我并不依赖于他们，但如果可以，我还是很愿意和他们在一起的。就像你们人类，虽有一日三餐，但总还是要吃些水果滴。
-:::
+用以校验 end-user 的选择是否满足业务范围，若不满足可以使用 Value Check 默认表现提示 end-user，允许 end-user 修改已选内容或重选内容，或根据业务场景客制化默认表现，see more click here （待补充 Value Check）；
 
-  ##### 1. Value Check
-  
-  用以校验 end-user 的选择是否满足业务范围，若不满足可以使用 Value Check 默认表现提示 end-user，允许 end-user 修改已选内容或重选内容，或根据业务场景客制化默认表现，see more click here （待补充 Value Check）；
+### Confirmation <Badge text="Optional" />
 
-  ##### 2. Confirmation
-  
-  用以与 end-user 确认想要选择的内容是否与 chatbot 得到的内容一致，若不一致，可以使用 Confirmation 默认表现追问 end-user 下一步指示，或客制化默认表现，see more click here （待补充 Confirmation）。
+用以与 end-user 确认想要选择的内容是否与 chatbot 得到的内容一致，若不一致，可以使用 Confirmation 默认表现追问 end-user 下一步指示，或客制化默认表现，see more click here （待补充 Confirmation）。
 
 
 ## How to use
 First click agent link: what_to_watch, and clone it to your own org. 
 Then you can commit, test or change, commit and test.
 
-
 一些 Dialog Annotation 既存在于 Slot Level，也存在于 Frame Level，不过你不用担心，无论在哪个 Level 定义，在这里暂时不会影响你理解如何定义 Value Rec。因为每一个 Level 的定义方式都是一致的，不同的只是这个 Dialog Annotation 所能影响的范围，是只影响 Slot，还是会波及整个 Frame。
-
-
-
-
-## Concept
 
 👇 在你开始前，一定要了解的一些概念：
 
-
- Input
-
-### Source Type
+### Source
 
 Source 即推荐列表来源，当你为你的 end-user 推荐一组内容时，这些内容一定是有一个来源的，即你需要告诉 chatbot 为 end-user 展示的列表内容应当从哪里获取。显然，不同的 slot 推荐的内容是不同，source 理应也是不同的。
 
@@ -84,7 +48,7 @@ Source 即推荐列表来源，当你为你的 end-user 推荐一组内容时，
 
 而在 Value Rec 这里，你其实无需关心复杂的逻辑，只需要在 Source Type 处关联好 source 即可。Source 可以通过 Function 与 Intent 来实现调用：
 
-### Function
+#### Code Expression
 
 若 Source Type 选择 Code Expression，则表示你将通过 kotlin code 调用 function，调用 function 的 code 非常简单，输入你要调用的 function label 即可，记得要加上 ()：
 
@@ -112,7 +76,7 @@ org.chatbot.slot!!.getAllInstances()
 （待补充）
 
 
-Outputs：
+
 
 ### Display
 

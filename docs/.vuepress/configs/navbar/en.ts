@@ -12,6 +12,7 @@ export const en: NavbarConfig = [
       {
         text: 'Annotations',
         children: [
+          '/reference/annotations/overview.md',
           '/reference/annotations/vr.md',
         ],
       },
