@@ -11,15 +11,16 @@ The goal for effective service chatbot design should be low user effort, so chat
 Framely provides a composable way of build conversational user interface for your services quickly. And at heart of this approach, there are some build in CUI components that builder can use to declaratively define the desired conversational experiences. Each component is documented in three parts: overview introduce the use case where one might consider this component, related components need to be factored during the CUI building, and finally all the controls that builder can to use to control behavior, each with why, and how.
 
 ::: tip Overview
- - 帮助你的用户了解业务范围与边界，快速锁定心仪内容；  
- - Preferred, but not required。
+ - Help your end-user to understand the business boundaries.
+ - Help your end-user focus on what they really want.   
+ - Preferred, but not required. 
 :::
 
 There are two kinds of related components.
-::: tip Related Component <Badge text="Required" />
- 虽然我并不依赖于他们，但如果可以，我还是很愿意和他们在一起的。就像你们人类，虽有一日三餐，但总还是要吃些水果滴。
+::: tip Related Component <Badge text="Preferred" />
+ There is no strong dependence. Like music, one of the ways we make sense of our lives, while one can live a life without it.
 :::
 
-::: tip Related Component <Badge text="Optional" />
- 我是一个依赖性很强的家伙，总是需要一些支持，才能够很好地工作。就像你们人类，虽有一日三餐，但总不能不喝水不是。
+::: tip Related Component <Badge type="warning" text="Required" />
+ There always need some support to work well. Just like the importance of water to we human beings.
 :::

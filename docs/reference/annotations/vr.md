@@ -3,14 +3,15 @@
 [[toc]]
 
 ## Overview
-::: tip 我能做什么？
- - 帮助你的用户了解业务范围与边界，快速锁定心仪内容；  
- - Preferred, but not required。
+::: tip What can I do？
+ - Help your end-user to understand the business boundaries.
+ - Help your end-user focus on what they really want. 
+ - Preferred, but not required.
 :::
 
 使用 Value Recommendation（简称 Value Rec 下同），可以为你的用户提供部分或全部业务内容，使用户快速了解业务范围与边界，并可以根据自己的偏好，做出特定场景下的最优选择。  
 
-如：当你的用户想喝“cold drink”，但此刻“冷萃”已经售罄，只有“冰拿铁”可以提供，通过 Value Rec 的展示，用户可以迅速了解门店供货现状，并决定继续选购“冰拿铁”还是没有“冷萃”就不喝了。
+如：你的用户来买咖啡，但此刻门店只有“拿铁”可以提供，通过 Value Rec，用户可以迅速了解门店供货现状，并决定是否继续选购“拿铁”。
 
 ### Value Rec Features
   - 支持翻页功能，如：“下一页”、“上一页”；  
@@ -21,34 +22,28 @@
     - 推荐内容数量为 single entry 与 zero entry 的默认行为；
   - 支持客制化系统默认表现。
   
-
-### Required Components
-::: tip Related Component
- 虽然我并不依赖于他们，但如果可以，我还是很愿意和他们在一起的。就像你们人类，虽有一日三餐，但总还是要吃些水果滴。
-:::
-
-### Prompt
+### Related Module
   
-Value Rec 总是会同 Prompt 一起出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至更佳热情的解释和说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
+#### Prompt <Badge type="warning" text="Required" />
+Value Rec 总是会在 Prompt 之后出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至热情的解释说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
+  
+#### Value Check <Badge text="Preferred" />
+配合 Value Check ，可以给你的用户更好的体验。Value Check 用以校验用户的选择是否满足业务范围，若不满足可以使用系统默认表现提示给用户，并允许他们修改已选内容或重选内容。当然，你可以根据具体场景，来客制化系统默认表现。
 
-### Optional Components
-::: tip Related Component 
- 我是一个依赖性很强的家伙，总是需要一些支持，才能够很好地工作。就像你们人类，虽有一日三餐，但总不能不喝水不是。
-:::
-
-#### Value Check
-用以校验 end-user 的选择是否满足业务范围，若不满足可以使用 Value Check 默认表现提示 end-user，允许 end-user 修改已选内容或重选内容，或根据业务场景客制化默认表现，see more click here （待补充 Value Check）；
-
-#### Confirmation
-用以与 end-user 确认想要选择的内容是否与 chatbot 得到的内容一致，若不一致，可以使用 Confirmation 默认表现追问 end-user 下一步指示，或客制化默认表现，see more click here （待补充 Confirmation）。
+#### Confirmation <Badge text="Preferred" />
+配合 Confirmation，可以给你的用户更强的信任感。Confirmation 用以与用户确认他选择的内容是否与 chatbot 得到的一致，若不一致，系统会使用 Confirmation 默认表现询问用户下一步指示。当然，你同样可以根据具体场景，客制化系统默认表现。
 
 ## How to use
-First click agent link: what_to_watch, and clone it to your own org. 
-Then you can commit, test or change, commit and test.
+::: tip Tips
+ - First clone this project： [What To Watch](https://framely.naturali.io/org/60741b6733676cd2b36dd460/agent/62415124b883426466b121b3/intent?page=0&imported=false&search=)  
+ - Then try to commit, run test, or make some little change and commit, test.
+:::
 
-一些 Dialog Annotation 既存在于 Slot Level，也存在于 Frame Level，不过你不用担心，无论在哪个 Level 定义，在这里暂时不会影响你理解如何定义 Value Rec。因为每一个 Level 的定义方式都是一致的，不同的只是这个 Dialog Annotation 所能影响的范围，是只影响 Slot，还是会波及整个 Frame。
+像其他 Dialog Annotation 一样，Value Rec 既存在于 Slot Level，也存在于 Frame Level。不过你不用担心，无论在哪个 Level 定义，不同 Level 只是影响 Value Rec 所能波及的范围，是只影响 Slot，还是整个 Frame，但定义方式都是一致的。
 
-👇 在你开始前，一定要了解的一些概念：
+Value Rec 既可以作用于
+
+
 
 ### Source
 
@@ -80,12 +75,6 @@ org.chatbot.slot!!.getAllInstances()
 ```
 
 不过不用担心，Framely 内部已在所有涉及纯 raw code 的输入框中，都内置了相对应的 auto completion，包括 SQL、kotlin、json，无论是你自定义的 type label 或 slot label 还是 language sytax 都可以 auto completion，就使用 IDE 一样。See more about Code Expression，click here （待补充 Code Expression ）
-
-
-##### 2. Intent
-（待补充）
-
-
 
 
 ### Display
