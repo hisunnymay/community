@@ -22,7 +22,7 @@
   - 支持客制化系统默认表现。
   
 
-### Required Features
+### Required Components
 ::: tip Related Component
  虽然我并不依赖于他们，但如果可以，我还是很愿意和他们在一起的。就像你们人类，虽有一日三餐，但总还是要吃些水果滴。
 :::
@@ -31,7 +31,7 @@
   
 Value Rec 总是会同 Prompt 一起出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至更佳热情的解释和说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
 
-### Optional Features
+### Optional Components
 ::: tip Related Component 
  我是一个依赖性很强的家伙，总是需要一些支持，才能够很好地工作。就像你们人类，虽有一日三餐，但总不能不喝水不是。
 :::
