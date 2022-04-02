@@ -9,7 +9,7 @@ If you don't have WeChat Official Account, set up one first.
 ![An image](/images/channelConfig/RegisterNow.jpeg)
 
 ## Add an integration
-1. From the chatbot page, click **Setting** > **Integrations**. In the **Channels** field, click **Add New** > **Wechat Public Account**
+1. From the chatbot page, click **Setting** > **Integrations**. In the **Channels** field, click **Add New** > **Wechat Official Account**
    
 ![An image](/images/channelConfig/step1_1.jpeg)
 
@@ -48,7 +48,7 @@ We show here how we deploy chatbot to Framely hosted environment, for the privia
 1. Back to your chatbot page, paste *AppID*, *AppSecret* and *Token* you copied.
 2. Click **SAVE**.
 
-![An image](/images/channelConfig/step3_1.png)
+![An image](/images/channelConfig/step3_1.jpeg)
 
 3. Click **Deploy** to deploy your chatbot.
 
