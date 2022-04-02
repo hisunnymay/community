@@ -13,7 +13,7 @@
 
 如：你的用户来买咖啡，但此刻门店只有“拿铁”可以提供，通过 Value Rec，用户可以迅速了解门店供货现状，并决定是否继续选购“拿铁”。
 
-### Value Rec Features
+## Features
   - 支持翻页功能，如：“下一页”、“上一页”；  
   - 支持通过 order 或 name 选择选择内容；
   - 支持推荐选项 name 的完整表达及指代表达；For more information about DU see “待补充 DU 文档”
@@ -22,7 +22,7 @@
     - 推荐内容数量为 single entry 与 zero entry 的默认行为；
   - 支持客制化系统默认表现。
   
-### Related Module
+## Related Annotations
   
 #### Prompt <Badge type="warning" text="Required" />
 Value Rec 总是会在 Prompt 之后出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至热情的解释说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。

@@ -14,6 +14,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   },
 
   define: {
+    isDarkMode: true,
   },
 
   head: [
