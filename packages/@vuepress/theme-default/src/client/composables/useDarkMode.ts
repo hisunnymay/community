@@ -26,7 +26,7 @@ export const useDarkMode = (): DarkModeRef => {
 export const setupDarkMode = (): void => {
   const themeLocale = useThemeLocaleData()
   const isDarkPreferred = usePreferredDark()
-  const darkStorage = useStorage('vuepress-color-scheme', 'auto')
+  const darkStorage = useStorage('vuepress-color-scheme', 'dark')
 
   const isDarkMode = computed<boolean>({
     get() {
