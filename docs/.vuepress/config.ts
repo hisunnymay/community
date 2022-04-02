@@ -13,10 +13,6 @@ export default defineUserConfig<DefaultThemeOptions>({
   alias:{
   },
 
-  define: {
-    isDarkMode: true,
-  },
-
   head: [
     [
       'link',
