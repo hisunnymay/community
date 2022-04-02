@@ -13,9 +13,6 @@ export default defineUserConfig<DefaultThemeOptions>({
   alias:{
   },
 
-  define: {
-  },
-
   head: [
     [
       'link',
