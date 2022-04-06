@@ -23,7 +23,7 @@ jobs:
           CICD_TOKEN: ${{ secrets.CICD }}
         run: |
           yarn
-          (yarn dev) & (sleep 10 && yarn docs:dev) & (sleep 25 && yarn docs:build)
+          (sleep 10 && yarn docs:dev) & (sleep 25 && yarn docs:build)
           cd docs/.vuepress/dist
           git config --global user.name  "github action"
           git config --global user.email "hui.cheng@naturali.io"
