@@ -1,4 +1,19 @@
 ---
-image: some url
+date: 1998-01-02
+category:
+  - History
+tag:
+  - WWII
+image:
+    - images/posts/test.png
 ---
-# Hello from a new article 
+
+# Article
+
+## Heading 2
+
+Here is the content.
+
+### Heading 3
+
+Here is the content.

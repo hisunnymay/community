@@ -1,5 +1,3 @@
-
-  
 <template>
   <div class="article-wrapper">
     <div v-if="!items.length">Nothing in here.</div>
@@ -11,6 +9,7 @@
       </header>
       <hr />
       <div class="article-info">
+        <span v-if="info.image">image: {{info.image}}</span>
         <span v-if="info.author" class="author">Author: {{ info.author }}</span>
         <span v-if="info.date" class="date"
           >Date: {{ new Date(info.date).toLocaleDateString() }}</span
@@ -18,6 +17,7 @@
         <span v-if="info.category" class="category"
           >Category: {{ info.category.join(",") }}</span
         >
+        {{info}}
         <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(",") }}</span>
       </div>
     </article>

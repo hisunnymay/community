@@ -65,7 +65,7 @@ const blogTheme: Theme<DefaultThemeOptions> = {
             filter: (page) => !page.frontmatter.archive,
             path: "/blog/",
             layout: "Article",
-            frontmatter: () => ({ title: "Articles", sidebar: false }),
+            frontmatter: () => ({ title: "Articles", sidebar: false, }),
             // sort pages with time and sticky
             sorter: (pageA, pageB) => {
               if (pageA.frontmatter.sticky && pageB.frontmatter.sticky)
