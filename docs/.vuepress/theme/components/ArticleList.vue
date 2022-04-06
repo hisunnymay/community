@@ -17,7 +17,6 @@
         <span v-if="info.category" class="category"
           >Category: {{ info.category.join(",") }}</span
         >
-        {{info}}
         <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(",") }}</span>
       </div>
     </article>
