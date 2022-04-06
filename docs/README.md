@@ -13,6 +13,7 @@ actions:
 features:
   - title: CUI for your service
     details: Building valuable services is hard. While we can not help with that, we can make building conversational user interface a lot easier.
+    icon: /images/icon.png
   - title: Separation of Concerns
     details: Separate chatbot building into service, interaction and language perception, so different aspects can be handled by different people.
   - title: Declarative
