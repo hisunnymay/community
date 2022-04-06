@@ -5,7 +5,7 @@ category:
 tag:
   - WWII
 image:
-    - images/posts/test.png
+    - images/test.png
 ---
 
 # Article

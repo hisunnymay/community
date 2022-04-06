@@ -9,7 +9,9 @@
       </header>
       <hr />
       <div class="article-info">
-        <span v-if="info.image">image: {{info.image}}</span>
+        <span v-if="info.image">
+            <img :src="info.image">
+        </span>
         <span v-if="info.author" class="author">Author: {{ info.author }}</span>
         <span v-if="info.date" class="date"
           >Date: {{ new Date(info.date).toLocaleDateString() }}</span

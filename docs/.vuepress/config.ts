@@ -148,6 +148,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       prismjs: !isProd,
 
     },
+    
   },
 
 
