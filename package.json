@@ -7,7 +7,7 @@
     "dev": "yarn copy-watch & yarn build --watch",
     "docs:build": "vuepress build docs --clean-cache",
     "docs:clean": "rimraf docs/.vuepress/.temp docs/.vuepress/.cache docs/.vuepress/dist",
-    "docs:dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "vuepress dev docs",
     "docs:release": "yarn copy && yarn build && yarn docs:build",
     "docs:serve": "anywhere -h localhost -d docs/.vuepress/dist",
     "lint": "eslint --ext .js,.ts,.vue .",
