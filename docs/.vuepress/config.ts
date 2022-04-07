@@ -11,7 +11,11 @@ export default defineUserConfig<DefaultThemeOptions>({
   theme: path.resolve(__dirname, './theme'),
 
   alias:{
+    '@theme/HomeFeatures.vue': path.resolve(__dirname, './components/features/HomeFeatures.vue'),
+
   },
+
+  
 
   head: [
     [
@@ -148,6 +152,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       prismjs: !isProd,
 
     },
+
   },
 
 

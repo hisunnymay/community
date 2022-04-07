@@ -12,4 +12,5 @@ import { useBlogType } from "vuepress-plugin-blog2/lib/client";
 import ArticleList from "../components/ArticleList.vue";
 import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
 const articles = useBlogType("article");
+console.log(articles.value)
 </script>

@@ -22,7 +22,7 @@ const blogTheme: Theme<DefaultThemeOptions> = {
       {
         // only files under posts are articles
         filter: ({ filePathRelative }) =>
-          filePathRelative && filePathRelative.startsWith("posts/"),
+          filePathRelative && filePathRelative.startsWith("blog/"),
 
         // getting article info
         getInfo: ({ frontmatter, title }) => ({
@@ -31,6 +31,7 @@ const blogTheme: Theme<DefaultThemeOptions> = {
           date: frontmatter.date || null,
           category: frontmatter.category || [],
           tag: frontmatter.tag || [],
+          image: frontmatter.image || ""
         }),
 
         category: [

@@ -3,12 +3,17 @@
 
   --c-brand: #4282fd;
   --c-brand-light: #1295f7;
+  --c-icon:#ffffff;
+
+
 }
 
 html.dark {
   // brand colors
   --c-brand: #4282fd;
   --c-brand-light: #1295f7;
+  --c-icon: #1295f7;
+
 }
 // footer
 .grid{
