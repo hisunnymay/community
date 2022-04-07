@@ -15,10 +15,13 @@ const features = computed(() => {
 <template>
   <div v-if="features.length" class="features">
     <div v-for="feature in features" :key="feature.title" class="feature">
-        <div class="icon" style="margin-auto">
-            <img :src="feature.icon" />
+        <div class="icon" style="display:flex; align-items:center; justify-content:center;">
+          <div class="image" style="width:40px; height:40px; border-radius:50%; background:var(--c-icon); padding:10px;">
+
+            <img  :src="feature.icon" style="width:40px; height:40px;" />
+          </div>
         </div>
-      <h2>{{ feature.title }}</h2>
+      <h2 style="text-align:center;">{{ feature.title }}</h2>
       <p>{{ feature.details }}</p>
     </div>
   </div>
