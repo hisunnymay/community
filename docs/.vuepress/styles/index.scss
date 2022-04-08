@@ -5,9 +5,11 @@
 
   --c-brand: #4282fd;
   --c-brand-light: #1295f7;
+
   --c-icon:#ffffff;
   --b-title: #11181c;
   --b-desc: #687086;
+  
 
 
 }
@@ -19,6 +21,7 @@ html.dark {
   --c-icon: #1295f7;
   --b-title: #EDEDED;
   --b-desc: #a0a0a0;
+  
 
 }
 // footer
@@ -37,8 +40,8 @@ html.dark {
 	text-align: left;
 }
 .logo-img>img{
-	width: 70px;
-	height: 70px;
+	width: 36px;
+	height: 36px;
 }
 .logo-socials{
 	display: flex;
