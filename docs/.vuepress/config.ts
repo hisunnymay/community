@@ -14,9 +14,6 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/HomeFeatures.vue': path.resolve(__dirname, './components/features/HomeFeatures.vue'),
 
   },
-
-  
-
   head: [
     [
       'link',
