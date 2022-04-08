@@ -16,9 +16,9 @@ const features = computed(() => {
   <div v-if="features.length" class="features">
     <div v-for="feature in features" :key="feature.title" class="feature">
         <div class="icon" style="display:flex; align-items:center; justify-content:center;">
-          <div class="image" style="width:40px; height:40px; border-radius:50%; background:var(--c-icon); padding:10px;">
+          <div class="image" style="width:28px; height:28px; border-radius:50%; background:var(--c-icon); padding:16px;">
 
-            <img  :src="feature.icon" style="width:40px; height:40px;" />
+            <img  :src="feature.icon" style="width:28px; height:28px;" />
           </div>
         </div>
       <h2 style="text-align:center;">{{ feature.title }}</h2>
