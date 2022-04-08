@@ -31,7 +31,9 @@ const blogTheme: Theme<DefaultThemeOptions> = {
           date: frontmatter.date || null,
           category: frontmatter.category || [],
           tag: frontmatter.tag || [],
-          image: frontmatter.image || ""
+          description: frontmatter.description || "",
+          image: `../../images/${frontmatter.image}` || "",
+          sticky: frontmatter.sticky || false,
         }),
 
         category: [

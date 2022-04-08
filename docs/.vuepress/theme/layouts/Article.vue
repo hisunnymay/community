@@ -2,6 +2,14 @@
   <ParentLayout>
     <template #page>
       <main class="page">
+        <div class="intro">
+          <div class="title">
+            <h1>Framely Blog</h1>
+          </div>
+          <div class="intro">
+            <p>Let's take you through our journey and provide guidance.</p>
+          </div>
+        </div>
         <ArticleList :items="articles.items" />
       </main>
     </template>
@@ -14,3 +22,19 @@ import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue"
 const articles = useBlogType("article");
 console.log(articles.value)
 </script>
+<style lang="scss">
+h1{
+  font-weight: normal;
+}
+.intro{
+  text-align: center;
+  margin-bottom: 100px;
+}
+@media (max-width:719px){
+  .page{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+</style>
