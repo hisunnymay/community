@@ -3,13 +3,14 @@ import { defineUserConfig } from '@vuepress/cli'
 import type { DefaultThemeOptions } from '@vuepress'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
+import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
   theme: path.resolve(__dirname, './theme'),
-
+  
   alias:{
     '@theme/HomeFeatures.vue': path.resolve(__dirname, './components/features/HomeFeatures.vue'),
 
@@ -268,6 +269,9 @@ export default defineUserConfig<DefaultThemeOptions>({
 
       }
     ],
+      mdEnhance({
+        flowchart: true,
+      }),
 
     // only enable shiki plugin in production mode
     [
