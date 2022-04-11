@@ -30,9 +30,7 @@ Bot: Order is placed. We'll send you to payment now. *Action: send payment card.
 
 
 
-Confirmation is optional for conversation design, Abusive usage will lead to the impression of disruption.
-
-We suggest you use it when:
+Confirmation is optional for conversation design, Abusive usage will lead to the impression of disruption. We suggest you use it when:
 
 - Next step is irreversible or high consequential: e.g. before database transactions, hand off to a human agent
 - Next step is user-sensitve: e.g. invoke a payment
@@ -46,10 +44,10 @@ We suggest you use it when:
 
 In this section, you will learn how to configure Confirmation annotations, including:  
 
-- Where to confirm: [Add Annotation](#Add Annotation)
-- When to confirm: [Multiple Conditions](#Multiple Conditions), [Condition](#Condition)
-- How to confirm: [Implicit Confirmation vs Explicit Confirmation](#Implicit Confirmation vs Explicit Confirmation)
-- What to answer: [Affirmatives and Negatives](#Affirmatives and Negatives)
+- Where to confirm: [Add Annotation](#add-annotation)
+- When to confirm: [Multiple Conditions](#multiple-conditions), [Condition](#condition)
+- How to confirm: [Implicit Confirmation vs Explicit Confirmation](#implicit-confirmation-vs-explicit-confirmation)
+- What to answer: [Affirmatives and Negatives](#affirmatives-and-negatives)
 
 
 
@@ -67,9 +65,7 @@ For further information of interacting, see [Frame filling](https://framely.gith
 
 
 
-While frame level sounds promising by batch confirming, it might mess user up if things go wrong. 
-
-We suggest you to use the more frequent asked ones when:
+While frame level sounds promising by batch confirming, it might mess user up if things go wrong. We suggest you to use the more frequent asked ones when:
 
 - You have strong confidence you could to reach a consensus with user
 - And if unfortunately you failed, the consequence is either acceptable or can be repaired in reasonable turns of interactions. We support the later by [CRUD](https://framely.github.io/guide/5levels-cui.html#crud-support).
@@ -164,7 +160,7 @@ Bot: Order is placed. We'll send you to payment now. *Action: send payment card.
 
 The key difference is implicit confirmation takes ***YES*** automatically, and saves one turn of interaction.
 
-We suggest you to carefully choose implicit confirmation based on the same rule [Add Annotation](#Add Annotation) specifies.
+We suggest you to carefully choose implicit confirmation based on the same rule [Add Annotation](#add-annotation) specifies.
 
 
 
@@ -189,7 +185,7 @@ You could also customize them in Affirmatives and Negatives:
 
  
 
-Note: The customization will only effect within the condition. For everlasting / bot-width customization, see [Advanced Usage: Customize Default Affirmatives and Negatives](#Customize Default Affirmatives and Negatives).
+Note: The customization will only effect within the condition. For everlasting / bot-width customization, see [Advanced Usage: Customize Default Affirmatives and Negatives](#customize-default-affirmatives-and-negatives).
 
 
 
@@ -215,7 +211,7 @@ For now, the expression of ***NO*** is the only thing we allow to customize. But
 
 ### Customize Default Affirmatives and Negatives
 
-As mentioned in [Affirmatives and Negatives](#Affirmatives and Negatives), we offer a few default expression for all Confirmation annotations. 
+As mentioned in [Affirmatives and Negatives](#affirmatives-and-negatives), we offer a few default expression for all Confirmation annotations. 
 
 They are defined in [system frame](https://framely.github.io/404.html) **io.framely.core.confirmation.Yes** and **io.framely.core.confirmation.No**. If you want to populate more expressions, you could add them under their **Expression** tab.
 
