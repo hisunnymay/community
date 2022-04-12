@@ -85,7 +85,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
   cursor: pointer;
   border-radius: 3px;
   a {
-    color: white;
+    color: var(--c-bg);
   }
 }
 </style>
