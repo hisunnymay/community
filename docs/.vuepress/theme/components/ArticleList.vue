@@ -33,7 +33,7 @@
           </div>
           <div class="stamp-author-date">
             <div class="author">
-              <span class="name">Lorem ipsum{{ info.author }}</span>
+              <span class="name">{{ info.author }}</span>
             </div>
           </div>
         </div>
