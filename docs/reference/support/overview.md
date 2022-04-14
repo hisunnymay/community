@@ -16,6 +16,7 @@ To reduce the effort level on the user side, it is important that we route user 
 4. Support system support more than one human agent teams, each is responsible for something.
 5. We can transfer the conversation from bot to specified team by department statically or dynamically, potentially based on , so that user can be served effectively. 
 6. After human agent is done with service, next time user will start with interacting bot again. Simply invoke CloseSession should be enough.  
+
 In the Framely hosted environment, we mainly interested in the external mode, currently we provide the great open source support system chatwoot as the only option, but this can change when someone starts to build the connection with other system and open source it. 
 
 ## Intent Based Routing under external mode
