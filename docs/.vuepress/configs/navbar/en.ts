@@ -33,6 +33,6 @@ export const en: NavbarConfig = [
   },
   {
     text: 'Blog',
-    link: '/blog/' 
+    link: '/articles/' 
   }
 ]

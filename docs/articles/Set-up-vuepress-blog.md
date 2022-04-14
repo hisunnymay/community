@@ -282,6 +282,6 @@ Here is the content.
 Now you should be able to see your article. 
 
 ## Conclusion
-It is important to not we can do anything and style our blogs and if we feel the default theme doesn't work for us we can change everything to whatever we want. This is the power of vuepress, you can replace anything you feel does not work for you. [Check out this list of components](https://github.com/vuepress/vuepress-next/tree/main/packages/%40vuepress/theme-default/src/client/components). You could pick them and change their styling to whatever format you wish.
+It is important to note that we can do anything and style our blogs and if we feel the default theme doesn't work for us we can change everything to whatever we want. This is the power of vuepress, you can replace anything you feel does not work for you. [Check out this list of components](https://github.com/vuepress/vuepress-next/tree/main/packages/%40vuepress/theme-default/src/client/components). You could pick them and change their styling to whatever format you wish.
 
 [Here is the repo to this incase you just want to start](https://github.com/karani12/vuepress-blog). 
