@@ -22,7 +22,7 @@ const blogTheme: Theme<DefaultThemeOptions> = {
       {
         // only files under posts are articles
         filter: ({ filePathRelative }) =>
-          filePathRelative && filePathRelative.startsWith("blog/"),
+          filePathRelative && filePathRelative.startsWith("articles/"),
 
         // getting article info
         getInfo: ({ frontmatter, title }) => ({
@@ -66,7 +66,7 @@ const blogTheme: Theme<DefaultThemeOptions> = {
             key: "article",
             // remove archive articles
             filter: (page) => !page.frontmatter.archive,
-            path: "/blog/",
+            path: "/articles/",
             layout: "Article",
             frontmatter: () => ({ title: "Articles", sidebar: false, }),
             // sort pages with time and sticky

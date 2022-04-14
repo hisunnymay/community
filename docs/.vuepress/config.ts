@@ -15,6 +15,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/HomeFeatures.vue': path.resolve(__dirname, './components/features/HomeFeatures.vue'),
     '@theme/Navbar.vue': path.resolve(__dirname, './components/navbar/Navbar.vue'),
   },
+  
 
   head: [
     [
