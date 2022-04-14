@@ -26,7 +26,7 @@ export const en: NavbarConfig = [
       {
         text: 'Supports',
         children: [
-          '/reference/support/chatwoot.md'
+          '/reference/support/overview.md'
         ],
       },
     ],

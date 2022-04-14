@@ -47,6 +47,7 @@ export const en: SidebarConfig = {
       text: 'Support Reference',
       collapsible: true,
       children: [
+          '/reference/support/overview.md',
       ],
     },
   ],
