@@ -1,10 +1,10 @@
-# Play Well with Others
+# Support
 
 We understand no matter how well you build your chatbot, there will always be user requests that is beyond the design and implementation scope, and we need to handoff the conversation to human support team. Support is a software where human agent can handle the conversation when bot failed or upon user requirement. Framely understand that your human support team already have their favorite support software, so instead of reinventing wheels, Framely is designed to play well with others when it comes to support system, as long as they can provide some basic APIs. 
 
 
 ## Two Cooperation Modes
-There are two different ways support system can work with chatbot, internal mode and external mode. In the internal mode, both channels and bots are managed by support systems, and when either bot or user indicate that they want to talk to human agent, then support system will route the conversation from bot to human agent, and let human agent take over. In theory, Framely should be able to work with any support system that is designn to work with third part bot solution, by simply implementing the hooks required by given support system.
+There are two different ways support system can work with chatbot, internal mode and external mode. In the internal mode, both channels and bots are managed by support systems, and when either bot or user indicate that they want to talk to human agent, then support system will route the conversation from bot to human agent, and let human agent take over. In theory, Framely should be able to work with any support system that is design to work with third part bot solution, by simply implementing the hooks required by given support system.
 
 In the external mode, messages are coming from the channel attached to the bot, and bot appear to be a normal agent on the support system, and bot is responsible for requesting routing the messages via exposed APIs on the support side. For this mode to work, we need to support system expose the APIs conforming to the following semantics. 
 
