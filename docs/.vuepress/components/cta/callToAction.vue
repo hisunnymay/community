@@ -35,6 +35,7 @@ const cta = computed(() => {
             border: none;
             font-weight: normal;
             text-align: center;
+            font-size: 2rem;
         }
         a{
             button{
@@ -45,6 +46,7 @@ const cta = computed(() => {
                 padding: 12px;
                 border-radius: 5px;
                 color: var(--c-bg);
+                font-size: 1em;
             }
         }
     }
