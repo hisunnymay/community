@@ -41,6 +41,10 @@ features:
   - title: Still Not Convinced?
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
     icon: /images/featureIcons/raw-code.svg
+cta :
+  - details: Build in a weekend, scale to millions
+    title: Start Project
+    link: https://framely.naturali.io
 footer:  <footer>
          <div class="links">
           <p>&copy;2022 Framely.io</p>
