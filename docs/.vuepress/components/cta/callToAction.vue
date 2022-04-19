@@ -25,17 +25,19 @@ const cta = computed(() => {
 </template>
 <style lang="scss" scoped>
 .container-s{
+    padding-top: 4rem;
     div{
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 300px;
-        justify-content: center;
+        height: 380px;
+        background-color: var(--c-bg-cta);
+        justify-content: center;        
         h2{
             border: none;
             font-weight: normal;
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
         a{
             button{
