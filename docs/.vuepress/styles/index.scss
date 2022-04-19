@@ -7,6 +7,7 @@
 	--c-brand-light: #1295f7;
 
 	--c-icon: #4282fd10;
+	--c-bg-cta: #4282fd08;
 	--b-title: #11181c;
 	--b-desc: #687086;
 
@@ -19,6 +20,7 @@ html.dark {
 	--c-brand: #4282fd;
 	--c-brand-light: #1295f7;
 	--c-icon: #4282fd25;
+	--c-bg-cta: #4282fd08;
 	--b-title: #EDEDED;
 	--b-desc: #a0a0a0;
 
@@ -27,7 +29,8 @@ html.dark {
 
 // footer
 .home .footer {
-	padding: 0;
+	padding: 10px;
+	border: none;
 }
 
 footer {
@@ -41,14 +44,14 @@ footer {
 		font-weight: normal;
 
 		p {
-			color: var(--c-text);
+			color: var(--c-text-lightest);
 			margin-right: 12px;
 			font-size: .90em;
 
 		}
 
 		a {
-			color: var(--c-text);
+			color: var(--c-text-lightest);
 			font-weight: normal;
 			font-size: .90em;
 			margin-right: 12px;
