@@ -1,23 +1,12 @@
 # Introduction
 
-If you want to provide all your services at where your users are: imessage, messenger, etc, but worried that building and operating such chatbot is unnecessarily hard and expensive, then you come to the right place. At Framely, we understand your goal is to provide service and chatbot is just a user facing application with conversational user interface, by making user of all the principles and best practices we learned over many years in building GUI application, we can help you to build capable conversation experience in cost-effective fashion.
+If you want to provide great conversational user experiences but worried about the cost associated with building and operating chatbot, then you come to the right place. Framely's goal is to reduce the cost of build and operate great conversational user interface for any of your service. After all, chatbot is just an app with conversational user interface, there is no reason building bot should cost significantly more than to building app that expose the same set of services.
 
-## Why We Build Framely
-Man kind has fantasized about talking robot for so long. In deed, chatbot is attractive broad interest across many industries because it can provide their user direct access to service without need users to jump though hoops. However, why are these magical conversational experience not ubiquitous as we see in the StarWars? Based on first principle thinking, here are the principles that we feel it is important but have been overlooked.
+## Who is building chatbot today?
+Man kind has fantasized about talking robot for a long time. In deed, chatbots attract broad interest because of its potential of bring great user experiences. However, why are these magical conversational experience in the movies not yet ubiquitous, particularly considering the availability of the app with same functionalities? What is the difference between building bot and building app? 
 
-### Conversation is a means to service
-Historically, chatbot are designed to start on informational tasks as simple question and answer is relatively easy to do and many our sourced customer services representative really only have clearance to handle these type of customer request. But as business start to compete in user experience and personalized services, they start to look at conversations to deliver transactional service as well. 
-
-Framely is designed to make building effective conversational user interface (CUI) easy. We think conversation is not the goal, but a means. The goal is to deliver not only informational but also transactional service through conversation. The emphasis on transactional conversational service can finally make chatbot a viable one-stop solution for personalized service.
-
-### Business Experience First
-While chatbot is commonly associated with appealing end user experience, it is important to not forget that business invests in chatbot for a reason. Since we do not know what business want, and can not keep up ever-changing business conditions, so it is important that we focus on giving business the control they to define and tweak conversational experience they see fit. This is not to say end user experience it not important, but we think it is builder's job to trade off between cost and user experience, and Framely just need to provide tools so builder can build user experience they want. Of course, we always provide the best possible default user experience when builder want to be lazy.
-
-### Serve Cooperative Users
-Human language can be infinitely complex, without placing an expectation on the type of user we serve can put a great burden on building usable chatbot. Framely mainly focuses on serving cooperative users, whose goal of engaging in conversation with chatbot is to get served with the least effort on their part. In addition to provide guideline on what control we should provide to chatbot builder and how builder should design the conversational user experience, this principle also suggests that allows us to get away with mainly  means we should on understanding the common instead of obscure user utterances, and adopt dialog policy that try to bring the conversation toward serving as quickly as possible.
-
-### Cost, both Build and Operate
-Third, we want not only to help business to build enjoyable conversational services, but also to greatly reduce the cost of building and operating such thing. In particular, we want to make it possible for the same engineering team that build out service have the ability to build the conversational user interface for it, without going through a steep learning curve. 
+The difference is simply who is building it. No matter what you build, your team need to understand your business logic. With declarative framework and component library like reactjs and antd, any people with reasonable amount programming training can build great app. But to build bot, you need to have Ph.Ds on 
+your team, and you need to teach them the ever-changing business logic for them to be effective.
 
 ## What's Framely
 
