@@ -67,7 +67,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '/': {
       lang: 'en-US',
       title: 'Framely',
-      description: 'Composable Conversational Interface for Services',
+      description: 'Cost-effective Conversational Interface for any Services',
     },
     // '/zh/': {
     //  lang: 'zh-CN',
