@@ -38,11 +38,11 @@ features:
   - title: Multi-language Ready
     details: The same interaction logic should be shared between all the different languages, so that you can use people with entirely different skillsets for this. 
     icon: /images/featureIcons/multi-language.svg
-  - title: Still Not Convinced?
-    details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
+  - title: Fully Extensible
+    details: The chatbot defined on the Framely are code generated into pure kotlin source code, which makes it super easy to integrate any types of plugins, including channel, support, and services in just about any functionality java/kotlin ecosystem has to offer.
     icon: /images/featureIcons/raw-code.svg
 cta :
-  - details: Build in a weekend, scale to millions
+  - details: Great conversational user experiences for masses.
     title: Start Project
     link: https://framely.naturali.io
 footer:  <footer>
