@@ -10,6 +10,7 @@ const contentCard = computed(() => {
     return frontmatter.value.contentCards
   }
   return []
+  
 })
 </script>
 
