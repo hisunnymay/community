@@ -31,6 +31,7 @@ const cta = computed(() => {
         align-items: center;
         height: 300px;
         justify-content: center;
+        border-top: 1px solid var(--c-border);
         h2{
             border: none;
             font-weight: normal;

@@ -41,6 +41,23 @@ features:
   - title: Still Not Convinced?
     details: The chatbot generated is in pure kotlin source code, so you can integrate just about any functionality java/kotlin ecosystem has to offer.
     icon: /images/featureIcons/raw-code.svg
+contentCards:
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+    image: images/example.jpg
+    left: true
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+    image: images/example.jpg
+    left: false
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+    image: images/example.jpg
+    left: true
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+    image: images/example.jpg
+    left: false    
 cta :
   - details: Build in a weekend, scale to millions
     title: Start Project
