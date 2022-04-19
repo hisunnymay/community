@@ -30,9 +30,11 @@ const cta = computed(() => {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         height: 380px;
         background-color: var(--c-bg-cta);
         justify-content: center;        
+
         h2{
             border: none;
             font-weight: normal;

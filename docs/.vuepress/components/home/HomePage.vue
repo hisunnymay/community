@@ -4,6 +4,7 @@ import HomeFeatures from '@theme/HomeFeatures.vue'
 import HomeFooter from '@theme/HomeFooter.vue'
 import HomeHero from '@theme/HomeHero.vue'
 import CTA from '../cta/callToAction.vue'
+import ContentCard from '../contentCard/ContentCard.vue'
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import CTA from '../cta/callToAction.vue'
     <HomeHero />
     <HomeFeatures />
     <HomeContent />
+    <ContentCard />
     <CTA />
     <HomeFooter />
   </main>

@@ -41,6 +41,23 @@ features:
   - title: Fully Extensible
     details: The chatbot defined on the Framely are code generated into pure kotlin source code, which makes it super easy to integrate any types of plugins, including channel, support, and services in just about any functionality java/kotlin ecosystem has to offer.
     icon: /images/featureIcons/raw-code.svg
+contentCards:
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+    image: images/example2.png
+    left: true
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+    image: images/example2.png
+    left: false
+  - title: Private Notes
+    details: Use private notes to communicate with your team. Use @mentions to share information and communicate efficiently within the team.
+    image: images/exampl3.png
+    left: true
+  - title: What is lorem Ipsum?
+    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+    image: images/example2.png
+    left: false    
 cta :
   - details: Great conversational user experiences for masses.
     title: Start Project
