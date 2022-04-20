@@ -62,7 +62,7 @@ const contentCard = computed(() => {
   .contentCard {
     margin-top: 30px;
     // margin-bottom: 30px;
-    width: 90%;
+    width: var(--homepage-width);
     align-items: center;
 
     .left {
@@ -70,8 +70,8 @@ const contentCard = computed(() => {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-right: 200px;
-      margin-left: 200px;
+      // margin-right: 200px;
+      // margin-left: 200px;
       margin-top: 80px;
       margin-bottom: 80px;
       .image {
