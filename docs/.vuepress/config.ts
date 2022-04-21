@@ -16,6 +16,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Navbar.vue': path.resolve(__dirname, './components/navbar/Navbar.vue'),
     '@theme/Home.vue': path.resolve(__dirname, './components/home/HomePage.vue'),
   },
+
   
 
   
@@ -75,6 +76,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     //  description: '让天下没有难的对话式服务',
     // },
   },
+  
 
  
   themeConfig: {
