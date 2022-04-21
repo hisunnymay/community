@@ -2,6 +2,10 @@
 home: true
 title: Home
 heroImage: /images/hero.png
+slides:
+  - title: Lorem Ipsum
+  - title: What is lorem Ipsum?
+  - title: Great conversational user experiences for masses.
 
 actions:
   - text: Introduction

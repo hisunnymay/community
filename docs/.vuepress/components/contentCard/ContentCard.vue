@@ -5,7 +5,6 @@ import { computed } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '../../shared'
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const contentCard = computed(() => {
-  console.log(frontmatter.value.contentCards)
   if (isArray(frontmatter.value.contentCards)) {
     return frontmatter.value.contentCards
   }
@@ -96,7 +95,6 @@ const contentCard = computed(() => {
           margin: 1px !important;
         }
         p {
-          // font-size: 1.1875em !important;
           margin: none;
         }
       }
