@@ -16,6 +16,9 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Navbar.vue': path.resolve(__dirname, './components/navbar/Navbar.vue'),
     '@theme/Home.vue': path.resolve(__dirname, './components/home/HomePage.vue'),
   },
+
+  
+
   
 
   head: [
@@ -74,7 +77,6 @@ export default defineUserConfig<DefaultThemeOptions>({
     // },
   },
 
- 
   themeConfig: {
     logo: '/images/logo.png',
     heroImage: '',

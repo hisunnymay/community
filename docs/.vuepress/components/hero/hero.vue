@@ -36,6 +36,12 @@ export default {
 
 <template>
   <div class="carousel-view">
+    <div class="carousel-controls">
+      <button class="carousel-controls__button" @click="next">
+        <span class="control">&lt;</span>
+      </button>
+    </div>
+
     <transition-group type="animation" name="slide" class="carousel" tag="div">
       <div
         v-for="(slide, index) in slides"
@@ -57,10 +63,10 @@ export default {
       </div>
     </transition-group>
     <div class="carousel-controls">
-      <button class="carousel-controls__button" @click="previous">
-        <!-- icons go here -->
-        <span class="control">&lt;</span>
-      </button>
+      <!-- <button class="carousel-controls__button" @click="previous"> -->
+      <!-- icons go here -->
+      <!-- <span class="control">&lt;</span> -->
+      <!-- </button> -->
       <button class="carousel-controls__button" @click="next">
         <!-- The other icon goes here -->
         <span class="control">&gt;</span>
@@ -73,8 +79,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  button {
+    cursor: pointer;
+  }
   .content {
     width: 50%;
+    z-index: 99;
     h3 {
       font-size: 2em;
       font-weight: 500;
@@ -103,11 +113,9 @@ export default {
   margin: auto;
   display: flex;
   width: var(--homepage-width);
-  flex-direction: column;
   align-items: center;
+  z-index: 90;
   height: 70vh;
-  position: relative;
- 
 }
 .carousel {
   display: flex;
@@ -118,8 +126,7 @@ export default {
   height: 100%;
   animation: slide;
   transition: transform 0.3s ease-in-out;
-     animation-name: slide;
-
+  animation-name: slide;
 }
 .slide {
   flex: 0 0 90%;
@@ -128,7 +135,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .slide:first-of-type {
   opacity: 0;
@@ -141,11 +147,9 @@ export default {
   font-size: 2em;
 }
 .carousel-controls {
-  width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
-  position: absolute;
   transform: translateY(50%);
 }
 .carousel-controls__button {
@@ -187,32 +191,10 @@ export default {
     display: flex;
     width: 100%;
   }
-  .carousel-controls {
-    transform: translateY(50%);
-    width: 100vw;
-  }
+
   .carousel-controls__button {
     width: 3em;
     height: 3em;
   }
-}
-@keyframes slide {
-  0%{
-    transform: translateX(-100%);
-  
-  }
-  25%{
-    transform:translate(-75%) ;
-  }
-  50%{
-    transform: translateY(-50%);
-  }
-  75%{
-    transform: translate(25%);
-  }
-  100%{
-    transform: translateX(0);
-  }
-  
 }
 </style>
