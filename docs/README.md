@@ -2,6 +2,18 @@
 home: true
 title: Home
 heroImage: /images/hero.png
+slides:
+  - title: What is Framely?
+    details: We aim to reduce cost associated with building chatbots. We believe that it should cost you less to build a chatbot compared to building an application
+    button: Get started
+    link: https://framely.naturali.io
+    image: /images/hero.png
+  - title: Service, Interaction and language
+    details: By decoupling the interaction from language, we can save cost by having different people working different aspects, at the same time make supporting multiple language very easy.
+    image: /images/hero.png
+  - title: Declarative and Component based
+    details: Building from scratch is slow and expensive. We package a solution based on use case into a reusable component. You only need to define the user experience you need.
+    image: /images/hero.png
 
 actions:
   - text: Introduction

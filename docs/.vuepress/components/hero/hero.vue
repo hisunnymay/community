@@ -1,83 +1,218 @@
+<script >
+import { usePageFrontmatter } from '@vuepress/client'
+import { isArray } from '@vuepress/shared'
+import { computed } from 'vue'
+
+export default {
+  data() {
+    return {
+      slides: [],
+    }
+  },
+  beforeMount() {
+    const frontmatter = usePageFrontmatter()
+    if (isArray(frontmatter.value.slides)) {
+      this.slides = frontmatter.value.slides
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      const first = this.slides.shift()
+      this.slides = this.slides.concat(first)
+    }, 5000)
+  },
+  methods: {
+    next() {
+      const first = this.slides.shift()
+      this.slides = this.slides.concat(first)
+    },
+    previous() {
+      const last = this.slides.pop()
+      this.slides = [last].concat(this.slides)
+    },
+  },
+}
+</script>
+
 <template>
-<div class="main-hero-container">
-    <div class="intro">
-        <div class="text-info">
-            <h1>Building Conversational Interface</h1>
-            <h1>For Your Services</h1>
+  <div class="carousel-view">
+    <transition-group type="animation" name="slide" class="carousel" tag="div">
+      <div
+        v-for="(slide, index) in slides"
+        class="slide container"
+        :key="index"
+      >
+        <!-- <div class="container"> -->
+        <div class="content">
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.details }}</p>
+          <a v-if="slide.button" :href="slide.link"
+            ><Button>{{ slide.button }}</Button></a
+          >
         </div>
-        <div class="buttons">
-            <a href="/guide">
-             <button class='btn'>Documentation</button>
-            </a>
-           
-            <a href="http://framely.naturali.io" target="_blank" rel="noopener noreferrer">
-            <button class="btn">Get Started</button>
-            </a>
-            
-            
-        </div>
-    </div>
-    <div class="img">
         <div class="image">
-            <img src="../../../.vuepress/public/images/hero.png" alt="">
+          <img :src="slide.image" alt="" />
         </div>
+        <!-- </div> -->
+      </div>
+    </transition-group>
+    <div class="carousel-controls">
+      <button class="carousel-controls__button" @click="previous">
+        <!-- icons go here -->
+        <span class="control">&lt;</span>
+      </button>
+      <button class="carousel-controls__button" @click="next">
+        <!-- The other icon goes here -->
+        <span class="control">&gt;</span>
+      </button>
     </div>
-</div>
+  </div>
 </template>
-<style scoped>
-.main-hero-container{
-    width: 100%;
-    position: relative;
-    width: var(--homepagewidth);
-   display: flex;
-   align-items: center;
-   height: 100vh;
-   justify-content: space-between;
-}
-.intro{
+<style lang ="scss" scoped>
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .content {
     width: 50%;
+    h3 {
+      font-size: 2em;
+      font-weight: 500;
+    }
+    p {
+      width: 80%;
+    }
+    button {
+      margin-top: 50px;
+      color: var(--c-bg);
+      padding: 12px;
+      background: var(--c-brand);
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .image {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
 }
-.intro .text-info h1{
-    font-size:2.5rem ;
+.carousel-view {
+  margin: auto;
+  display: flex;
+  width: var(--homepage-width);
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  position: relative;
+ 
+}
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 90%;
+  height: 100%;
+  animation: slide;
+  transition: transform 0.3s ease-in-out;
+     animation-name: slide;
 
 }
-.img{
+.slide {
+  flex: 0 0 90%;
+  width: 100%;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.slide:first-of-type {
+  opacity: 0;
+}
+.slide:last-of-type {
+  opacity: 0;
+}
+.control {
+  font-weight: bold;
+  font-size: 2em;
+}
+.carousel-controls {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  transform: translateY(50%);
+}
+.carousel-controls__button {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  outline: none;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  background: var(--c-icon);
+  color: var(--c-brand);
+}
+
+.slide-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+@media (max-width: 719px) {
+  .container {
+    .image {
+      display: none;
+    }
+    .content {
+      width: 100%;
+    }
+  }
+  .carousel-view {
     display: flex;
-    align-items: flex-end;
-    width: 50%;
-    position: relative;
-}
-.image>img{
     width: 100%;
+  }
+  .carousel-controls {
+    transform: translateY(50%);
+    width: 100vw;
+  }
+  .carousel-controls__button {
+    width: 3em;
+    height: 3em;
+  }
 }
- .btn{
-     padding: 15px;
-     background: var(--c-brand);
-     border: none;
-     color: var(--c-bg);
-     font-weight: bold;
-     margin: 10px;
-     border-radius: 10px;
-     cursor: pointer;
- }
- @media(max-width:719px){
-     .main-hero-container{
-         flex-direction: column;
-         justify-content: center;
-         height: fit-content;
-         padding-bottom: 100px;
-     }
-     .intro{
-         width: 100%;
-     }
-     .buttons{
-         display: flex;
-         width: 100%;
-     }
-     .img{
-         display: none;
-     }
-
- }
-
+@keyframes slide {
+  0%{
+    transform: translateX(-100%);
+  
+  }
+  25%{
+    transform:translate(-75%) ;
+  }
+  50%{
+    transform: translateY(-50%);
+  }
+  75%{
+    transform: translate(25%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+  
+}
 </style>
