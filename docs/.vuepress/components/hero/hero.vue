@@ -65,9 +65,18 @@ export default {
 
 <template>
   <div class="carousel-view">
-    <transition-group class="carousel" tag="div">
+    <transition-group class="carousel" name="slide" tag="div">
       <div v-for="(slide,index) in slides" class="slide" :key="index">
-        <h4>{{ slide.title }}</h4>
+        <div class="container">
+          <div class="content">
+            <h3>{{slide.title}}</h3>
+            <p>{{slide.details}}</p>
+            <a v-if="slide.button" :href="slide.link"><Button>{{slide.button}}</Button></a>
+          </div>
+          <div class="image">
+            <img :src="slide.image" alt="">
+          </div>
+        </div>
       </div>
     </transition-group>
     <div class="carousel-controls">
@@ -80,14 +89,45 @@ export default {
     </div>
   </div>
 </template>
-<style scoped>
+<style lang ="scss" scoped>
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .content{
+    width: 50%;
+    h3{
+      font-size: 2em;
+      font-weight: 500;
+    }
+    p{
+      width: 80%;
+    }
+    button{
+      margin-top: 50px;
+      color: var(--c-bg);
+      padding: 12px;
+      background: var(--c-brand);
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+  }
+  .image{
+    width: 50%;
+    img{
+      width: 100%;
+    }
+  }
+}
 .carousel-view {
   margin: auto;
   display: flex;
   width: var(--homepage-width);
   flex-direction: column;
   align-items: center;
-  height: 50vh;
+  height: 70vh;
 }
 .carousel {
   display: flex;
@@ -127,7 +167,16 @@ export default {
   background: var(--c-icon);
   color: var(--c-brand);
 }
+
 @media (max-width: 719px) {
+  .container{
+    .image{
+      display: none;
+    }
+    .content{
+      width: 100%;
+    }
+  }
   .carousel-view {
     display: flex;
     width: 100%;
