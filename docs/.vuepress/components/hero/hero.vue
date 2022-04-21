@@ -15,12 +15,12 @@ export default {
       this.slides = frontmatter.value.slides
     }
   },
-  mounted() {
-    setInterval(() => {
-      const first = this.slides.shift()
-      this.slides = this.slides.concat(first)
-    }, 5000)
-  },
+  // mounted() {
+  //   setInterval(() => {
+  //     const first = this.slides.shift()
+  //     this.slides = this.slides.concat(first)
+  //   }, 5000)
+  // },
   methods: {
     next() {
       const first = this.slides.shift()
@@ -73,8 +73,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  button{
+    cursor: pointer;
+  }
   .content {
     width: 50%;
+    z-index: 99;
     h3 {
       font-size: 2em;
       font-weight: 500;
@@ -105,7 +109,8 @@ export default {
   width: var(--homepage-width);
   flex-direction: column;
   align-items: center;
-  height: 70vh;
+  z-index: 90;
+  /* height: 70vh; */
   position: relative;
  
 }
@@ -196,23 +201,5 @@ export default {
     height: 3em;
   }
 }
-@keyframes slide {
-  0%{
-    transform: translateX(-100%);
-  
-  }
-  25%{
-    transform:translate(-75%) ;
-  }
-  50%{
-    transform: translateY(-50%);
-  }
-  75%{
-    transform: translate(25%);
-  }
-  100%{
-    transform: translateX(0);
-  }
-  
-}
+
 </style>
