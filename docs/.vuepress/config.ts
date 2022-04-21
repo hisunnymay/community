@@ -76,9 +76,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     //  description: '让天下没有难的对话式服务',
     // },
   },
-  
 
- 
   themeConfig: {
     logo: '/images/logo.png',
     heroImage: '',

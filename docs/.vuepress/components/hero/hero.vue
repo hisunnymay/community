@@ -15,12 +15,12 @@ export default {
       this.slides = frontmatter.value.slides
     }
   },
-  // mounted() {
-  //   setInterval(() => {
-  //     const first = this.slides.shift()
-  //     this.slides = this.slides.concat(first)
-  //   }, 5000)
-  // },
+  mounted() {
+    setInterval(() => {
+      const first = this.slides.shift()
+      this.slides = this.slides.concat(first)
+    }, 5000)
+  },
   methods: {
     next() {
       const first = this.slides.shift()
@@ -115,8 +115,7 @@ export default {
   width: var(--homepage-width);
   align-items: center;
   z-index: 90;
-  /* height: 70vh; */
-  position: relative;
+  height: 70vh;
 }
 .carousel {
   display: flex;
