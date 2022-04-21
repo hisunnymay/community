@@ -1,52 +1,25 @@
-
 <script >
 import { usePageFrontmatter } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
-// import type { DefaultThemeHomePageFrontmatter } from '../../shared'
-// const frontmatter = usePageFrontmatter()
+
 export default {
   data() {
     return {
-      slides: [
-        {
-          title: 'I am Slide A',
-          id: 1,
-        },
-        {
-          title: 'I am Slide B',
-          id: 2,
-        },
-        {
-          title: 'I am Slide C',
-          id: 3,
-        },
-        {
-          title: 'Lorem ipsum',
-          id: 4,
-        },
-        {
-          title: 'I am Slide E',
-          id: 5,
-        },
-      ],
-      
+      slides: [],
     }
   },
-  beforeMount(){
-      const frontmatter = usePageFrontmatter()
+  beforeMount() {
+    const frontmatter = usePageFrontmatter()
     if (isArray(frontmatter.value.slides)) {
-    this.slides = frontmatter.value.slides
-  }
-
+      this.slides = frontmatter.value.slides
+    }
   },
-  mounted(){
-  
-    setInterval(()=>{
+  mounted() {
+    setInterval(() => {
       const first = this.slides.shift()
       this.slides = this.slides.concat(first)
-
-    },5000)
+    }, 5000)
   },
   methods: {
     next() {
@@ -58,52 +31,58 @@ export default {
       this.slides = [last].concat(this.slides)
     },
   },
-  
 }
-
 </script>
 
 <template>
   <div class="carousel-view">
-    <transition-group class="carousel" name="slide" tag="div">
-      <div v-for="(slide,index) in slides" class="slide" :key="index">
-        <div class="container">
-          <div class="content">
-            <h3>{{slide.title}}</h3>
-            <p>{{slide.details}}</p>
-            <a v-if="slide.button" :href="slide.link"><Button>{{slide.button}}</Button></a>
-          </div>
-          <div class="image">
-            <img :src="slide.image" alt="">
-          </div>
+    <transition-group type="animation" name="slide" class="carousel" tag="div">
+      <div
+        v-for="(slide, index) in slides"
+        class="slide container"
+        :key="index"
+      >
+        <!-- <div class="container"> -->
+        <div class="content">
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.details }}</p>
+          <a v-if="slide.button" :href="slide.link"
+            ><Button>{{ slide.button }}</Button></a
+          >
         </div>
+        <div class="image">
+          <img :src="slide.image" alt="" />
+        </div>
+        <!-- </div> -->
       </div>
     </transition-group>
     <div class="carousel-controls">
       <button class="carousel-controls__button" @click="previous">
+        <!-- icons go here -->
         <span class="control">&lt;</span>
       </button>
       <button class="carousel-controls__button" @click="next">
+        <!-- The other icon goes here -->
         <span class="control">&gt;</span>
       </button>
     </div>
   </div>
 </template>
 <style lang ="scss" scoped>
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .content{
+  .content {
     width: 50%;
-    h3{
+    h3 {
       font-size: 2em;
       font-weight: 500;
     }
-    p{
+    p {
       width: 80%;
     }
-    button{
+    button {
       margin-top: 50px;
       color: var(--c-bg);
       padding: 12px;
@@ -112,11 +91,10 @@ export default {
       border: none;
       cursor: pointer;
     }
-    
   }
-  .image{
+  .image {
     width: 50%;
-    img{
+    img {
       width: 100%;
     }
   }
@@ -128,14 +106,20 @@ export default {
   flex-direction: column;
   align-items: center;
   height: 70vh;
+  position: relative;
+ 
 }
 .carousel {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  animation: slide;
+  transition: transform 0.3s ease-in-out;
+     animation-name: slide;
+
 }
 .slide {
   flex: 0 0 90%;
@@ -144,7 +128,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease-in-out;
+
 }
 .slide:first-of-type {
   opacity: 0;
@@ -156,10 +140,18 @@ export default {
   font-weight: bold;
   font-size: 2em;
 }
+.carousel-controls {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  transform: translateY(50%);
+}
 .carousel-controls__button {
   border-radius: 50%;
-  width: 3em;
-  height: 3em;
+  width: 5em;
+  height: 5em;
   outline: none;
   border: none;
   margin: 5px;
@@ -168,20 +160,59 @@ export default {
   color: var(--c-brand);
 }
 
+.slide-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
 @media (max-width: 719px) {
-  .container{
-    .image{
+  .container {
+    .image {
       display: none;
     }
-    .content{
+    .content {
       width: 100%;
     }
   }
   .carousel-view {
     display: flex;
     width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
   }
+  .carousel-controls {
+    transform: translateY(50%);
+    width: 100vw;
+  }
+  .carousel-controls__button {
+    width: 3em;
+    height: 3em;
+  }
+}
+@keyframes slide {
+  0%{
+    transform: translateX(-100%);
+  
+  }
+  25%{
+    transform:translate(-75%) ;
+  }
+  50%{
+    transform: translateY(-50%);
+  }
+  75%{
+    transform: translate(25%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+  
 }
 </style>
