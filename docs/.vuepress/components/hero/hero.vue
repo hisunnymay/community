@@ -48,25 +48,34 @@ export default {
         class="slide container"
         :key="index"
       >
-        <!-- <div class="container"> -->
-        <div class="content">
-          <h3>{{ slide.title }}</h3>
-          <p>{{ slide.details }}</p>
-          <a v-if="slide.button" :href="slide.link"
-            ><Button>{{ slide.button }}</Button></a
-          >
+        <div class="container-left" v-if="slide.left">
+          <div class="content">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.details }}</p>
+            <a v-if="slide.button" :href="slide.link"
+              ><Button>{{ slide.button }}</Button></a
+            >
+          </div>
+          <div class="image">
+            <img :src="slide.image" alt="" />
+          </div>
         </div>
-        <div class="image">
-          <img :src="slide.image" alt="" />
+        <div class="container-left" v-else >
+          <div class="image">
+            <img :src="slide.image" alt="" />
+          </div>
+          <div class="content">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.details }}</p>
+            <a v-if="slide.button" :href="slide.link"
+              ><Button>{{ slide.button }}</Button></a
+            >
+          </div>
+          
         </div>
-        <!-- </div> -->
       </div>
     </transition-group>
     <div class="carousel-controls">
-      <!-- <button class="carousel-controls__button" @click="previous"> -->
-      <!-- icons go here -->
-      <!-- <span class="control">&lt;</span> -->
-      <!-- </button> -->
       <button class="carousel-controls__button" @click="next">
         <!-- The other icon goes here -->
         <span class="control">&gt;</span>
@@ -75,7 +84,7 @@ export default {
   </div>
 </template>
 <style lang ="scss" scoped>
-.container {
+.container-left {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,7 +124,7 @@ export default {
   width: var(--homepage-width);
   align-items: center;
   z-index: 90;
-  height:  50vh;
+  height: 50vh;
 }
 .carousel {
   display: flex;
@@ -136,7 +145,6 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
 }
 .slide:first-of-type {
   opacity: 0;
