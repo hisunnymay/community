@@ -185,22 +185,34 @@ export default {
   opacity: 0;
 }
 @media (max-width: 719px) {
-  .container {
+  .container-left {
+    flex-direction: column;
+    height: fit-content;
     .image {
-      display: none;
+      /* display: none; */
+      order: -1;
+      width: 100%;
     }
     .content {
       width: 100%;
+      p{
+        width: 100%;
+      }
+      h3{
+        font-size: 1.5em;
+      }
     }
   }
   .carousel-view {
     display: flex;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
   }
   .carousel-controls__button {
     width: 3em;
     height: 3em;
   }
 }
+/* @media (max-width: 1024px) {} */
+
 </style>

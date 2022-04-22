@@ -155,4 +155,14 @@ const contentCard = computed(() => {
     }
   }
 }
+@media (max-width: 1024px) {
+  .container-c {
+    .contentCard {
+      .left {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
 </style>
