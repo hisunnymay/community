@@ -1,8 +1,8 @@
+
 <script >
 import { usePageFrontmatter } from '@vuepress/client'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
-
 export default {
   data() {
     return {
@@ -48,25 +48,34 @@ export default {
         class="slide container"
         :key="index"
       >
-        <!-- <div class="container"> -->
-        <div class="content">
-          <h3>{{ slide.title }}</h3>
-          <p>{{ slide.details }}</p>
-          <a v-if="slide.button" :href="slide.link"
-            ><Button>{{ slide.button }}</Button></a
-          >
+        <div class="container-left" v-if="slide.left">
+          <div class="content">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.details }}</p>
+            <a v-if="slide.button" :href="slide.link"
+              ><Button>{{ slide.button }}</Button></a
+            >
+          </div>
+          <div class="image">
+            <img :src="slide.image" alt="" />
+          </div>
         </div>
-        <div class="image">
-          <img :src="slide.image" alt="" />
+        <div class="container-left" v-else >
+          <div class="image">
+            <img :src="slide.image" alt="" />
+          </div>
+          <div class="content">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.details }}</p>
+            <a v-if="slide.button" :href="slide.link"
+              ><Button>{{ slide.button }}</Button></a
+            >
+          </div>
+          
         </div>
-        <!-- </div> -->
       </div>
     </transition-group>
     <div class="carousel-controls">
-      <!-- <button class="carousel-controls__button" @click="previous"> -->
-      <!-- icons go here -->
-      <!-- <span class="control">&lt;</span> -->
-      <!-- </button> -->
       <button class="carousel-controls__button" @click="next">
         <!-- The other icon goes here -->
         <span class="control">&gt;</span>
@@ -75,7 +84,7 @@ export default {
   </div>
 </template>
 <style lang ="scss" scoped>
-.container {
+.container-left {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,7 +124,7 @@ export default {
   width: var(--homepage-width);
   align-items: center;
   z-index: 90;
-  height: 70vh;
+  height: 50vh;
 }
 .carousel {
   display: flex;
@@ -135,6 +144,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .slide:first-of-type {
   opacity: 0;
@@ -163,21 +173,17 @@ export default {
   background: var(--c-icon);
   color: var(--c-brand);
 }
-
 .slide-enter-active {
   transition: all 0.3s ease-out;
 }
-
 .slide-leave-active {
   transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-
 .slide-enter-from,
 .slide-leave-to {
   transform: translateX(20px);
   opacity: 0;
 }
-
 @media (max-width: 719px) {
   .container {
     .image {
@@ -190,8 +196,8 @@ export default {
   .carousel-view {
     display: flex;
     width: 100%;
+    height: 70vh;
   }
-
   .carousel-controls__button {
     width: 3em;
     height: 3em;

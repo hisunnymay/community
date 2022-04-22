@@ -17,9 +17,9 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Home.vue': path.resolve(__dirname, './components/home/HomePage.vue'),
   },
 
-  
 
-  
+
+
 
   head: [
     [
@@ -63,6 +63,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
   ],
 
+
+
   // site-level locales config
   locales: {
     '/': {
@@ -92,6 +94,8 @@ export default defineUserConfig<DefaultThemeOptions>({
        */
       '/': {
         // navbar
+
+
         navbar: navbar.en,
 
         // sidebar
