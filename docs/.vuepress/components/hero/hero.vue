@@ -53,7 +53,7 @@ export default {
             <h3>{{ slide.title }}</h3>
             <p>{{ slide.details }}</p>
             <a v-if="slide.button" :href="slide.link"
-              ><Button>{{ slide.button }}</Button></a
+              ><button>{{ slide.button }}</button></a
             >
           </div>
           <div class="image">
@@ -68,7 +68,7 @@ export default {
             <h3>{{ slide.title }}</h3>
             <p>{{ slide.details }}</p>
             <a v-if="slide.button" :href="slide.link"
-              ><Button>{{ slide.button }}</Button></a
+              ><button>{{ slide.button }}</button></a
             >
           </div>
           

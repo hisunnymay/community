@@ -11,9 +11,7 @@ const blogTheme: Theme<DefaultThemeOptions> = {
   // we provide some blog layouts
   layouts: {
     Article: path.resolve(__dirname, "./layouts/Article.vue"),
-    // Category: path.resolve(__dirname, "./layouts/Category.vue"),
-    // Tag: path.resolve(__dirname, "./layouts/Tag.vue"),
-    // Timeline: path.resolve(__dirname, "./layouts/Timeline.vue"),
+
   },
 
   plugins: [
