@@ -26,7 +26,52 @@ html.dark {
 
 
 }
+// buttons
+.button-small{
+	padding: 14px 20px;
+	font-size: 16px;
+	line-height: 18px;
+	border-radius: 48px;
+	border: 1px solid var(--c-brand);
+	background: var(--c-brand);
+	margin: 10px;
+	color: var(--c-bg);
+}
+.button-medium{
+	padding: 20px 28px;
+	font-size: 16px;
+	line-height: 18px;
+	border-radius: 48px;
+	border: 1px solid var(--c-brand);
+	background: var(--c-brand);
+	text-align: center;
+}
+.button-large{
+	padding: 20px 56px;
+	font-size: 16px;
+	line-height: 22px;
+	border-radius: 48px;
+	border: 1px solid var(--c-brand);
+	background: var(--c-brand);
+	text-align: center;
+}
+.button-icon{
+	padding: 20px 28px;
+	font-size: 16px;
+	line-height: 18px;
+	border-radius: 48px;
+	border: 1px solid var(--c-brand);
+	background: var(--c-brand);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	.social-icon{
+		line-height: 21px;
+		margin-right: 6px;
+	}
 
+}
+// end buttons
 
 // footer
 .home .footer {

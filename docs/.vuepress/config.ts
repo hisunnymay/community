@@ -4,6 +4,7 @@ import type { DefaultThemeOptions } from '@vuepress'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 import { mdEnhance } from "vuepress-plugin-md-enhance";
+// 
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -274,12 +275,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         type:'thumbnail',
       }
     ],
-    [
-      '@vuepress/plugin-container',{
-        type:'four',
-
-      }
-    ],
+    // [
+    //   'pricing'
+    // ],
+   
       mdEnhance({
         flowchart: true,
       }),
