@@ -5,7 +5,6 @@ import { computed } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '../../shared'
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const cta = computed(() => {
-    console.log(frontmatter.value.cta)
   if (isArray(frontmatter.value.cta)) {
     return frontmatter.value.cta
   }
