@@ -125,9 +125,14 @@ footer {
 }
 
 .features {
-	width: var(--homepage-width);
+	max-width: var(--homepage-width);
 	grid-row-gap: 50px;
 	margin: auto;
+}
+
+.home .feature h2 {
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .custom-container {
