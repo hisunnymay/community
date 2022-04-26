@@ -29,16 +29,15 @@ const cta = computed(() => {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         height: 380px;
         background-color: var(--c-bg-cta);
         justify-content: center;        
 
         h2{
             border: none;
-            font-weight: normal;
+            font-weight: 600;
             text-align: center;
-            font-size: 2rem;
+            font-size: 36px;
         }
         a{
             // button{

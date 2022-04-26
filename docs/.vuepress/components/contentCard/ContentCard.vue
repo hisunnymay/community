@@ -50,52 +50,37 @@ const contentCard = computed(() => {
 </template>
 <style lang="scss" scoped>
 .container-c {
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  margin: 2.5rem auto;
+  width: 100%;
+  max-width: var(--homepage-width);
+  border-top: 1px solid var(--c-border);
+  padding: 2.5rem 0;
 
   .contentCard {
-    margin-top: 30px;
-    // margin-bottom: 30px;
-    width: var(--homepage-width);
-    align-items: center;
 
     .left {
-      color: var(--c-text);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      // margin-right: 200px;
-      // margin-left: 200px;
-      margin-top: 80px;
-      margin-bottom: 80px;
+      padding: 4rem 0;
+      grid-column-gap: 120px;
       .image {
         width: 100%;
-        padding: 0 20px;
-        flex: 0 0 41.6666666667%;
-        max-width: 41.6666666667%;
 
         img {
           width: 100%;
-          border-radius: 5px;
-          object-fit: cover;
         }
       }
       .content {
-        flex: 0 0 41.6666666667%;
-        max-width: 41.6666666667%;
+        max-width: 40%;
         h3 {
-          font-weight: 400;
-          font-size: 1.9375em;
-          line-height: 1.45em;
-          margin: 1px !important;
+          color: var(--c-text);
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 50px;
         }
         p {
-          margin: none;
+          color: var(--c-text-lighter);
         }
       }
     }
@@ -107,54 +92,35 @@ const contentCard = computed(() => {
     flex-direction: column;
 
     .contentCard {
-      width: 100%;
+      max-width: 100%;
+      padding: 0 2.5rem;
 
       .left {
         display: flex;
         flex-direction: column;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 30px;
-        margin-top: 30px;
         .image {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex: 0 0 100%;
-          max-width: 100%;
-          width: 100%;
           img {
-            border-radius: 3px;
             width: 100%;
-            // height: 300px;
-            object-fit: cover;
           }
         }
         .content {
-          width: 100%;
-          margin: auto;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
           order: 1;
-          flex: 0 0 100%;
           max-width: 100%;
-          text-align: center !important;
 
           .desc {
             width: 100%;
-            text-align: center;
           }
           .title {
             width: 100%;
-            text-align: center;
           }
         }
       }
     }
   }
 }
+/*
 @media (max-width: 1024px) {
   .container-c {
     .contentCard {
@@ -165,4 +131,5 @@ const contentCard = computed(() => {
     }
   }
 }
+*/
 </style>
