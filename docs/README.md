@@ -46,15 +46,15 @@ features:
 contentCards:
   - title: Schema Definition
     details: The services that you want to expose is uniquely defined by the schema, which on one hand capture the data type of the input and output parameter, and signature of the function, and on the other hand represent the meaning user expression in the utterances. 
-    image: images/exampl3.png
+    image: /images/schema.png
     left: true
   - title: Interaction Declaration
     details: Schema defines what information we need to collect from user in order to build the desired user experience. The interaction logic is decided by business logic and goal. Framely provides a set of interaction annotation which builder can use declaratively describe what conversational experience they want to provide, and Framely runtime will take care of the rest.
-    image: images/example2.png
+    image: /images/interaction.png
     left: false
   - title: Language Decorations
     details: Natural language utterances in the different language is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, builder only need to touch language part of relevant interaction annotation, by provider exemplars for user utterance, and template for bot messaging, no machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for hire a Ph.D for this.
-    image: images/exampl3.png
+    image: /images/language.png
     left: true
 
 cta :
