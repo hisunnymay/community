@@ -22,13 +22,13 @@ const page = computed(() => {
     <slot name="top" />
     <Pricing v-if="frontmatter.pricing" :frontmatter=frontmatter />
 
-    <div class="theme-default-content">
+    <div v-else class="theme-default-content">
       <Content />
     </div>
 
-    <PageMeta />
+    <PageMeta  v-if="!frontmatter.pricing"/>
 
-    <PageNav />
+    <PageNav v-if="!frontmatter.pricing" />
 
     <slot name="bottom" />
   </main>
