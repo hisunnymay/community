@@ -38,8 +38,10 @@ const cta = computed(() => {
             font-weight: 600;
             text-align: center;
             font-size: 36px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
         }
-        a{
+        //a{
             // button{
             //     background: var(--c-brand);
             //     outline: none;
@@ -50,7 +52,7 @@ const cta = computed(() => {
             //     color: var(--c-bg);
             //     font-size: 1.1em;
             // }
-        }
+       // }
     }
 }
 
