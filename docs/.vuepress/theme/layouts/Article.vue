@@ -22,7 +22,7 @@ import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue"
 const articles = useBlogType("article");
 console.log(articles.value)
 </script>
-<style lang="scss">
+<style lang="scss"  scoped>
 h1{
   font-weight: normal;
 }
