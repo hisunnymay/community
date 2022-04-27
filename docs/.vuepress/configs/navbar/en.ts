@@ -32,6 +32,10 @@ export const en: NavbarConfig = [
     ],
   },
   {
+    text:"pricing",
+    link:"/pricing/"
+  },
+  {
     text: 'Blog',
     link: '/articles/' 
   }
