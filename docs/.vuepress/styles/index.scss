@@ -34,8 +34,12 @@ html.dark {
 	border-radius: 48px;
 	border: 1px solid var(--c-brand);
 	background: var(--c-brand);
-	margin: 10px;
 	color: var(--c-bg);
+}
+.button-small.secondary {
+    color: var(--c-brand);
+    background-color: var(--c-bg);
+    border-color: var(--c-brand);
 }
 .button-medium{
 	padding: 20px 28px;

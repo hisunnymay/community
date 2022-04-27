@@ -65,9 +65,9 @@ const HomeHeroImage: FunctionalComponent = () => {
         <h1 v-if="heroText" id="main-title">
           {{ heroText }}
         </h1>
-        <h2 v-if="tagline" class="description">
+        <p v-if="tagline" class="description">
           {{ tagline }}
-        </h2>
+        </p>
       </div>
       <div class="buttons">
         <p v-if="actions.length" class="actions">
@@ -92,32 +92,44 @@ const HomeHeroImage: FunctionalComponent = () => {
 
 <style lang="scss"  scoped>
 .main-hero-container {
-  position: relative;
-  width: var(--homepage-width);
+  max-width: 1600px; //if we want to fit body width, change "1600px" to "var(--homepage-width)"
   display: flex;
   align-items: center;
-  height: 70vh;
   justify-content: space-between;
+  flex-direction: row;
   margin: auto;
-  h2 {
-    border-bottom: none;
-    font-weight: normal;
-  }
+  padding: 4rem 2rem 4rem 2rem;
 }
 .intro {
-  width: 50%;
+  width: 60%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.text-info {
+  margin-bottom: 60px;
 }
 .intro .text-info h1 {
-  font-size: 2.5rem;
+  font-size: 64px;
+  line-height: 80px;
+  font-weight: 700;
+}
+.description {
+  color: var(--c-text-lighter);
+  line-height: 40px;
 }
 .img {
   display: flex;
   align-items: flex-end;
-  width: 50%;
-  position: relative;
+  width: 60%;
+  //position: relative;
 }
 .image > img {
   width: 100%;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; //this is button spacing
 }
 .btn {
   padding: 15px;
@@ -130,14 +142,14 @@ const HomeHeroImage: FunctionalComponent = () => {
   margin-right: 15px;
   margin-top: 15px;
 }
+
 @media (max-width: 719px) {
   .main-hero-container {
-    flex-direction: column;
-    justify-content: center;
-    height: 80vh;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     align-items: center;
-    width: 100%;
-    text-align: center;
+    padding: 4rem 0.5rem 0 0.5rem;
   }
   .intro {
     width: 100%;
@@ -147,17 +159,14 @@ const HomeHeroImage: FunctionalComponent = () => {
     width: 100%;
   }
   .intro .text-info h1 {
-    font-size: 2rem;
+    font-size: 36px;
+    line-height: 50px;
   }
-   .intro .text-info h2{
-     font-size: 1.4em;
-     line-height: 28px;
-   }
+  .description {
+    line-height: 20px;
+  }
   .img {
-    order: -1;
-  }
-  .actions{
-    margin: auto;
+    width: 100%;
   }
 }
 </style> 
