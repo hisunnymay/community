@@ -42,7 +42,7 @@ defineProps({
       <!--  -->
     </div>
   </div>
-  <footer>
+  <!-- <footer>
     <div class="links">
       <div class="social">
         <a
@@ -67,7 +67,7 @@ defineProps({
       <a href="#">Privacy</a>
       <a href="#">Sitemap</a>
     </div>
-  </footer>
+  </footer> -->
 </template>
 <style lang="scss" scoped>
 footer{

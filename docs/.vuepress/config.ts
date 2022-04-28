@@ -19,13 +19,11 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Page.vue': path.resolve(__dirname, './components/page/Page.vue'),
   },
 
-  
 
 
 
 
 
-  
 
   head: [
     [
