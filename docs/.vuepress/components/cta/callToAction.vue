@@ -17,14 +17,13 @@ const cta = computed(() => {
     <div v-for="cta in cta" :key="cta.details">
       <h2>{{ cta.details }}</h2>
       <a :href="cta.link" target="_blank" rel="noopener noreferrer">
-          <button class="button-medium" style="color:var(--c-bg)">{{cta.title}}</button>
+          <button class="button-medium">{{cta.title}}</button>
       </a>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .container-s{
-    padding-top: 4rem;
     div{
         display: flex;
         flex-direction: column;

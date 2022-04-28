@@ -54,7 +54,6 @@ const contentCard = computed(() => {
   width: 100%;
   max-width: var(--homepage-width);
   border-top: 1px solid var(--c-border);
-  padding: 2.5rem 0;
 
   .contentCard {
 
