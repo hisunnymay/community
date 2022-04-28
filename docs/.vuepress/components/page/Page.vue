@@ -3,6 +3,7 @@ import PageMeta from '@theme/PageMeta.vue'
 import PageNav from '@theme/PageNav.vue'
 import Pricing from '../pricing/pricing.vue'
 import { usePageData, usePageFrontmatter } from '@vuepress/client'
+import Footer from './footer.vue'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 const pageData = usePageData()
@@ -29,7 +30,10 @@ const page = computed(() => {
     <PageMeta  v-if="!frontmatter.pricing"/>
 
     <PageNav v-if="!frontmatter.pricing" />
+    
 
     <slot name="bottom" />
+    
   </main>
+  <Footer />
 </template>

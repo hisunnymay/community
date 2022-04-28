@@ -5,6 +5,7 @@
 
 	--c-brand: #4282fd;
 	--c-brand-light: #1295f7;
+	--footer-height:50px;
 
 	--c-icon: #4282fd10;
 	--c-bg-cta: #4282fd08;
@@ -77,6 +78,10 @@ html.dark {
 .home .footer {
 	padding: 10px;
 	border: none;
+}
+.sidebar{
+	bottom: var(--footer-height);
+
 }
 
 footer {
@@ -223,6 +228,11 @@ footer {
 
 
 @media (max-width:719px) {
+	.sidebar{
+		bottom:0;
+	
+	}
+	
 	footer{
 		flex-direction: column;
 		margin-top: 15px;
