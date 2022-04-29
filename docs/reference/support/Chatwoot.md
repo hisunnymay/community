@@ -62,6 +62,7 @@ When you enable Chatwoot, we create a Chatwoot organization and add all the owne
 An agent is a member of your Customer Support team. Agents will be able to view and reply to messages from your users. Once you log into Chatwoot account, you can click **Settings** > **Agents** to manager all the agents in this organization. Follow these steps to add an agent.
 
 1. Click Add Agent and follow the instructions.
+2. Agent you add will receive an email with a confirmation link to activate their account, after which they can access Chatwoot and respond to messages.
 
 ![An image](/images/Chatwoot/Configuration_2_1.png)
 
@@ -70,7 +71,7 @@ An agent is a member of your Customer Support team. Agents will be able to view 
 BotAgent1 should always be an administadministrator. Otherwise, conversation can't be assign to teams, unless you add BotAgent1 to the inbox.
 :::
 
-2. Agent you add will receive an email with a confirmation link to activate their account, after which they can access Chatwoot and respond to messages.
+
 
 ### Set Up Inbox
 
