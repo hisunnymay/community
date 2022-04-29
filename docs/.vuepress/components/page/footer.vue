@@ -2,7 +2,7 @@
   <footer>
     <div class="links">
       <div class="social">
-        <a
+        <!-- <a
           href="https://github.com/framely/community"
           target="_blank"
           rel="noopener noreferrer"
@@ -14,7 +14,7 @@
               clip-rule="evenodd"
             ></path>
           </svg>
-        </a>
+        </a> -->
       </div>
       <p>Framely, Inc &copy; 2022 All rights reserved</p>
     </div>

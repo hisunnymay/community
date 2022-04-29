@@ -19,6 +19,8 @@ const page = computed(() => {
 </script>
 
 <template>
+<div class="container">
+
   <main class="page">
     <slot name="top" />
     <Pricing v-if="frontmatter.pricing" :frontmatter=frontmatter />
@@ -36,4 +38,6 @@ const page = computed(() => {
     
   </main>
   <Footer />
+</div>
+
 </template>
