@@ -48,6 +48,7 @@ export const en: SidebarConfig = {
       collapsible: true,
       children: [
           '/reference/support/overview.md',
+          '/reference/support/Chatwoot.md',
       ],
     },
   ],
