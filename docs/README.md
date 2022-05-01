@@ -2,8 +2,8 @@
 home: true
 title: Home
 heroImage: /images/hero.png
-tagline: Cost-effective Conversational Interface for any Services
-heroText: Building Conversational Interface For Your Services
+tagline: Cost-effective Chatbots for any Services
+heroText: React for Conversational User Interface
 actions:
   - text: Get Started
     link: /guide/getting-started.html
