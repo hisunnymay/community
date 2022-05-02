@@ -230,8 +230,17 @@ footer {
 @media (max-width:719px) {
 	.sidebar{
 		bottom:0;
+		width: 100%;
+		.navbar-items{
+			border:none;
+		}
 	
 	}
+	.sidebar-items{
+		display:none;
+		
+	}
+	
 	
 	footer{
 		flex-direction: column;
@@ -255,6 +264,15 @@ footer {
 		grid-template-columns: 1fr;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.navbar-items{
+		.navbar-item{
+			border-bottom: 1px solid var(--c-border);
+			a{
+				font-size: 1em;
+				margin-top: 12px;
+			}
+		}
 	}
 
 	.custom-container {

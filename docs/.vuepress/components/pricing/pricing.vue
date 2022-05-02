@@ -18,7 +18,7 @@ defineProps({
     <div class="cards" v-if="frontmatter.cards">
       <!--  -->
       <div class="card" v-for="card in frontmatter.cards" :key="card">
-        <div class="head">
+        <div class="card-head">
           <h2 v-if="card.package">{{ card.package }}</h2>
           <div class="price-badge">
             <h1 v-if="card.price">{{ card.price }}</h1>
@@ -26,12 +26,12 @@ defineProps({
           </div>
           <p v-if="card.tagline">{{ card.tagline }}</p>
         </div>
-        <div class="body">
+        <div class="card-body">
           <ul>
             <li v-for="list in card.features" :key="list">{{ list }}</li>
           </ul>
         </div>
-        <div class="footer">
+        <div class="card-footer">
           <p v-if="card.footertagline">{{ card.footertagline }}</p>
           <button class="button-small" v-if="card.link">
             <a :href="card.link">{{ card.buttonText }}</a>
@@ -118,7 +118,7 @@ footer{
           margin-left: 5px;
         }
       }
-      .head {
+      .card-head {
         width: 90%;
         margin: auto;
         border-bottom: 1px solid var(--c-border);
@@ -126,7 +126,7 @@ footer{
           border: none;
         }
       }
-      .footer {
+      .card-footer {
         width: 90%;
         margin: auto;
         height: 12em;
@@ -142,7 +142,7 @@ footer{
           }
         }
       }
-      .body {
+      .card-body {
         height: 100%;
         padding-top: 12px;
 

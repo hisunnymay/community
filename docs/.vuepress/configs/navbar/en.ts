@@ -1,7 +1,9 @@
 import type { NavbarConfig } from '@vuepress/theme-default'
+
+
 // import { version } from '../meta' 
 
-export const en: NavbarConfig = [ 
+export const en = [ 
   {
     text: 'Guide',
     link: '/guide/',
@@ -12,7 +14,12 @@ export const en: NavbarConfig = [
       {
         text: 'Annotations',
         children: [
-          '/reference/annotations/overview.md',
+          {
+          link:'/reference/annotations/overview.md',
+          text:'Overview',
+          icon:"gear-solid.svg"
+
+          },
           '/reference/annotations/vr.md',
           '/reference/annotations/confirmation.md',
         ],
