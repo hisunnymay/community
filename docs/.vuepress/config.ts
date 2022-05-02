@@ -17,6 +17,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Navbar.vue': path.resolve(__dirname, './components/navbar/Navbar.vue'),
     '@theme/Home.vue': path.resolve(__dirname, './components/home/HomePage.vue'),
     '@theme/Page.vue': path.resolve(__dirname, './components/page/Page.vue'),
+
     '@theme/NavbarBrand.vue': path.resolve(__dirname, './components/navbar/NavbarBrand.vue'),
     '@theme/NavbarDropdown.vue': path.resolve(__dirname, './components/navbar/NavbarDropdown.vue'),
     '@theme/AutoLink.vue' : path.resolve(__dirname, './components/AutoLink/AutoLink.vue'),
@@ -58,11 +59,11 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         rel: 'mask-icon',
         href: '/images/icons/safari-pinned-tab.svg',
-        color: '#4282fd;',
+        color: '#4282fd',
       },
     ],
-    ['meta', { name: 'msapplication-TileColor', content: '#4282fd;' }],
-    ['meta', { name: 'theme-color', content: '#4282fd;' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#4282fd' }],
+    ['meta', { name: 'theme-color', content: '--c-bg' }],
   ],
 
 
@@ -96,8 +97,6 @@ export default defineUserConfig<DefaultThemeOptions>({
        */
       '/': {
         // navbar
-
-
         navbar: navbar.en,
 
         // sidebar
@@ -161,64 +160,9 @@ export default defineUserConfig<DefaultThemeOptions>({
       prismjs: !isProd,
 
     },
-
   },
 
-
   plugins: [
-    // [
-    //   '@vuepress/plugin-docsearch',
-    //   {
-    //     apiKey: '3a539aab83105f01761a137c61004d85',
-    //     indexName: 'vuepress',
-    //     searchParameters: {
-    //       facetFilters: ['tags:v2'],
-    //     },
-    //     locales: {
-    //       '/zh/': {
-    //         placeholder: '搜索文档',
-    //         translations: {
-    //           button: {
-    //             buttonText: '搜索文档',
-    //             buttonAriaLabel: '搜索文档',
-    //           },
-    //           modal: {
-    //             searchBox: {
-    //               resetButtonTitle: '清除查询条件',
-    //               resetButtonAriaLabel: '清除查询条件',
-    //               cancelButtonText: '取消',
-    //               cancelButtonAriaLabel: '取消',
-    //             },
-    //             startScreen: {
-    //               recentSearchesTitle: '搜索历史',
-    //               noRecentSearchesText: '没有搜索历史',
-    //               saveRecentSearchButtonTitle: '保存至搜索历史',
-    //               removeRecentSearchButtonTitle: '从搜索历史中移除',
-    //               favoriteSearchesTitle: '收藏',
-    //               removeFavoriteSearchButtonTitle: '从收藏中移除',
-    //             },
-    //             errorScreen: {
-    //               titleText: '无法获取结果',
-    //               helpText: '你可能需要检查你的网络连接',
-    //             },
-    //             footer: {
-    //               selectText: '选择',
-    //               navigateText: '切换',
-    //               closeText: '关闭',
-    //               searchByText: '搜索提供者',
-    //             },
-    //             noResultsScreen: {
-    //               noResultsText: '无法找到相关结果',
-    //               suggestedQueryText: '你可以尝试查询',
-    //               openIssueText: '你认为该查询应该有结果？',
-    //               openIssueLinkText: '点击反馈',
-    //             },
-    //           },
-    //         },
-    //       },
-    //     },
-    //   },
-    // ],
     [
       '@vuepress/plugin-google-analytics',
       {
@@ -274,13 +218,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         type:'thumbnail',
       }
     ],
-    // [
-    //   'pricing'
-    // ],
-   
-      mdEnhance({
+
+    mdEnhance({
         flowchart: true,
-      }),
+    }),
 
     // only enable shiki plugin in production mode
     [

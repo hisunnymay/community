@@ -17,30 +17,30 @@ const cta = computed(() => {
     <div v-for="cta in cta" :key="cta.details">
       <h2>{{ cta.details }}</h2>
       <a :href="cta.link" target="_blank" rel="noopener noreferrer">
-          <button class="button-medium" style="color:var(--c-bg)">{{cta.title}}</button>
+          <button class="button-medium">{{cta.title}}</button>
       </a>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .container-s{
-    padding-top: 4rem;
     div{
         display: flex;
         flex-direction: column;
         align-items: center;
-
         height: 380px;
         background-color: var(--c-bg-cta);
         justify-content: center;        
 
         h2{
             border: none;
-            font-weight: normal;
+            font-weight: 600;
             text-align: center;
-            font-size: 2rem;
+            font-size: 36px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
         }
-        a{
+        //a{
             // button{
             //     background: var(--c-brand);
             //     outline: none;
@@ -51,7 +51,7 @@ const cta = computed(() => {
             //     color: var(--c-bg);
             //     font-size: 1.1em;
             // }
-        }
+       // }
     }
 }
 

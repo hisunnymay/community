@@ -33,7 +33,8 @@ export const en = [
       {
         text: 'Supports',
         children: [
-          '/reference/support/overview.md'
+          '/reference/support/overview.md',
+          '/reference/support/Chatwoot.md'
         ],
       },
     ],

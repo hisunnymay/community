@@ -24,7 +24,7 @@ import Footer from "../../components/page/footer.vue"
 const articles = useBlogType("article");
 console.log(articles.value)
 </script>
-<style lang="scss">
+<style lang="scss"  scoped>
 h1{
   font-weight: normal;
 }

@@ -1,14 +1,14 @@
 # WeChat Official Account
 A WeChat Official Account exists in the form of a Wechat user's contact, and chat is the basis for the interaction between the Official Account and its users. Follow these steps to config WeChat Official Account.
 
-## Before you begin
+## Before You Begin
 If you don't have WeChat Official Account, set up one first.
 1. Go to [https://mp.weixin.qq.com](https://mp.weixin.qq.com), click **Register Now**
 2. Select **Service Account** or **Subscription Account**, and follow the instructions that are provided on the screen to complete the process.
 
 ![An image](/images/channelConfig/RegisterNow.jpeg)
 
-## Add an integration
+## Add an Integration
 1. From the chatbot page, click **Setting** > **Integrations**. In the **Channels** field, click **Add New** > **Wechat Official Account**
    
 ![An image](/images/channelConfig/step1_1.jpeg)
@@ -17,7 +17,7 @@ If you don't have WeChat Official Account, set up one first.
    
 ![An image](/images/channelConfig/step1_2.jpeg)
 
-## Connect chatbot to WeChat Official Account
+## Connect Chatbot to WeChat Official Account
 1. Go to [https://mp.weixin.qq.com](https://mp.weixin.qq.com) and log in with your WeChat Official Account.
 2. In the **Setting and Development** field, click **Basic configuration**.
 3. In the **Official Account development information** field, copy *Developer ID(AppID)* and *Developer Password(AppSecret)*
@@ -43,7 +43,7 @@ If you used *Developer Password(AppSecret)* before but didn't store it, you can 
 
 ![An image](/images/channelConfig/step2_4.png)
 
-## Deploy chatbot
+## Deploy Chatbot
 We show here how we deploy chatbot to Framely hosted environment, for the priviate deploy, please consult systems in your organization.
 1. Back to your chatbot page, paste *AppID*, *AppSecret* and *Token* you copied.
 2. Click **SAVE**.

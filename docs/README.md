@@ -2,8 +2,8 @@
 home: true
 title: Home
 heroImage: /images/hero.png
-tagline: Cost-effective Conversational Interface for any Services
-heroText: Building Conversational Interface For Your Services
+tagline: Cost-effective Chatbots for any Services
+heroText: React for Conversational User Interface
 actions:
   - text: Get Started
     link: /guide/getting-started.html
@@ -42,23 +42,21 @@ features:
   - title: Fully Extensible
     details: The chatbot defined on the Framely are code generated into pure kotlin source code, which makes it super easy to integrate any types of plugins, including channel, support, and services in just about any functionality java/kotlin ecosystem has to offer.
     icon: /images/featureIcons/raw-code.svg
+
 contentCards:
-  - title: What is lorem Ipsum?
-    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    image: images/example2.png
+  - title: Schema Definition
+    details: The services that you want to expose is uniquely defined by the schema, which on one hand capture the data type of the input and output parameter, and signature of the function, and on the other hand represent the meaning user expression in the utterances. 
+    image: /images/schema.png
     left: true
-  - title: What is lorem Ipsum?
-    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    image: images/example2.png
+  - title: Interaction Declaration
+    details: Schema defines what information we need to collect from user in order to build the desired user experience. The interaction logic is decided by business logic and goal. Framely provides a set of interaction annotation which builder can use declaratively describe what conversational experience they want to provide, and Framely runtime will take care of the rest.
+    image: /images/interaction.png
     left: false
-  - title: Private Notes
-    details: Use private notes to communicate with your team. Use @mentions to share information and communicate efficiently within the team.
-    image: images/exampl3.png
+  - title: Language Decorations
+    details: Natural language utterances in the different language is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, builder only need to touch language part of relevant interaction annotation, by provider exemplars for user utterance, and template for bot messaging, no machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for hire a Ph.D for this.
+    image: /images/language.png
     left: true
-  - title: What is lorem Ipsum?
-    details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    image: images/example2.png
-    left: false    
+
 cta :
   - details: Great conversational user experiences for masses.
     title: Start Project

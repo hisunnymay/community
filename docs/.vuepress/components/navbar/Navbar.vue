@@ -79,11 +79,12 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 <style lang="scss" scoped>
 .button {
   margin-left: 20px;
+  padding: 0 16px;
   background: var(--c-brand);
   border: none;
   outline: none;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 48px;
   a {
     color: var(--c-bg);
   }
