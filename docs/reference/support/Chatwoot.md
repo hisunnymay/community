@@ -41,7 +41,7 @@ When a user demands talking to a human agent, we can forward the conversation to
 ## Configuration
 Now you can follow these steps to integrate your chatbots with Chatwoot.
 
-### Enable Chatwoot
+### Enable Chatwoot <Badge text="Framely" />
 
 1. From the chatbot page, click **Setting** > **Integrations**. In the **Support** field, enable **Chatwoot**.
 
@@ -49,7 +49,7 @@ Now you can follow these steps to integrate your chatbots with Chatwoot.
 
 2. Check your email then log into [Chatwoot](https://chatwoot.naturali.io/) account with the given user name and password.
 
-### Add Agents
+### Add Agents <Badge text="Chatwoot" />
 
 When you enable Chatwoot, we create a Chatwoot organization and add all the owners in your organization to it. The owners added to Chatwoot organization are called agents which are set as administrators by default.
 
@@ -73,7 +73,7 @@ BotAgent1 should always be an administadministrator. Otherwise, conversation can
 
 
 
-### Set Up Inbox
+### Set Up Inbox <Badge text="Chatwoot" />
 
 When you enable Chatwoot in a chatbot, we will create an inbox connected to the chatbot. When you deploy the chatbot to a channel and end-users send messages to the chatbot through that channel, you can get the conversation in the corresponding inbox. Follow these steps to add an agent to the inbox so when it's needed agents can carry on the conversation.
 
@@ -86,13 +86,14 @@ When you enable Chatwoot in a chatbot, we will create an inbox connected to the 
 
 ![An image](/images/Chatwoot/Configuration_3_2.png)
 
-### Add Teams
+### Add Teams <Badge text="Chatwoot" />
 
 When the conversation is assigned to a team, the agents in the team can carry on the conversation. See [Add Teams | Chatwoot](https://www.chatwoot.com/docs/user-guide/add-teams-settings) to learn how to add an agent to the team.
 
 
 
-### Set Up Routing Priority
+### Set Up Routing Priority <Badge text="Framely" />
+
 To make intent based routing work, you need to set up routing priority. When there are unfinished intents in the conversation, we follow routing priority to decide which team we should route the conversation to. If an unfinished intent is one of the associate intents in routing priority, we route the conversation to the corresponding team. Otherwise, we route the conversation to default team. Follow these steps to set up routing priority.
 
 1. Click **Setting** > **Routing Priority** > **Default**, input team id of the default team.
