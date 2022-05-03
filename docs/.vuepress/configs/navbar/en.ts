@@ -1,7 +1,9 @@
 import type { NavbarConfig } from '@vuepress/theme-default'
+
+
 // import { version } from '../meta' 
 
-export const en: NavbarConfig = [ 
+export const en = [ 
   {
     text: 'Guide',
     link: '/guide/',
@@ -11,10 +13,26 @@ export const en: NavbarConfig = [
     children: [
       {
         text: 'Annotations',
+        icon: "/featureIcons/cui.svg",
         children: [
-          '/reference/annotations/overview.md',
-          '/reference/annotations/vr.md',
-          '/reference/annotations/confirmation.md',
+          {
+          link:'/reference/annotations/overview.md',
+          text:'Overview',
+          icon:"/featureIcons/cui.svg",
+
+          },
+          {
+            link:'/reference/annotations/vr.md',
+            icon:"/featureIcons/hotfix.svg",
+            text:"value Recommendation"
+          },
+          {
+            link:'/reference/annotations/confirmation.md',
+            icon:"/featureIcons/declarative.svg",
+            text:"Confirmation"
+          }
+          
+         
         ],
       },
       {
@@ -23,6 +41,7 @@ export const en: NavbarConfig = [
           '/reference/channels/wpa.md',
         ],
       },
+ 
       {
         text: 'Supports',
         children: [

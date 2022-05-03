@@ -17,6 +17,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Navbar.vue': path.resolve(__dirname, './components/navbar/Navbar.vue'),
     '@theme/Home.vue': path.resolve(__dirname, './components/home/HomePage.vue'),
     '@theme/Page.vue': path.resolve(__dirname, './components/page/Page.vue'),
+    '@theme/NavbarBrand.vue': path.resolve(__dirname, './components/navbar/NavbarBrand.vue'),
+    '@theme/NavbarDropdown.vue': path.resolve(__dirname, './components/navbar/NavbarDropdown.vue'),
+    '@theme/AutoLink.vue' : path.resolve(__dirname, './components/AutoLink/AutoLink.vue'),
+
   },
 
   head: [
