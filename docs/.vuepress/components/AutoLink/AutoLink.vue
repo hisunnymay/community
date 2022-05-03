@@ -122,11 +122,15 @@ const isActive = computed(() => {
     /* align-items: center; */
 }
 .linkicon{
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
     margin-right: 5px;
     background: var(--c-icon); 
     padding: 2px;
     border-radius: 50%;
+}
+.linkicon-text{
+  display: flex;
+  align-items: center;
 }
 </style>
