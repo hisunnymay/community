@@ -15,33 +15,31 @@ const { item } = toRefs(props)
 const dropdownAriaLabel = computed(
   () => item.value.ariaLabel || item.value.text
 )
-const open = ref(false)
-if(window.screen.width < 720){
-    open.value = true
-}else{
-    open.value = false
+const open = ref(true)
+if (window.screen.width < 720) {
+  open.value = true
+} else {
+  open.value = false
 }
 const route = useRoute()
 watch(
   () => route.path,
   () => {
-      if(window.screen.availWidth <720){
-        //   open.value = true
-      }else{
-
-          open.value = false
-      }
+    if (window.screen.availWidth < 720) {
+        open.value = true
+    } else {
+      open.value = false
+    }
   }
 )
 
 const handleDropdown = (e): void => {
   const isTriggerByTab = e.detail === 0
-  if(window.screen.availWidth < 720){
-      open.value = true
-  }else if (isTriggerByTab) {
+  if (window.screen.availWidth < 720) {
+    open.value = true
+  } else if (isTriggerByTab) {
     open.value = !open.value
-  } 
-   else {
+  } else {
     open.value = false
   }
 }
@@ -58,7 +56,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       @click="handleDropdown"
     >
       <span class="title">{{ item.text }}</span>
-      <span class="arrow down" />
+      <!-- <span class="arrow down" /> -->
     </button>
 
     <button
@@ -72,55 +70,57 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
     </button>
 
     <DropdownTransition>
-      <ul v-show="open" class="navbar-dropdown">
-        <li
-          v-for="child in item.children"
-          :key="child.text"
-          class="navbar-dropdown-item"
-        >
-          <template v-if="child.children">
-            <h4 class="navbar-dropdown-subtitle">
-              <AutoLink
-                v-if="child.link"
-                :item="child"
-                @focusout="
-                  isLastItemOfArray(child, item.children) &&
-                    child.children.length === 0 &&
-                    (open = false)
-                "
-              />
-
-              <span v-else>{{ child.text }}</span>
-            </h4>
-
-            <ul class="navbar-dropdown-subitem-wrapper">
-              <li
-                v-for="grandchild in child.children"
-                :key="grandchild.link"
-                class="navbar-dropdown-subitem"
-              >
+      <div  v-show="open" class="navbar-dropdown">
+        <ul class="navbar-dropdown-block">
+          <li
+            v-for="child in item.children"
+            :key="child.text"
+            class="navbar-dropdown-item"
+          >
+            <template v-if="child.children">
+              <h4 class="navbar-dropdown-subtitle">
                 <AutoLink
-                  :item="grandchild"
+                  v-if="child.link"
+                  :item="child"
                   @focusout="
-                    isLastItemOfArray(grandchild, child.children) &&
-                      isLastItemOfArray(child, item.children) &&
+                    isLastItemOfArray(child, item.children) &&
+                      child.children.length === 0 &&
                       (open = false)
                   "
                 />
-              </li>
-            </ul>
-          </template>
 
-          <template v-else>
-            <AutoLink
-              :item="child"
-              @focusout="
-                isLastItemOfArray(child, item.children) && (open = false)
-              "
-            />
-          </template>
-        </li>
-      </ul>
+                <span v-else>{{ child.text }}</span>
+              </h4>
+
+              <ul class="navbar-dropdown-subitem-wrapper">
+                <li
+                  v-for="grandchild in child.children"
+                  :key="grandchild.link"
+                  class="navbar-dropdown-subitem"
+                >
+                  <AutoLink
+                    :item="grandchild"
+                    @focusout="
+                      isLastItemOfArray(grandchild, child.children) &&
+                        isLastItemOfArray(child, item.children) &&
+                        (open = false)
+                    "
+                  />
+                </li>
+              </ul>
+            </template>
+
+            <template v-else>
+              <AutoLink
+                :item="child"
+                @focusout="
+                  isLastItemOfArray(child, item.children) && (open = false)
+                "
+              />
+            </template>
+          </li>
+        </ul>
+      </div>
     </DropdownTransition>
   </div>
 </template>

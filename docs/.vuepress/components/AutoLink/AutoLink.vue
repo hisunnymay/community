@@ -93,8 +93,11 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
+    <div class="linkicon-text">
     <img v-if="item.icon" class="linkicon" :src="LinkIcon" :alt="item.icon">
     {{ item.text }}
+    </div>
+    <p v-if="item.description">{{item.description}}</p>
     <slot name="after" />
   </RouterLink>
   <a
@@ -115,11 +118,15 @@ const isActive = computed(() => {
 <style scoped>
 #router-link{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    /* align-items: center; */
 }
 .linkicon{
     width: 20px;
     height: 20px;
     margin-right: 5px;
+    background: var(--c-icon); 
+    padding: 2px;
+    border-radius: 50%;
 }
 </style>
