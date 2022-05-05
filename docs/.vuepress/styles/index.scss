@@ -300,12 +300,16 @@ footer {
 
 	//end of dropdowns
 	.sidebar {
-		bottom: 0;
+		bottom: 0;  // uncomment
+		width: 100%;
+		.sidebar-items {
+			display: none;
+	
+		}
 
 		.navbar-items {
 			border: none;
-			// padding: 15px 4px;
-			width: 100%;
+			// width: 100%; //Navigation bar content
 		}
 
 	}

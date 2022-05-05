@@ -43,7 +43,7 @@ const page = computed(() => {
 
 </template>
 <style scoped>
-.btn-toggle-content-sidebar{
+/* .btn-toggle-content-sidebar{
   position: fixed;
   z-index: 9000;
   top: 10%;
@@ -55,5 +55,5 @@ const page = computed(() => {
   width: 30px;
   border-radius: 50%;
 
-}
+} */
 </style>
