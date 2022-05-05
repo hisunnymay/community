@@ -92,7 +92,7 @@ const HomeHeroImage: FunctionalComponent = () => {
 
 <style lang="scss"  scoped>
 .main-hero-container {
-  max-width: 1600px; //if we want to fit body width, change "1600px" to "var(--homepage-width)"
+  max-width: var(--homepage-width); 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,7 +109,7 @@ const HomeHeroImage: FunctionalComponent = () => {
   margin-bottom: 60px;
 }
 .intro .text-info h1 {
-  font-size: 64px;
+  font-size: 60px;
   line-height: 80px;
   font-weight: 700;
 }
