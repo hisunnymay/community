@@ -97,7 +97,6 @@ const isActive = computed(() => {
     <img v-if="item.icon" class="linkicon" :src="LinkIcon" :alt="item.icon">
     {{ item.text }}
     </div>
-    <p v-if="item.description">{{item.description}}</p>
     <slot name="after" />
   </RouterLink>
   <a
@@ -115,7 +114,7 @@ const isActive = computed(() => {
     <slot name="after" />
   </a>
 </template>
-<style scoped>
+<style scoped lang="scss">
 #router-link{
     display: flex;
     flex-direction: column;
@@ -134,4 +133,15 @@ const isActive = computed(() => {
   display: flex;
   align-items: center;
 }
+// @media (max-width:719px){
+  
+//   .navbar-dropdown-title{
+//     .title{
+
+//       padding: 3px;
+//     }
+
+
+//   }
+// }
 </style>

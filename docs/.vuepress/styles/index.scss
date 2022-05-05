@@ -30,11 +30,12 @@ html.dark {
 
 
 // end of navbar dropdwons
-.navbar-dropdown-wrapper .navbar-dropdown .navbar-dropdown-item{
+.navbar-dropdown-wrapper .navbar-dropdown .navbar-dropdown-item {
 	list-style: none;
 
 }
-.navbar-dropdown-block{
+
+.navbar-dropdown-block {
 	padding: inherit;
 }
 
@@ -292,22 +293,26 @@ footer {
 		width: 100%;
 	}
 
+	.navbar-dropdown-wrapper.open .navbar-dropdown-title,
+	.navbar-dropdown-wrapper.open .navbar-dropdown-title-mobile {
+		margin-top: 5px;
+	}
+
 	//end of dropdowns
 	.sidebar {
-		bottom: 0;
+		bottom: 0;  // uncomment
 		width: 100%;
+		.sidebar-items {
+			display: none;
+	
+		}
 
 		.navbar-items {
 			border: none;
+			// width: 100%; //Navigation bar content
 		}
 
 	}
-
-	.sidebar-items {
-		display: none;
-
-	}
-
 
 	footer {
 		flex-direction: column;
