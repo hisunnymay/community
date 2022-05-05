@@ -20,8 +20,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/NavbarBrand.vue': path.resolve(__dirname, './components/navbar/NavbarBrand.vue'),
     '@theme/NavbarDropdown.vue': path.resolve(__dirname, './components/navbar/NavbarDropdown.vue'),
     '@theme/AutoLink.vue' : path.resolve(__dirname, './components/AutoLink/AutoLink.vue'),
-
+    '@theme/Sidebar.vue': path.resolve(__dirname, './components/sidebar/Sidebar.vue'),
+    '@theme/SidebarItem.vue':path.resolve(__dirname, './components/sidebar/SidebarItem.vue')
   },
+
 
   head: [
     [
@@ -62,7 +64,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
     ],
     ['meta', { name: 'msapplication-TileColor', content: '#4282fd' }],
-    ['meta', { name: 'theme-color', content: '--c-bg' }],
+    ['meta', { name: 'theme-color', content: '#4282fd' }],
   ],
 
 

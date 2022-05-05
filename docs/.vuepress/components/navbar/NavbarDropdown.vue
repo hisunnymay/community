@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import AutoLink from '@theme/AutoLink.vue'
 import DropdownTransition from '@theme/DropdownTransition.vue'
-import { computed, ref, toRefs, watch } from 'vue'
-import type { PropType } from 'vue'
+import { computed, ref, toRefs, watch, onMounted } from 'vue'
+import type { PropType, } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavbarItem, ResolvedNavbarItem } from '../../shared'
 const props = defineProps({
@@ -12,27 +12,29 @@ const props = defineProps({
   },
 })
 const { item } = toRefs(props)
+
 const dropdownAriaLabel = computed(
   () => item.value.ariaLabel || item.value.text
 )
 const open = ref(true)
-if (window.screen.width < 720) {
-  open.value = true
-} else {
+
   open.value = false
-}
+
 const route = useRoute()
 watch(
   () => route.path,
   () => {
-    if (window.screen.availWidth < 720) {
         open.value = true
-    } else {
       open.value = false
-    }
   }
 )
+onMounted(() => {
+   if (window.innerWidth < 720) {
+        open.value = true
+    }
+ 
 
+})
 const handleDropdown = (e): void => {
   const isTriggerByTab = e.detail === 0
   if (window.screen.availWidth < 720) {
@@ -43,8 +45,11 @@ const handleDropdown = (e): void => {
     open.value = false
   }
 }
+
 const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
   arr[arr.length - 1] === item
+
+
 </script>
 
 <template>
@@ -56,7 +61,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
       @click="handleDropdown"
     >
       <span class="title">{{ item.text }}</span>
-      <!-- <span class="arrow down" /> -->
+      <span class="arrow down" />
     </button>
 
     <button

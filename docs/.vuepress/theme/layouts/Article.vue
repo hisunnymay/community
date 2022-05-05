@@ -22,7 +22,6 @@ import ArticleList from "../components/ArticleList.vue";
 import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
 import Footer from "../../components/page/footer.vue"
 const articles = useBlogType("article");
-console.log(articles.value)
 </script>
 <style lang="scss"  scoped>
 h1{
