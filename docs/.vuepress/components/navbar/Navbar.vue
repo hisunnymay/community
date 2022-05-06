@@ -5,13 +5,21 @@ import ToggleDarkModeButton from '@theme/ToggleDarkModeButton.vue'
 import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
 import { computed, onMounted, ref } from 'vue'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
+import { doc } from 'prettier'
 // import {  usePageFrontmatter } from '@vuepress/client'
-
 defineEmits(['toggle-sidebar'])
 // const frontmatter =  usePageFrontmatter()
-// console.log(frontmatter.value)
+
 const themeLocale = useThemeLocaleData()
 const navbar = ref<HTMLElement | null>(null)
+
+// refs for menu bar
+const navigationMenu = ref<HTMLElement | null>(null)
+const lastToggleLine = ref<HTMLElement | null>(null)
+const middleToggleLine = ref<HTMLElement | null>(null)
+const firstToggleLine = ref<HTMLElement | null>(null)
+
+
 const navbarBrand = ref<HTMLElement | null>(null)
 const linksWrapperMaxWidth = ref(0)
 const linksWrapperStyle = computed(() => {
@@ -23,14 +31,16 @@ const linksWrapperStyle = computed(() => {
   }
 })
 
+
 // const ToggleMenu = () => {
-//   const navigationMenu = document.getElementById('navbar-items-right')
-//   navigationMenu.classList.toggle('slide-in-menu')
-//   document.querySelector(".last").classList.toggle('transform-last')
-//   document.querySelector(".first").classList.toggle('transform-first')
-//   document.querySelector(".middle").classList.toggle('transform-middle')
+//   if(typeof document !== undefined){
 
-
+//     const navigationMenu = document.getElementById('navbar-items-right')
+//     navigationMenu.classList.toggle('slide-in-menu')
+//     document.querySelector(".last").classList.toggle('transform-last')
+//     document.querySelector(".first").classList.toggle('transform-first')
+//     document.querySelector(".middle").classList.toggle('transform-middle')
+//   }
 
 // }
 // const checkPage = () => {
@@ -49,6 +59,7 @@ const linksWrapperStyle = computed(() => {
 //     return true
 //   }
 // }
+
 
 const enableDarkMode = computed(() => themeLocale.value.darkMode)
 onMounted(() => {
@@ -105,11 +116,11 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <slot name="after" />
 
       <ToggleDarkModeButton v-if="enableDarkMode" />
-      <!-- <div class="toggle-menu" @click="ToggleMenu" role="button">
-        <span class="first"></span>
-        <span class="middle"></span>
-        <span class="last"></span>
-      </div> -->
+      <div class="toggle-menu" @click="ToggleMenu" role="button">
+        <span ref="firstToggleLine" class="first"></span>
+        <span ref="middleToggleLine" class="middle"></span>
+        <span ref="lastToggleLine " class="last"></span>
+      </div>
 
       <NavbarSearch />
     </div>
@@ -128,66 +139,66 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     color: var(--c-bg);
   }
 }
-// @media (max-width: 719px) {
-//   .toggle-menu  span:nth-child(2){
-//     width: 90%;
-//     margin: 6px 0;
-//   }
-//   .toggle-menu {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: flex-end;
-//     width: 1.25rem;
-//     height: 1.25rem;
-//     align-self: center;
-//     cursor: pointer;
-//     margin-left: 10px;
-//     position: relative;
-//     span {
-//       display: inline-block;
-//       width: 100%;
-//       height: 1px;
-//       border-radius: 2px;
-//       background: var(--c-text);
-//       transition: 0.01s ease-in-out;
-//       // position:absolute;
-//       // transform: var(--t-transform);
+@media (max-width: 719px) {
+  .toggle-menu  span:nth-child(2){
+    width: 90%;
+    margin: 6px 0;
+  }
+  .toggle-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 1.25rem;
+    height: 1.25rem;
+    align-self: center;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    span {
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      border-radius: 2px;
+      background: var(--c-text);
+      transition: 0.01s ease-in-out;
+      // position:absolute;
+      // transform: var(--t-transform);
       
-//     }
-//   }
-//   .navbar-items-wrapper-links {
-//     background: var(--c-bg);
-//     height: fit-content;
-//     display: flex;
-//     flex-direction: column;
-//     z-index: 9999;
-//     width: 100%;
-//     padding: 15px;
-//     transition: 0.5s ease-out;
-//     position: fixed;
-//     top: var(--navbar-height);
-//     height: 100%;
-//     transform: translateX(100%);
-//   }
-//   .slide-in-menu {
-//     transform: translateX(-70%);
-//   }
-//   .transform-first{
-//     transform: rotate(45deg) translate3d(5.5px, 5.5px, 0);
-//     // top: 3px;
+    }
+  }
+  .navbar-items-wrapper-links {
+    background: var(--c-bg);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    width: 100%;
+    padding: 15px;
+    transition: 0.5s ease-out;
+    position: fixed;
+    top: var(--navbar-height);
+    height: 100%;
+    transform: translateX(100%);
+  }
+  .slide-in-menu {
+    transform: translateX(-70%);
+  }
+  .transform-first{
+    transform: rotate(45deg) translate3d(5.5px, 5.5px, 0);
+    // top: 3px;
     
-//   }
-//   .transform-last{
-//     transform: rotate(-45deg) translate3d(5px, -5px, 0);
-//     // transform: rotate(135deg);
-//     // top: 6;
-//   }
-//   .transform-middle{
-//     transform: translateY(-30px);
-//     // width: 1px;
-//     // display: none;
+  }
+  .transform-last{
+    transform: rotate(-45deg) translate3d(5px, -5px, 0);
+    // transform: rotate(135deg);
+    // top: 6;
+  }
+  .transform-middle{
+    transform: translateY(-30px);
+    // width: 1px;
+    // display: none;
   
-//   }
-// }
+  }
+}
 </style>
