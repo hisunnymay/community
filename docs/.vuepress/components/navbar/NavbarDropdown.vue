@@ -35,6 +35,11 @@ onMounted(() => {
  
 
 })
+const LinkIcon = (icon)=>{
+    if(icon){
+        return `../../images/${icon}`
+    }
+}
 const handleDropdown = (e): void => {
   const isTriggerByTab = e.detail === 0
   if (window.screen.availWidth < 720) {
@@ -93,8 +98,11 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
                       (open = false)
                   "
                 />
-
-                <span v-else>{{ child.text }}</span>
+   <div class="linkicon-text" id="subtitle-link-icon" v-else>
+    <img v-show="child.icon" class="linkicon" :src="LinkIcon(child.icon)" :alt="item.icon">
+    {{ child.text }}
+    </div>
+                <!-- <span v-else>{{ child.text }}</span> -->
               </h4>
 
               <ul class="navbar-dropdown-subitem-wrapper">
@@ -129,3 +137,9 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
     </DropdownTransition>
   </div>
 </template>
+<style scoped>
+#subtitle-link-icon{
+  padding: 0 1.5rem 0 1.25rem;
+
+}
+</style>

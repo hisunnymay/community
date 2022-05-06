@@ -116,11 +116,11 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <slot name="after" />
 
       <ToggleDarkModeButton v-if="enableDarkMode" />
-      <div class="toggle-menu" @click="ToggleMenu" role="button">
+      <!-- <div class="toggle-menu" @click="ToggleMenu" role="button">
         <span ref="firstToggleLine" class="first"></span>
         <span ref="middleToggleLine" class="middle"></span>
         <span ref="lastToggleLine " class="last"></span>
-      </div>
+      </div> -->
 
       <NavbarSearch />
     </div>

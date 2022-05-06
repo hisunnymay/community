@@ -13,7 +13,6 @@ export const en = [
     children: [
       {
         text: 'Annotations',
-        icon: "/featureIcons/cui.svg",
         children: [
           {
           link:'/reference/annotations/overview.md',

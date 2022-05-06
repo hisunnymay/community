@@ -9,9 +9,7 @@ defineProps({
 <template>
   <div class="main">
     <div class="top-info">
-      <p class="pricing" v-if="frontmatter.topsubtitle">
-        {{ frontmatter.topsubtitle }}
-      </p>
+ 
       <h1 v-if="frontmatter.title">{{ frontmatter.title }}</h1>
       <p v-if="frontmatter.tagline">{{ frontmatter.tagline }}</p>
     </div>
@@ -21,14 +19,14 @@ defineProps({
         <div class="card-head">
           <h2 v-if="card.package">{{ card.package }}</h2>
           <div class="price-badge">
-            <h1 v-if="card.price">{{ card.price }}</h1>
+            <h3 v-if="card.price">{{ card.price }}</h3>
             <span v-if="card.badge" class="badge-price">{{ card.badge }}</span>
           </div>
           <p v-if="card.tagline">{{ card.tagline }}</p>
         </div>
         <div class="card-body">
           <ul>
-            <li v-for="list in card.features" :key="list">{{ list }}</li>
+            <li v-for="list in card.features" :key="list"><p>{{ list }}</p></li>
           </ul>
         </div>
         <div class="card-footer">
@@ -71,44 +69,41 @@ defineProps({
 </template>
 <style lang="scss" scoped>
 footer{
-    width: 90% !important;
+    width: var(--homepage-width);
     margin: auto;
 }
 .main {
-  width: 100%;
+  width: var(--homepage-width);
   position: relative;
   margin-top: 30px;
   display: flex;
+  margin: auto;
+
   flex-direction: column;
   .top-info {
     margin: auto;
     text-align: center;
-    // width: 70%;
+    h1{
+      font-weight: normal;
+    }
   }
 
   .cards {
     margin: auto;
-
     display: grid;
-    // margin-left: 10px;
-    // margin-right: 10px;
-    // width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
-    padding: 2em;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
 
     .card {
       border: 1px solid var(--c-border);
-      //       margin-left: 10px;
-      // margin-right: 10px;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
       padding: 1em;
-      min-width: 350px;
+      margin: 2px;
       .price-badge {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         .badge-price {
           background: var(--c-icon);
           padding: 2px 5px;
@@ -122,6 +117,9 @@ footer{
         width: 90%;
         margin: auto;
         border-bottom: 1px solid var(--c-border);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         h2 {
           border: none;
         }
@@ -149,19 +147,21 @@ footer{
         ul {
           list-style: none;
           height: 100%;
-          min-height: fit-content;
+          // min-height: fit-content;
 
           li {
             height: 30px;
             padding-top: 0.5em;
-            padding-bottom: 0.5em;
+            margin: 20px 0;
+            // padding-bottom: 0.5em;
+            
           }
         }
       }
     }
   }
 }
-@media (max-width: 959px) {
+@media (max-width: 719px) {
   .main {
     width: 100%;
     .cards {
@@ -172,7 +172,7 @@ footer{
       padding: 0;
       .card {
         width: 90%;
-        min-width: fit-content;
+        // min-width: fit-content;
         ul {
           li {
             margin-top: 10px;
