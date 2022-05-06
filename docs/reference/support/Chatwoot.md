@@ -86,13 +86,13 @@ When you enable Chatwoot in a chatbot, we will create an inbox connected to the 
 
 ![An image](/images/Chatwoot/Configuration_3_2.png)
 
-### Add Teams <Badge text="Chatwoot" />
+### Add Teams 
 
 When the conversation is assigned to a team, the agents in the team can carry on the conversation. See [Add Teams | Chatwoot](https://www.chatwoot.com/docs/user-guide/add-teams-settings) to learn how to add an agent to the team.
 
 
 
-### Set Up Routing Priority <Badge text="Framely" />
+### Set Up Routing Priority 
 
 To make intent based routing work, you need to set up routing priority. When there are unfinished intents in the conversation, we follow routing priority to decide which team we should route the conversation to. If an unfinished intent is one of the associate intents in routing priority, we route the conversation to the corresponding team. Otherwise, we route the conversation to default team. Follow these steps to set up routing priority.
 
