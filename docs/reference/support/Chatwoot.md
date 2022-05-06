@@ -27,6 +27,15 @@ When a user demands talking to a human agent, we can forward the conversation to
 ## Configuration
 Now you can follow these steps to integrate your chatbots with Chatwoot.
 
+
+### Enable Chatwoot 
+
+1. From the chatbot page, click **Setting** > **Integrations**. In the **Support** field, enable **Chatwoot**.
+
+![An image](/images/Chatwoot/Configuration_1_1.png)
+
+2. Check your email then log into [Chatwoot](https://chatwoot.naturali.io/) account with the given user name and password.
+
 ### Add Agents 
 
 When you enable Chatwoot, we create a Chatwoot organization and add all the owners in your organization to it. The owners added to Chatwoot organization are called agents which are set as administrators by default.
@@ -48,7 +57,13 @@ The role of BotAgent1 should always be administadministrator. Otherwise, agents 
 
 When you enable Chatwoot in a chatbot, we will create an inbox named after the chatbot and connect the inbox to the chatbot. When you deploy the chatbot to a channel and end-users send messages to the chatbot through that channel, you can get the conversation in the corresponding inbox. 
 
+
 Follow these steps to add an agent to the inbox so when it's needed agents can carry on the conversation.
+
+### Set Up Inbox 
+
+When you enable Chatwoot in a chatbot, we will create an inbox connected to the chatbot. When you deploy the chatbot to a channel and end-users send messages to the chatbot through that channel, you can get the conversation in the corresponding inbox. Follow these steps to add an agent to the inbox so when it's needed agents can carry on the conversation.
+
 
 1. Click **Inboxes** > **Settings**
 
@@ -65,7 +80,9 @@ When the conversation is assigned to a team, the agents in the team can carry on
 
 
 
+
 ## How to Get Team Id
 In the **Conversations** field, select a team. The last number in current url is the id of this team. As shown, the id of **team a** is 47.
 
 ![get-team-id](/images/Chatwoot/get-team-id.png)
+
