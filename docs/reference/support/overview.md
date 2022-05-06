@@ -19,5 +19,43 @@ To reduce the effort level on the user side, it is important that we route user 
 
 In the Framely hosted environment, we mainly interested in the external mode, currently we provide the great open source support system chatwoot as the only option, but this can change when someone starts to build the connection with other system and open source it. 
 
+
 ### Intent Based Routing under external mode
 To reduce the effort level on the user side, we support the conversation routing based on user intent. Essentially, user intents are grouped into multiple set, each maps to a particular team. When there are unfinished intent in the conversation, that intent can be used to decide which team should we route the conversation to, based on the builder supplied the information. when there are no unfinished intent, we can also ask user to provide one, so that they can be transferred to right team directly.
+
+## Configure Support
+
+### Before You Begin
+
+1. Make sure all the owners in your organization have verified their emails first otherwise you won't be able to get support of Chatwoot.
+
+::: tip How to Verify Your Email?
+1. Click on your avatar in the top right corner and click on your name.
+2. Click "!" icon in the **E-mail** box and follow the instructions to verify your email.
+   :::
+
+
+2. Make sure you have configured your channel first. Learn more about channel configuration, see [WeChat Official Account](https://www.framely.ai/reference/channels/wpa.html#before-you-begin).
+
+3. We show here how to integrate your chatbots with Chatwoot in Framely hosted environment. For private deploy, please consult systems in your organization.
+
+### Enable Chatwoot
+
+1. Click **Setting** > **Integrations**. In the **Support** field, enable **Chatwoot**.
+
+![enable-chatwoot](/images/Chatwoot/enable-chatwoot.png)
+
+2. If you enable Chatwoot for the first time in your organization, check your email to get your user name and password so you can log into [Chatwoot](https://chatwoot.naturali.io/).
+
+### Set Up Routing Priority
+
+To make intent based routing work, you need to set up routing priority. When there are unfinished intents in the conversation, we follow routing priority to decide which team we should route the conversation to. If an unfinished intent is one of the associate intents in routing priority, we route the conversation to the corresponding team. Otherwise, we route the conversation to default team.\
+Follow these steps to set up routing priority.
+
+1. Click **Setting** > **Routing Priority** > **Default**, input team id of the default team. To get team id, see [How to Get Team Id](/reference/support/Chatwoot.html#how-to-get-team-id).
+2. Click **add** to add more teams. Input the name of intent in **Associate intent** box.
+
+![routing-priority](/images/Chatwoot/routing-priority.png)
+
+
+[enable-chatwoot]: /images/Chatwoot/enable-chatwoot.png
