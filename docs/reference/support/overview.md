@@ -58,4 +58,3 @@ Follow these steps to set up routing priority.
 ![routing-priority](/images/Chatwoot/routing-priority.png)
 
 
-[enable-chatwoot]: /images/Chatwoot/enable-chatwoot.png
