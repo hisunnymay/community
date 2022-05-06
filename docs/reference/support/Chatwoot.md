@@ -25,7 +25,7 @@ When a user demands talking to a human agent, we can forward the conversation to
 
 
 ## Configuration
-Now you can follow these steps to integrate your chatbots with Chatwoot.
+Now you can follow these steps to configure your account in Chatwoot.
 
 ### Add Agents 
 
