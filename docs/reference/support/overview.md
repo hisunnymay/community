@@ -1,4 +1,4 @@
-# Support
+# Overview
 
 We understand no matter how well you build your chatbot, there will always be user requests that is beyond the design and implementation scope, and we need to handoff the conversation to human support team. Support is a software where human agent can handle the conversation when bot failed or upon user requirement. Framely understand that your human support team already have their favorite support software, so instead of reinventing wheels, Framely is designed to play well with others when it comes to support system, as long as they can provide some basic APIs. 
 
@@ -19,5 +19,5 @@ To reduce the effort level on the user side, it is important that we route user 
 
 In the Framely hosted environment, we mainly interested in the external mode, currently we provide the great open source support system chatwoot as the only option, but this can change when someone starts to build the connection with other system and open source it. 
 
-## Intent Based Routing under external mode
+### Intent Based Routing under external mode
 To reduce the effort level on the user side, we support the conversation routing based on user intent. Essentially, user intents are grouped into multiple set, each maps to a particular team. When there are unfinished intent in the conversation, that intent can be used to decide which team should we route the conversation to, based on the builder supplied the information. when there are no unfinished intent, we can also ask user to provide one, so that they can be transferred to right team directly.
