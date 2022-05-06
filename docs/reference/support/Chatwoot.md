@@ -41,7 +41,7 @@ When a user demands talking to a human agent, we can forward the conversation to
 ## Configuration
 Now you can follow these steps to integrate your chatbots with Chatwoot.
 
-### Enable Chatwoot <Badge text="Framely" />
+### Enable Chatwoot 
 
 1. From the chatbot page, click **Setting** > **Integrations**. In the **Support** field, enable **Chatwoot**.
 
@@ -49,7 +49,7 @@ Now you can follow these steps to integrate your chatbots with Chatwoot.
 
 2. Check your email then log into [Chatwoot](https://chatwoot.naturali.io/) account with the given user name and password.
 
-### Add Agents <Badge text="Chatwoot" />
+### Add Agents 
 
 When you enable Chatwoot, we create a Chatwoot organization and add all the owners in your organization to it. The owners added to Chatwoot organization are called agents which are set as administrators by default.
 
@@ -73,7 +73,7 @@ BotAgent1 should always be an administadministrator. Otherwise, conversation can
 
 
 
-### Set Up Inbox <Badge text="Chatwoot" />
+### Set Up Inbox 
 
 When you enable Chatwoot in a chatbot, we will create an inbox connected to the chatbot. When you deploy the chatbot to a channel and end-users send messages to the chatbot through that channel, you can get the conversation in the corresponding inbox. Follow these steps to add an agent to the inbox so when it's needed agents can carry on the conversation.
 
@@ -105,4 +105,5 @@ In Conversation field, click a team, and the last number in current url is the i
 ![An image](/images/Chatwoot/Configuration_5_1.png)
 :::
 
-
+hhh
+hhhhhhhh
