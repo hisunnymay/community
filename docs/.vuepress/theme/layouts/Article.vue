@@ -1,7 +1,7 @@
 <template>
   <ParentLayout>
     <template #page>
-      <main class="page">
+      <main class="page article-page">
         <div class="intro">
           <div class="title">
             <h1>Framely Blog</h1>
@@ -24,6 +24,10 @@ import Footer from "../../components/page/footer.vue"
 const articles = useBlogType("article");
 </script>
 <style lang="scss"  scoped>
+.article-page{
+  width: var(--homepage-width);
+  margin: auto;
+}
 h1{
   font-weight: normal;
 }

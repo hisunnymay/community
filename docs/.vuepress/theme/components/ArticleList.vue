@@ -66,7 +66,7 @@ defineProps({
     row-gap: 100px;
     column-gap: 50px;
 
-  width: 80%;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
   .article {
     width: 1fr;

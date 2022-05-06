@@ -114,7 +114,7 @@ const isActive = computed(() => {
     <slot name="after" />
   </a>
 </template>
-<style scoped lang="scss">
+<style  lang="scss">
 #router-link{
     display: flex;
     flex-direction: column;
