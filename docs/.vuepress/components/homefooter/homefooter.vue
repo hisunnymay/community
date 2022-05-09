@@ -1,5 +1,3 @@
-
-  
 <template>
 <div class="main">
 <section class="footer">
