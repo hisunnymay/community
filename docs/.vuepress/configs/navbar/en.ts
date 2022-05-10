@@ -23,7 +23,7 @@ export const en = [
           {
             link:'/reference/annotations/vr.md',
             icon:"/featureIcons/hotfix.svg",
-            text:"value Recommendation"
+            text:"Value Recommendation"
           },
           {
             link:'/reference/annotations/confirmation.md',
@@ -51,7 +51,7 @@ export const en = [
     ],
   },
   {
-    text:"pricing",
+    text:"Pricing",
     link:"/pricing/"
   },
   {

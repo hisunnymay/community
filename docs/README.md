@@ -61,6 +61,7 @@ cta :
   - details: Great conversational user experiences for masses.
     title: Start Project
     link: https://framely.naturali.io
+    
 footer: <section class="footer-small">
         <div class="links">
         <div class="social">
