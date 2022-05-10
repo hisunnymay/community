@@ -17,7 +17,7 @@ const cta = computed(() => {
     <div v-for="cta in cta" :key="cta.details">
       <h2>{{ cta.details }}</h2>
       <a :href="cta.link" target="_blank" rel="noopener noreferrer">
-          <button class="button-medium">{{cta.title}}</button>
+          <button class="button-small">{{cta.title}}</button>
       </a>
     </div>
   </div>
@@ -40,18 +40,6 @@ const cta = computed(() => {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
         }
-        //a{
-            // button{
-            //     background: var(--c-brand);
-            //     outline: none;
-            //     cursor: pointer;
-            //     border: none;
-            //     padding: 12px;
-            //     border-radius: 5px;
-            //     color: var(--c-bg);
-            //     font-size: 1.1em;
-            // }
-       // }
     }
 }
 
