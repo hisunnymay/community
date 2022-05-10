@@ -2,7 +2,7 @@
 	scroll-behavior: smooth;
 
 	--c-brand: #4282fd;
-	--c-brand-light: #1295f7;
+	--c-brand-light: #5F95FE;
 
 	//icon
 
@@ -34,7 +34,7 @@
 	--c-border-dark: #dfe2e5;
 
 	// custom container colors
-	--c-tip: #42b983;
+	--c-tip: var(--c-brand-light);
 	--c-tip-bg: var(--c-bg-light);
 	--c-tip-title: var(--c-text);
 	--c-tip-text: var(--c-text);
@@ -86,7 +86,7 @@
 html.dark {
 	// brand colors
 	--c-brand: #4282fd;
-	--c-brand-light: #1295f7;
+	--c-brand-light: #5F95FE;
 
 	//icon 
 
@@ -113,7 +113,7 @@ html.dark {
 	--c-border-dark: #34404c;
 
 	// custom container colors
-	--c-tip: #318a62;
+	--c-tip: var(--c-brand-light);
 	--c-warning: #ceab00;
 	--c-warning-bg: #7e755b;
 	--c-warning-title: #ceac03;
@@ -150,13 +150,23 @@ html.dark {
 	border: 1px solid var(--c-brand);
 	background: var(--c-brand);
 	color: var(--c-bg);
+	transition: all 0.5s ease-out;
 	cursor: pointer;
+}
+.button-small:hover {
+	background: var(--c-brand-light);
+	border-color: var(--c-brand-light);
 }
 
 .button-small.secondary {
 	color: var(--c-brand);
 	background-color: var(--c-bg);
 	border-color: var(--c-brand);
+}
+.button-small.secondary:hover {
+	color: var(--c-bg);
+	background: var(--c-brand-light);
+	border-color: var(--c-brand-light);
 }
 
 .button-medium {
@@ -168,6 +178,11 @@ html.dark {
 	background: var(--c-brand);
 	color: var(--c-bg);
 	text-align: center;
+	cursor: pointer;
+}
+.button-medium:hover {
+	background: var(--c-brand-light);
+	border-color: var(--c-brand-light);
 }
 
 .button-large {
