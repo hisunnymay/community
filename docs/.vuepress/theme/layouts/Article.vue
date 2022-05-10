@@ -36,6 +36,10 @@ const articles = useBlogType("article");
     padding-left: 12px;
     padding-right: 12px;
   }
+  .article-page{
+  width: 100%;
+  margin: auto;
+}
 }
 
 </style>
