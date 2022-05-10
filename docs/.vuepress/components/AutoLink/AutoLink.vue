@@ -66,10 +66,10 @@ const isActiveInSubpath = computed(() => {
   }
   return route.path.startsWith(item.value.link)
 })
-const LinkIcon = computed(()=>{
-    if(item.value.icon){
-        return `../../images/${item.value.icon}`
-    }
+const LinkIcon = computed(() => {
+  if (item.value.icon) {
+    return `../../images/${item.value.icon}`
+  }
 })
 // if this link is active
 const isActive = computed(() => {
@@ -81,6 +81,16 @@ const isActive = computed(() => {
   }
   return isActiveInSubpath.value
 })
+const RemoveSidebar = () => {
+  if (typeof document !== undefined) {
+    document
+      .getElementById('navbar-items-right')
+      .classList.remove('slide-in-menu')
+    document.querySelector('.last').classList.remove('transform-last')
+    document.querySelector('.first').classList.remove('transform-first')
+    document.querySelector('.middle').classList.remove('transform-middle')
+  }
+}
 </script>
 
 <template>
@@ -91,11 +101,12 @@ const isActive = computed(() => {
     :to="item.link"
     :aria-label="linkAriaLabel"
     v-bind="$attrs"
+    @click="RemoveSidebar"
   >
     <slot name="before" />
     <div class="linkicon-text">
-    <img v-if="item.icon" class="linkicon" :src="LinkIcon" :alt="item.icon">
-    {{ item.text }}
+      <img v-if="item.icon" class="linkicon" :src="LinkIcon" :alt="item.icon" />
+      {{ item.text }}
     </div>
     <slot name="after" />
   </RouterLink>
@@ -109,37 +120,36 @@ const isActive = computed(() => {
     v-bind="$attrs"
   >
     <slot name="before" />
-     {{ item.text }}
+    {{ item.text }}
     <AutoLinkExternalIcon v-if="isBlankTarget" />
     <slot name="after" />
   </a>
 </template>
 <style  lang="scss">
-#router-link{
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
+#router-link {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
 }
-.linkicon{
-    width: 14px;
-    height: 14px;
-    margin-right: 5px;
-    background: var(--c-icon); 
-    padding: 2px;
-    border-radius: 50%;
+.linkicon {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  background: var(--c-icon);
+  padding: 2px;
+  border-radius: 50%;
 }
-.linkicon-text{
+.linkicon-text {
   display: flex;
   align-items: center;
 }
 // @media (max-width:719px){
-  
+
 //   .navbar-dropdown-title{
 //     .title{
 
 //       padding: 3px;
 //     }
-
 
 //   }
 // }

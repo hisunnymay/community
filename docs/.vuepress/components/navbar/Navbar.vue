@@ -6,9 +6,9 @@ import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
 import { computed, onMounted, ref } from 'vue'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 import { doc } from 'prettier'
-// import {  usePageFrontmatter } from '@vuepress/client'
+import {  usePageFrontmatter } from '@vuepress/client'
 defineEmits(['toggle-sidebar'])
-// const frontmatter =  usePageFrontmatter()
+const frontmatter =  usePageFrontmatter()
 
 const themeLocale = useThemeLocaleData()
 const navbar = ref<HTMLElement | null>(null)
@@ -32,33 +32,19 @@ const linksWrapperStyle = computed(() => {
 })
 
 
-// const ToggleMenu = () => {
-//   if(typeof document !== undefined){
+const ToggleMenu = () => {
+    if(typeof document !== undefined){
 
-//     const navigationMenu = document.getElementById('navbar-items-right')
-//     navigationMenu.classList.toggle('slide-in-menu')
-//     document.querySelector(".last").classList.toggle('transform-last')
-//     document.querySelector(".first").classList.toggle('transform-first')
-//     document.querySelector(".middle").classList.toggle('transform-middle')
-//   }
 
-// }
-// const checkPage = () => {
-//   if(frontmatter.value.home){
-//     return false
-//   }
-//   else if(!frontmatter.value.sidebar){
-//     return false
-//   }
-//   else if(frontmatter.value.pricing){
-//     return false
-//   }else if(frontmatter.value.article){
-//     return false
-//   }
-// else{
-//     return true
-//   }
-// }
+    const navigationMenu = document.getElementById('navbar-items-right')
+    navigationMenu.classList.toggle('slide-in-menu')
+    document.querySelector(".last").classList.toggle('transform-last')
+    document.querySelector(".first").classList.toggle('transform-first')
+    document.querySelector(".middle").classList.toggle('transform-middle')
+  }
+
+}
+
 
 
 const enableDarkMode = computed(() => themeLocale.value.darkMode)
@@ -91,11 +77,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </script>
 
 <template>
-  <!-- <header ref="navbar" :style="[checkPage() ? {'padding-left':'4rem'}:{'padding-left':'20px'}]" class="navbar"> -->
   <header ref="navbar"  class="navbar">
-    <!-- <ToggleSidebarButton v-show="checkPage()" @toggle="$emit('toggle-sidebar')" /> -->
-    <ToggleSidebarButton  @toggle="$emit('toggle-sidebar')" />
-
 
     <span ref="navbarBrand">
       <NavbarBrand />
@@ -103,8 +85,8 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 
     <div class="navbar-items-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
-      <NavbarItems class="can-hide" />
-      <!-- <NavbarItems id="navbar-items-right" class="navbar-items-wrapper-links" /> -->
+      <!-- <NavbarItems class="can-hide" /> -->
+      <NavbarItems id="navbar-items-right" class="navbar-items-wrapper-links" />
       <button class="button can-hide">
         <a
           href="http://framely.naturali.io"
@@ -116,17 +98,20 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <slot name="after" />
 
       <ToggleDarkModeButton v-if="enableDarkMode" />
-      <!-- <div class="toggle-menu" @click="ToggleMenu" role="button">
+      <div class="toggle-menu" @click="ToggleMenu" role="button">
         <span ref="firstToggleLine" class="first"></span>
         <span ref="middleToggleLine" class="middle"></span>
         <span ref="lastToggleLine " class="last"></span>
-      </div> -->
+      </div>
 
       <NavbarSearch />
     </div>
   </header>
 </template>
 <style lang="scss" scoped>
+.navbar{
+  padding-left: 10px;
+}
 .button {
   margin-left: 20px;
   padding: 0 16px;

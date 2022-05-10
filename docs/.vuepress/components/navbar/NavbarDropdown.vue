@@ -2,7 +2,7 @@
 import AutoLink from '@theme/AutoLink.vue'
 import DropdownTransition from '@theme/DropdownTransition.vue'
 import { computed, ref, toRefs, watch, onMounted } from 'vue'
-import type { PropType, } from 'vue'
+import type { PropType } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavbarItem, ResolvedNavbarItem } from '../../shared'
 const props = defineProps({
@@ -18,27 +18,31 @@ const dropdownAriaLabel = computed(
 )
 const open = ref(true)
 
-  open.value = false
+open.value = false
 
 const route = useRoute()
 watch(
   () => route.path,
   () => {
+    if (typeof window !== undefined) {
+      if (window.innerWidth < 720) {
         open.value = true
-      open.value = false
+      } else {
+        open.value = false
+      }
+    }
+    // open.value = true
   }
 )
 onMounted(() => {
-   if (window.innerWidth < 720) {
-        open.value = true
-    }
- 
-
+  if (window.innerWidth < 720) {
+    open.value = true
+  }
 })
-const LinkIcon = (icon)=>{
-    if(icon){
-        return `../../images/${icon}`
-    }
+const LinkIcon = (icon) => {
+  if (icon) {
+    return `../../images/${icon}`
+  }
 }
 const handleDropdown = (e): void => {
   const isTriggerByTab = e.detail === 0
@@ -53,8 +57,6 @@ const handleDropdown = (e): void => {
 
 const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
   arr[arr.length - 1] === item
-
-
 </script>
 
 <template>
@@ -80,7 +82,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
     </button>
 
     <DropdownTransition>
-      <div  v-show="open" class="navbar-dropdown">
+      <div v-show="open" class="navbar-dropdown">
         <ul class="navbar-dropdown-block">
           <li
             v-for="child in item.children"
@@ -98,10 +100,15 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
                       (open = false)
                   "
                 />
-   <div class="linkicon-text" id="subtitle-link-icon" v-else>
-    <img v-show="child.icon" class="linkicon" :src="LinkIcon(child.icon)" :alt="item.icon">
-    {{ child.text }}
-    </div>
+                <div class="linkicon-text" id="subtitle-link-icon" v-else>
+                  <img
+                    v-show="child.icon"
+                    class="linkicon"
+                    :src="LinkIcon(child.icon)"
+                    :alt="item.icon"
+                  />
+                  {{ child.text }}
+                </div>
                 <!-- <span v-else>{{ child.text }}</span> -->
               </h4>
 
@@ -138,8 +145,7 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
   </div>
 </template>
 <style scoped>
-#subtitle-link-icon{
+#subtitle-link-icon {
   padding: 0 1.5rem 0 1.25rem;
-
 }
 </style>

@@ -7,8 +7,20 @@ import { usePageData, usePageFrontmatter } from '@vuepress/client'
 import Footer from './footer.vue'
 import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
-const pageData = usePageData()
+import ToggleMenu from '../ToggleMenu/ToggleMenu.vue'
+const ToggleMenuSidebar = () => {
+  if (typeof document !== undefined) {
+    document.querySelector('.last-t').classList.toggle('last-transform')
+    document.querySelector('.first-t').classList.toggle('first-transform')
+    document.querySelector('.middle-t').classList.toggle('middle-transform')
+
+    const sidebar = document.querySelector('.theme-container')
+    sidebar.classList.toggle('sidebar-open')
+  }
+}
+
 defineEmits(['toggle-sidebar'])
+const pageData = usePageData()
 const frontmatter = usePageFrontmatter()
 const page = computed(() => {
   if (isArray(pageData.value.frontmatter)) {
@@ -19,41 +31,36 @@ const page = computed(() => {
 </script>
 
 <template>
-<div class="container">
+  <div class="container">
+    <main class="page">
+      <slot name="top" />
+      <Pricing v-if="frontmatter.pricing" :frontmatter="frontmatter" />
 
-  <main class="page">
-    <slot name="top" />
-    <Pricing v-if="frontmatter.pricing" :frontmatter=frontmatter />
+      <div v-else class="theme-default-content">
+        <ToggleMenu class="toggle" @click="ToggleMenuSidebar" />
+        <Content />
+      </div>
 
-    <div v-else class="theme-default-content">
-      <Content />
-      <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" style="background:blue;"/>
-    </div>
+      <PageMeta v-if="!frontmatter.pricing" />
 
-    <PageMeta  v-if="!frontmatter.pricing"/>
+      <PageNav v-if="!frontmatter.pricing" />
 
-    <PageNav v-if="!frontmatter.pricing" />
-    
-
-    <slot name="bottom" />
-    
-  </main>
-  <Footer />
-</div>
-
+      <slot name="bottom" />
+    </main>
+    <Footer />
+  </div>
 </template>
 <style scoped>
-/* .btn-toggle-content-sidebar{
+.toggle {
   position: fixed;
-  z-index: 9000;
   top: 10%;
   left: 0;
-  background: var(--c-icon);
-  outline: none;
-  border: none;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
+  transform: translateX(-10px);
+  background: var(--c-bg);
+  padding: 2px 10px;
+box-shadow:  2px 2px 4px var(--c-bg),
+             -2px -2px 4px var(--c-bg);
 
-} */
+
+}
 </style>
