@@ -40,6 +40,10 @@ h1{
     margin-left: 12px;
     margin-right: 12px;
   }
+  .article-page{
+  width: 100%;
+  margin: auto;
+}
 }
 
 </style>
