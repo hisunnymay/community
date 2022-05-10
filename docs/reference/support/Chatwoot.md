@@ -29,7 +29,7 @@ Now you can follow these steps to configure your account in Chatwoot.
 
 ### Add Agents 
 
-When you enable Chatwoot, we create a Chatwoot organization and add all the owners in your organization to it. The owners added to Chatwoot organization are called agents which are set as administrators by default.
+When you [enable Chatwoot](/reference/support/overview.html#enable-support), we create a Chatwoot organization and add all the owners in your organization to it. The owners added to Chatwoot organization are called agents which are set as administrators by default.
 ::: tip How to Manage Owners in Your Organization?
 1. Log into Framely account and enter your organization.
 2. Click **Settings** > **Internal Members**. Now You can view all the onwers and members in your organization.
@@ -62,7 +62,7 @@ Follow these steps to add an agent to the inbox so when it's needed agents can c
 
 ### Add Teams 
 
-When the conversation is assigned to a team, the agents in the team can carry on the conversation. See [Chatwoot - Add Teams](https://www.chatwoot.com/docs/user-guide/add-teams-settings) to learn how to add an agent to the team.
+When the conversation is assigned to a team, the agents in the team can carry on the conversation. See [Chatwoot - Add Teams](https://www.chatwoot.com/docs/user-guide/add-teams-settings) to learn how to add teams.
 
 
 
@@ -71,4 +71,3 @@ When the conversation is assigned to a team, the agents in the team can carry on
 In the **Conversations** field, select a team. The last number in current url is the id of this team. As shown, the id of **team a** is 47.
 
 ![get-team-id](/images/Chatwoot/get-team-id.png)
-

@@ -39,22 +39,29 @@ To reduce the effort level on the user side, we support the conversation routing
 
 3. We show here how to integrate your chatbots with Chatwoot in Framely hosted environment. For private deploy, please consult systems in your organization.
 
-### Enable Chatwoot
+### Enable Support
 
-1. Click **Setting** > **Integrations**. In the **Support** field, enable **Chatwoot**.
+Click **Setting** > **Integrations**. In the **Support** field, enable the support you need. To configure Chatwoot, see [Chatwoot Configuration](/reference/support/Chatwoot.html#configuration)
 
 ![enable-chatwoot](/images/Chatwoot/enable-chatwoot.png)
 
-2. If you enable Chatwoot for the first time in your organization, check your email to get your user name and password so you can log into [Chatwoot](https://chatwoot.naturali.io/).
+::: tip
+If you enable Chatwoot for the first time in your organization, check your email to get your user name and password so you can log into [Chatwoot](https://chatwoot.naturali.io/).
+:::
 
 ### Set Up Routing Priority
 
-To make intent based routing work, you need to set up routing priority. When there are unfinished intents in the conversation, we follow routing priority to decide which team we should route the conversation to. If an unfinished intent is one of the associate intents in routing priority, we route the conversation to the corresponding team. Otherwise, we route the conversation to default team.\
+To make intent based routing work, you need to set up routing priority. When there are unfinished intents in the conversation, we follow routing priority to decide which team we should route the conversation to.\
+If an unfinished intent is one of the associate intents in routing priority, we route the conversation to the corresponding team. Otherwise, we route the conversation to default team.
+
 Follow these steps to set up routing priority.
 
-1. Click **Setting** > **Routing Priority** > **Default**, input team id of the default team. To get team id, see [How to Get Team Id](/reference/support/Chatwoot.html#how-to-get-team-id).
-2. Click **add** to add more teams. Input the name of intent in **Associate intent** box.
+1. Click **Setting** > **Routing Priority** > **Default**, input team id of the default team. 
+2. If you have more than one team, click **add** to add more teams. The format of **Associate intent** is *Organization.Project.Intent*, e.g. *Demo.testChatbot.TestIntent*
 
 ![routing-priority](/images/Chatwoot/routing-priority.png)
 
+::: tip
+To get team id in Chatwoot, see [How to Get Team Id](/reference/support/Chatwoot.html#how-to-get-team-id).
+:::
 
