@@ -64,3 +64,4 @@ Follow these steps to set up routing priority.
 ::: tip
 To get team id in Chatwoot, see [How to Get Team Id](/reference/support/Chatwoot.html#how-to-get-team-id).
 :::
+
