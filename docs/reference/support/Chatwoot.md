@@ -71,4 +71,3 @@ When the conversation is assigned to a team, the agents in the team can carry on
 In the **Conversations** field, select a team. The last number in current url is the id of this team. As shown, the id of **team a** is 47.
 
 ![get-team-id](/images/Chatwoot/get-team-id.png)
-
