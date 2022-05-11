@@ -29,7 +29,7 @@ const itemClass = computed(() => ({
 }))
 
 const isOpen = ref(true)
-isOpen.value = false
+// isOpen.value = false
 
 const onClick = ref<(() => void) | undefined>(undefined)
 if (item.value.collapsible) {

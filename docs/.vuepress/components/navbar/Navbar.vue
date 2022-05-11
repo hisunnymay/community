@@ -6,9 +6,9 @@ import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue'
 import { computed, onMounted, ref } from 'vue'
 import { useThemeLocaleData } from '@vuepress/theme-default/lib/client/composables'
 import { doc } from 'prettier'
-import {  usePageFrontmatter } from '@vuepress/client'
+import { usePageFrontmatter } from '@vuepress/client'
 defineEmits(['toggle-sidebar'])
-const frontmatter =  usePageFrontmatter()
+const frontmatter = usePageFrontmatter()
 
 const themeLocale = useThemeLocaleData()
 const navbar = ref<HTMLElement | null>(null)
@@ -18,7 +18,6 @@ const navigationMenu = ref<HTMLElement | null>(null)
 const lastToggleLine = ref<HTMLElement | null>(null)
 const middleToggleLine = ref<HTMLElement | null>(null)
 const firstToggleLine = ref<HTMLElement | null>(null)
-
 
 const navbarBrand = ref<HTMLElement | null>(null)
 const linksWrapperMaxWidth = ref(0)
@@ -31,21 +30,15 @@ const linksWrapperStyle = computed(() => {
   }
 })
 
-
 const ToggleMenu = () => {
-    if(typeof document !== undefined){
-
-
+  if (typeof document !== undefined) {
     const navigationMenu = document.getElementById('navbar-items-right')
     navigationMenu.classList.toggle('slide-in-menu')
-    document.querySelector(".last").classList.toggle('transform-last')
-    document.querySelector(".first").classList.toggle('transform-first')
-    document.querySelector(".middle").classList.toggle('transform-middle')
+    document.querySelector('.last').classList.toggle('transform-last')
+    document.querySelector('.first').classList.toggle('transform-first')
+    document.querySelector('.middle').classList.toggle('transform-middle')
   }
-
 }
-
-
 
 const enableDarkMode = computed(() => themeLocale.value.darkMode)
 onMounted(() => {
@@ -77,8 +70,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </script>
 
 <template>
-  <header ref="navbar"  class="navbar">
-
+  <header ref="navbar" class="navbar">
     <span ref="navbarBrand">
       <NavbarBrand />
     </span>
@@ -98,18 +90,23 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <slot name="after" />
 
       <ToggleDarkModeButton v-if="enableDarkMode" />
-      <div class="toggle-menu" @click="ToggleMenu" role="button">
+
+      <NavbarSearch />
+      <div
+        class="toggle-menu"
+        id="toggle-menu"
+        @click="ToggleMenu"
+        role="button"
+      >
         <span ref="firstToggleLine" class="first"></span>
         <span ref="middleToggleLine" class="middle"></span>
         <span ref="lastToggleLine " class="last"></span>
       </div>
-
-      <NavbarSearch />
     </div>
   </header>
 </template>
 <style lang="scss" scoped>
-.navbar{
+.navbar {
   padding-left: 10px;
 }
 .button {
@@ -125,8 +122,10 @@ function getCssValue(el: HTMLElement | null, property: string): number {
   }
 }
 @media (max-width: 719px) {
-  .toggle-menu  span:nth-child(2){
-    width: 90%;
+  .toggle-menu span:nth-child(1) {
+    transform-origin: center;
+  }
+  .toggle-menu span:nth-child(2) {
     margin: 6px 0;
   }
   .toggle-menu {
@@ -138,52 +137,45 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     height: 1.25rem;
     align-self: center;
     cursor: pointer;
-    margin-left: 10px;
     position: relative;
     span {
       display: inline-block;
       width: 100%;
-      height: 1px;
+      height: 2px;
       border-radius: 2px;
       background: var(--c-text);
-      transition: 0.01s ease-in-out;
-      // position:absolute;
-      // transform: var(--t-transform);
-      
+      transition: 0.3s ease;
+      transform-origin: center;
     }
   }
   .navbar-items-wrapper-links {
     background: var(--c-bg);
-    height: fit-content;
     display: flex;
     flex-direction: column;
-    z-index: 9999;
-    width: 100%;
-    padding: 15px;
+    z-index: 9999999;
     transition: 0.5s ease-out;
     position: fixed;
     top: var(--navbar-height);
+    margin-left: 10px;
     height: 100%;
-    transform: translateX(100%);
+    position: fixed;
+    left: 0px;
+    width: 100%;
+
+    top: var(--navbar-height);
+    transform: translate(-120%);
   }
   .slide-in-menu {
-    transform: translateX(-70%);
+    transform: translateX(0%);
   }
-  .transform-first{
-    transform: rotate(45deg) translate3d(5.5px, 5.5px, 0);
-    // top: 3px;
-    
+  .transform-first {
+    transform: rotate(45deg) translate3d(6px, 6px, 0);
   }
-  .transform-last{
-    transform: rotate(-45deg) translate3d(5px, -5px, 0);
-    // transform: rotate(135deg);
-    // top: 6;
+  .transform-last {
+    transform: rotate(-45deg) translate3d(5px, -5.5px, 0);
   }
-  .transform-middle{
-    transform: translateY(-30px);
-    // width: 1px;
-    // display: none;
-  
+  .transform-middle {
+    transform: scale3d(0, 1, 1);
   }
 }
 </style>

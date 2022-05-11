@@ -11,6 +11,8 @@ const ToggleMenuSidebar = () => {
     document.querySelector('.last-t').classList.toggle('last-transform')
     document.querySelector('.first-t').classList.toggle('first-transform')
     document.querySelector('.middle-t').classList.toggle('middle-transform')
+    document.getElementById('mask-sidebar').classList.toggle('mask-sidebar')
+
   }
 }
 </script>

@@ -143,14 +143,5 @@ const RemoveSidebar = () => {
   display: flex;
   align-items: center;
 }
-// @media (max-width:719px){
 
-//   .navbar-dropdown-title{
-//     .title{
-
-//       padding: 3px;
-//     }
-
-//   }
-// }
 </style>
