@@ -33,8 +33,6 @@ const articles = useBlogType("article");
 @media (max-width:719px){
   .page{
     max-width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
   }
   .article-page{
   width: 100%;

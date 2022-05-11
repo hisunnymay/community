@@ -22,6 +22,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/AutoLink.vue' : path.resolve(__dirname, './components/AutoLink/AutoLink.vue'),
     '@theme/Sidebar.vue': path.resolve(__dirname, './components/sidebar/Sidebar.vue'),
     '@theme/SidebarItem.vue':path.resolve(__dirname, './components/sidebar/SidebarItem.vue')
+
   },
 
   

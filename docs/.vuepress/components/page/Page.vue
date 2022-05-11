@@ -19,6 +19,7 @@ const ToggleMenuSidebar = () => {
   }
 }
 
+
 defineEmits(['toggle-sidebar'])
 const pageData = usePageData()
 const frontmatter = usePageFrontmatter()
@@ -39,7 +40,7 @@ const page = computed(() => {
       <div v-else class="theme-default-content">
         <ToggleMenu class="toggle" @click="ToggleMenuSidebar" />
         <Content />
-        <div id="mask-sidebar"></div>
+        <div id="mask-sidebar" @click="ToggleMenuSidebar"></div>
       </div>
 
       <PageMeta v-if="!frontmatter.pricing" />
@@ -60,12 +61,9 @@ const page = computed(() => {
   background: var(--c-bg);
   padding: 2px 10px;
   z-index: 2;
-box-shadow:  2px 2px 4px var(--c-bg),
-             -2px -2px 4px var(--c-bg);
-
-
+  box-shadow: 2px 2px 4px var(--c-bg), -2px -2px 4px var(--c-bg);
 }
-.mask-sidebar{
+.mask-sidebar {
   height: 100%;
   width: 100%;
   position: fixed;
@@ -73,6 +71,5 @@ box-shadow:  2px 2px 4px var(--c-bg),
   left: 0;
   background: #00000073;
   z-index: 1;
-
 }
 </style>
