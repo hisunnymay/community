@@ -50,14 +50,13 @@ if (item.value.collapsible) {
   }
   router.afterEach(() => {
     isOpen.value = isActive.value
-    RemoveSidebar()
   })
 }
 </script>
 
 <template>
   <li>
-    <AutoLink v-if="item.link" :class="itemClass" :item="item" />
+    <AutoLink v-if="item.link" @click="RemoveSidebar" :class="itemClass" :item="item" />
     <p
       v-else
       tabindex="0"
