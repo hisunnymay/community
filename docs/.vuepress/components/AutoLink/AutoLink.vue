@@ -131,13 +131,16 @@ const RemoveSidebar = () => {
   flex-direction: column;
   /* align-items: center; */
 }
-.linkicon {
-  width: 14px;
-  height: 14px;
-  margin-right: 5px;
-  background: var(--c-icon);
-  padding: 2px;
-  border-radius: 50%;
+
+.linkicon{
+    width: 14px;
+    height: 14px;
+    margin-left: -4px;
+    margin-right: 6px;
+    /*background: var(--c-icon); */
+    padding: 2px;
+    border-radius: 50%;
+
 }
 .linkicon-text {
   display: flex;

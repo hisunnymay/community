@@ -121,6 +121,9 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     color: var(--c-bg);
   }
 }
+.button:hover {
+	background: var(--c-brand-light);
+}
 @media (max-width: 719px) {
   .toggle-menu span:nth-child(1) {
     transform-origin: center;
