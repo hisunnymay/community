@@ -24,6 +24,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/SidebarItem.vue':path.resolve(__dirname, './components/sidebar/SidebarItem.vue')
   },
 
+
+
+  
+
   
   head: [
     [
