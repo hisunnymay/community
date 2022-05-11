@@ -58,7 +58,7 @@ contentCards:
     left: true
 
 cta :
-  - details: Great conversational user experiences for masses.
+  - details: Build conversational interface for your APIs.
     title: Start Project
     link: https://framely.naturali.io
     
