@@ -26,7 +26,7 @@ const articles = useBlogType("article");
 </script>
 <style lang="scss"  scoped>
 .article-page{
-  width: var(--homepage-width);
+  max-width: var(--homepage-width);
   margin: auto;
 }
 
@@ -36,10 +36,10 @@ const articles = useBlogType("article");
     padding-left: 12px;
     padding-right: 12px;
   }
-  .article-page{
+ /*.article-page{
   width: 100%;
   margin: auto;
-}
+}*/
 }
 
 </style>
