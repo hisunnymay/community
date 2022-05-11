@@ -29,6 +29,7 @@ const itemClass = computed(() => ({
 }))
 
 const isOpen = ref(true)
+// isOpen.value = false
 
 const onClick = ref<(() => void) | undefined>(undefined)
 if (item.value.collapsible) {
@@ -38,12 +39,7 @@ if (item.value.collapsible) {
   }
   router.afterEach(() => {
     isOpen.value = isActive.value
-    document
-      .getElementById('navbar-items-right')
-      .classList.remove('slide-in-menu')
-    document.querySelector('.last').classList.remove('transform-last')
-    document.querySelector('.first').classList.remove('transform-first')
-    document.querySelector('.middle').classList.remove('transform-middle')
+
   })
 }
 </script>

@@ -397,6 +397,9 @@ html.dark {
 
 
 @media (max-width:719px) {
+	.sidebar ul{
+		margin-top: 10px;
+	}
 
 	// dropdowns
 	.navbar-dropdown-wrapper {
@@ -438,12 +441,9 @@ html.dark {
 	//end of dropdowns
 	.sidebar {
 		bottom: 0; // uncomment
-		width: 100%;
+		// width: 100%;
 
-		.sidebar-items {
-			display: none;
-
-		}
+	
 
 		.navbar-items {
 			border: none;
