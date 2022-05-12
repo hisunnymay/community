@@ -4,10 +4,6 @@
 	--c-brand: #4282fd;
 	--c-brand-light: #5F95FE;
 
-	//icon
-
-	--c-icon: #4282fd10;
-
 
 	// background colors
 	--c-bg: #ffffff;
@@ -17,6 +13,7 @@
 	--c-bg-sidebar: var(--c-bg);
 	--c-bg-arrow: #cccccc;
 	--c-bg-cta: #4282fd08;
+	--c-bg-icon: #4282fd10;
 
 
 	// text colors
@@ -86,16 +83,13 @@ html.dark {
 	--c-brand: #4282fd;
 	--c-brand-light: #5F95FE;
 
-	//icon 
-
-	--c-icon: #4282fd25;
-
 
 	// background colors
 	--c-bg: #22272e;
 	--c-bg-light: #2b313a;
 	--c-bg-lighter: #262c34;
 	--c-bg-cta: #4282fd08;
+	--c-bg-icon: #4282fd25;
 
 
 	// text colors
