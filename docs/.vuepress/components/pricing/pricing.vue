@@ -80,7 +80,7 @@ footer{
         align-items: center;
         flex-wrap: wrap;
         .badge-price {
-          background: var(--c-icon);
+          background: var(--c-bg-icon);
           padding: 2px 5px;
           color: var(--c-brand) !important;
           border-radius: 2px;

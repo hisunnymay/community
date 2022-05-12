@@ -48,7 +48,7 @@ const page = computed(() => {
   z-index: 9000;
   top: 10%;
   left: 0;
-  background: var(--c-icon);
+  background: var(--c-bg-icon);
   outline: none;
   border: none;
   height: 30px;
