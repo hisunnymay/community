@@ -27,8 +27,20 @@ const itemClass = computed(() => ({
   'active': isActive.value,
   'collapsible': item.value.collapsible,
 }))
+const RemoveSidebar = () => {
+  if (typeof document !== undefined) {
+    const sidebar = document.querySelector('.theme-container')
+    sidebar.classList.toggle('sidebar-open')
+    document.querySelector('.last-t').classList.remove('last-transform')
+    document.querySelector('.first-t').classList.remove('first-transform')
+    document.querySelector('.middle-t').classList.remove('middle-transform')
+    document.getElementById('mask-sidebar').classList.remove('mask-sidebar')
+
+  }
+}
 
 const isOpen = ref(true)
+// isOpen.value = false
 
 const onClick = ref<(() => void) | undefined>(undefined)
 if (item.value.collapsible) {
@@ -38,19 +50,13 @@ if (item.value.collapsible) {
   }
   router.afterEach(() => {
     isOpen.value = isActive.value
-    document
-      .getElementById('navbar-items-right')
-      .classList.remove('slide-in-menu')
-    document.querySelector('.last').classList.remove('transform-last')
-    document.querySelector('.first').classList.remove('transform-first')
-    document.querySelector('.middle').classList.remove('transform-middle')
   })
 }
 </script>
 
 <template>
   <li>
-    <AutoLink v-if="item.link" :class="itemClass" :item="item" />
+    <AutoLink v-if="item.link" @click="RemoveSidebar" :class="itemClass" :item="item" />
     <p
       v-else
       tabindex="0"
