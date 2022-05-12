@@ -44,8 +44,8 @@ features:
     icon: /images/featureIcons/raw-code.svg
 
 contentCards:
-  - title: Start API Schema
-    details: The services that you want to expose is uniquely defined by the schema, which on one hand capture the data type of the input and output parameter, and signature of the function, and on the other hand represent the meaning user expression in the utterances. 
+  - title: Describe API Schema
+    details: The services that you want to expose is uniquely defined by API schema, which on one hand capture the data type of the input and output parameter, and signature of the function, and on the other hand represent the meaning user expression in the utterances. 
     image: /images/schema.png
     left: true
   - title: Declare Interaction
