@@ -54,37 +54,45 @@ defineProps({
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  margin: 2.5rem auto;
-  grid-row-gap: 1rem;
-  //grid-column-gap: 0.5rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  grid-row-gap: 2rem;
+  //grid-column-gap: 2rem;
 
     .blog-card {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      padding: 2rem;
+      padding: 1.5rem;
+      position: relative;
+      top: 0;
+      transition: top ease 0.5s;
     }
 
     .blog-card:hover {
       border: 1px solid var(--c-border);
       border-radius: 6px;
+      top: -10px;
     }
 
     .blog-card-image {
       width: 100%;
-      height: 50%;
+      height: 12rem;
       border-radius: 6px;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     .blog-card-info {
       display: flex;
       flex-direction: column;
       color: var(--c-text);
+      padding-top: 1rem;
     }      
 
     .blog-card-info-title {
       text-transform: capitalize;
+      font-size: 20px;
+      font-weight: 700;
       border-bottom: none;
     }
 
@@ -100,7 +108,7 @@ defineProps({
       justify-content: space-between;
       align-items: center;
       padding-top: 0.5rem;
-      color: var(--c-text-lightest);
+      color: var(--c-text-lighter);
       font-size: 12px;
       font-weight: normal
     }
@@ -118,6 +126,8 @@ defineProps({
   }
   .blog-card {
     border: 1px solid var(--c-border);
+    border-radius: 6px;
+    padding: 2rem;
   }
    
 }

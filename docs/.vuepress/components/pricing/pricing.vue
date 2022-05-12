@@ -74,6 +74,9 @@ footer{
       display: flex;
       flex-direction: column;
       padding: 1em;
+      position: relative;
+      top: 0;
+      transition: top ease 0.5s;
 
       .price-badge {
         display: flex;
@@ -124,6 +127,9 @@ footer{
           }
         }
       }
+    }
+    .card:hover{
+      top: -10px;
     }
   }
 }
