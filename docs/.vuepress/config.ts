@@ -4,9 +4,12 @@ import type { DefaultThemeOptions } from '@vuepress'
 import { path } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 import { mdEnhance } from "vuepress-plugin-md-enhance";
+
 // 
+const { tocPlugin } = require('@vuepress/plugin-toc')
 
 const isProd = process.env.NODE_ENV === 'production'
+
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
@@ -23,7 +26,16 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/Sidebar.vue': path.resolve(__dirname, './components/sidebar/Sidebar.vue'),
     '@theme/SidebarItem.vue':path.resolve(__dirname, './components/sidebar/SidebarItem.vue')
 
+
+
+
+
+
+    
+
+
   },
+
 
   
   head: [
@@ -164,7 +176,12 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
   },
 
+
   plugins: [
+    tocPlugin({
+      // options
+    }),
+  
     [
       '@vuepress/plugin-google-analytics',
       {
