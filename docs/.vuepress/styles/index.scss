@@ -129,6 +129,68 @@ html.dark {
 
 
 }
+// big footer
+.grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding-left: 5rem;
+	padding-right: 5rem;
+	width: 70%;
+	margin: auto;
+
+}
+.grid-2{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.logo-img{
+	text-align: left;
+}
+.logo-img>img{
+	width: 36px;
+	height: 36px;
+}
+.logo-socials{
+	display: flex;
+	flex-direction: column;
+	padding-top: 38px;
+}
+.grid-2 div ul li{
+	list-style: none;
+	font-size: .875rem;
+	font-weight: lighter;
+	line-height: 2rem;
+	text-align: left;
+}
+.grid-2 div h6{
+	padding-left: 1.2em;
+	text-align: left;
+}
+.grid-2 div ul li a{
+	color: var(--c-text-lighter);
+}
+// end of big footer
+
+// toc
+.vuepress-toc {
+	.vuepress-toc-list {
+		.vuepress-toc-item {
+			list-style: none;
+
+			.vuepress-toc-link {
+				color: var(--c-desc);
+				font-weight: normal;
+			}
+
+			.active {
+				color: var(--c-text-accent);
+			}
+		}
+
+	}
+}
+
+// end toc
 
 
 // end of navbar dropdwons
@@ -153,6 +215,7 @@ html.dark {
 	transition: all 0.5s ease-out;
 	cursor: pointer;
 }
+
 .button-small:hover {
 	background: var(--c-brand-light);
 	border-color: var(--c-brand-light);
@@ -163,6 +226,7 @@ html.dark {
 	background-color: var(--c-bg);
 	border-color: var(--c-brand);
 }
+
 .button-small.secondary:hover {
 	color: var(--c-bg);
 	background: var(--c-brand-light);
@@ -180,6 +244,7 @@ html.dark {
 	text-align: center;
 	cursor: pointer;
 }
+
 .button-medium:hover {
 	background: var(--c-brand-light);
 	border-color: var(--c-brand-light);
@@ -219,6 +284,7 @@ html.dark {
 .home .footer {
 	padding: 10px;
 	border: none;
+	margin: auto;
 }
 
 .sidebar {
@@ -230,6 +296,8 @@ html.dark {
 	display: flex;
 	justify-content: space-between;
 	height: fit-content;
+	width: 70%;
+	margin: auto;
 
 	.links {
 		display: flex;
@@ -378,26 +446,29 @@ html.dark {
 
 //top-info style
 .top-info {
-    margin: 2.5rem;
-    text-align: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+	margin: 2.5rem;
+	text-align: center;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 
-    .top-info-title{
-        font-weight: 600;
-        line-height: 1.6;
-    }
+	.top-info-title {
+		font-weight: 600;
+		line-height: 1.6;
+	}
 
-    .top-info-desc{
-        color: var(--c-text-lightest);
-        padding-bottom: 1rem;
-    }
-  }
+	.top-info-desc {
+		color: var(--c-text-lightest);
+		padding-bottom: 1rem;
+	}
+}
+
 //end top-info
 
 
 @media (max-width:719px) {
-	.sidebar ul{
+
+
+	.sidebar ul {
 		margin-top: 10px;
 	}
 
@@ -443,7 +514,7 @@ html.dark {
 		bottom: 0; // uncomment
 		// width: 100%;
 
-	
+
 
 		.navbar-items {
 			border: none;
@@ -457,6 +528,8 @@ html.dark {
 		align-items: center;
 		margin-top: 15px;
 		padding-bottom: 15px;
+		width: 100%;
+		margin: 0;
 
 		.links {
 			order: 1;
@@ -476,6 +549,7 @@ html.dark {
 		grid-template-columns: 1fr;
 		padding-left: 0;
 		padding-right: 0;
+		width: 100%;
 	}
 
 	.navbar-items {
