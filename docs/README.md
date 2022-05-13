@@ -52,7 +52,7 @@ contentCards:
     details: Schema defines what information we need to collect from user in order to deliver the desired user experience. The interaction logic is driven by business logic and goal. Framely provides a set of interaction annotation which builder can use declaratively describe what conversational experience they want to provide, and Framely runtime will take care of the rest.
     image: /images/interaction.png
     left: false
-  - title: Demonstrate 
+  - title: Link Utterances to Semantics 
     details: Natural language utterances in the different language is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, builder only need to touch language part of relevant interaction annotation, by provider exemplars for user utterance, and template for bot messaging, no machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for hire a Ph.D for this.
     image: /images/language.png
     left: true
