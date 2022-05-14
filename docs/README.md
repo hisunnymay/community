@@ -3,7 +3,7 @@ home: true
 title: Home
 heroImage: /images/hero.png
 tagline: Schema grounded Chatbots for any Services
-heroText: React of Conversational User Interface
+heroText: Vue of Conversational User Interface
 actions:
   - text: Get Started
     link: /guide/getting-started.html
