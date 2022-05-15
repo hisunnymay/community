@@ -137,19 +137,7 @@ const page = computed(() => {
   height: 50px;
   font-size: 1em;
 }
-.toc-content .vuepress-toc .vuepress-toc-list .vuepress-toc-item a {
-  color: var(--c-text);
-}
-.vuepress-toc {
-  width: 100%;
-  border-left: 1px solid var(--c-border);
-  margin-left: 10px;
-  font-size: 0.9em;
-}
-.vuepress-toc-list {
-  background: #000;
-  color: var(--c-text) !important;
-}
+
 .theme-default-content:not(.custom) {
   max-width: 100%;
   /* display: flex; */

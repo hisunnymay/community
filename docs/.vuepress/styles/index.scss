@@ -163,12 +163,18 @@ html.dark {
 
 // toc
 .vuepress-toc {
+	width: 100%;
+	border-left: 1px solid var(--c-border);
+	margin-left: 10px;
+	font-size: 0.9em;
+
 	.vuepress-toc-list {
+
 		.vuepress-toc-item {
 			list-style: none;
 
 			.vuepress-toc-link {
-				color: var(--c-desc);
+				color: var(--c-text-lighter);
 				font-weight: normal;
 			}
 
@@ -179,7 +185,6 @@ html.dark {
 
 	}
 }
-
 // end toc
 
 
