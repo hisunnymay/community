@@ -122,7 +122,7 @@ html.dark {
 // big footer
 .grid{
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	padding-left: 5rem;
 	padding-right: 5rem;
 	width: 70%;
@@ -131,7 +131,7 @@ html.dark {
 }
 .grid-2{
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 }
 .logo-img{
 	text-align: left;
