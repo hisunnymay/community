@@ -52,65 +52,12 @@ const page = computed(() => {
     <main class="page">
       <slot name="top" />
       <Pricing v-if="frontmatter.pricing" :frontmatter="frontmatter" />
-      <div v-if="frontmatter.article" class="container-blog">
-        <div class="theme-default-content">
-          <div class="toc">
-            <button @click="ShowToc" class="title">
-              <p>In this page</p>
-              <div class="angle">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
-                    fill="var(--c-text)"
-                  />
-                </svg>
-              </div>
-            </button>
-            <div class="toc-content display-none">
-              <Toc :headers="pageData.headers" :options="options" />
-            </div>
-          </div>
-          <div class="content">
-            <Content />
-          </div>
-        </div>
-      </div>
 
-      <div v-else class="theme-default-content">
-        <div class="toc">
-          <button @click="ShowToc" class="title">
-            <p>In this page</p>
-            <div class="angle">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
-                  fill="var(--c-text)"
-                />
-              </svg>
-            </div>
-          </button>
-          <div class="toc-content display-none">
-            <Toc :headers="pageData.headers" :options="options" />
-          </div>
-        </div>
-        <div class="content">
-          <ToggleMenu class="toggle" @click="ToggleMenuSidebar" />
-          <Content />
+      <div class="theme-default-content">
+        <ToggleMenu class="toggle" @click="ToggleMenuSidebar" />
+        <Content />
 
-          <div id="mask-sidebar" @click="ToggleMenuSidebar"></div>
-        </div>
+        <div id="mask-sidebar" @click="ToggleMenuSidebar"></div>
       </div>
 
       <PageMeta v-if="!frontmatter.pricing" />
@@ -123,9 +70,7 @@ const page = computed(() => {
   </div>
 </template>
 <style lang="scss" scoped>
-.page-nav {
-  margin: 0 0;
-}
+
 .title {
   display: flex;
   justify-content: space-between;
@@ -136,28 +81,6 @@ const page = computed(() => {
   background: var(--c-bg);
   height: 50px;
   font-size: 1em;
-}
-.toc-content .vuepress-toc .vuepress-toc-list .vuepress-toc-item a {
-  color: var(--c-text);
-}
-.vuepress-toc {
-  width: 100%;
-  border-left: 1px solid var(--c-border);
-  margin-left: 10px;
-  font-size: 0.9em;
-}
-.vuepress-toc-list {
-  background: #000;
-  color: var(--c-text) !important;
-}
-.theme-default-content:not(.custom) {
-  max-width: 100%;
-  /* display: flex; */
-}
-.container-blog {
-  .theme-default-content:not(.custom) {
-    max-width: 70%;
-  }
 }
 .toc {
   position: relative;
@@ -178,7 +101,7 @@ const page = computed(() => {
 .toggle {
   position: fixed;
 
-  top: calc( var(--navbar-height) + 18px );
+  top: calc(var(--navbar-height) + 18px);
   left: 0;
   transform: translateX(-10px);
   background: var(--c-bg);
