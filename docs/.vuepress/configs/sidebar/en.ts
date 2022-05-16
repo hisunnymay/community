@@ -6,6 +6,7 @@ export const en: SidebarConfig = {
       text: 'Getting Started',
       children: [
         '/guide/README.md',
+        '/guide/are-you-ready.md',
         '/guide/getting-started.md',
       ],
     },
@@ -16,8 +17,8 @@ export const en: SidebarConfig = {
     {
       text: "Essentials",
       children: [
-        '/guide/cui.md',
         '/guide/structured.md',
+        '/guide/cui.md',
         '/guide/5levels-cui.md',
         '/guide/components.md',
         '/guide/architecture.md',

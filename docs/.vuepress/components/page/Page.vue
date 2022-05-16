@@ -82,6 +82,7 @@ const page = computed(() => {
   height: 50px;
   font-size: 1em;
 }
+
 .toc {
   position: relative;
   height: fit-content;
