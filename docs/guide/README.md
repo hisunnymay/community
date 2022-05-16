@@ -1,16 +1,12 @@
 # Why Framely
 
-If you want to provide great conversational user experiences but worried about the cost associated with building and operating chatbot, then you come to the right place. Framely's goal is to reduce the cost of build and operate great conversational user interface for any services. After all, chatbot is just an app with conversational user interface, there is no reason building bot should cost significantly more than to building app that expose the same set of services.
+If you want to provide great conversational user experiences but worried about the cost associated with building and operating chatbot, then you come to the right place. Framely's goal is to democratize the chatbot development by making it possible for regular develop team or even business domain expert to build and operate great conversational user interface for any services. Chatbot is just app with conversational user interface, there is no reason building bot should cost more than building app, at least when they expose the same set of services.
 
-## Who should build chatbot?
-Man kind has fantasized about talking robot for a long time. In deed, chatbots attract broad interest because of its potential of bring great user experiences. However, why are these magical conversational experience in the movies not yet ubiquitous, particularly considering the availability of the app with same functionalities? What is the difference between building bot and building app? 
+Chatbots attract broad interest because of its great user experiences. Contrast to the ubiquitous availability of the app exposing same functionalities, these magical conversational experience in the movies is still hard to find. This is mainly because of the lack of high level framework. With declarative framework and component library like Vue and Antd, it is easy for domain expert with reasonable amount programming training to build great apps. Without these high level framework, building CUI can be a lot more demanding, you need Ph.Ds with NLU background, and as well as business experts that stay on top of the ever-changing business conditions.
 
-The difference is simply who is building it. No matter what you build, your team need to understand your business logic. With declarative framework and component library like reactjs and antd, any people with reasonable amount programming training can build great app. But to build bot, you need to have Ph.Ds on 
-your team, and you need to teach them the ever-changing business logic for them to be effective.
+## Follow the Same Best Practices 
 
-## If something works, don't change it!
-
-To make building bot as cost effective as building app, we simply follow the same principles such as [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and the same workflow such as [version control using git for collaboration](https://en.wikipedia.org/wiki/Git). If something works, why change it? After all CUI and GUI are just different user interface to the same services.
+To make building bot as cost-effective as building app, we follow the same principles such as [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and the same workflow such as [version control using git for collaboration](https://en.wikipedia.org/wiki/Git). If something works, why change it? After all CUI and GUI are just different user interface to the same services.
 
 ### Separation of Concerns
 The division of labor, or separation of concerns is essential for increasing productivity and reducing the cost of building things. Along the line of model-view-controller for building graphical user interface, we decompose chatbot into 3 layers: service, interaction and language perception (both understanding and text generation). In most cases, services already exist, we just need to build interaction for it, so that we can trigger service based on what user wants. It should be clear that interaction logic is largely decided underlying service but constrained by conversation principles, independent of which language is used. By decoupling CUI from service, and the interaction from language, we can save cost by having different people working different aspects, at the same time make supporting multiple language very easy.
@@ -26,7 +22,7 @@ Building thing from scratch is slow and expensive. By packaging the solution for
 ### Dialog Understanding without Ph.D.
 Human language are mess, and understanding it is hard as the different text can mean the same thing and the same text can mean different thing in different context. This is one of the key complications of building conversational user interface. The popular approach rely on standard ML/NLU tasks like text classification and named entity recognition. While these standard tasks are well studied, applying them to new business use case requires effective customization, which typically call for serious thus costly expertise in ML/NLU. Framely focus on schema grounded conversational user interface, and use a set of ML/NLU models that every easy for regular dev team to effectively customize for any use cases with just utterance exemplars and template, entirely drop the need for having Ph.D on your team.
 
-## Conclusion
+## Democratize CUI Development
 Capable chatbot has been reserved for players with deep pocket, think Erica by Bank of America, but we are here to change that. By providing a declarative and component based approach to build schema grounded conversational user interface to any services, along with regularly updated NLU model, Framely make it possible for regular develop team to build and operate the capable conversational user experiences. We hope the resulted cost reduction can full democratize conversational experience for masses, so what are you waiting for?
 
 
