@@ -4,7 +4,6 @@ import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '../../shared'
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
-console.log(frontmatter.value)
 const footerItems = computed(() => {
   if (isArray(frontmatter.value.mainfooter)) {
     return frontmatter.value.mainfooter
