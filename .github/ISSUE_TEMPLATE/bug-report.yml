@@ -16,6 +16,14 @@ body:
       options:
       - label: I have searched the existing issues
         required: true
+
+  - type: checkboxes
+    attributes:
+      label: Make sure you are using Framely on Google Chrome!
+      description: Please double check that you are using a supported brower there. 
+      options:
+      - label: I used Framely on Google Chrome
+        required: true
       
   - type: textarea
     attributes:
