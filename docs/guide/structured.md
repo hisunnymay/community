@@ -20,7 +20,11 @@ Be relevant. The maxim of relevance suggests that we engage in conversations tha
 
 
 ## Max Min principle
-By designing bot to help the cooperative user only, one will already avoid the unnecessary over design, thus greatly reduce the complexity and cost of building the effective chatbots. We take one step further by explicitly seek simultaneously maximizing user experience and minimizing building cost. For CUI, this means that use should be able to say whatever they want to say, but the bot should be as simple as possible as long as it is still effective in helping user.
+One of the key assumption that Framely takes is so 
+
+By designing bot to help the cooperative user only, one will already avoid the unnecessary over design, thus greatly reduce the complexity and cost of building the effective chatbots. We take one step further by explicitly seek simultaneously maximizing user experience and minimizing building cost. 
+
+Framely , this means that user should be able to say whatever they want to say, but the bot should behave as simple as possible as long as it is still effective in helping user.
 
 Even assuming user are cooperative, we can not control what user want to say and when they say it. But, since the goal is to deliver any services in a cost-effective fashion, we can design bot to follow a simple yet effective strategy, so it is easy for builder to design and debug.
 
@@ -30,5 +34,4 @@ Structured conversations are simply composite conversation sequences, in both se
 
 Current conversation owner can yield ownership to other party: for example, the bot can say "what can I do for you", this can potentially start a nested conversation sequence that is owned by user. And after the sequence concludes, then the ownership automatically get back to bot. Of course, in this case, user can choose not to take the ownership by simply reply "nothing, thanks" , which will bring closure to bots' owned sequence, bot is expected to simply close the sequence in the next turn. 
 
-## Summary
-All widely adopted user interface framework are good trade off between user and builder experience, Framely is no exception. This structured conversation is powerful enough to carry out conversation for any service, it can be declaratively defined, can be carried out by easy to debug stack based state tracker. The structure conversation serves basis for dialog annotation design on Framely.
+
