@@ -77,7 +77,6 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 
     <div class="navbar-items-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
-      <!-- <NavbarItems class="can-hide" /> -->
       <NavbarItems id="navbar-items-right" class="navbar-items-wrapper-links" />
       <button class="button can-hide">
         <a
@@ -161,8 +160,8 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     transition: 0.5s ease-out;
     position: fixed;
     top: var(--navbar-height);
-    margin-left: 10px;
     height: 100%;
+    padding-left: 10px;
     position: fixed;
     left: 0px;
     width: 100%;

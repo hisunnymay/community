@@ -104,10 +104,8 @@ const RemoveSidebar = () => {
     @click="RemoveSidebar"
   >
     <slot name="before" />
-    <div class="linkicon-text">
       <img v-if="item.icon" class="linkicon" :src="LinkIcon" :alt="item.icon" />
       {{ item.text }}
-    </div>
     <slot name="after" />
   </RouterLink>
   <a
@@ -127,19 +125,15 @@ const RemoveSidebar = () => {
 </template>
 <style  lang="scss">
 #router-link {
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
+  display: inline-block;
+  margin: auto;
 }
 
 .linkicon{
     width: 14px;
     height: 14px;
     margin-left: -4px;
-    margin-right: 6px;
-    /*background: var(--c-bg-icon); */
-    padding: 2px;
-    border-radius: 50%;
+    padding-right: 2px;
 
 }
 .linkicon-text {

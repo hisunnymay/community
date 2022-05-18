@@ -12,6 +12,7 @@ const footerItems = computed(() => {
 })
 </script>
 <template>
+
   <div class="container-footer">
     <div class="grid">
       <div class="logo-socials">
