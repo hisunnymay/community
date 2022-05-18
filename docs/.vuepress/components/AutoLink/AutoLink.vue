@@ -126,7 +126,6 @@ const RemoveSidebar = () => {
 <style  lang="scss">
 #router-link {
   display: inline-block;
-  margin: auto;
 }
 
 .linkicon{
@@ -139,6 +138,7 @@ const RemoveSidebar = () => {
 .linkicon-text {
   display: flex;
   align-items: center;
+  font-size: 15px;
 }
 
 </style>

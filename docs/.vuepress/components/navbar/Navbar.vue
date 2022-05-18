@@ -122,7 +122,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
   }
 }
 .button:hover {
-	background: var(--c-brand-light);
+  background: var(--c-brand-light);
 }
 @media (max-width: 719px) {
   .toggle-menu span:nth-child(1) {
@@ -165,9 +165,11 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     position: fixed;
     left: 0px;
     width: 100%;
-
+    font-size: 1.1em;
     top: var(--navbar-height);
     transform: translate(-120%);
+    line-height: 1.4em;
+    
   }
   .slide-in-menu {
     transform: translateX(0%);
