@@ -1,9 +1,8 @@
-# Basic Considerations
-The goal of the Framely is to build cost-effective conversational user interface for your services. So we focus on enabling cooperative conversations, and seeking the balance between user and builder experience: by maximizing the user choices and minimizing builder cost.
+# Cooperative Principle
 
-## Cooperative Principle
-In goal oriented conversations, participants are assumed to have a common goal, in business world, completing service transaction, or business deliver service user wants. Under this condition, the cooperative principle says that parties involved normally attempt to be informative, truthful, relevant, and clear. The concept was introduced by philosopher H. Paul Grice in his 1975 article "Logic and Conversation" in which he argued that "talk exchanges" were not merely a "succession of disconnected remarks," and would not be rational if they were. Grice suggested instead that meaningful dialogue is characterized by cooperation. "Each participant recognizes in them, to some extent, a common purpose or set of purposes, or at least a mutually accepted direction."
+To build conversational user interface (CUI) for your service, we focus on goal oriented conversations where participants are assumed to have a common goal. In business world, this typically mean both sides want to complete service transaction, or businesses deliver service user wants. The cooperative principle says that parties involved normally attempt to be informative, truthful, relevant, and clear. The concept was introduced by philosopher H. Paul Grice in his 1975 article "Logic and Conversation" in which he argued that "talk exchanges" were not merely a "succession of disconnected remarks," and would not be rational if they were. Grice suggested instead that meaningful dialogue is characterized by cooperation. "Each participant recognizes in them, to some extent, a common purpose or set of purposes, or at least a mutually accepted direction."
 
+## Four Pillars 
 Grice expanded his cooperative principle with the four following conversational maxims, which he believed anyone wishing to engage in meaningful, cogent conversation must follow.
 
 ### Maxim of Quantity
