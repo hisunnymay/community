@@ -20,18 +20,16 @@ Be relevant. The maxim of relevance suggests that we engage in conversations tha
 
 
 ## Max Min principle
-One of the key assumption that Framely takes is so 
+By designing bot to help the cooperative user only, one will already avoid the unnecessary over design, thus greatly reduce the complexity and cost of building the effective chatbots. We take one step further by explicitly seek simultaneously maximizing user experience and minimizing building cost. This means that user should be able to say whatever they want to say, but the bot should behave as simple as possible, so it is easy to build, as long as it is still effective in helping user.
 
-By designing bot to help the cooperative user only, one will already avoid the unnecessary over design, thus greatly reduce the complexity and cost of building the effective chatbots. We take one step further by explicitly seek simultaneously maximizing user experience and minimizing building cost. 
+Unlike GUI application where we have full control of how user can interact with us, for chatbot, we can not control what user want to say and when they say it. This is actually good for user as they do not have to learn anything and still be able to get what they want. So the good conversational user interface design should anticipate any things, so bots always have something reasonable to say. 
 
-Framely , this means that user should be able to say whatever they want to say, but the bot should behave as simple as possible as long as it is still effective in helping user.
+However, this does not mean the bot we build need to serve any request user might have. Building such an omnipotent bot does not make business sense. Since the goal is to deliver any services in a cost-effective fashion, we can design bot to follow a simple yet effective strategy, so it is easy for builder to design and debug. In particular, at any given time, bot will only engage in single conversation sequence with one goal, and it will try to bring the active conversation sequence to closure before it move onto a different one. When user digress in the middle of transaction service, bot will react to that and then bring conversation back on track. We say that bot engages in structured conversations.
 
-Even assuming user are cooperative, we can not control what user want to say and when they say it. But, since the goal is to deliver any services in a cost-effective fashion, we can design bot to follow a simple yet effective strategy, so it is easy for builder to design and debug.
 
-In particularly, we make bot follow a very simple strategy: at any given time, bot will only engage in single conversation sequence with one goal, and it will try to bring the active conversation sequence to closure before it move onto a different one. When user digress in the middle of conversation, say they have an information request, bot will react to that and then bring conversation back on track. Or we make bot to engage in structured conversations.
-
+## Structured Conversations
 Structured conversations are simply composite conversation sequences, in both sequential and nested sense. Each sequence has concrete goal, and have a clear start and finish. Finish can come in different flavors: including abort by user or early exit per business logic. Furthermore, each sequence has a clear owner. Owner start the sequence, and set the goal and communicate to other party, and  other party is cooperating in help to achieve the goal for the owner. 
 
 Current conversation owner can yield ownership to other party: for example, the bot can say "what can I do for you", this can potentially start a nested conversation sequence that is owned by user. And after the sequence concludes, then the ownership automatically get back to bot. Of course, in this case, user can choose not to take the ownership by simply reply "nothing, thanks" , which will bring closure to bots' owned sequence, bot is expected to simply close the sequence in the next turn. 
 
-
+Structured conversations can be carried out using multiple stacks, each for one topic. Stack is a natural tool for nested structure.
