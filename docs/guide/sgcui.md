@@ -17,3 +17,11 @@ It is Framely's goal to democratize chatbot development. we developed an enginee
 Schema grounded CUI only focus on building conversational interface for the services/functionalities that there are the service APIs for. So what happens if your customer asks your barista bot for a haircut? It can simply say "I am only trained to help you with your coffee needs. What do you want to drink today?" Nobody will fault your service bot here. So, instead of modeling all possible conversations, by focusing only on the limited services we offer, the conversational UI can be a lot easy to build, as it is very easy to decide whether some use case need attention or not.
 
 Aside from reduce the scope of the work, by grounding the conversation on the API schema, we can naturally separate the different concerns, so different people can work on the different aspects: the actual service can be implemented by backend team, and conversational user interface builder can take care of interaction logic, and CUI designer can provide script for better user experience.
+
+
+## Structured Conversations
+Structured conversations are simply composite conversation sequences, in both sequential and nested sense. Each sequence has concrete goal, and have a clear start and finish. Finish can come in different flavors: including abort by user or early exit per business logic. Furthermore, each sequence has a clear owner. Owner start the sequence, and set the goal and communicate to other party, and  other party is cooperating in help to achieve the goal for the owner. 
+
+Current conversation owner can yield ownership to other party: for example, the bot can say "what can I do for you", this can potentially start a nested conversation sequence that is owned by user. And after the sequence concludes, then the ownership automatically get back to bot. Of course, in this case, user can choose not to take the ownership by simply reply "nothing, thanks" , which will bring closure to bots' owned sequence, bot is expected to simply close the sequence in the next turn. 
+
+Structured conversations can be carried out using multiple stacks, each for one topic. Stack is a natural tool for nested structure.
