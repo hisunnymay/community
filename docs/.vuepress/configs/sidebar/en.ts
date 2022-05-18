@@ -1,9 +1,10 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
 
-export const en: SidebarConfig = {
+export const en = {
   '/guide/': [
     {
       text: 'Getting Started',
+
+
       children: [
         '/guide/README.md',
         '/guide/are-you-ready.md',
@@ -27,12 +28,16 @@ export const en: SidebarConfig = {
     {
       text: "Glossary",
       link: '/guide/glossary.md',
+
     }
   ],
   '/reference/': [
     {
       text: 'Annotation Reference',
+      icon:"/featureIcons/cui.svg",
+
       collapsible: true,
+
       children: [
         '/reference/annotations/overview.md',
         '/reference/annotations/vr.md',

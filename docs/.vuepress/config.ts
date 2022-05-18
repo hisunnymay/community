@@ -14,17 +14,19 @@ const isProd = process.env.NODE_ENV === 'production'
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
   theme: path.resolve(__dirname, './theme'),
-  
-  alias:{
+
+  alias: {
     '@theme/HomeFeatures.vue': path.resolve(__dirname, './components/features/HomeFeatures.vue'),
     '@theme/Navbar.vue': path.resolve(__dirname, './components/navbar/Navbar.vue'),
     '@theme/Home.vue': path.resolve(__dirname, './components/home/HomePage.vue'),
     '@theme/Page.vue': path.resolve(__dirname, './components/page/Page.vue'),
     '@theme/NavbarBrand.vue': path.resolve(__dirname, './components/navbar/NavbarBrand.vue'),
     '@theme/NavbarDropdown.vue': path.resolve(__dirname, './components/navbar/NavbarDropdown.vue'),
-    '@theme/AutoLink.vue' : path.resolve(__dirname, './components/AutoLink/AutoLink.vue'),
+    '@theme/AutoLink.vue': path.resolve(__dirname, './components/AutoLink/AutoLink.vue'),
     '@theme/Sidebar.vue': path.resolve(__dirname, './components/sidebar/Sidebar.vue'),
-    '@theme/SidebarItem.vue':path.resolve(__dirname, './components/sidebar/SidebarItem.vue')
+    '@theme/SidebarItem.vue': path.resolve(__dirname, './components/sidebar/SidebarItem.vue'),
+    // "@theme/NavbarItems.vue": path.resolve(__dirname, './components/navbar/NavbarItems.vue')
+
   },
 
   head: [
@@ -170,7 +172,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     tocPlugin({
       // options
     }),
-  
+
     [
       '@vuepress/plugin-google-analytics',
       {
@@ -188,47 +190,47 @@ export default defineUserConfig<DefaultThemeOptions>({
     [
       '@vuepress/plugin-container',
       {
-        type:'story',
+        type: 'story',
       },
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'half',
+      '@vuepress/plugin-container', {
+        type: 'half',
       }
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'third',
+      '@vuepress/plugin-container', {
+        type: 'third',
       }
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'right',
+      '@vuepress/plugin-container', {
+        type: 'right',
       }
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'left',
+      '@vuepress/plugin-container', {
+        type: 'left',
       }
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'center',
+      '@vuepress/plugin-container', {
+        type: 'center',
       }
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'card',
+      '@vuepress/plugin-container', {
+        type: 'card',
       }
     ],
     [
-      '@vuepress/plugin-container',{
-        type:'thumbnail',
+      '@vuepress/plugin-container', {
+        type: 'thumbnail',
       }
     ],
 
     mdEnhance({
-        flowchart: true,
+      flowchart: true,
     }),
 
     // only enable shiki plugin in production mode
@@ -236,8 +238,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       '@vuepress/plugin-shiki',
       isProd
         ? {
-            theme: 'dark-plus',
-          }
+          theme: 'dark-plus',
+        }
         : false,
     ],
   ],

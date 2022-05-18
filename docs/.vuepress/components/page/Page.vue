@@ -45,6 +45,15 @@ const page = computed(() => {
   }
   return []
 })
+const checkPage = ()=>{
+  if(frontmatter.value.pricing){
+    return false
+  }else if(frontmatter.value.article){
+    return false
+  }else{
+    return true
+  }
+}
 </script>
 
 <template>
@@ -54,7 +63,7 @@ const page = computed(() => {
       <Pricing v-if="frontmatter.pricing" :frontmatter="frontmatter" />
 
       <div class="theme-default-content">
-        <ToggleMenu class="toggle" @click="ToggleMenuSidebar" />
+        <ToggleMenu v-if="checkPage()"  class="toggle" @click="ToggleMenuSidebar" />
         <Content />
 
         <div id="mask-sidebar" @click="ToggleMenuSidebar"></div>
@@ -94,8 +103,7 @@ const page = computed(() => {
 .content {
   max-width: 60%;
 }
-.toc-content {
-}
+
 .angle {
   display: none;
 }
