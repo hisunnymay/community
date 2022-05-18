@@ -22,22 +22,6 @@ const ToggleMenuSidebar = () => {
 defineEmits(['toggle-sidebar'])
 const pageData = usePageData()
 const frontmatter = usePageFrontmatter()
-const options = {
-  containerTag: 'nav',
-  containerClass: 'vuepress-toc',
-  listClass: 'vuepress-toc-list',
-  itemClass: 'vuepress-toc-item',
-  linkTag: 'RouterLink',
-  linkClass: 'vuepress-toc-link',
-  linkActiveClass: 'active',
-  linkChildrenActiveClass: 'active',
-}
-const ShowToc = () => {
-  if (typeof document !== undefined) {
-    document.querySelector('.toc-content').classList.toggle('display-none')
-    document.querySelector('.angle').classList.toggle('rotate-angle')
-  }
-}
 
 const page = computed(() => {
   if (isArray(pageData.value.frontmatter)) {
@@ -80,26 +64,9 @@ const checkPage = ()=>{
 </template>
 <style lang="scss" scoped>
 
-.title {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  background: none;
-  align-items: center;
-  border: none;
-  background: var(--c-bg);
-  height: 50px;
-  font-size: 1em;
-}
 
-.toc {
-  position: relative;
-  height: fit-content;
-  position: fixed;
-  width: 30%;
-  right: 0;
-  margin: auto;
-}
+
+
 .content {
   max-width: 60%;
 }
@@ -132,47 +99,8 @@ const checkPage = ()=>{
   z-index: 1;
 }
 @media (max-width: 900px) {
-  .theme-default-content:not(.custom) {
-    flex-direction: column;
-  }
-  .toc {
-    width: 100%;
-    position: relative;
-    height: fit-content;
-    transition: 1s ease-in-out;
-    padding-top: 20px;
-  }
-  .toc-content {
-    position: relative;
-    width: 100%;
-    transition: 0.3s ease;
-    background: var(--c-bg);
-    transition: height 292ms ease-in-out 0s;
-    font-size: 0.8em;
-    // transition: 0.5s ease-in-out;
-    // display: none;
-  }
-  .container-blog {
-    .theme-default-content:not(.custom) {
-      max-width: 100%;
-    }
-  }
-  .content {
-    max-width: 100%;
-  }
-  .title {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background: none;
-    align-items: center;
-    border: none;
-    background: var(--c-bg);
-    height: 50px;
-    font-size: 1em;
-  }
+
   .angle {
-    // transform: rotate(90deg);
     display: block;
     font-size: 1.5em;
     transition: 0.2s ease-in-out;
@@ -185,7 +113,6 @@ const checkPage = ()=>{
     height: 0;
     overflow: hidden;
     will-change: height;
-    // transform: translateY(-200%);
   }
 }
 </style>
