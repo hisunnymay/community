@@ -29,7 +29,17 @@ Human language are mess, and understanding it is hard as the different text can 
 Under the hood, we take advantage of the state of the art deep learning based natural language models that are production friendly. But conversational AI is just a means to develop conversational applications, not the goal. There are many other directions that has been tried in the industry and academia, while we are learning as much as possible from this large body of prior work, these are some trendy things we decide against. So if you want to try these approaches, look else where.
 
 ### End to End
-Be able to create a well-functioned chatbot by just looking at past conversations when customers are served well is such an appealing idea that there is so much effort around this, from both academia and industry, but it is not a good idea from the production point of view. It simply does not offer direct control needed for business to react ever-changing business conditions.
+Chatbots are developed to deliver services with good user experiences. However, good user experience alone may not be the enough motivation for business to build one.
+
+::: story
+User: *I like some iced coffee.*
+
+Barista: *Sorry, we ran out, but the Starbucks next door has some excellent choices.*
+:::
+
+It is good user experience alright, but as a coffee shop owner, you might not want to invest towards this chatbot. To achieve your business goal, you need to have direct and full control of your chatbot so that you can react to ever-changing business conditions. 
+
+Be able to create a well-functioned chatbot by just looking at past conversations is such an appealing idea that there is so much effort around this, from both academia and industry. But this example based end to end approach, commonly under the name of conversational AI, is not a good idea from the production point of view. Communicating rules in form of examples is not efficient for long tail scenarios. 
 
 ### Flow Based Approach
 Business logic are typically described as processes. Under graphical user interface, builder have full control what user can do at each step of interaction, so flow based definition works well. For conversational interaction, builder does not have control, user can say anything they like at any point, and in any order. Without some sort of factorization, the possible conversational paths needed modeling by flow based approach will grow exponentially as complexity grows. Thus flow based approach to define conversational interaction become prohibitively costly. It is clear that humans do not follow fixed script during conversation, so in theory it is possible for builder to specify how bot should behave under necessary and sufficient conditions, and chatbot can try to figure out what to do no matter how conversation reached here.   
