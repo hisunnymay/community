@@ -4,6 +4,7 @@ import { isArray } from '@vuepress/shared'
 import { computed } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '../../shared'
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
+console.log(frontmatter.value)
 const footerItems = computed(() => {
   if (isArray(frontmatter.value.mainfooter)) {
     return frontmatter.value.mainfooter
@@ -23,11 +24,19 @@ const footerItems = computed(() => {
       </div>
 
       <div v-for="footerItem in footerItems" :key="footerItem" class="grid-2">
-        <div class="col-1">
-          <h6>{{ footerItem.title }}</h6>
+        <div v-for="grid in footerItem.firstgrid" :key="grid" class="col-1" >
+          <h6>{{ grid.title }}</h6>
           <ul>
-            <li v-for="link in footerItem.links" :key="link">
-              <a href="#">{{ link.text }}</a>
+            <li v-for="link in grid.links" :key="link">
+              <a :href="link.link">{{ link.text }}</a>
+            </li>
+          </ul>
+        </div>
+                <div v-for="grid in footerItem.secondgrid" :key="grid" class="col-1" >
+          <h6>{{ grid.title }}</h6>
+          <ul>
+            <li v-for="link in grid.links" :key="link">
+              <a :href="link.link">{{ link.text }}</a>
             </li>
           </ul>
         </div>

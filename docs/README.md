@@ -63,62 +63,64 @@ cta :
     link: https://framely.naturali.io
     
 mainfooter:
-  - title: product
-    links:
-      - link: /database
-        text: Database
-      - link: /auth
-        text: Auth
-      - link: /storage
-        text: Storage
-      - link: /functions
-        text: Functions
-      - link: /pricing
-        text: Pricing
-      - link: /beta
-        text: Beta
-  - title: Resources
-    links:
-      - link: /database
-        text: Database
-      - link: /auth
-        text: Auth
-      - link: /storage
-        text: Storage
-      - link: /functions
-        text: Functions
-      - link: /pricing
-        text: Pricing
-      - link: /beta
-        text: Beta
-  - title: Developers
-    links:
-      - link: /database
-        text: Database
-      - link: /auth
-        text: Auth
-      - link: /storage
-        text: Storage
-      - link: /functions
-        text: Functions
-      - link: /pricing
-        text: Pricing
-      - link: /beta
-        text: Beta
-  - title: Company
-    links:
-      - link: /database
-        text: Database
-      - link: /auth
-        text: Auth
-      - link: /storage
-        text: Storage
-      - link: /functions
-        text: Functions
-      - link: /pricing
-        text: Pricing
-      - link: /beta
-        text: Beta
+  - firstgrid:
+      - title: product
+        links:
+          - link: /database
+            text: Database
+          - link: /auth
+            text: Auth
+          - link: /storage
+            text: Storage
+          - link: /functions
+            text: Functions
+          - link: /pricing
+            text: Pricing
+          - link: /beta
+            text: Beta
+      - title: Resources
+        links:
+          - link: /database
+            text: Database
+          - link: /auth
+            text: Auth
+          - link: /storage
+            text: Storage
+          - link: /functions
+            text: Functions
+          - link: /pricing
+            text: Pricing
+          - link: /beta
+            text: Beta
+  - secondgrid:
+      - title: Company
+        links:
+          - link: /database
+            text: Database
+          - link: /auth
+            text: Auth
+          - link: /storage
+            text: Storage
+          - link: /functions
+            text: Functions
+          - link: /pricing
+            text: Pricing
+          - link: /beta
+            text: Beta
+      - title: Developers
+        links:
+          - link: /database
+            text: Database
+          - link: /auth
+            text: Auth
+          - link: /storage
+            text: Storage
+          - link: /functions
+            text: Functions
+          - link: /pricing
+            text: Pricing
+          - link: /beta
+            text: Beta
 
 footerHtml: true 
 ---
