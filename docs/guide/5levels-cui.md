@@ -1,4 +1,4 @@
-# 5 Levels of Conversational UI
+# 5 Levels of CUI
 
 ![five-levels-cui](/images/guide/five_levels_cui.png)
 

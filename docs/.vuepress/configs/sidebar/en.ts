@@ -20,7 +20,7 @@ export const en = {
       children: [
         '/guide/cooperative.md',
         '/guide/sgcui.md',
-        '/guide/5levels-sgcui.md',
+        '/guide/5levels-cui.md',
         '/guide/components.md',
         '/guide/architecture.md',
       ]
