@@ -9,17 +9,22 @@ Building CUI in this schema grounded fashion means we always first convert user 
 Aside from these soft influence, the schema grounded CUI actually have more constructive requirements on how conversational experience should be built differently.
 
 ## CUI Type System
-In programming languages, a type system is a logical system comprising a set of rules that assigns a property called a type to the various constructs of a computer program, such as variables, expressions, functions or modules. It is  
+In programming languages, a type system is a logical system comprising a set of rules that assigns a property called a type to the various constructs of a computer program, such as variables, expressions, functions or modules. It is considered as starting point for any programming language and everything else is built on top of this. The standard way of describe APIs nowadays is OpenAPI. OpenAPI is a programming language agnostic way define functions, at its core, there is also a type system. 
 
-it’s a logical system consisting of a set of rules that assign properties called types to various structures of a computer program, such as variables, expressions, functions, or modules.
-While conversation driven CUI approaches of 
+The core of the type system is to specify what types the programming language support. Types in programming languages are broadly classified and can be divided into built-in types represented by int and float, and abstract types represented by class and function. Since the types serve as the basis of the problem modeling, it is important to support modern concepts like: containers, inheritance and polymorphism, in addition to basic user define data types if one want to make is easier to model complex problems, which is exactly what [OpenAPI](https://swagger.io/docs/specification/data-models/) did.
+
+While recently there are some effort of supporting composite data type out of necessity,conversation driven CUI approaches in general does not have explicit support for user defined type, container, and polymorphism. While it is possible to simulate conversational behavior of these type system features, doing so put burden on the CUI builder and greatly increase the cost of building good conversational experience. Framely provide support for every type system features defined by OpenAPI 3.x at CUI level for both input and output, with the only exception on dictionary which only have output support. This way, so that Framely builder can enjoy modeling the problem at the abstract level permitted by modern type system.
+
+The types in OpenAPI are supported on Framely as follows: functions are mapped to intent, classes are mapped to frame, and primitive type and enum are mapped to entity. This means that there is a one-to-one mapping between semantics from user utterance to data structure at programming language level. The conversational behavior for these type can be defined through some declarative annotation at both interaction level and language level. If defined in library, these behaviors can be reused by other builder after import.  
 
 
-## Stack based Structured Conversations
+## Structured Conversations
+Since the conversational behavior is defined on the frame, and frame is potentially nested, so conversational behavior are necessarily nested. To make sure we can fill the nested structure through conversations, we make bot follow simple strategy like depth first search. The conversation follow such systematic algorithm is called structured conversation. 
+
 Structured conversations are simply composite conversation sequences, in both sequential and nested sense. Each sequence has concrete goal, and have a clear start and finish. Finish can come in different flavors: including abort by user or early exit per business logic. Furthermore, each sequence has a clear owner. Owner start the sequence, and set the goal and communicate to other party, and  other party is cooperating in help to achieve the goal for the owner. 
 
 Current conversation owner can yield ownership to other party: for example, the bot can say "what can I do for you", this can potentially start a nested conversation sequence that is owned by user. And after the sequence concludes, then the ownership automatically get back to bot. Of course, in this case, user can choose not to take the ownership by simply reply "nothing, thanks" , which will bring closure to bots' owned sequence, bot is expected to simply close the sequence in the next turn. 
 
 ## Implicit Contextual Management
-Structured conversations can be carried out using multiple stacks, each for one topic. Stack is a natural tool for nested structure.
+One of the hallmark of natural language is the same word can mean different things in the different context. While context dependent behavior is explicit modeled by conversation driven approaches, schema grounded CUI naturally has a context, the stack of frame that represent the the current filling. This forest representation of dialog state in the schema space made it easy to find the coreference for the pronouns and produce the contextual behavior almost as a by product.
 
