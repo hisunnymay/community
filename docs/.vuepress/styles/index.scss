@@ -266,7 +266,7 @@ html.dark {
 }
 
 .sidebar {
-	bottom: var(--footer-height);
+	// bottom: var(--footer-height);
 
 }
 
@@ -275,6 +275,7 @@ html.dark {
 	justify-content: space-between;
 	height: fit-content;
 	margin: auto;
+
 
 	.links {
 		display: flex;

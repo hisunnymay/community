@@ -12,21 +12,21 @@
             </div>
           </div>
           <ArticleList :items="articles.items" />
-        </div>  
+        </div>
+          <Footer />
       </main>
-      <Footer />
     </template>
   </ParentLayout>
 </template>
 <script setup lang="ts">
-import { useBlogType } from "vuepress-plugin-blog2/lib/client";
-import ArticleList from "../components/ArticleList.vue";
-import ParentLayout from "@vuepress/theme-default/lib/client/layouts/Layout.vue";
-import Footer from "../../components/page/footer.vue"
-const articles = useBlogType("article");
+import { useBlogType } from 'vuepress-plugin-blog2/lib/client'
+import ArticleList from '../components/ArticleList.vue'
+import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+import Footer from '../../components/page/footer.vue'
+const articles = useBlogType('article')
 </script>
 <style lang="scss"  scoped>
-.article-page{
+.article-page {
   max-width: var(--homepage-width);
   position: relative;
   margin-top: 30px;
@@ -35,14 +35,13 @@ const articles = useBlogType("article");
   flex-direction: column;
 }
 
-@media (max-width:719px){
-  .page{
+@media (max-width: 719px) {
+  .page {
     max-width: 100%;
   }
- /*.article-page{
+  /*.article-page{
   width: 100%;
   margin: auto;
 }*/
 }
-
 </style>
