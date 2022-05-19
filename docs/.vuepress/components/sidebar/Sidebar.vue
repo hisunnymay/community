@@ -18,11 +18,11 @@ const ToggleMenuSidebar = () => {
 </script>
 
 <template>
-  <aside class="sidebar">
+  <div class="sidebar">
     <slot name="top" />
     <ToggleMenu class="toggle" @click="ToggleMenuSidebar" />
 
     <SidebarItems />
     <slot name="bottom" />
-  </aside>
+  </div>
 </template>

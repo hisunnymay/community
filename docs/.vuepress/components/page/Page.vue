@@ -57,8 +57,8 @@ const checkPage = ()=>{
 
       <PageNav v-if="!frontmatter.pricing" />
 
-    </main>
     <Footer />
+    </main>
       <slot name="bottom" />
   </div>
 </template>
