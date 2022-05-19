@@ -124,8 +124,7 @@ html.dark {
 .grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	padding-left: 5rem;
-	padding-right: 5rem;
+	padding: 2rem 5rem;
 	margin: auto;
 
 }
@@ -164,7 +163,7 @@ html.dark {
 }
 
 .grid-2 div ul li a {
-	color: var(--c-text-lighter);
+	color: var(--c-text-lightest);
 }
 
 // end of big footer

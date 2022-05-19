@@ -7,16 +7,15 @@ tagline: Clone and import public libraries, reuse and customize everything effec
 cards:
     - package: Starter
       price: $99
-      badge: per year per user
+      badge: per year
       tagline: For developer team and freelancers, who want building and sharing
       features:
-                -  CUI Components
+                -  Public Projects
                 -  Public Libraries
+                -  CUI Components
+                -  Single Language
                 -  Hosting Backoffice
                 -  Basic NLU Model
-                -  Open Sourced Runtime
-                -  Public Projects
-                -  Single Language
                 -  Limited Integration
                 -  Community Support
       footertagline: Free projects are paused after 1 week of inactivity
@@ -29,10 +28,12 @@ cards:
       tagline: For growing teams and agencies who want stronger permissions
       features:
                 - 'Everything included in Starter and:'
+                - Collaboration Workflow
                 - Private Projects
                 - Multi Language
                 - Omni Channel
                 - Hosting Support
+                - Private Deployed
                 - Advanced NLU Model
       footertagline: Free projects are paused after 1 week of inactivity
       buttonText: Add Team Plan
