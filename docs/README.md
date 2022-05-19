@@ -64,63 +64,51 @@ cta :
     
 mainfooter:
   - firstgrid:
-      - title: product
+      - title: Product
         links:
           - link: /database
-            text: Database
+            text: Component
           - link: /auth
-            text: Auth
+            text: Chatbot
           - link: /storage
-            text: Storage
+            text: Service
           - link: /functions
-            text: Functions
+            text: Provider
           - link: /pricing
-            text: Pricing
-          - link: /beta
-            text: Beta
+            text: Runtime
       - title: Resources
         links:
-          - link: /database
-            text: Database
-          - link: /auth
-            text: Auth
-          - link: /storage
-            text: Storage
-          - link: /functions
-            text: Functions
-          - link: /pricing
-            text: Pricing
-          - link: /beta
-            text: Beta
+          - link: /guide/cooperative.html
+            text: Cooperative Principle
+          - link: /guide/sgcui.html
+            text: Schema Grounded CUI
+          - link: /guide/5levels-cui.html
+            text: 5 Levels of CUI
+          - link: /guide/components.html
+            text: CUI Component
+          - link: /guide/architecture.html
+            text: Under the Hood
   - secondgrid:
+      - title: Builder
+        links:
+          - link: /guide/
+            text: Guide
+          - link: /reference/
+            text: Reference
+          - link: https://github.com/framely/community/discussions
+            text: Community
+          - link: https://github.com/framely/community/issues
+            text: Issues
       - title: Company
         links:
-          - link: /database
-            text: Database
-          - link: /auth
-            text: Auth
+          - link: https://framely.medium.com/
+            text: About
+          - link: https://framely.medium.com/
+            text: Blog
           - link: /storage
-            text: Storage
-          - link: /functions
-            text: Functions
-          - link: /pricing
-            text: Pricing
-          - link: /beta
-            text: Beta
-      - title: Developers
-        links:
-          - link: /database
-            text: Database
-          - link: /auth
-            text: Auth
-          - link: /storage
-            text: Storage
-          - link: /functions
-            text: Functions
-          - link: /pricing
-            text: Pricing
-          - link: /beta
-            text: Beta
+            text: Career
+          - link: https://framely.webflow.io/contact
+            text: Contact
 
 footerHtml: true 
 ---

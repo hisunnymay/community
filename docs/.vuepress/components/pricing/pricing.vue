@@ -84,11 +84,11 @@ footer{
         flex-wrap: wrap;
         .badge-price {
           background: var(--c-bg-icon);
-          padding: 2px 5px;
+          padding: 2px 8px;
           color: var(--c-brand) !important;
           border-radius: 2px;
           height: 20px;
-          margin-left: 5px;
+          margin-left: 6px;
         }
       }
       .card-head {
