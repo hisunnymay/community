@@ -203,6 +203,31 @@ html.dark {
 // end small footer
 
 
+.page-nav {
+	.inner {
+		display: flex;
+		border-top: none;
+		padding-bottom: 2rem;
+		gap: 1rem;
+		.prev {
+			flex: 1 50%;
+			max-width: 50%;
+			padding: 1rem;
+			border-radius: 8px;
+			border: 1px solid var(--c-border);
+		}
+		.next {
+			flex: 1 50%;
+			max-width: 50%;
+			padding: 1rem;
+			border-radius: 8px;
+			border: 1px solid var(--c-border);
+			text-align: right;
+			margin-right: 0;
+			margin-left: auto;
+		}
+	}
+}
 
 // end of navbar dropdwons
 .navbar-dropdown-wrapper .navbar-dropdown .navbar-dropdown-item {
