@@ -44,7 +44,6 @@ const footerItems = computed(() => {
   </div>
   <section class="footer-small">
     <div class="links">
-      <div class="social"></div>
       <p>Framely, Inc &copy; 2022 All rights reserved</p>
     </div>
     <div class="links">
@@ -55,4 +54,9 @@ const footerItems = computed(() => {
     </div>
   </section>
 </template>
-
+<style scoped>
+.footer-small {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>

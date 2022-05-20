@@ -42,10 +42,6 @@ defineProps({
 
 </template>
 <style lang="scss" scoped>
-footer{
-    width: var(--homepage-width);
-    margin: auto;
-}
 .main {
   max-width: var(--homepage-width);
   position: relative;

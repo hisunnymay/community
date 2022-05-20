@@ -1,7 +1,6 @@
 <template>
   <section class="footer-small">
     <div class="links">
-      <div class="social"></div>
       <p>Framely, Inc &copy; 2022 All rights reserved</p>
     </div>
     <div class="links">
@@ -12,9 +11,3 @@
     </div>
   </section>
 </template>
-<style scoped>
-.footer-small {
-  width: 90%;
-  margin: auto;
-}
-</style>
