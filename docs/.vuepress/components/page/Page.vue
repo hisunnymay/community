@@ -46,7 +46,7 @@ const checkPage = ()=>{
       <slot name="top" />
       <Pricing v-if="frontmatter.pricing" :frontmatter="frontmatter" />
 
-      <div class="theme-default-content">
+      <div v-else class="theme-default-content">
         <ToggleMenu v-if="checkPage()"  class="toggle" @click="ToggleMenuSidebar" />
         <Content />
 
