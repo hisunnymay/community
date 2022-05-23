@@ -128,7 +128,6 @@ const RemoveSidebar = () => {
 <style  lang="scss">
 #router-link {
   display: inline-block;
-   margin: 0 auto;
 }
 .img-icon{
   padding-left: 2px;
