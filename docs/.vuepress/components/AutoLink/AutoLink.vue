@@ -74,6 +74,7 @@ const LinkIcon = computed(() => {
 // if this link is active
 const isActive = computed(() => {
   if (!isRouterLink.value) {
+    
     return false
   }
   if (item.value.activeMatch) {
@@ -104,7 +105,8 @@ const RemoveSidebar = () => {
     @click="RemoveSidebar"
   >
     <slot name="before" />
-      <img v-if="item.icon" class="linkicon" :src="LinkIcon" :alt="item.icon" />
+      <img v-if="item.icon" class="linkicon img-icon" 
+       :src="LinkIcon" :alt="item.icon" />
       {{ item.text }}
     <slot name="after" />
   </RouterLink>
@@ -126,6 +128,10 @@ const RemoveSidebar = () => {
 <style  lang="scss">
 #router-link {
   display: inline-block;
+   margin: 0 auto;
+}
+.img-icon{
+  padding-left: 2px;
 }
 
 .linkicon{

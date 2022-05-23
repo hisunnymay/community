@@ -120,6 +120,7 @@ html.dark {
 
 }
 
+
 // big footer
 .grid {
 	display: grid;
@@ -177,9 +178,14 @@ html.dark {
 	list-style: none;
 
 }
-
+.navbar-dropdown{
+	ul{
+		padding-left: 0;
+		margin: 0 0;
+	}
+}
 .navbar-dropdown-block {
-	padding: inherit;
+	// padding: inherit;
 }
 
 // buttons
@@ -449,7 +455,9 @@ html.dark {
 	.navbar-dropdown-block {
 		margin: 0;
 	}
-
+	.navbar-dropdown-wrapper .navbar-dropdown{
+		padding: 0 0;
+	}
 	.sidebar ul {
 		margin-top: 10px;
 	}
@@ -462,7 +470,7 @@ html.dark {
 	// dropdowns
 	.navbar-dropdown-wrapper.open .navbar-dropdown-title,
 	.navbar-dropdown-wrapper.open .navbar-dropdown-title-mobile {
-		margin-bottom: 0;
+		margin-bottom: 0.5rem;
 	}
 
 	.navbar-dropdown-wrapper .navbar-dropdown .navbar-dropdown-item .navbar-dropdown-subtitle>span {

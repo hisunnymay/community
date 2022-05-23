@@ -7,6 +7,7 @@ export const en = [
   {
     text: 'Guide',
     link: '/guide/',
+
   },
   {
     text: 'Reference',
@@ -16,20 +17,20 @@ export const en = [
 
         children: [
           {
-            link: '/reference/annotations/overview.md',
             text: 'Overview',
+            link: '/reference/annotations/overview.html',
             icon: "/featureIcons/cui.svg",
 
           },
           {
-            link: '/reference/annotations/vr.md',
+            text: "Value Recommendation",
+            link: '/reference/annotations/vr.html',
             icon: "/featureIcons/hotfix.svg",
-            text: "Value Recommendation"
           },
           {
-            link: '/reference/annotations/confirmation.md',
+            text: "Confirmation",
+            link: '/reference/annotations/confirmation.html',
             icon: "/featureIcons/declarative.svg",
-            text: "Confirmation"
           }
 
 

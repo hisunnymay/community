@@ -27,6 +27,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     '@theme/SidebarItem.vue': path.resolve(__dirname, './components/sidebar/SidebarItem.vue'),
     "@theme/NavbarItems.vue": path.resolve(__dirname, './components/navbar/NavbarItems.vue')
 
+    
+
   },
 
   head: [
