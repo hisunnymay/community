@@ -25,10 +25,10 @@ features:
     details: Never build from scratch, build complex behavior using imported components, so you can focus on what matters most for your business.
     icon: /images/featureIcons/component.svg
   - title: Hot Fixable NLU 
-    details: Accuracy is not the most important metric when it comes to dialog understanding. To deploy chatbot into production, every thing need to be hot fixable by operation team.
+    details: Accuracy is not the most important metric when it comes to dialog understanding. To deploy a chatbot into production, every thing need to be hot fixable by the operation team.
     icon: /images/featureIcons/hotfix.svg
   - title: Open Source Runtime
-    details: Reactjs enable teams to focus on their application dependent interaction logic, instead of reinventing wheels. Framely is doing the same for chatbot. 
+    details: Reactjs enables teams to focus on their application dependent interaction logic, instead of reinventing wheels. Framely is doing the same for chatbots. 
     icon: /images/featureIcons/open-source-line.svg
   - title: Universal Messages
     details: Omnichannel made easy, the universal messages you defined once will get automatically translated into native message for each channel.  
@@ -40,20 +40,20 @@ features:
     details: The same interaction logic should be shared between all the different languages, so that you can use people with entirely different skillsets for this. 
     icon: /images/featureIcons/multi-language.svg
   - title: Fully Extensible
-    details: The chatbot defined on the Framely are generated into kotlin code, which makes it easy to integrate with any channel, support, and services, take full advantage of java/kotlin ecosystem.
+    details: The chatbot defined on the Framely are generated into kotlin code, which makes it easy to integrate with any channel, support and services, take full advantage of java/kotlin ecosystem.
     icon: /images/featureIcons/raw-code.svg
 
 contentCards:
   - title: Start with API Schema
-    details: The services that you want to expose is uniquely defined by API schema, which on one hand capture the data type of the input and output parameter, and signature of the function, and on the other hand represent the meaning user expression in the utterances. 
+    details: The services that you want to expose is uniquely defined by API schema, which on one hand, capture the data type of the input and output parameter, and signature of the function, and on the other hand, represent the meaning user expression in the utterances. 
     image: /images/schema.png
     left: true
   - title: Declare Interaction Logic
-    details: Schema defines what information we need to collect from user in order to deliver the desired user experience. The interaction logic is driven by business logic and goal. Framely provides a set of interaction annotation which builder can use declaratively describe what conversational experience they want to provide, and Framely runtime will take care of the rest.
+    details: Schema defines what information we need to collect from a user in order to deliver the desired user experience. The interaction logic is driven by business logic and goals. Framely provides a set of interaction annotation which a builder can use declaratively to describe what conversational experience they want to provide, and Framely runtime will take care of the rest.
     image: /images/interaction.png
     left: false
   - title: Link Utterances to Semantics 
-    details: Natural language utterances in the different language is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, builder only need to touch language part of relevant interaction annotation, by provider exemplars for user utterance, and template for bot messaging, no machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for hire a Ph.D for this.
+    details: Natural language utterances in the different languages is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, the builder only needs to touch the language part of the relevant interaction annotation, by providing exemplars for user utterance and template for bot messaging. No machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for a Ph.D hire.
     image: /images/language.png
     left: true
 
