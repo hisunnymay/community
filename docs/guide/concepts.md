@@ -1,4 +1,4 @@
-# Key Concepts and Terminology
+# Key Concepts
 
 This section helps you understand the key concepts at the org level, and at chatbot level in terms of build, test, deploy and operate chatbots.
 
@@ -59,9 +59,10 @@ After these types are defined at schema level, builder can add annotation on top
 Dialog annotations can be defined both on slot and frame level. Slot level annotations defines how individual slot can be filled. This includes whether the slot can take multiple values, whether it need confirmation. For frame slot, whether the polymorphism is allowed.  Frame level annotations are related to multi-slot filling where values for slots need to collectively make business sense. This includes annotations like value recommendations and value check. Value recommendation provide user with candidate list so that they can pick one from that instead of input something that is invalid. Value check make sure agent catch user input error as early as possible so that conversation can be efficient. Dialog anntoation are naturally separated into interaction related and language related, each can be handled by different set of people. This makes multiple language support easy.
 
 ### Storage Annotation
+Framely support the full stack component, data types (frames) defined on the platform can be persisted to tables in the database. The storage annotation is used to specify how frames are storage in the Postgresql. For each slot, Builder can specify how to store them, whether to create index for it, or add unique constraint. And stored procedures can be then be defined on these table, and served as function via Postgrest. 
 
 ### Backoffice Annotation
-
+Aside from being manipulated by user through Postgrest restful API, the persisted data can also be managed via admin web interface. In addition to storage annotation, builder can use backoffice annotation to specify how operation team can access these data via that web interface. This includes whether they can add row, change cell, etc. Backoffice annotation can also include the hint on what help and safeguard we have on the data entry for each slot.  
 
 ## Operational Software
 After we build the conversational service, we can deploy them for different channels. Then we need to operate the services. This includes both backoffice that manages the transactions from the end users, and support software that human agent can step in when bot failed to meet user's needs. 

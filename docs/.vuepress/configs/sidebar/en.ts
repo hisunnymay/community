@@ -18,8 +18,8 @@ export const en = {
     {
       text: "Essentials",
       children: [
-        '/guide/structured.md',
-        '/guide/cui.md',
+        '/guide/cooperative.md',
+        '/guide/sgcui.md',
         '/guide/5levels-cui.md',
         '/guide/components.md',
         '/guide/architecture.md',

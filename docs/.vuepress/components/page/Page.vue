@@ -63,14 +63,6 @@ const checkPage = ()=>{
   </div>
 </template>
 <style lang="scss" scoped>
-
-
-
-
-.content {
-  max-width: 60%;
-}
-
 .angle {
   display: none;
 }
