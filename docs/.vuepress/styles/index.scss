@@ -120,9 +120,12 @@ html.dark {
 
 }
 
+
+
 .page {
     padding-bottom: 0;
   }
+
 
 // big footer
 .container-footer {
@@ -234,9 +237,14 @@ html.dark {
 	list-style: none;
 
 }
-
+.navbar-dropdown{
+	ul{
+		padding-left: 0;
+		margin: 0 0;
+	}
+}
 .navbar-dropdown-block {
-	padding: inherit;
+	// padding: inherit;
 }
 
 // buttons
@@ -448,7 +456,9 @@ html.dark {
 	.navbar-dropdown-block {
 		margin: 0;
 	}
-
+	.navbar-dropdown-wrapper .navbar-dropdown{
+		padding: 0 0;
+	}
 	.sidebar ul {
 		margin-top: 10px;
 	}
