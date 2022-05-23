@@ -28,7 +28,7 @@ features:
     details: Accuracy is not the most important metric when it comes to dialog understanding. To deploy a chatbot into production, every thing need to be hot fixable by the operation team.
     icon: /images/featureIcons/hotfix.svg
   - title: Open Source Runtime
-    details: Reactjs enable teams to focus on their application dependent interaction logic, instead of reinventing wheels. Framely is doing the same for chatbots. 
+    details: Reactjs enables teams to focus on their application dependent interaction logic, instead of reinventing wheels. Framely is doing the same for chatbots. 
     icon: /images/featureIcons/open-source-line.svg
   - title: Universal Messages
     details: Omnichannel made easy, the universal messages you defined once will get automatically translated into native message for each channel.  
@@ -53,7 +53,7 @@ contentCards:
     image: /images/interaction.png
     left: false
   - title: Link Utterances to Semantics 
-    details: Natural language utterances in the different languages is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, the builder only needs to touch the language part of the relevant interaction annotation, by provider exemplars for user utterance and template for bot messaging. No machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for a Ph.D hire.
+    details: Natural language utterances in the different languages is translated to and from schema event by Framely dialog understanding and module. To control the language perception related behavior, the builder only needs to touch the language part of the relevant interaction annotation, by providing exemplars for user utterance and template for bot messaging. No machine learning (ML) and natural language understanding (NLU) training is needed, certainly no need for a Ph.D hire.
     image: /images/language.png
     left: true
 
