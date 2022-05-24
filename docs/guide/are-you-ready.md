@@ -1,6 +1,6 @@
 # Before You Start
 
-Framely is a low code platform allow you to build schema grounded conversational user interface (CUI) for you service APIs, in a declarative and component based fashion. It is designed to help regular business development team build great CUI for your service, without hire special skillset like NLU Ph.D on your team. Instead of focusing on the conversations, Framely allows you to focus the data structures, APIs and interaction logic, and takes care of context dependent dialog understanding based on just a few examples. To take full advantage of Framely, these are the couple things you might want to get ready. 
+Framely is a low code platform allow you to build schema grounded conversational user interface (CUI) for you service APIs, in a declarative and component based fashion. It is designed to help regular business development team build great CUI for your service, without hiring special talents like NLU Ph.D on your team. Instead of focusing on the conversations, Framely allows you to focus on the data structures, APIs and interaction logic, and takes care of context dependent dialog understanding based on just a few examples. To take full advantage of Framely, these are the couple things you might want to get ready. 
 
 ## APIs for the Services
 
@@ -16,7 +16,7 @@ The success of any chatbot project requires you have a CUI product manager. This
 
 
 ## Have operation team ready
-Create the CUI for your business is just the first step, you need to have operation team, so you can bring the chatbot online. This is important for two reasons. First language is very complex things, it is hard for you to get it dialog understanding right in one shot, so it is import to monitoring the actually conversations and provide expression to continuously to improve dialog understanding for you domain. Second, with CUI, user can ask for services that you are not prepared, this is a good opportunity for you to figure out what other features should be developed next. The good thing about CUI is, you do not have to educate your user, if they need a feature, they will find you.
+Create the CUI for your business is just the first step, you need to have operation team, so you can bring the chatbot online. This is important for two reasons. First language is very complex things, it is hard for you to get it dialog understanding right in one shot, so it is essential to monitor the actual conversations and provide expression to continuously to improve dialog understanding for your domain. Second, with CUI, a user can ask for services that you are not prepared, this is a good opportunity for you to figure out what other features should be developed next. The good thing about CUI is, you do not have to educate your user, if they need a feature, they will find you.
 
 ## Budget engineering resource 
 When you need to work with channels/support/services that is not currently supported by Framely runtime, you will need to budget some engineering resource. Framely's extensible due to its plug-and-play design, but it will require you have engineering resource.

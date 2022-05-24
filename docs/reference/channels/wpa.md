@@ -1,5 +1,5 @@
 # WeChat Official Account
-A WeChat Official Account exists in the form of a Wechat user's contact, and chat is the basis for the interaction between the Official Account and its users. Follow these steps to config WeChat Official Account.
+A WeChat Official Account exists in the form of a Wechat user's contact, and chat is the basis for the interaction between the Official Account and its users. Follow these steps to configure WeChat Official Account.
 
 ## Before You Begin
 If you don't have WeChat Official Account, set up one first.
@@ -44,7 +44,7 @@ If you used *Developer Password(AppSecret)* before but didn't store it, you can 
 ![An image](/images/channelConfig/step2_4.png)
 
 ## Deploy Chatbot
-We show here how we deploy chatbot to Framely hosted environment, for the priviate deploy, please consult systems in your organization.
+We show here how we deploy chatbot to Framely hosted environment, for the private deployment, please consult systems in your organization.
 1. Back to your chatbot page, paste *AppID*, *AppSecret* and *Token* you copied.
 2. Click **SAVE**.
 
