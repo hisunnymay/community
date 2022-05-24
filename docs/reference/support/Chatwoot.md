@@ -19,7 +19,7 @@ When a user demands talking to a human agent, we can forward the conversation to
 
 ![how-it-works-4](/images/Chatwoot/how-it-works-4.gif)
 
-5. After the agent resolves the conversation, next time end-user will start with interacting bot again.
+5. After the agent resolves the conversation, next time the end-user will start with interacting bot again.
 
 ![how-it-works-4](/images/Chatwoot/how-it-works-5.png)
 
@@ -41,7 +41,7 @@ Once you log into [Chatwoot](https://chatwoot.naturali.io/), you can click **Set
 ![config-agents](/images/Chatwoot/config-agents.png)
 
 ::: danger
-The role of BotAgent1 should always be administadministrator. Otherwise, agents can not receive messages sent by end-users.
+The role of BotAgent1 should always be administrator. Otherwise, agents can not receive messages sent by end-users.
 :::
 
 ### Set Up Inbox 
