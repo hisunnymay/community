@@ -12,7 +12,7 @@ If user chose ***NO*** and provide no further instruction, bot will inform user 
 
 ::: story 
 
-Bot: Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. Con you confirm these are what you want to order?
+Bot: Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. Can you confirm these are what you want to order?
 
 User: No.
 
@@ -36,7 +36,7 @@ Confirmation is optional for conversation design, Abusive usage will lead to the
 - Next step is user-sensitve: e.g. invoke a payment
 - You tend to win more by reducing the uncertainty: e.g. user selects items and asks to check out, confirm shopping list and total amount
 - Your business procedure requires it
-- Your target user does not mind be interrupt: e.g. they are conservative in character, or not familiar with the service you provide
+- Your target user does not mind to be interrupted: e.g. they are conservative in character, or not familiar with the service you provide
 
 
 
@@ -68,7 +68,7 @@ For further information of interacting, see [Frame filling](https://framely.gith
 While frame level sounds promising by batch confirming, it might mess user up if things go wrong. We suggest you to use the more frequent asked ones when:
 
 - You have strong confidence you could to reach a consensus with user
-- And if unfortunately you failed, the consequence is either acceptable or can be repaired in reasonable turns of interactions. We support the later by [CRUD](https://framely.github.io/guide/5levels-cui.html#crud-support).
+- And if unfortunately you failed, the consequence is either acceptable or can be repaired in reasonable turns of interactions. We support the latter by [CRUD](https://framely.github.io/guide/5levels-cui.html#crud-support).
 
 
 
@@ -102,7 +102,7 @@ For each Confirmation annotation, multiple conditions can be added.
 
 [DM (dialog manager)](https://framely.github.io/404.html) will check these conditions one after one, and using the first one who's true to interact with user during conversation.
 
-In another word, these conditions are joint by `IF-ELSE` relationship.
+In other words, these conditions are joined by `IF-ELSE` relationship.
 
 
 
@@ -145,7 +145,7 @@ For further information of interacting, see [Type](https://framely.github.io/404
 
 Confirmation can be asked in two different ways:
 
-- Explicit confirmation: Inform / emphasize information, ask user to confirm them, and move forward based on the answer user given.
+- Explicit confirmation: Inform / emphasize information, ask a user to confirm them, and move forward based on the answer user given.
 - Implicit confirmation: Inform / emphasize information, then assume user always agrees and move forward.
 
 ::: story 
@@ -166,7 +166,7 @@ We suggest you to carefully choose implicit confirmation based on the same rule 
 
 ### Affirmatives and Negatives
 
-User makes choice of  ***YES*** / ***NO***  through expression, and we supports the followings by default:
+User makes a choice of  ***YES*** / ***NO***  through expression, and we supports the followings by default:
 
 - Affirmatives
 
@@ -193,7 +193,7 @@ Note: The customization will only effect within the condition. For everlasting /
 
 ### Customize Strategy
 
-When user chooses ***NO*** and provides no further disruption, bot will ask user:
+When a user chooses ***NO*** and provides no further disruption, the bot will ask the user:
 
 ::: story 
 
@@ -205,7 +205,7 @@ This default strategy is defined in [system intent](https://framely.github.io/40
 
 
 
-For now, the expression of ***NO*** is the only thing we allow to customize. But we might plan to support both ***YES*** and ***NO***'s customizing behaviour (not only expression). Let us know if you have any suggestion.
+For now, the expression of ***NO*** is the only thing we allow to customize. But we might plan to support both ***YES*** and ***NO***'s customizing behaviour (not only expression). Let us know if you have any suggestions.
 
 
 
@@ -223,7 +223,7 @@ To understand how this works, see [On dialog understanding](On dialog understand
 
 ### Cooperate with Value Recommendation
 
-When [Value Recommendation](https://framely.github.io/reference/annotations/vr.html) has only 1 candidate, asking user to choose from 1 out of 1 implies confirmation as well. 
+When [Value Recommendation](https://framely.github.io/reference/annotations/vr.html) has only 1 candidate, asking users to choose from 1 out of 1 implies confirmation as well. 
 
 We cut the redundancy by asking [Value Recommendation's Single-entry Prompts](https://framely.github.io/reference/annotations/vr.html#single-entry-prompts) first, then skip Confirmation annotation.
 
@@ -237,7 +237,7 @@ Bot: Are you sure you want to add pizza to shopping cart? *(Ask to confirm)*
 
 User: Yes.
 
-Bot: For drink, we only has coke in stock, do you want it? *(Value Recommendation with 1 candidate, using Single-entry Prompt)*
+Bot: For drinks, we only have coke in stock, do you want it? *(Value Recommendation with 1 candidate, using Single-entry Prompt)*
 
 User: Yes.
 
