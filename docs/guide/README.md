@@ -62,7 +62,7 @@ Being able to create a well-functioning chatbot by just looking at past conversa
 
 ### Flow Based Approach
 
-Business logic is typically described as processes. Full control of each step a user takes is possible in graphical user interfaces  but not in conversational interaction. Without some sort of factorization, the possible conversational paths needed in modeling by flow based approach grows exponentially with complexity. Thus flow based approach to define conversational interaction becomes prohibitively costly. It is clear that humans are unpredicatble during a conversation and therefore the builder can specify the behaviour of the bot when a conversation deviates.
+Business logic is typically described as processes. Full control of each step a user takes is possible in graphical user interfaces but not in conversational interaction. Without some sort of factorization, the possible conversational paths needed in modeling by flow based approach grows exponentially with complexity. Thus flow based approach to define conversational interaction becomes prohibitively costly. It is clear that humans are unpredicatble during a conversation and therefore the builder can specify the behaviour of the bot when a conversation deviates.
 
 ### Low Level Library
 
