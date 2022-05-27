@@ -106,8 +106,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
 </template>
 <style lang="scss" scoped>
 .navbar {
-  //padding-left: 10px;
-  padding-left: var(--navbar-padding-h);
+  padding-left: var(--navbar-padding-h); // icon padding left
 }
 .button {
   margin-left: 20px;
@@ -160,14 +159,14 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     transition: 0.5s ease-out;
     position: fixed;
     top: var(--navbar-height);
-    height: 100%;
+    height: 100vh;
     //padding-left: 10px;
     position: fixed;
-    left: 0px;
-    width: 100%;
+    right: 0;
+    width: 100vw;
     font-size: 1.1em;
-    top: var(--navbar-height);
-    transform: translate(-120%);
+    //top: var(--navbar-height);
+    transform: translate(120%);
     line-height: 1.4em;
     
   }
