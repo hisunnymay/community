@@ -40,7 +40,6 @@ To model complex real world business and more importantly promote reuse, frames 
 
 Since intent is essentially verb + frame, and same frame can be used by different intent, frame also naturally serves as context to pivot conversation back and forth between intents. This makes it easy to support side questions. For example when a chatbot asks a user "which day you want to fly to Shanghai?", user's response "how is the weather like there?", while seemed missing information, is easy to understand.
 
-
 ### Entity
 The term entity is used to describe the general concept of types, and they are basic building block for complex data type. When discussing entity details, it's important to understand these specific aspects:
 1. Type: Defines the type of information you want to extract from user input. For example, cell phone model could be an entity type.
@@ -48,6 +47,10 @@ The term entity is used to describe the general concept of types, and they are b
 3. Entry: For each entity type, there are many entity entries. Each entity entry provides a set of words or phrases that are considered equivalent. For example, if cell phone is an entity type, you could define these entity entries: "iphone 12", "huawei mate pro", etc.
 
 In conversation layer, entity represents an instance of concept type, like "beijing" is an instance of type "city". In service layer, entity are mapped to primitive type, of enum like atomic type. Understanding entity is typically done by extractive understanding, with synonyms annotation are the important control that builder has to influence the dialog understanding behavior.
+
+
+## Frame Filling
+One of the goal of the schema grounded CUI is to extract what service users want and how they want it from conversations into structured data called frames. We call this process frame filling. There are natural structures motivated by application logic among the slots covered by these frames, and interaction logic need to reflect that. For example, we might need to skip the interaction on a set of slots based on some condition per application logic, so it is more effective to define the interaction behavior on the frames instead of slots. The application logic is naturally integrated into interaction via functions from services, in form of data sources for value recommendation and conditions. 
 
 
 ## Annotations

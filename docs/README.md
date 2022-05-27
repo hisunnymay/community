@@ -59,7 +59,7 @@ contentCards:
 
 cta :
   - details: Build conversational interface for your APIs.
-    title: Start Project
+    title: Get Started
     link: https://framely.naturali.io
     
 mainfooter:
