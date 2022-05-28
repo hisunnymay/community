@@ -73,6 +73,9 @@ defineProps({
       position: relative;
       top: 0;
       transition: top ease 0.5s;
+      &:hover{
+        top: -10px;
+      }
 
       .price-badge {
         display: flex;
@@ -124,21 +127,14 @@ defineProps({
         }
       }
     }
-    .card:hover{
-      top: -10px;
-    }
   }
 }
 @media (max-width: 719px) {
   .main {
-    //width: 100%;
     .cards {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      //width: 90%;
       .card {
-        //width: 90%;
         min-width: fit-content;
       }
     }
