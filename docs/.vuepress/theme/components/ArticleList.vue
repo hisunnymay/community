@@ -47,32 +47,25 @@ defineProps({
 })
 </script>
 <style lang="scss">
-/*.sticky{
-  width: var;
-}*/
 .article-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   margin: 2rem auto;
-  padding: 0 2rem;
   grid-row-gap: 2rem;
-  //grid-column-gap: 2rem;
+  grid-column-gap: 4rem;
 
     .blog-card {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      padding: 1.5rem;
       position: relative;
       top: 0;
       transition: top ease 0.5s;
-    }
-
-    .blog-card:hover {
-      border: 1px solid var(--c-border);
-      border-radius: 6px;
-      top: -10px;
+      &:hover {
+        border-radius: 6px;
+        top: -10px;
+      }
     }
 
     .blog-card-image {
@@ -99,7 +92,7 @@ defineProps({
     .blog-card-info-description {
       color: var(--c-text-lighter);
       margin-top: 0px;
-      font-weight: normal
+      font-weight: normal;
     }
 
     .blog-card-info-bottom {
@@ -110,19 +103,23 @@ defineProps({
       padding-top: 0.5rem;
       color: var(--c-text-lighter);
       font-size: 12px;
-      font-weight: normal
+      font-weight: normal;
     }
 
     .author{
       text-transform: uppercase;
     }
 }
+@media (max-width:960px){
+  .article-wrapper {
+    padding:0 2rem;
+    grid-column-gap: 2rem;
+  }
+}
 @media (max-width:719px){
   .article-wrapper {
     grid-template-columns:1fr ;
-    //width: 100%;
     align-items: center;
-    justify-items: center;
   }
   .blog-card {
     border: 1px solid var(--c-border);

@@ -255,23 +255,21 @@ html.dark {
 	color: var(--c-bg);
 	transition: all 0.5s ease-out;
 	cursor: pointer;
-}
-
-.button-small:hover {
-	background: var(--c-brand-light);
-	border-color: var(--c-brand-light);
+	&:hover {
+		background: var(--c-brand-light);
+		border-color: var(--c-brand-light);
+	}
 }
 
 .button-small.secondary {
 	color: var(--c-brand);
 	background-color: var(--c-bg);
 	border-color: var(--c-brand);
-}
-
-.button-small.secondary:hover {
-	color: var(--c-bg);
-	background: var(--c-brand-light);
-	border-color: var(--c-brand-light);
+	&:hover {
+		color: var(--c-bg);
+		background: var(--c-brand-light);
+		border-color: var(--c-brand-light);
+	}
 }
 
 .button-medium {
@@ -284,11 +282,10 @@ html.dark {
 	color: var(--c-bg);
 	text-align: center;
 	cursor: pointer;
-}
-
-.button-medium:hover {
-	background: var(--c-brand-light);
-	border-color: var(--c-brand-light);
+	&:hover {
+		background: var(--c-brand-light);
+		border-color: var(--c-brand-light);
+	}
 }
 
 .button-large {
