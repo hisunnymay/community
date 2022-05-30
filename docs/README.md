@@ -6,10 +6,10 @@ tagline: Schema grounded Chatbots for any Services
 heroText: Vue of Conversational User Interface
 actions:
   - text: Get Started
-    link: /guide/getting-started.html
+    link: https://framely.naturali.io
     type: primary
-  - text: Introduction
-    link: /guide/
+  - text: Learn More
+    link: /guide/getting-started.html
     type: secondary
 features:
   - title: CUI for your APIs
