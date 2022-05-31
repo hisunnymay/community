@@ -82,23 +82,23 @@ And the following conversation can be expected:
 
 **Use case 1**
 
-Bot: What kind of colour do you like for flowers? 
+Bot: *What kind of colour do you like for flowers?*
 
-User: Red, please.
+User: *Red, please.*
 
+:::
 
+::: story
 
 **Usecase 2: Stuck unless getting an answer**
 
-Bot: What kind of colour do you like for flowers? 
+Bot: *What kind of colour do you like for flowers?* 
 
-User:  What do you have for roses? *(Digression)*
+User: *What do you have for roses? (Digression)*
 
-Bot: Red and white. *(Anser digression)*
+Bot: *Red and white. (Anser digression)<br/>&emsp;&emsp;What kind of colour do you like for flowers?*
 
-What kind of colour do you like for flowers? 
-
-User: Red, please.
+User: *Red, please.*
 
 :::
 
@@ -145,25 +145,27 @@ And the following conversation can be expected:
 
 **Use case 1: met condition**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Rose
+User: *Rose*
 
-Bot: What kind of colour would you like for roses?
+Bot: *What kind of colour would you like for roses?*
 
-User: Red, please.
+User: *Red, please.*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
+:::
 
+::: story
 
 **Use case 2: not met condition**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Sunflower.
+User: *Sunflower.*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
 :::
 
@@ -216,31 +218,35 @@ And the following conversation can be expected:
 
 **Use case 1: YES**
 
-Bot: Do you want a message card?
+Bot: *Do you want a message card?*
 
-User: Yes
+User: *Yes*
 
-Bot: What kind of card do you want? We have: 1. birthday card. 2. thanks card ...
+Bot: *What kind of card do you want? We have: 1. birthday card. 2. thanks card ...*
 
+:::
 
+::: story
 
 **Use case 2: Slot value**
 
-Bot: Do you want a message card?
+Bot: *Do you want a message card?*
 
-User: Can I have a birthday card?
+User: *Can I have a birthday card?*
 
-Bot: To whom do you want to send to? ...
+Bot: *To whom do you want to send to? ...*
 
+:::
 
+::: story
 
 **Use case 3: NO**
 
-Bot: Do you want a message card?
+Bot: *Do you want a message card?*
 
-User: NO
+User: *NO*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
 :::
 
@@ -296,25 +302,23 @@ And the following conversation can be expected:
 
 **Use case 1: user mentions**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Rose
+User: *Rose<br/>&emsp;&emsp;Oh, can you leave a message of "How many loved your moments of glad grace..."*
 
-Oh, can you leave a message of "How many loved your moments of glad grace..."
+Bot: *Just leave the note for you.<br/>&emsp;&emsp;Your order is done.*
 
-Bot: Just leave the note for you. 
+:::
 
-Your order is done.
-
-
+::: story
 
 **Use case2: user doesn't mention**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Rose
+User: *Rose*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
 :::
 
@@ -363,13 +367,11 @@ And the following conversation can be expected:
 
 ::: story
 
-Bot: Happy Valentine's day! We only sell roses for tens a bunch today.
+Bot: *Happy Valentine's day! We only sell roses for tens a bunch today.<br/>&emsp;&emsp;What kind of flower do you like?*
 
-What kind of flower do you like?
+User: *Rose*
 
-User: Rose
-
-Bot: Ok, then your order is done for 10 roses.
+Bot: *Ok, then your order is done for 10 roses.*
 
 :::
 
@@ -412,19 +414,13 @@ And the following conversation can be expected:
 
 ::: story
 
-Bot: Your order contains 10 roses. 
+Bot: *Your order contains 10 roses.<br/>&emsp;&emsp;[Payment Link]<br/>&emsp;&emsp;You need to complete payment to secure the order.*
 
-[Payment Link]
+*... BOT WAITING...*
 
-You need to complete payment to secure the order.
+User: *(Pay for the order)*
 
-*... BIOCKING*
-
-U: *Paid for the order*
-
-Bot: Payment completed. 
-
-Your order is done.
+Bot: *Payment completed.<br/>&emsp;&emsp;Your order is done.*
 
 :::
 
