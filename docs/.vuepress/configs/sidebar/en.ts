@@ -38,6 +38,7 @@ export const en = {
 
       children: [
         '/reference/annotations/overview.md',
+        '/reference/annotations/fillstratetgy.md',
         '/reference/annotations/vr.md',
         '/reference/annotations/confirmation.md',
       ],
