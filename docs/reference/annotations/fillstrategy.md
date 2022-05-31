@@ -96,7 +96,7 @@ Bot: *What kind of colour do you like for flowers?*
 
 User: *What do you have for roses? (Digression)*
 
-Bot: *Red and white. (Anser digression)<br/>&emsp;&emsp;What kind of colour do you like for flowers?*
+Bot: *Red and white. (Answer digression)<br/>&emsp;&emsp;What kind of colour do you like for flowers?*
 
 User: *Red, please.*
 
