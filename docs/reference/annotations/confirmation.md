@@ -1,6 +1,6 @@
 # Confirmation
 
-
+[[toc]]
 
 ## Overview
 
@@ -61,7 +61,7 @@ There are three kinds of confirmation:
 | Confirmation (slot level)              | Confirming after the slot (as a whole) is checked. This works for both single-valued and multi-valued slot. | the slot's (whole) value      |
 | Multi-Valued Confirmation (slot level) | Confirming each time a slot value is given, if the slot is multi-valued. | the slot's each value         |
 
-For further information of interacting, see [Frame filling](https://framely.github.io/404.html).  
+For further information of interaction, see [Frame filling](https://www.framely.ai/reference/slotfilling.html).  
 
 
 
@@ -100,7 +100,7 @@ For each Confirmation annotation, multiple conditions can be added.
 
 
 
-[DM (dialog manager)](https://framely.github.io/404.html) will check these conditions one after one, and using the first one who's true to interact with user during conversation.
+[DM (dialog management)](https://www.framely.ai/guide/architecture.html#dialog-management) will check these conditions one after one, and using the first one who's true to interact with user during conversation.
 
 In other words, these conditions are joined by `IF-ELSE` relationship.
 
@@ -137,7 +137,7 @@ For function invocation:
 | Is type of               | SV, MV, frame                                | x is y                                          |
 | Congruent                | MV                                           | x and y are bijection                           |
 
-For further information of interacting, see [Type](https://framely.github.io/404.html).  
+For further information, see [Type](https://www.framely.ai/guide/concepts.html#type-systems).  
 
 
 
@@ -150,9 +150,7 @@ Confirmation can be asked in two different ways:
 
 ::: story 
 
-Bot: Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. *(Implicit Confirmation)*
-
-Bot: Order is placed. We'll send you to payment now. *Action: send payment card.*
+Bot: *Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. (Implicit Confirmation)<br/>&emsp;&emsp;Order is placed. We'll send you to payment now. *Action: send payment card.*
 
 :::
 
@@ -197,11 +195,11 @@ When a user chooses ***NO*** and provides no further disruption, the bot will as
 
 ::: story 
 
-Bot: What do you want to do next? You can change your choice before, leave the task and more. 
+Bot: *What do you want to do next? You can change your choice before, leave the task and more.*
 
 :::
 
-This default strategy is defined in [system intent](https://framely.github.io/404.html) **io.framely.core.ConfirmationNo**. If you favour some other expression, you could customize them under its **Response** tab.
+This default strategy is defined in [system intent](https://www.framely.ai/reference/systemframes/systemframe.html) **io.framely.core.ConfirmationNo**. If you favour some other expression, you could customize them under its **Response** tab.
 
 
 
@@ -213,7 +211,7 @@ For now, the expression of ***NO*** is the only thing we allow to customize. But
 
 As mentioned in [Affirmatives and Negatives](#affirmatives-and-negatives), we offer a few default expression for all Confirmation annotations. 
 
-They are defined in [system frame](https://framely.github.io/404.html) **io.framely.core.confirmation.Yes** and **io.framely.core.confirmation.No**. If you want to populate more expressions, you could add them under their **Expression** tab.
+They are defined in [system frame](https://www.framely.ai/reference/systemframes/systemframe.html) **io.framely.core.confirmation.Yes** and **io.framely.core.confirmation.No**. If you want to populate more expressions, you could add them under their **Expression** tab.
 
 
 
@@ -229,18 +227,18 @@ We cut the redundancy by asking [Value Recommendation's Single-entry Prompts](ht
 
 ::: story
 
-Bot: Which one do you want for main dish? We have: 1. pizza, 2. risotto and many other more. *(Value Recommendation with multiple candidates)*
+Bot: *Which one do you want for main dish? We have: 1. pizza, 2. risotto and many other more. (Value Recommendation with multiple candidates)*
 
-User: Pizza.
+User: *Pizza.*
 
-Bot: Are you sure you want to add pizza to shopping cart? *(Ask to confirm)*
+Bot: *Are you sure you want to add pizza to shopping cart? (Ask to confirm)*
 
-User: Yes.
+User: *Yes.*
 
-Bot: For drinks, we only have coke in stock, do you want it? *(Value Recommendation with 1 candidate, using Single-entry Prompt)*
+Bot: *For drinks, we only have coke in stock, do you want it? (Value Recommendation with 1 candidate, using Single-entry Prompt)*
 
-User: Yes.
+User: *Yes.*
 
-Bot: What do you want for dessert? *(Skip confirm, asking next slot instead)*
+Bot: *What do you want for dessert? (Skip confirm, asking next slot instead)*
 
 :::
