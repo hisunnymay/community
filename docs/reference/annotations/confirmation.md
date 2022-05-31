@@ -12,19 +12,19 @@ If user chose ***NO*** and provide no further instruction, bot will inform user 
 
 ::: story 
 
-Bot: Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. Can you confirm these are what you want to order?
+Bot: *Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15.<br/>&emsp;&emsp;Can you confirm these are what you want to order?*
 
-User: No.
+User: *No.*
 
-Bot: What do you want to do next? You can change your choice before, leave the task and more.
+Bot: *What do you want to do next? You can change your choice before, leave the task and more.*
 
-User: I want to drop 1 coke.
+User: *I want to drop 1 coke.*
 
-Bot: 1 coke is removed. Your shopping cart has 1 pizza, 1 cokes. Total amount is: $15. Con you confirm these are what you want to order?
+Bot: *1 coke is removed.<br/>&emsp;&emsp;Your shopping cart has 1 pizza, 1 cokes. Total amount is: $15.<br/>&emsp;&emsp;Con you confirm these are what you want to order?*
 
-User: Yes.
+User: *Yes.*
 
-Bot: Order is placed. We'll send you to payment now. *Action: send payment card.*
+Bot: *Order is placed. We'll send you to payment now.<br/>&emsp;&emsp;[Payment card]*
 
 :::
 
@@ -150,7 +150,7 @@ Confirmation can be asked in two different ways:
 
 ::: story 
 
-Bot: *Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. (Implicit Confirmation)<br/>&emsp;&emsp;Order is placed. We'll send you to payment now. *Action: send payment card.*
+Bot: *Your shopping cart has 1 pizza, 2 cokes. Total amount is: $15. (Implicit Confirmation)<br/>&emsp;&emsp;Order is placed. We'll send you to payment now. <br/>&emsp;&emsp;[Payment card]*
 
 :::
 
