@@ -23,6 +23,11 @@ export const en = [
 
           },
           {
+            text: "Fill Strategy",
+            link: '/reference/annotations/fillstrategy.html',
+            icon: "/featureIcons/separate.svg",
+          },
+          {
             text: "Value Recommendation",
             link: '/reference/annotations/vr.html',
             icon: "/featureIcons/hotfix.svg",
