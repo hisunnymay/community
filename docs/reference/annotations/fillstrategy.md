@@ -40,7 +40,7 @@ There are six different strategies. A brief comparison of them is listed here fo
 | Conditional         | User                      | under certain conditions that business specifies             | /                                                            |
 | Boolean Gate        | User                      | when user explicitly expresses the willingness to answer a bunch of questions about a specific topic <br/> *(which belongs to a composite slot)* | /                                                            |
 | User Mentioned      | User                      | when user proactively mentions the slot first                | /                                                            |
-| Never Ask           | Business                  | /                                                            | if SlotInit in [Transition](https://framely.github.io/404.html) is set <br/> *which eventually can be a constant, a synchronous service function etc.* |
+| Never Ask           | Business                  | /                                                            | if SlotInit in [Transition](https://www.framely.ai/reference/annotations/transition.html) is set <br/> *which eventually can be a constant, a synchronous service function etc.* |
 | External Event      | Business                  | /                                                            | always  <br/> *through external events caused by asynchronous client action* |
 
 
@@ -48,19 +48,21 @@ There are six different strategies. A brief comparison of them is listed here fo
 
 Always Ask suits all the CUXs which collect information from users without any special requirements. It is one of the most frequently used strategies. 
 
-Like the name implied, it tells the bot to ask users for slot value without any additional condition. And once the bot asks, it will not proceed with the conversation until getting an answer. Always Ask doesn't alter or skip any of the standard [Slot Filling](https://framely.github.io/404.html) phases. In other words, slot-level annotations are all welcome to be used.
+Like the name implied, it tells the bot to ask users for slot value without any additional condition. And once the bot asks, it will not proceed with the conversation until getting an answer. Always Ask doesn't alter or skip any of the standard [Slot Filling](https://www.framely.ai/reference/slotfilling.html) phases. In other words, slot-level annotations are all welcome to be used.
 
 
 
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
+
 - Create a slot
 - Set its Fill Strategy to Always Ask
-- [Prompts](https://framely.github.io/404.html): at least one question is needed to request slot value from user.
+- [Prompts](https://www.framely.ai/reference/annotations/prompts.html): at least one question is needed to request slot value from user.
 
 <Badge type="tip" text="Preferred" vertical="top" />
-- All annotations relate to [Slot Filling](https://framely.github.io/404.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://framely.github.io/404.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
+
+- All annotations relate to [Slot Filling](https://www.framely.ai/reference/slotfilling.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
 
 
 
@@ -78,25 +80,25 @@ And the following conversation can be expected:
 
 ::: story
 
-Use case 1
+**Use case 1**
 
-Bot: What kind of colour do you like for flowers? 
+Bot: *What kind of colour do you like for flowers?*
 
-User: Red, please.
+User: *Red, please.*
 
+:::
 
+::: story
 
-Usecase 2: Stuck unless getting an answer
+**Usecase 2: Stuck unless getting an answer**
 
-Bot: What kind of colour do you like for flowers? 
+Bot: *What kind of colour do you like for flowers?* 
 
-User:  What do you have for roses? *(Digression)*
+User: *What do you have for roses? (Digression)*
 
-Bot: Red and white. *(Anser digression)*
+Bot: *Red and white. (Answer digression)<br/>&emsp;&emsp;What kind of colour do you like for flowers?*
 
-What kind of colour do you like for flowers? 
-
-User: Red, please.
+User: *Red, please.*
 
 :::
 
@@ -112,13 +114,15 @@ When certain conditions are met, the bot behaves exactly like Always Ask; and if
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
+
 - Create a slot
 - Set its Fill Strategy to Conditional, and for the detailed configuration:
   - Ask Condition should be configured like [Condition in Confirmation](https://www.framely.ai/reference/annotations/confirmation.html#condition)
-- [Prompts](https://framely.github.io/404.html)
+- [Prompts](https://www.framely.ai/reference/annotations/prompts.html)
 
 <Badge type="tip" text="Preferred" vertical="top" />
-- All annotations relate to [Slot Filling](https://framely.github.io/404.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://framely.github.io/404.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
+
+- All annotations relate to [Slot Filling](https://www.framely.ai/reference/slotfilling.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
 
 
 
@@ -139,27 +143,29 @@ And the following conversation can be expected:
 
 ::: story
 
-Use case 1: met condition
+**Use case 1: met condition**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Rose
+User: *Rose*
 
-Bot: What kind of colour would you like for roses?
+Bot: *What kind of colour would you like for roses?*
 
-User: Red, please.
+User: *Red, please.*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
+:::
 
+::: story
 
-Use case 2: not met condition
+**Use case 2: not met condition**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Sunflower.
+User: *Sunflower.*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
 :::
 
@@ -181,6 +187,7 @@ Boolean Gate will ask users the YES-or-NO question once and once only, then wait
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
+
 - Create a **composite slot**
 - Set its Fill Strategy to Boolean Gate, and for the detailed configuration:
   - Boolean Gate: prompts that ask user whether he/she wants to or is able to provide slot values should be set here
@@ -190,7 +197,8 @@ Boolean Gate will ask users the YES-or-NO question once and once only, then wait
 
 
 <Badge type="tip" text="Preferred" vertical="top" />
-- All annotations relate to [Slot Filling](https://framely.github.io/404.html), including: [Prompts](https://framely.github.io/404.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://framely.github.io/404.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
+
+- All annotations relate to [Slot Filling](https://www.framely.ai/reference/slotfilling.html), including: [Prompts](https://www.framely.ai/reference/annotations/prompts.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
 
 
 
@@ -208,33 +216,37 @@ And the following conversation can be expected:
 
 ::: story
 
-Use case 1: YES
+**Use case 1: YES**
 
-Bot: Do you want a message card?
+Bot: *Do you want a message card?*
 
-User: Yes
+User: *Yes*
 
-Bot: What kind of card do you want? We have: 1. birthday card. 2. thanks card ...
+Bot: *What kind of card do you want? We have: 1. birthday card. 2. thanks card ...*
 
+:::
 
+::: story
 
-Use case 2: Slot value
+**Use case 2: Slot value**
 
-Bot: Do you want a message card?
+Bot: *Do you want a message card?*
 
-User: Can I have a birthday card?
+User: *Can I have a birthday card?*
 
-Bot: To whom do you want to send to? ...
+Bot: *To whom do you want to send to? ...*
 
+:::
 
+::: story
 
-Use case 3: NO
+**Use case 3: NO**
 
-Bot: Do you want a message card?
+Bot: *Do you want a message card?*
 
-User: NO
+User: *NO*
 
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
 :::
 
@@ -263,13 +275,14 @@ There are three possible behaviours under User Mentioned:
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
+
 - Create a slot
 - Set its Fill Strategy to User Mentioned
-- [Prompts](https://framely.github.io/404.html): Prompts are still required as the slot value user mentioned may not be qualified. For example, users might say something bots cannot understand, or offer some slot value that fails the Value Check. In these cases, re-prompt is needed to request the slot value from user again.
+- [Prompts](https://www.framely.ai/reference/annotations/prompts.html): Prompts are still required as the slot value user mentioned may not be qualified. For example, users might say something bots cannot understand, or offer some slot value that fails the Value Check. In these cases, re-prompt is needed to request the slot value from user again.
 
 <Badge type="tip" text="Preferred" vertical="top" />
 
-- All annotations relate to [Slot Filling](https://framely.github.io/404.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://framely.github.io/404.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
+- All annotations relate to [Slot Filling](https://www.framely.ai/reference/slotfilling.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
 
 
 
@@ -287,27 +300,25 @@ And the following conversation can be expected:
 
 ::: story
 
-Use case 1: user mentions
+**Use case 1: user mentions**
 
-Bot: What kind of flower do you like?
+Bot: *What kind of flower do you like?*
 
-User: Rose
+User: *Rose<br/>&emsp;&emsp;Oh, can you leave a message of "How many loved your moments of glad grace..."*
 
-Oh, can you leave a message of "How many loved your moments of glad grace..."
+Bot: *Just leave the note for you.<br/>&emsp;&emsp;Your order is done.*
 
-Bot: Just leave the note for you. 
+:::
 
-Your order is done.
+::: story
 
+**Use case2: user doesn't mention**
 
+Bot: *What kind of flower do you like?*
 
-Use case2: user doesn't mention
+User: *Rose*
 
-Bot: What kind of flower do you like?
-
-User: Rose
-
-Bot: Ok, then your order is done.
+Bot: *Ok, then your order is done.*
 
 :::
 
@@ -318,20 +329,21 @@ There are chances businesses want to specify slot value by themselves instead of
 
 Never Ask by itself only means never ask. If nothing else is done, the slot will be skipped (neither be asked nor be filled). This is why Framely uses it as the default choice for Fill Strategy. However, if businesses use Never Ask with SlotInit in Transition, they can then provide slot values with Code Expression, which could be a constant, a synchronous service function etc.
 
-Never Ask alters the standard [Slot Filling](https://framely.github.io/404.html) phases by ignoring Ask/Prompt and Confirmation. This basically is another way of saying Never Ask doesn't interact with users.
+Never Ask alters the standard [Slot Filling](https://www.framely.ai/reference/slotfilling.html) phases by ignoring Ask/Prompt and Confirmation. This basically is another way of saying Never Ask doesn't interact with users.
 
 
 
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
+
 - Create a slot
 - Set its Fill Strategy to Never Ask
-- No annotations that required to interact with users should be defined, including: [Prompts](https://framely.github.io/404.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). Like the name implied, bot NEVER ASKs. Notice that if these annotations were added out of careless, bot will simply ignore them.
+- No annotations that required to interact with users should be defined, including: [Prompts](https://www.framely.ai/reference/annotations/prompts.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). Like the name implied, bot NEVER ASKs. Notice that if these annotations were added out of careless, bot will simply ignore them.
 
 <Badge type="tip" text="Preferred" vertical="top" />
 
-- [Transition](https://framely.github.io/404.html): use SlotInit in Transition to initialize a slot value. Detailed configuration goes as follow:
+- [Transition](https://www.framely.ai/reference/annotations/transition.html): use SlotInit in Transition to initialize a slot value. Detailed configuration goes as follow:
   - set Trigger Method to State
     - set State's Target Slot to the hosting slot of Never Ask
     - set State's State to SlotInit
@@ -339,10 +351,7 @@ Never Ask alters the standard [Slot Filling](https://framely.github.io/404.html)
     - set Fill Slot's Target Slot to the hosting slot of Never Ask
     - set Fill Slot's Code Expression to the slot value needs to be provided
 
-![never-ask](/images/annotation/fillstrategy/neverask1.png)
-![transition](/images/annotation/fillstrategy/neverask2.png)
-
-
+![never-ask](/images/annotation/fillstrategy/neverask3.png)
 
 **[Example]**
 
@@ -358,15 +367,11 @@ And the following conversation can be expected:
 
 ::: story
 
-Use case 1
+Bot: *Happy Valentine's day! We only sell roses for tens a bunch today.<br/>&emsp;&emsp;What kind of flower do you like?*
 
-Bot: Happy Valentine's day! We only sell roses for tens a bunch today.
+User: *Rose*
 
-What kind of flower do you like?
-
-User: Rose
-
-Bot: Ok, then your order is done for 10 roses.
+Bot: *Ok, then your order is done for 10 roses.*
 
 :::
 
@@ -375,20 +380,22 @@ Bot: Ok, then your order is done for 10 roses.
 
 Like Never Ask, External Event also gathers slot value from businesses, but targets a different scenario: businesses send an asynchronous client action, then BLOCKs until the the third-party resumes and updates conversation.
 
-External Event by itself only means blocking (of course some [Inform](https://framely.github.io/404.html) is allowed before blocking). It is the external event's responsibility to provide slot value and unblocking the conversation. External events have many forms, callback function is one of the kind. 
+External Event by itself only means blocking (of course some [Inform](https://www.framely.ai/reference/annotations/inform.html) is allowed before blocking). It is the external event's responsibility to provide slot value and unblocking the conversation. External events have many forms, callback function is one of the kind. 
 
-Apart from that, if businesses want to interact differently depending on how well the client action has done (e.g. is it succeed, failed, or timed out), it needs to do some conditional branching with the hosting slot's value, just like all the other slots did. One typical place to do this is [Response](https://framely.github.io/404.html).
+Apart from that, if businesses want to interact differently depending on how well the client action has done (e.g. is it succeed, failed, or timed out), it needs to do some conditional branching with the hosting slot's value, just like all the other slots did. One typical place to do this is [Response](https://www.framely.ai/reference/annotations/response.html).
 
 
 
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
+
 - Create a slot
 - Set its Fill Strategy to External Event
 
 <Badge type="tip" text="Preferred" vertical="top" />
-- [Inform](https://framely.github.io/404.html): inform users there's an asynchronous client action happening, and they have to wait until bot gets feedback.
+
+- [Inform](https://www.framely.ai/reference/annotations/inform.html): inform users there's an asynchronous client action happening, and they have to wait until bot gets feedback.
 
 
 
@@ -407,21 +414,13 @@ And the following conversation can be expected:
 
 ::: story
 
-Use case 1
+Bot: *Your order contains 10 roses.<br/>&emsp;&emsp;[Payment Link]<br/>&emsp;&emsp;You need to complete payment to secure the order.*
 
-Bot: Your order contains 10 roses. 
+*... BOT WAITING...*
 
-[Payment Link]
+User: *(Pay for the order)*
 
-You need to complete payment to secure the order.
-
-*... BIOCKING*
-
-U: *Paid for the order*
-
-Bot: Payment completed. 
-
-Your order is done.
+Bot: *Payment completed.<br/>&emsp;&emsp;Your order is done.*
 
 :::
 
