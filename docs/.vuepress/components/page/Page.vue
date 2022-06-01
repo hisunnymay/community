@@ -50,7 +50,7 @@ const checkPage = ()=>{
         <ToggleMenu v-if="checkPage()"  class="toggle" @click="ToggleMenuSidebar" />
         <Content />
 
-        <div id="mask-sidebar" @click="ToggleMenuSidebar"></div>
+      <div id="mask-sidebar" @click="ToggleMenuSidebar"></div>
       </div>
 
       <PageMeta v-if="!frontmatter.pricing" />
@@ -69,7 +69,7 @@ const checkPage = ()=>{
 .toggle {
   position: fixed;
 
-  top: calc(var(--navbar-height) + 18px);
+  top: calc(var(--navbar-height) + 2px);
   left: 0;
   transform: translateX(-10px);
   background: var(--c-bg);
@@ -79,7 +79,7 @@ const checkPage = ()=>{
   border-radius: 4px;
   border: 1px solid var(--c-border);
   background-position: 50% 50%;
-  box-shadow: 2px 2px 4px var(--c-bg-icon);
+  box-shadow: 2px 2px 4px var(--c-bg), -2px -2px 4px var(--c-bg);
 }
 .mask-sidebar {
   height: 100%;
@@ -88,7 +88,7 @@ const checkPage = ()=>{
   top: 0;
   left: 0;
   background: #00000073;
-  z-index: 1;
+  z-index: 9;
 }
 @media (max-width: 900px) {
 
