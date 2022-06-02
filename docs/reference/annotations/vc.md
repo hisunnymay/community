@@ -48,13 +48,19 @@ Conditions are defined in [code expression](https://www.framely.ai/guide/glossar
 When Value Check fails, bot uses prompts to inform users that the value is invalid, like bot's utterance shown in [Overview](../annotations/vc.html#overview). You should add at least one prompt. 
 
 ### Recovering 
-In Recovering field, you can decide which slot to be cleared, so that slot will be asked again. For example, when all the slot are filled but somehow user wants to change one of them. If above behavior causes the slot's Value Check fails, you can choose to clear other slot's value and keep this current slot's value. 
-In the example of [Overview](../annotations/vc.html#overview), bot clear the input value of current slot.
-In the following example, bot keeps the input value of date but clears the value of time.
-::: story
+In Recovering field, you can decide which slot to be cleared, so that slot will be asked again. For example, when all the slot are filled but somehow user wants to change one of them. If above behavior causes the slot's Value Check fails, you can choose to clear current slot's value or you can keep this current slot's value and clear other slot's value.
 
+- Case 1 Keep the input value of current slot
+::: story
 User: *Can I change the date to this Friday?*
 
-Bot: *Sorry, small table at 5 pm on Friday is not available. Please choose another time.*
+Bot: *Sorry, small table at 5 pm on Friday is not available. Please choose another **time**.*
+:::
 
+
+- Case 2 Clear the input value of current slot
+::: story
+User: *Can I change the date to this Friday?*
+
+Bot: *Sorry, small table at 5 pm on Friday is not available. Please choose another **date**.*
 :::
