@@ -41,6 +41,7 @@ export const en = {
         '/reference/annotations/fillstrategy.md',
         '/reference/annotations/vr.md',
         '/reference/annotations/confirmation.md',
+        '/reference/annotations/vc.md',
       ],
     },
     {
