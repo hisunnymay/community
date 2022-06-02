@@ -49,8 +49,8 @@ When Value Check fails, bot uses prompts to inform users that the value is inval
 
 ### Recovering 
 In Recovering field, you can decide which slot to be cleared, so that slot will be asked again. For example, when all the slot are filled but somehow user wants to change one of them. If above behavior causes the slot's Value Check fails, you can choose to clear other slot's value and keep this current slot's value. 
-
-In following example, bot keeps the input value of date but clears the value of time.
+In the example of [Overview](../annotations/vc.html#overview), bot clear the input value of current slot.
+In the following example, bot keeps the input value of date but clears the value of time.
 ::: story
 
 User: *Can I change the date to this Friday?*
