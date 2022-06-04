@@ -3,35 +3,59 @@
 [[toc]]
 
 ## Overview
-::: tip What can I do？
- - Help your end-user to understand the business boundaries.
- - Help your end-user focus on what they really want. 
- - Preferred, but not required.
+One of the most clear and concise ways to give users information to continue the conversation is providing value recommendations, which can be used as hints to help the user answer a question or discover new features, and best for questions about complex or unfamiliar domains, or when options are limited or unclear. 
+<br><br>
+For example, with value recommendation, one can get the boundaries directly:  
+
+::: story
+User: *Get me two tickets for Star War for tonight, please.*
+
+Bot: *Star War, we only have it at 21:30pm. Would you like to get these?*
 :::
 
-使用 Value Recommendation（简称 Value Rec 下同），可以为你的用户提供部分或全部业务内容，使用户快速了解业务范围与边界，并可以根据自己的偏好，做出特定场景下的最优选择。  
+Instead of having many trials:
 
-如：你的用户来买咖啡，但此刻门店只有“拿铁”可以提供，通过 Value Rec，用户可以迅速了解门店供货现状，并决定是否继续选购“拿铁”。
+::: story
+User: *Get me two tickets for Star War for tonight, please.*
+
+Bot: *Ok, what time?*
+
+User: *18:30pm.*
+
+Bot: *Sorry, Star War at 18:30pm have sold out, please choose another time.*
+:::
+
+When designing value recommendations, you can also consider the pros and cons in the table below:
+
+| With Value Recommendation 	| Without Value Recommendation 	|
+|:---	|:---	|
+|<ul><li>Makes it clear what the user can say by establishing boundaries.</li><li>Minimizes confusion, easy for users to answer.</li><li>Can feel limiting to users.</li></ul>	|<ul><li>Encourages the user to respond naturally and in their own words.</li><li>Difficult for users to anticipate what answers are supported.</li><li>Set expectations too high and overpromise.</li></ul>	|
 
 ## Features
-  - 支持翻页功能，如：“下一页”、“上一页”；  
-  - 支持通过 order 或 name 选择选择内容；
-  - 支持推荐选项 name 的完整表达及指代表达；For more information about DU see “待补充 DU 文档”
-  - 支持系统默认表现：
-    - 用户选择超出业务范围的默认行为；
-    - 推荐内容数量为 single entry 与 zero entry 的默认行为；
-  - 支持客制化系统默认表现。
+
+The features of value recommendation are as follows:
+
+- Provides universal message 
+  - Design conversations using simple text, media card, carousels and more. 
+  - Design once, and can be worked on every channel you configured. 
+- Provides display limit
+  - Paginate items by using PageSelectable default behavior
+  - Limit items
+    - Hard and soft behavior
+    - Single entry and zero entry behavior
+- Customize default behavior
+  
   
 ## Related Annotations
   
 #### Prompt <Badge type="warning" text="Required" />
-Value Rec 总是会在 Prompt 之后出现。你可以这样理解，当你去星巴克买咖啡时，门店伙伴一定会先询问你想喝什么、再给你一些推荐选项、甚至热情的解释说明。而不是一上来什么也不说，递给你菜单让你自己选择自己看。而这个询问的互动就是 Prompt 所起的作用。你的 Chatbot 越亲切，你的用户体验便会越好。因此，在定义 Value Rec 之前，一定记得要先加上 Prompt。
+Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items.
   
 #### Value Check <Badge text="Preferred" />
 配合 Value Check ，可以给你的用户更好的体验。Value Check 用以校验用户的选择是否满足业务范围，若不满足可以使用系统默认表现提示给用户，并允许他们修改已选内容或重选内容。当然，你可以根据具体场景，来客制化系统默认表现。
 
 #### Confirmation <Badge text="Preferred" />
-配合 Confirmation，可以给你的用户更强的信任感。Confirmation 用以与用户确认他选择的内容是否与 chatbot 得到的一致，若不一致，系统会使用 Confirmation 默认表现询问用户下一步指示。当然，你同样可以根据具体场景，客制化系统默认表现。
+Confirmations give users feedback on how their input was understood. This not only empowers users to correct mistakes immediately, but it also reassures them in a socially and conversationally appropriate way by establishing common ground. Furthermore, confirmations help carry the thread of the conversation forward by maintaining context.
 
 ## How to use
 ::: tip Tips
