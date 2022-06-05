@@ -49,13 +49,57 @@ The features of value recommendation are as follows:
 ## Related Annotations
   
 #### Prompt <Badge type="warning" text="Required" />
-Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items.
-  
+Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items. For example, you can not always recommend a timetable directly, instead you'd better to indicate the context of the timetable:
+
+::: story
+Bot: *What time would you like to leave on the __outbound flight__ ?*
+  - *10:30*
+  - *11:30*
+  - *12:30*
+  - ……
+:::
+
+<br>
+
+::: story
+Bot: *What time would you like to leave on the __return flight home__ ?*
+  - *10:30*
+  - *11:30*
+  - *12:30*
+  - ……
+:::
+
+<br>
+
 #### Value Check <Badge text="Preferred" />
-配合 Value Check ，可以给你的用户更好的体验。Value Check 用以校验用户的选择是否满足业务范围，若不满足可以使用系统默认表现提示给用户，并允许他们修改已选内容或重选内容。当然，你可以根据具体场景，来客制化系统默认表现。
+With the help of value check, the bot can find out in time whether the value provided by the user satisfies the business boundaries. For example, when buying a movie ticket, the bot can inform the user in advance whether there is a schedule for the time, instead of notifying it when the last process is reached. 
+
+::: story
+Bot: *What time would you like to leave on the outbound flight ?*
+  - *10:30*
+  - *11:30*
+  - *12:30*
+
+User: *I would like to leave at 5pm.*
+
+Bot: *Sorry, tickets at 5pm have sold out, please choose another time.*
+:::
+
+<br>
 
 #### Confirmation <Badge text="Preferred" />
-Confirmations give users feedback on how their input was understood. This not only empowers users to correct mistakes immediately, but it also reassures them in a socially and conversationally appropriate way by establishing common ground. Furthermore, confirmations help carry the thread of the conversation forward by maintaining context.
+Confirmation can give users feedback on how their input was understood. This not only empowers users to correct mistakes immediately, but it also reassures them in a socially and conversationally appropriate way by establishing common ground. 
+
+::: story
+Bot: *You want a one way ticket for:*
+  - *From JFK To London*
+  - *Leaving on 2022-12-25*
+  - *Time 17:00:00*
+
+*Is that correct?*
+:::
+
+<br>
 
 ## How to use
 ::: tip Tips
