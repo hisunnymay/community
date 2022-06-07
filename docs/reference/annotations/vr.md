@@ -4,7 +4,7 @@
 
 ## Overview
 One of the most clear and concise ways to give users information to continue the conversation is providing value recommendations, which can be used as hints to help the user answer a question or discover new features, and best for questions about complex or unfamiliar domains, or when options are limited or unclear. 
-<br><br>
+
 For example, with value recommendation, one can get the boundaries directly:  
 
 ::: story
@@ -35,15 +35,30 @@ When designing value recommendations, you can also consider the pros and cons in
 
 The features of value recommendation are as follows:
 
-- Provides universal message 
-  - Design conversations using simple text, media card, carousels and more. 
-  - Design once, and can be worked on every channel you configured. 
-- Provides display limit
-  - Paginate items by using PageSelectable default behavior
-  - Limit items
-    - Hard and soft behavior
-    - Single entry and zero entry behavior
-- Customize default behavior
+### For the interactive level
+
+1. Support page navigation, like *"next page"*, *"previous page"*. 
+
+2. Provide the ability to deal with selection expressions in order or by name: 
+
+| Features 	| Examples 	|
+|:---	|:---	|
+|Can be expressed by the order in which they are placed	|*"the first one"*, *"second"*	|
+|Can be expressed through specific properties	|*"the red one"*, *"the hot one"*	|
+|Support primitive expressions and pronoun expressions	|*"this city"*, *"over there"*	|
+|Support don't care expressions |*"don't care"*, *"anything will do"*	|
+
+::: tip Note
+Don't care expressions need to be defined in another annotation, but the interactive experience will be reflected here. See more about Don't Care.
+:::
+
+### For business boundaries
+
+Some default behaviors are already supported here, and you can use them directly. If they are not enough, you can customize them with Transition Component.
+
+1. Provide hard mode as the relationship between recommendations and business scope. When the user's expression is out of range, the default response like *"Sorry, we do not offer Star War at this time."* will be replied. 
+
+2. Support to define the confirmation or prompt, when the option of recommendations is single entry or zero entry.
   
   
 ## Related Annotations
