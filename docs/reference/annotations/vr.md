@@ -63,7 +63,7 @@ Some default behaviors are already supported here, and you can use them directly
   
 ## Related Annotations
 
- 【img】
+ <!--【img】todo 在对话中标出不同的 annotation -->
 
 #### Prompt <Badge type="warning" text="Required" />
 Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items. For example, you can not always recommend a timetable directly, instead you'd better to indicate the context of the timetable:
@@ -128,14 +128,31 @@ There are two places that you can define value recommendation: slot level and fr
 
 So you have to decide where to put it based on your business. 
 
-【img】
+<!--【img】todo slot level frame level 对比-->
 
-![value-rec](/images/annotation/vr/value-rec.png)
-
+### Hard Mode
 
 ![vr-popup](/images/annotation/vr/vr-popup.png)
 
-### Source
+Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. 
+
+So if the item the user wants is not in all candidates, the bot will give user a default reply such as "Sorry, we do not offer Star War at this time." Of course, you can customize them on the system intent io.framely.core.BadIndex and io.framely.core.BadCandidate by adding more  replies.
+
+And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in Single Entry Prompts and Zero Entry Prompts.
+
+We recommend using hard mode when there are limited items and limited quantities. For example, when booking a flight ticket, hard mode can help your users understand the available flight arrangements. Users can choose what they want at one time, instead of trying multiple times and failing to get what they want each time.
+
+<br>
+
+::: tip 
+Customization of system intent will not only affect the current slot, but also the entire bot behaviors.
+:::
+
+<br>
+
+![vr-hard-show](/images/annotation/vr/vr-hard-show.png)
+
+### Source Type
 
 ![vr-source](/images/annotation/vr/vr-source.png)
 
@@ -238,20 +255,6 @@ Explicit (Left) vs Implicit (Right)，如下图所示 👇
 
 如下图所示👇
 
-
-### Hard Toggle
-
-Hard 是用来声明“业务范围”与“推荐列表”之间关系的：
-- 若开关开启，则表“强限制”，即你的“业务范围”与 Value Rec 的推荐列表内容严丝合缝、完全吻合。因此若 end-user 想要的内容不在当前列表，chatbot 会给 end-user 一个超出范围的默认回复，当然你可以客制化这个回复，或者添加更多的默认回复。
-- 若开关关闭，则表示无限制，即 Value Rec 的推荐列表内容起到展示或提示的作用，与你的“业务范围”无关，当你的 end-user 想要的内容不在当前列表，他也可以得到他想要的。
-
-通常涉及库存或 slot 之间有各种关联及限制的场景下，我们建议使用 Hard 模式，比如不同的电影院放映的电影是不同的，Hard 模式可以帮助你的 end-user 了解放映或排片情况，而不致于每次超出选择范围、每次都得不到想要的。
-
-当然，有一点你无需担心。如果你的推荐列表有 20 个条目，即使每页只展示 5 个，除了进行翻页操作外，你的 end-user 一样可以直接表达目前没有展示出来的 15 个条目中的任意一个。
-
-如下图所示👇
-
-![vr-hard-show](/images/annotation/vr/vr-hard-show.png)
 
 ### Expressions
 
