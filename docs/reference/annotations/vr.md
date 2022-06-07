@@ -35,7 +35,7 @@ When designing value recommendations, you can also consider the pros and cons in
 
 The features of value recommendation are as follows:
 
-### For the interactive level
+### Interactive level
 
 1. Support page navigation, like *"next page"*, *"previous page"*. 
 
@@ -48,11 +48,11 @@ The features of value recommendation are as follows:
 |Support primitive expressions and pronoun expressions	|*"this city"*, *"over there"*	|
 |Support don't care expressions |*"don't care"*, *"anything will do"*	|
 
-::: tip Note
+::: tip 
 Don't care expressions need to be defined in another annotation, but the interactive experience will be reflected here. See more about Don't Care.
 :::
 
-### For business boundaries
+### Business boundaries
 
 Some default behaviors are already supported here, and you can use them directly. If they are not enough, you can customize them with Transition Component.
 
@@ -62,7 +62,9 @@ Some default behaviors are already supported here, and you can use them directly
   
   
 ## Related Annotations
-  
+
+ 【img】
+
 #### Prompt <Badge type="warning" text="Required" />
 Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items. For example, you can not always recommend a timetable directly, instead you'd better to indicate the context of the timetable:
 
@@ -117,16 +119,19 @@ Bot: *You want a one way ticket for:*
 <br>
 
 ## How to use
-::: tip Tips
- - First clone this project： [What To Watch](https://framely.naturali.io/org/60741b6733676cd2b36dd460/agent/62415124b883426466b121b3/intent?page=0&imported=false&search=)  
- - Then try to commit, run test, or make some little change and commit, test.
-:::
 
-像其他 Dialog Annotation 一样，Value Rec 既存在于 Slot Level，也存在于 Frame Level。不过你不用担心，无论在哪个 Level 定义，不同 Level 只是影响 Value Rec 所能波及的范围，是只影响 Slot，还是整个 Frame，但定义方式都是一致的。
+Before you start, you should make sure services or APIs that host your business logic are available, as value recommendation will turn your business data into recommendations.
+
+There are two places that you can define value recommendation: slot level and frame level,  different places have different meanings: 
+- **Slot Level**: Progressive, We value rec one column at a time, which can quickly result in nothing to recommend for the next slot.
+- **Frame Level**: Holistic, we always recommend multi slots simultaneously, and they will be filled together. 
+
+So you have to decide where to put it based on your business. 
+
+【img】
 
 ![value-rec](/images/annotation/vr/value-rec.png)
 
-Value Rec 既可以作用于
 
 ![vr-popup](/images/annotation/vr/vr-popup.png)
 
