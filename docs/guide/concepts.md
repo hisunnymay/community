@@ -49,10 +49,6 @@ The term entity is used to describe the general concept of types, and they are b
 In conversation layer, entity represents an instance of concept type, like "beijing" is an instance of type "city". In service layer, entity are mapped to primitive type, of enum like atomic type. Understanding entity is typically done by extractive understanding, with synonyms annotation are the important control that builder has to influence the dialog understanding behavior.
 
 
-## Frame Filling
-One of the goal of the schema grounded CUI is to extract what service users want and how they want it from conversations into structured data called frames. We call this process frame filling. There are natural structures motivated by application logic among the slots covered by these frames, and interaction logic need to reflect that. For example, we might need to skip the interaction on a set of slots based on some condition per application logic, so it is more effective to define the interaction behavior on the frames instead of slots. The application logic is naturally integrated into interaction via functions from services, in form of data sources for value recommendation and conditions. 
-
-
 ## Annotations
 After these types are defined at schema level, builder can add annotation on top of it to control the every aspect of this component. An example will be what if a user did not specify a value for a required slot, how do we prompt them in a given language. As a declarative platform for building a full stack chatbot, different categories of annotations are supported: dialog annotation, storage annotation and backoffice annotation. 
 

@@ -19,6 +19,7 @@ export const en = {
         '/guide/cooperative.md',
         '/guide/sgcui.md',
         '/guide/5levels-cui.md',
+        '/guide/slotfilling.md',
         '/guide/components.md',
         '/guide/architecture.md',
       ]
