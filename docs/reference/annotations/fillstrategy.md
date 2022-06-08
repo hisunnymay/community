@@ -329,7 +329,7 @@ There are chances businesses want to specify slot value by themselves instead of
 
 Never Ask by itself only means never ask. If nothing else is done, the slot will be skipped (neither be asked nor be filled). This is why Framely uses it as the default choice for Fill Strategy. However, if businesses use Never Ask with SlotInit in Transition, they can then provide slot values with Code Expression, which could be a constant, a synchronous service function etc.
 
-Never Ask alters the standard [Slot Filling](https://www.framely.ai/reference/slotfilling.html) phases by ignoring Ask/Prompt and Confirmation. This basically is another way of saying Never Ask doesn't interact with users.
+Never Ask alters the standard [Slot Filling](https://www.framely.ai/reference/slotfilling.html) phases by ignoring Ask / Value Recommendation, Value Check and Confirmation. This basically is another way of saying Never Ask doesn't interact with users.
 
 
 
@@ -339,7 +339,7 @@ Never Ask alters the standard [Slot Filling](https://www.framely.ai/reference/sl
 
 - Create a slot
 - Set its Fill Strategy to Never Ask
-- No annotations that required to interact with users should be defined, including: [Prompts](https://www.framely.ai/reference/annotations/prompts.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). Like the name implied, bot NEVER ASKs. Notice that if these annotations were added out of careless, bot will simply ignore them.
+- No annotations that required to interact with users should be defined, including: [Prompts](https://www.framely.ai/reference/annotations/prompts.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). Like the name implied, bot NEVER ASKs. Notice that if these annotations were added out of careless, bot will simply ignore them.
 
 <Badge type="tip" text="Preferred" vertical="top" />
 
