@@ -73,7 +73,7 @@ Bot: *Sorry, small table at 5 pm on Friday is not available. Please choose anoth
 
 ::: story
 
-User: *Can I reserve a table for two this Friday*
+User: *Can I reserve a table for two this Friday?*
 
 Bot: *What time would you like to book?*
 
