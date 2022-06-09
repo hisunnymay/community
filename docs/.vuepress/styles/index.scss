@@ -422,6 +422,21 @@ html.dark {
 			max-width: 90%;
 		}
 	}
+
+	&.thumbnail {
+		background-color: var(--c-bg-light);
+		border: 1px solid var(--c-border);
+		border-radius: 0px;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		text-align: center;
+		padding: 1.5em;
+		p {
+			margin: 0;
+			color: var(--c-text-lightest);
+		}
+	}
+
 }
 
 //top-info style
