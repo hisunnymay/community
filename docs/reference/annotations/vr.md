@@ -49,7 +49,7 @@ The features of value recommendation are as follows:
 |Support don't care expressions |*"don't care"*, *"anything will do"*	|
 
 ::: tip Note
-Don't care expressions need to be defined in another annotation, but the interactive experience will be reflected here. See more about Don't Care.
+Don't care expressions need to be defined in another annotation, but the interactive experience will be reflected here. See more about [Don't Care](./dontcare.md).
 :::
 
 ### Business boundaries
@@ -76,8 +76,6 @@ Bot: *What time would you like to leave on the __outbound flight__ ?*
   - ……
 :::
 
-<br>
-
 ::: story
 Bot: *What time would you like to leave on the __return flight home__ ?*
   - *10:30*
@@ -86,10 +84,8 @@ Bot: *What time would you like to leave on the __return flight home__ ?*
   - ……
 :::
 
-<br>
-
 #### Value Check <Badge text="Preferred" />
-With the help of value check, the bot can find out in time whether the value provided by the user satisfies the business boundaries. For example, when buying a movie ticket, the bot can inform the user in advance whether there is a schedule for the time, instead of notifying it when the last process is reached. 
+With the help of [value check](./vc.md), the bot can find out in time whether the value provided by the user satisfies the business boundaries. For example, when buying a movie ticket, the bot can inform the user in advance whether there is a schedule for the time, instead of notifying it when the last process is reached. 
 
 ::: story
 Bot: *What time would you like to leave on the outbound flight ?*
@@ -102,10 +98,8 @@ User: *I would like to leave at 5pm.*
 Bot: *Sorry, tickets at 5pm have sold out, please choose another time.*
 :::
 
-<br>
-
 #### Confirmation <Badge text="Preferred" />
-Confirmation can give users feedback on how their input was understood. This not only empowers users to correct mistakes immediately, but it also reassures them in a socially and conversationally appropriate way by establishing common ground. 
+[Confirmation](./confirmation.md) can give users feedback on how their input was understood. This not only empowers users to correct mistakes immediately, but it also reassures them in a socially and conversationally appropriate way by establishing common ground. 
 
 ::: story
 Bot: *You want a one way ticket for:*
@@ -132,33 +126,38 @@ So you have to decide where to put it based on your business.
 
 ### Hard Mode
 
+::: thumbnail
 ![vr-popup](/images/annotation/vr/vr-popup.png)
+*Hard Modee*
+:::
 
 Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. 
 
-So if the item the user wants is not in all candidates, the bot will give user a default reply such as "Sorry, we do not offer Star War at this time." Of course, you can customize them on the system intent io.framely.core.BadIndex and io.framely.core.BadCandidate by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in Single Entry Prompts and Zero Entry Prompts.
+So if the item the user wants is not in all candidates, the bot will give user a default reply such as *"Sorry, we do not offer Star War at this time"*. Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./vr.md#single-entry) and [Zero Entry Prompts](./vr.md#zero-entry).
 
 <!--【img】hard soft 对比-->
 
 We recommend using hard mode when there are limited items and limited quantities. For example, when booking a flight ticket, hard mode can help your users understand the available flight arrangements. Users can choose what they want at one time, instead of trying multiple times and failing to get what they want each time.
 
-<br>
-
 ::: tip Note
-Customization of system intent will not only affect the current slot, but also the entire bot behaviors.
+Customization of **system intent** will not only affect the current slot, but also the entire bot behaviors.
 :::
-
-<br>
 
 ### Source
 
+::: thumbnail
 ![vr-source](/images/annotation/vr/vr-source.png)
+*Source*
+:::
 
 Source is the place to declare where the recommended options come from. Normally, you can add it using function methods directly like ` function()` or `function(input: slot!!)` , which need to contact your service and return a list of options. However, in certain advanced scenarios, you may find it easier to define it with the code expression, which can generate dynamic suggestions. 
 
 ### Display
 
+::: thumbnail
 ![vr-display](/images/annotation/vr/vr-display.png)
+*Display*
+:::
 
 Display is what the bot shows to the user. If the hard toggle is turned on, here are three different scenarios triggered by different result sets: 
 - **List**: which indicates the returned content is multiple items.
@@ -187,7 +186,10 @@ ${it.value.identifier()}  // on platform, entity instance label
 ${it!!.value}
 ```
 
+::: thumbnail
 ![vr-dispaly-full](/images/annotation/vr/vr-dispaly-full.png)
+*Display definitions*
+:::
 
 - **Footer**: text area, defines the bottom content or inform of the recommendation card.
 
@@ -197,7 +199,6 @@ ${it!!.value}
   - The first is used to define the delimiter between entries. The default value is `\n`, which indicates a line break. 
   - The second is used to define the delimiter of the last entry. It can be empty if not needed.
 
-![vr-display](/images/annotation/vr/vr-display-show.png)
 
 <!-- Todo: add template (universal message) -->
 
@@ -207,13 +208,14 @@ In theory, you can define header, body, footer as any content as you want, but i
 
 #### Single-entry
 
+Single entry prompt used to handle the scenario when there is only one entry in the recommended options. Like confirmation, there are two ways to provide it to your users: **Explicit** and **Implicit**：
+
+::: thumbnail
 ![vr-sep-explict](/images/annotation/vr/vr-sep-explict.png)
+*Explict Single-entry Prompts*
+:::
 
-![vr-sep-implicit](/images/annotation/vr/vr-sep-implicit.png)
-
-Single entry prompt used to handle the scenario when there is only one entry in the recommended options. Like confirmation, there are two ways to provide it to your users: explicit and implicit：
-
-- **Explicit**: requires a reply from the user to confirm, usually yes/no or some synonym.
+- **Explicit**: requires a reply from the user to confirm, usually *"yes/no"* or some synonym.
 
 ::: story
 User: *Get me two tickets for Star War for tonight, please.*
@@ -221,7 +223,10 @@ User: *Get me two tickets for Star War for tonight, please.*
 Bot: *Star War, we only have it at 21:30pm. Would you like to get these?*
 :::
 
-<br>
+::: thumbnail
+![vr-sep-implicit](/images/annotation/vr/vr-sep-implicit.png)
+*Implicit Single-entry Prompts*
+:::
 
 - **Implicit**: does not require a reply from the user, simply confirms like *"Star War, at 21:30pm"* and moves on, although users might give one if they want to make a correction *"no, 18:30"*. In this example below, the next step is to explicitly confirm the purchase of these tickets.
 
@@ -231,16 +236,21 @@ User: *Get me two tickets for Star War for tonight, please.*
 Bot: *Alright, Star War, at 21:30pm. Would you like to proceed with payment?*
 :::
 
-<br>
-
 #### Zero-entry
 
+::: thumbnail
 ![vr-zep](/images/annotation/vr/vr-zep.png)
+*Zero-entry Prompts*
+:::
 
-When the recommendation is empty, the zero entry prompt will be replied to users. And then bot will exit the current intent as it can not provide the service any more. If this default behavior does not meet your expectations, you can customize this behavior with Transition annotation, or recover some value at the previous slot with Value Check. 
+When the recommendation is empty, the zero entry prompt will be replied to users. And then bot will exit the current intent as it can not provide the service any more. If this default behavior does not meet your expectations, you can customize this behavior with Transition annotation, or recover some value at the previous slot with [Value Check](./vc.md). 
 
 
 ### Expressions
 
+::: thumbnail
 ![vr-expression](/images/annotation/vr/vr-expression.png)
+*Expressions*
+:::
 
+Expressions in value recommendation can provide an active way for your users to get choices directly like *"what do yo have?"*, when they are in the dependent context.
