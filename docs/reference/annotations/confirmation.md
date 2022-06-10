@@ -42,8 +42,8 @@ Confirmation is optional for conversation design, Abusive usage will lead to the
 - Provides two ways to confirm
   - Implicit Confirmation
   - Explicit Confirmation
-- Supports customizing strategy when user chooses ***NO***.
 - Supports adding expressions of  affirmatives and negatives.
+- Supports customizing strategy when user chooses ***NO***.
 
 
 ## How to use
