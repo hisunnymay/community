@@ -38,9 +38,15 @@ Confirmation is optional for conversation design, Abusive usage will lead to the
 - Your business procedure requires it
 - Your target user does not mind to be interrupted: e.g. they are conservative in character, or not familiar with the service you provide
 
+## Features
+- Provides two ways to confirm
+  - Implicit Confirmation
+  - Explicit Confirmation
+- Supports adding expressions of  affirmatives and negatives.
+- Supports customizing strategy when user chooses ***NO***.
 
 
-## Configuration
+## How to use
 
 In this section, you will learn how to configure Confirmation annotations, including:  
 
@@ -61,14 +67,14 @@ There are three kinds of confirmation:
 | Confirmation (slot level)              | Confirming after the slot (as a whole) is checked. This works for both single-valued and multi-valued slot. | the slot's (whole) value      |
 | Multi-Valued Confirmation (slot level) | Confirming each time a slot value is given, if the slot is multi-valued. | the slot's each value         |
 
-For further information, see [Frame filling](https://www.framely.ai/reference/framefilling.html).  
+For further information, see [Frame filling](../../guide/slotfilling.md).  
 
 
 
 While frame level sounds promising by batch confirming, it might mess user up if things go wrong. We suggest you to use the more frequent asked ones when:
 
 - You have strong confidence you could to reach a consensus with user
-- And if unfortunately you failed, the consequence is either acceptable or can be repaired in reasonable turns of interactions. We support the latter by [CRUD](https://framely.github.io/guide/5levels-cui.html#crud-support).
+- And if unfortunately you failed, the consequence is either acceptable or can be repaired in reasonable turns of interactions. We support the latter by [CRUD](../../guide/5levels-cui.html#crud-support).
 
 
 
@@ -100,7 +106,7 @@ For each Confirmation annotation, multiple conditions can be added.
 
 
 
-[DM (dialog management)](https://www.framely.ai/guide/architecture.html#dialog-management) will check these conditions one after one, and using the first one who's true to interact with user during conversation.
+[DM (dialog management)](../../guide/architecture.html#dialog-management) will check these conditions one after one, and using the first one who's true to interact with user during conversation.
 
 In other words, these conditions are joined by `IF-ELSE` relationship.
 
@@ -137,7 +143,7 @@ For function invocation:
 | Is type of               | SV, MV, frame                                | x is y                                          |
 | Congruent                | MV                                           | x and y are bijection                           |
 
-For further information, see [Type](https://www.framely.ai/guide/concepts.html#type-systems).  
+For further information, see [Type](../../guide/concepts.html#type-systems).  
 
 
 
@@ -187,9 +193,9 @@ Note: The customization will only effect within the condition. For everlasting /
 
 
 
-## Advanced Usage
+### Advanced Usage
 
-### Customize Strategy
+#### Customize Strategy
 
 When a user chooses ***NO*** and provides no further disruption, the bot will ask the user:
 
@@ -199,7 +205,7 @@ Bot: *What do you want to do next? You can change your choice before, leave the 
 
 :::
 
-This default strategy is defined in [system intent](https://www.framely.ai/reference/systemframes/systemframe.html) **io.framely.core.ConfirmationNo**. If you favour some other expression, you could customize them under its **Response** tab.
+This default strategy is defined in [system intent](../systemframes/systemframe.html) **io.framely.core.ConfirmationNo**. If you favour some other expression, you could customize them under its **Response** tab.
 
 
 
@@ -207,11 +213,11 @@ For now, the expression of ***NO*** is the only thing we allow to customize. But
 
 
 
-### Customize Default Affirmatives and Negatives
+#### Customize Default Affirmatives and Negatives
 
 As mentioned in [Affirmatives and Negatives](#affirmatives-and-negatives), we offer a few default expression for all Confirmation annotations. 
 
-They are defined in [system frame](https://www.framely.ai/reference/systemframes/systemframe.html) **io.framely.core.confirmation.Yes** and **io.framely.core.confirmation.No**. If you want to populate more expressions, you could add them under their **Expression** tab.
+They are defined in [system frame](../systemframes/systemframe.html) **io.framely.core.confirmation.Yes** and **io.framely.core.confirmation.No**. If you want to populate more expressions, you could add them under their **Expression** tab.
 
 
 
@@ -219,7 +225,7 @@ To understand how this works, see [On dialog understanding](On dialog understand
 
 
 
-### Cooperate with Value Recommendation
+#### Cooperate with Value Recommendation
 
 When [Value Recommendation](https://framely.github.io/reference/annotations/vr.html) has only 1 candidate, asking users to choose from 1 out of 1 implies confirmation as well. 
 
