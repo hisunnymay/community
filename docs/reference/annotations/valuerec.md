@@ -128,12 +128,11 @@ So you have to decide where to put it based on your business.
 
 ::: thumbnail
 ![vr-popup](/images/annotation/vr/vr-popup.png)
-*Hard Modee*
 :::
 
 Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. 
 
-So if the item the user wants is not in all candidates, the bot will give user a default reply such as *"Sorry, we do not offer Star War at this time"*. Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./vr.md#single-entry) and [Zero Entry Prompts](./vr.md#zero-entry).
+So if the item the user wants is not in all candidates, the bot will give user a default reply such as *"Sorry, we do not offer Star War at this time"*. Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./valuerec.md#single-entry) and [Zero Entry Prompts](./valuerec.md#zero-entry).
 
 <!--【img】hard soft 对比-->
 
