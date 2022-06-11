@@ -127,7 +127,7 @@ So you have to decide where to put it based on your business.
 ### Hard Mode
 
 ::: thumbnail
-![vr-popup](/images/annotation/vr/vr-popup.png)
+![vr-popup](/images/annotation/valuerec/vr-popup.png)
 :::
 
 Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. 
@@ -145,8 +145,7 @@ Customization of **system intent** will not only affect the current slot, but al
 ### Source
 
 ::: thumbnail
-![vr-source](/images/annotation/vr/vr-source.png)
-*Source*
+![vr-source](/images/annotation/valuerec/vr-source.png)
 :::
 
 Source is the place to declare where the recommended options come from. Normally, you can add it using function methods directly like ` function()` or `function(input: slot!!)` , which need to contact your service and return a list of options. However, in certain advanced scenarios, you may find it easier to define it with the code expression, which can generate dynamic suggestions. 
@@ -154,8 +153,7 @@ Source is the place to declare where the recommended options come from. Normally
 ### Display
 
 ::: thumbnail
-![vr-display](/images/annotation/vr/vr-display.png)
-*Display*
+![vr-display](/images/annotation/valuerec/vr-display.png)
 :::
 
 Display is what the bot shows to the user. If the hard toggle is turned on, here are three different scenarios triggered by different result sets: 
@@ -186,8 +184,7 @@ ${it!!.value}
 ```
 
 ::: thumbnail
-![vr-dispaly-full](/images/annotation/vr/vr-dispaly-full.png)
-*Display definitions*
+![vr-dispaly-full](/images/annotation/valuerec/vr-dispaly-full.png)
 :::
 
 - **Footer**: text area, defines the bottom content or inform of the recommendation card.
@@ -210,8 +207,8 @@ In theory, you can define header, body, footer as any content as you want, but i
 Single entry prompt used to handle the scenario when there is only one entry in the recommended options. Like confirmation, there are two ways to provide it to your users: **Explicit** and **Implicit**：
 
 ::: thumbnail
-![vr-sep-explict](/images/annotation/vr/vr-sep-explict.png)
-*Explict Single-entry Prompts*
+![vr-sep-explict](/images/annotation/valuerec/vr-sep-explict.png)
+*Explict*
 :::
 
 - **Explicit**: requires a reply from the user to confirm, usually *"yes/no"* or some synonym.
@@ -223,8 +220,8 @@ Bot: *Star War, we only have it at 21:30pm. Would you like to get these?*
 :::
 
 ::: thumbnail
-![vr-sep-implicit](/images/annotation/vr/vr-sep-implicit.png)
-*Implicit Single-entry Prompts*
+![vr-sep-implicit](/images/annotation/valuerec/vr-sep-implicit.png)
+*Implicit*
 :::
 
 - **Implicit**: does not require a reply from the user, simply confirms like *"Star War, at 21:30pm"* and moves on, although users might give one if they want to make a correction *"no, 18:30"*. In this example below, the next step is to explicitly confirm the purchase of these tickets.
@@ -238,8 +235,7 @@ Bot: *Alright, Star War, at 21:30pm. Would you like to proceed with payment?*
 #### Zero-entry
 
 ::: thumbnail
-![vr-zep](/images/annotation/vr/vr-zep.png)
-*Zero-entry Prompts*
+![vr-zep](/images/annotation/valuerec/vr-zep.png)
 :::
 
 When the recommendation is empty, the zero entry prompt will be replied to users. And then bot will exit the current intent as it can not provide the service any more. If this default behavior does not meet your expectations, you can customize this behavior with Transition annotation, or recover some value at the previous slot with [Value Check](./vc.md). 
@@ -248,8 +244,7 @@ When the recommendation is empty, the zero entry prompt will be replied to users
 ### Expressions
 
 ::: thumbnail
-![vr-expression](/images/annotation/vr/vr-expression.png)
-*Expressions*
+![vr-expression](/images/annotation/valuerec/vr-expression.png)
 :::
 
 Expressions in value recommendation can provide an active way for your users to get choices directly like *"what do yo have?"*, when they are in the dependent context.
