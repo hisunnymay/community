@@ -4,7 +4,10 @@ Framely platform is the place where builder define, share conversational compone
 
 ## Architecture
 The conversational interaction specified by builder declaratively in terms of the primitives offered by runtime, the execution of these interactions by the Framely runtime can be depicted as follows:
-![runtime architecture](/images/architecture.jpeg).
+
+::: thumbnail
+![runtime architecture](/images/architecture.png)
+:::
 
 There are three main components that worth some explanations.
 
