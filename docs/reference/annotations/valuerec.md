@@ -115,7 +115,7 @@ Bot: *You want a one way ticket for:*
 
 Before you start, you should make sure services or APIs that host your business logic are available, as value recommendation will turn your business data into recommendations.
 
-There are two places that you can define value recommendation: slot level and frame level,  different places have different meanings: 
+There are two places that you can define value recommendation: slot level and frame level, different places have different meanings: 
 - **Slot Level**: Progressive, We value rec one column at a time, which can quickly result in nothing to recommend for the next slot.
 - **Frame Level**: Holistic, we always recommend multi slots simultaneously, and they will be filled together. 
 ::: thumbnail
@@ -137,7 +137,7 @@ Hard is used to declare the relationship between business boundaries and recomme
 Bot: *Sorry, we do not offer Star War at this time.*
 :::
 
-Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. 
+Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more replies. 
 
 And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./valuerec.md#single-entry) and [Zero Entry Prompts](./valuerec.md#zero-entry).
 
