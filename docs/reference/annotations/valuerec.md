@@ -131,7 +131,7 @@ So you have to decide where to put it based on your business.
 ![vr-popup](/images/annotation/valuerec/vr-popup.png)
 :::
 
-Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. So if the item the user wants is not in all candidates, the bot will give user a default reply such as:
+Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the recommended options. So if the item the user wants is not in all candidates, the bot will give user a default reply such as:
 
 ::: story
 Bot: *Sorry, we do not offer Star War at this time.*
