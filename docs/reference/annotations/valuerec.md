@@ -63,7 +63,7 @@ Some default behaviors are already supported here, and you can use them directly
   
 ## Related Annotations
 
- <!--【img】todo 在对话中标出不同的 annotation -->
+![Value Rec related annotation](/images/annotation/valuerec/valuerec_related.png)
 
 #### Prompt <Badge type="warning" text="Required" />
 Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items. For example, you can not always recommend a timetable directly, instead you'd better to indicate the context of the timetable:
