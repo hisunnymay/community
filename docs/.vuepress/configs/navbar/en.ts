@@ -29,7 +29,7 @@ export const en = [
           },
           {
             text: "Value Recommendation",
-            link: '/reference/annotations/vr.html',
+            link: '/reference/annotations/valuerec.md',
             icon: "/featureIcons/hotfix.svg",
           },
           {

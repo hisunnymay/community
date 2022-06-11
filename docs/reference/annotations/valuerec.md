@@ -63,7 +63,7 @@ Some default behaviors are already supported here, and you can use them directly
   
 ## Related Annotations
 
- <!--【img】todo 在对话中标出不同的 annotation -->
+![Value Rec related annotation](/images/annotation/valuerec/valuerec_related.png)
 
 #### Prompt <Badge type="warning" text="Required" />
 Once you’ve decided to offer a value recommendation, there must have a prompt in front, as users require this context to understand these recommendation items. For example, you can not always recommend a timetable directly, instead you'd better to indicate the context of the timetable:
@@ -127,13 +127,12 @@ So you have to decide where to put it based on your business.
 ### Hard Mode
 
 ::: thumbnail
-![vr-popup](/images/annotation/vr/vr-popup.png)
-*Hard Modee*
+![vr-popup](/images/annotation/valuerec/vr-popup.png)
 :::
 
 Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. 
 
-So if the item the user wants is not in all candidates, the bot will give user a default reply such as *"Sorry, we do not offer Star War at this time"*. Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./vr.md#single-entry) and [Zero Entry Prompts](./vr.md#zero-entry).
+So if the item the user wants is not in all candidates, the bot will give user a default reply such as *"Sorry, we do not offer Star War at this time"*. Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./valuerec.md#single-entry) and [Zero Entry Prompts](./valuerec.md#zero-entry).
 
 <!--【img】hard soft 对比-->
 
@@ -146,8 +145,7 @@ Customization of **system intent** will not only affect the current slot, but al
 ### Source
 
 ::: thumbnail
-![vr-source](/images/annotation/vr/vr-source.png)
-*Source*
+![vr-source](/images/annotation/valuerec/vr-source.png)
 :::
 
 Source is the place to declare where the recommended options come from. Normally, you can add it using function methods directly like ` function()` or `function(input: slot!!)` , which need to contact your service and return a list of options. However, in certain advanced scenarios, you may find it easier to define it with the code expression, which can generate dynamic suggestions. 
@@ -155,8 +153,7 @@ Source is the place to declare where the recommended options come from. Normally
 ### Display
 
 ::: thumbnail
-![vr-display](/images/annotation/vr/vr-display.png)
-*Display*
+![vr-display](/images/annotation/valuerec/vr-display.png)
 :::
 
 Display is what the bot shows to the user. If the hard toggle is turned on, here are three different scenarios triggered by different result sets: 
@@ -187,8 +184,7 @@ ${it!!.value}
 ```
 
 ::: thumbnail
-![vr-dispaly-full](/images/annotation/vr/vr-dispaly-full.png)
-*Display definitions*
+![vr-dispaly-full](/images/annotation/valuerec/vr-dispaly-full.png)
 :::
 
 - **Footer**: text area, defines the bottom content or inform of the recommendation card.
@@ -211,8 +207,8 @@ In theory, you can define header, body, footer as any content as you want, but i
 Single entry prompt used to handle the scenario when there is only one entry in the recommended options. Like confirmation, there are two ways to provide it to your users: **Explicit** and **Implicit**：
 
 ::: thumbnail
-![vr-sep-explict](/images/annotation/vr/vr-sep-explict.png)
-*Explict Single-entry Prompts*
+![vr-sep-explict](/images/annotation/valuerec/vr-sep-explict.png)
+*Explict*
 :::
 
 - **Explicit**: requires a reply from the user to confirm, usually *"yes/no"* or some synonym.
@@ -224,8 +220,8 @@ Bot: *Star War, we only have it at 21:30pm. Would you like to get these?*
 :::
 
 ::: thumbnail
-![vr-sep-implicit](/images/annotation/vr/vr-sep-implicit.png)
-*Implicit Single-entry Prompts*
+![vr-sep-implicit](/images/annotation/valuerec/vr-sep-implicit.png)
+*Implicit*
 :::
 
 - **Implicit**: does not require a reply from the user, simply confirms like *"Star War, at 21:30pm"* and moves on, although users might give one if they want to make a correction *"no, 18:30"*. In this example below, the next step is to explicitly confirm the purchase of these tickets.
@@ -239,8 +235,7 @@ Bot: *Alright, Star War, at 21:30pm. Would you like to proceed with payment?*
 #### Zero-entry
 
 ::: thumbnail
-![vr-zep](/images/annotation/vr/vr-zep.png)
-*Zero-entry Prompts*
+![vr-zep](/images/annotation/valuerec/vr-zep.png)
 :::
 
 When the recommendation is empty, the zero entry prompt will be replied to users. And then bot will exit the current intent as it can not provide the service any more. If this default behavior does not meet your expectations, you can customize this behavior with Transition annotation, or recover some value at the previous slot with [Value Check](./vc.md). 
@@ -249,8 +244,7 @@ When the recommendation is empty, the zero entry prompt will be replied to users
 ### Expressions
 
 ::: thumbnail
-![vr-expression](/images/annotation/vr/vr-expression.png)
-*Expressions*
+![vr-expression](/images/annotation/valuerec/vr-expression.png)
 :::
 
 Expressions in value recommendation can provide an active way for your users to get choices directly like *"what do yo have?"*, when they are in the dependent context.
