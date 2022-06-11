@@ -110,7 +110,6 @@ Bot: *You want a one way ticket for:*
 *Is that correct?*
 :::
 
-<br>
 
 ## How to use
 
@@ -119,10 +118,12 @@ Before you start, you should make sure services or APIs that host your business 
 There are two places that you can define value recommendation: slot level and frame level,  different places have different meanings: 
 - **Slot Level**: Progressive, We value rec one column at a time, which can quickly result in nothing to recommend for the next slot.
 - **Frame Level**: Holistic, we always recommend multi slots simultaneously, and they will be filled together. 
-
+::: thumbnail
+![vr-source](/images/annotation/valuerec/valuerec_levels.png)
+*Value recommendation on different levels*
+:::
 So you have to decide where to put it based on your business. 
 
-<!--【img】todo slot level frame level 对比-->
 
 ### Hard Mode
 
@@ -130,11 +131,15 @@ So you have to decide where to put it based on your business.
 ![vr-popup](/images/annotation/valuerec/vr-popup.png)
 :::
 
-Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. 
+Hard is used to declare the relationship between business boundaries and recommendations. If the hard toggle is turned on, meaning your business scope is fully aligned with the  recommended options. So if the item the user wants is not in all candidates, the bot will give user a default reply such as:
 
-So if the item the user wants is not in all candidates, the bot will give user a default reply such as *"Sorry, we do not offer Star War at this time"*. Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./valuerec.md#single-entry) and [Zero Entry Prompts](./valuerec.md#zero-entry).
+::: story
+Bot: *Sorry, we do not offer Star War at this time.*
+:::
 
-<!--【img】hard soft 对比-->
+Of course, you can customize them on the system intent `io.framely.core.BadIndex` and `io.framely.core.BadCandidate` by adding more  replies. 
+
+And if there are only one or zero recommended options, the default behavior will also be provided. The difference is that it needs to be defined in [Single Entry Prompts](./valuerec.md#single-entry) and [Zero Entry Prompts](./valuerec.md#zero-entry).
 
 We recommend using hard mode when there are limited items and limited quantities. For example, when booking a flight ticket, hard mode can help your users understand the available flight arrangements. Users can choose what they want at one time, instead of trying multiple times and failing to get what they want each time.
 
