@@ -230,6 +230,26 @@ export default defineUserConfig<DefaultThemeOptions>({
         type: 'thumbnail',
       }
     ],
+    [
+      '@vuepress/plugin-container', {
+        type: 'caption',
+      }
+    ],
+    [
+      '@vuepress/plugin-container', {
+        type: 'conversation',
+      }
+    ],
+    [
+      '@vuepress/plugin-container', {
+        type: 'bot',
+      }
+    ],
+    [
+      '@vuepress/plugin-container', {
+        type: 'user',
+      }
+    ],
 
     mdEnhance({
       flowchart: true,
