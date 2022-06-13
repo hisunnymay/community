@@ -437,6 +437,44 @@ html.dark {
 		}
 	}
 
+	&.caption {
+		padding: 5px;
+		background-color: var(--c-bg-light);
+		color: var(--c-text-light);
+		font-weight: 700;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: .4px;
+	}
+
+	&.conversation {
+		max-width: 28rem;
+		margin: 2rem auto;
+	}
+	&.bot {
+		display: flex;
+		flex-direction: row;
+		margin: 1rem auto;
+		p {
+			margin: 0;
+			padding: 0.5rem 1.5rem;
+			border-radius: 0 1.5rem 1.5rem 1.5rem;
+			background-color: var(--c-tip-bg);
+		}
+	}
+	&.user {
+		display: flex;
+		flex-direction: row-reverse;
+		margin: 1rem auto;
+		p {
+			margin: 0;
+			color: var(--c-bg);
+			padding: 0.5rem 1.5rem;
+			border-radius: 1.5rem 0 1.5rem 1.5rem;
+			background-color: var(--c-brand-light);
+		}
+	}
+
 }
 
 //top-info style
