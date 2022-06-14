@@ -17,10 +17,10 @@ A frame can be marked as interface. Builder can define multiple frames as implem
 When an artifact, including entity, frame and intent, is defined as external, we assume the corresponding kotlin class is already provided so that we do not have to generate the code for this. The builtin types, like Int, Boolean, are accessible at the Framely level, due to this mechanism. 
 
 ### Multi valued
-A slot can be declared as multivalued as opposed to single valued. A multivalued slot of type T can be translated into a slot with type List<T>. By creating a generic way of instantiating a list of instances of some type can make it easy to build the CUI for certain types.
+A slot can be declared as multivalued as opposed to single valued. A multivalued slot of type T can be translated into a slot with type List\<T\>. By creating a generic way of instantiating a list of instances of some type can make it easy to build the CUI for certain types.
 
 ### Global
-Sometime, we need to have a frame that is session global. For example, multiple symptoms might be fever related, but doctor might only need to ask the details of the fever once instead of every time it is related.
+Sometime, we need a frame to be session global. For example, multiple symptoms might be fever related, but doctor might only need to ask the details of the fever once instead of every time it is related.
 
 ### Dynamic
 The entity can be static or dynamic, the instance of static entity are decided at the time of compile, so there are instance can be referenced during the configuration. Instance of dynamic entity, on the other hand, are only available during runtime.
@@ -39,11 +39,11 @@ Framely dialog understanding try to convert natural language text into structure
 ### Storage Annotations
 On Framely, builder can also define the backend component, or service provider. And they can do this declaratively in two steps: first adding the storage annotation to the data types defined in the service, then creating restful function implementation by simply providing SQL statement as application logic. While this is only the only way to create the storage layer for the data model, this is certainly one way of doing it, particularly if one want to start from scratch as these component service provider can be easily reused by cloning. 
 
-To create the data model needed by service implementation, we can simply turn on storage annotation on the corresponding frames inside service provider. This essentially create a isomorphic database table with each slot mapped to column in it. When the storage annotation is turned on for the frame, we will automatically create the corresponding tables in the hosting database. Builder can precisely control how that table is created by using
-1. Data Type: to specify the column database type for each slot. For most cases, builder can rely on the default strategy. URL is special string data type that can be used to serve the media. 
-2. Not Null: to indicate whether a column can host a null value.
-3. Default Value: defines default value for the column.
-4. Unique: to indicate whether a value in the column need to be unique, and thus can potentially serve as key.
+To create the data model needed by service implementation, we can simply turn on storage annotation on the corresponding frames inside service provider. This essentially create an isomorphic database table with each slot mapped to column in it. When the storage annotation is turned on for the frame, we will automatically create the corresponding tables in the hosting database. Builder can precisely control how that table is created by using
+Data Type: to specify the column database type for each slot. For most cases, builder can rely on the default strategy. URL is special string data type that can be used to serve the media. 
+Not Null: to indicate whether a column can host a null value. 
+Default Value: defines default value for the column. 
+Unique: to indicate whether a value in the column need to be unique, and thus can potentially serve as key.
 
 After builder specify the data model, they can then define the function implementation in the provider by providing sql statement that capture application logic. Such function definition is automatically turned in the restful API on top of the database. 
 
