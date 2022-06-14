@@ -448,7 +448,7 @@ html.dark {
 	}
 
 	&.conversation {
-		max-width: 28rem;
+		max-width: 34rem;
 		margin: 2rem auto;
 	}
 	&.bot {
@@ -456,10 +456,17 @@ html.dark {
 		flex-direction: row;
 		margin: 1rem auto;
 		p {
-			margin: 0;
+			margin: 0 3rem 0 0;
 			padding: 0.5rem 1.5rem;
 			border-radius: 0 1.5rem 1.5rem 1.5rem;
 			background-color: var(--c-tip-bg);
+		}
+		.custom-container-title {
+			margin: 0;
+			background-color: var(--c-bg);
+			color: var(--c-text-lighter);
+			padding: 0.4rem 1rem 0.4rem 0;
+			font-weight: 400;
 		}
 	}
 	&.user {
@@ -467,14 +474,20 @@ html.dark {
 		flex-direction: row-reverse;
 		margin: 1rem auto;
 		p {
-			margin: 0;
+			margin: 0 0 0 3rem;
 			color: var(--c-bg);
 			padding: 0.5rem 1.5rem;
 			border-radius: 1.5rem 0 1.5rem 1.5rem;
 			background-color: var(--c-brand-light);
 		}
+		.custom-container-title {
+			margin: 0;
+			background-color: var(--c-bg);
+			color: var(--c-text-lighter);
+			padding: 0.4rem 0 0.4rem 1rem;
+			font-weight: 400;
+		}
 	}
-
 }
 
 //top-info style
