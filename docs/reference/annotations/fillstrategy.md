@@ -1,18 +1,21 @@
-# Fill Strategy
+# Prompt Strategy
 
 [[toc]]
 
 ## Overview
 
-Information is contained in slots, and for each of them, a couple of decisions will always need to be made:
+When user did not mention which movie they want to watch when buying tickets, we need to prompt user for them. 
+::: story 
+User: Can I get two tickets for 8:00pm please? 
 
-- Whether or not to collect / fill it
-- From whom the information / slot value is offered
-- Through what kind of interactions it will be collected / filled
+Bot: *Which movie? We have two options: Top Gun and Star Wars.*
 
-Fill Strategy offers control for these decisions.
+User: Top Gun, please.
+:::
 
-
+Prompt strategy is a slot level annotation that builder can use to control the following aspects of slot filling:
+- Whether to prompt user to fill this slot
+- Template that can be used to verbalize the slot request dialog act.
 
 ## Features
 
@@ -78,9 +81,7 @@ To support this, they need to:
 
 And the following conversation can be expected:
 
-::: story
-
-**Use case 1**
+::: story Use case 1
 
 Bot: *What kind of colour do you like for flowers?*
 
@@ -88,9 +89,7 @@ User: *Red, please.*
 
 :::
 
-::: story
-
-**Usecase 2: Stuck unless getting an answer**
+::: story Usecase 2: Stuck unless getting an answer
 
 Bot: *What kind of colour do you like for flowers?* 
 
