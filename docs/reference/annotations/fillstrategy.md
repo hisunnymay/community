@@ -13,7 +13,7 @@ Bot: *Which movie? We have two options: Top Gun and Star Wars.*
 User: Top Gun, please.
 :::
 
-Prompt strategy is a slot level annotation that builder can use to control the following aspects of slot filling:
+Prompt strategy is a slot level annotation that builder can use to control the following aspects of slot filling when user did not provide their preference for given slot:
 - Whether to prompt user to fill this slot
 - Template that can be used to verbalize the slot request dialog act.
 
