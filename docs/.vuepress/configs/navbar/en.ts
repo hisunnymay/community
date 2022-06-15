@@ -23,7 +23,7 @@ export const en = [
 
           },
           {
-            text: "Fill Strategy",
+            text: "Prompt Strategy",
             link: '/reference/annotations/fillstrategy.html',
             icon: "/featureIcons/separate.svg",
           },
