@@ -4,7 +4,7 @@
 
 ## Overview
 
-When user did not mention which movie they want to watch when buying tickets, we need to prompt user for them. 
+If user did not mention which movie they want to watch when buying tickets, we need to prompt user for them. 
 ::: story 
 User: Can I get two tickets for 8:00pm please? 
 
