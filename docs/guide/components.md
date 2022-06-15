@@ -20,7 +20,7 @@ There are many possible angles that component based approach can be advantageous
 3. Using components can greatly reduce the time to market. As a component can be prefabricated or developed in parallel.
 4. Using components allows builders to try different things quickly as builders can focus on what they want instead of how to build it.
 
-Conversational user interaction (CUI) component
+## Conversational user interaction (CUI) component
 For conversational user interface, the component based approach can be more appealing. As half of the user interaction is dictated by end users, it is very likely that we will converge to a smaller set of CUI components thus introduce huge cost savings in building conversational user experiences. But what are the basic considerations of highly reusable conversational user interaction component?
 
 ### Schema
@@ -37,6 +37,9 @@ For graphical user interface components, the runtime can be fairly simple becaus
 
 ### Integration with service
 For task oriented conversation, the goal is always connecting user with desired services. So it should be possible for the CUI component to pair up with different service providers for maximal reuse. Furthermore, when a CUI component is used together with the compatible backend component, builder can simply deliver services directly by populating the table hosted in the backend components, without needing to understand how component works at CUI level.
+
+## Provider Component
+The CUI components are declaratively defined for user to access service through conversations. On Framely, we can also define the PSQL provider component, the implementation of given services, in a low code manner. To define provider component, we first add storage annotations to frames so that we can create the database tables needed by service implementation, then for each service function we can provide SQL statement to express the intended application logic. Framely then automatically create the stored procedure for them, and expose these storage procedures as function through restful APIs. At the same time, client side stub is also automatically generated, so that one can directly access the implementation of the given service we created on the platform. Under the hood, we rely on the battle tested open source technology stack like Postgresql and Postgrest for maximal reliability.
 
 ## Conclusion
 The advent of high level component based frameworks greatly reduced the cost of building the GUI application, and there is little question that these frameworks contribute to the ubiquitous availability for web and mobile apps. However, the conversational user experience are still mainly built from scratch. It is excruciating slow and expensive and only the team with extreme deep pockets can do it well. Lack of a well-designed component based CUI framework has plagued chatbot development for so long as there are many aspects needed to be taken care of. But the wait is over: check framely.io to see how one can build chatbot in a component approach today.

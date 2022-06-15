@@ -1,6 +1,6 @@
 # Runtime Under the Hood
 
-Framely platform is the place where builder define, share conversational components, service providers and then package these components into enjoyable conversational services. The declaration on the platform is then generated into Kotlin code where it can be deployed along with Framely runtime to the environment of your choices. 
+Framely platform is the place where builder define, share conversational components, service providers and then package these components into enjoyable conversational services. The declaration on the platform is then generated into Kotlin code where it can be compiled and deployed along with Framely runtime to the environment of your choices. 
 
 ## Architecture
 The conversational interaction specified by builder declaratively in terms of the primitives offered by runtime, the execution of these interactions by the Framely runtime can be depicted as follows:
@@ -12,19 +12,19 @@ The conversational interaction specified by builder declaratively in terms of th
 There are three main components that worth some explanations.
 
 ### Dialog Understanding (DU)
-CUI needs to understand what the users want, regardless if it is service related, i.e., "I want two tickets for star wars at 7:00", or it is some dialogue act, i.e. "That is alright. But thanks." By understanding, we really mean that we can normalize equivalent expressions into some predefined semantics, either intents or frame needed by them. 
+CUI needs to understand what the users want, regardless if it is service related, i.e., "I want two tickets for star wars at 7:00", or it is some dialogue act, i.e. "That is alright. But thanks." By understanding, we really mean that we can normalize equivalent expressions into predefined semantic representation, instance of intents. 
 
-DU can be modeled as a function (utterance, conversation history) -> (frame), where frame is described in form of FrameEvent so Dialog . The example for such normalized frame event is "buy(amount=2, movie=star wars, time=7:00pm)". In practice, conversation history is represented by stack of frames (sometime knowns as dialog state), in form of Dialog Expectation. Dialog expectation describe the current active semantic frame, as well as which slot bot expects user to fill. 
+DU can be modeled as a function (utterance, conversation history) -> (frame), where frame is described in form of FrameEvent. The example for such normalized frame event is "buy(amount=2, movie=star wars, time=7:00pm)". In practice, conversation history is represented by stack of frames (sometime known as dialog state), in form of Dialog Expectation. Dialog expectation describe what is current active semantic frame, as well as which slot bot expects user to fill. 
 
-At implementation level, DU is decomposed into context independent level NLU module, which is used by context dependent DU module. The entire DU module is driven by Dialog Manager (DM).
+At implementation level, DU is decomposed into context independent level NLU module and context dependent DU module. DU module use the dialog expectation to The entire DU module is driven by Dialog Manager (DM).
 
 ### Dialog Management
-Dialog manager essentially just a dynamic state chart defined declaratively on the platform. At each turn, the chatbot needs to take normalized user input in form of FrameEvent, based on current transition rules, emit a response and updates the state at the same time. State chart is essentially a composite state machine, thus it is a natural fit for this reactive logic. We added support for service functions, which allow dialog manager to naturally interact with the business logic/data via APIs or database connections.
+Dialog manager executes the interaction logic, which creates structure response based on the input frame event. Interaction logic is defined by builder based on the business goal, and CUI principles. The interaction logic defined on the Framely framework is essentially just a dynamic statechart. At each turn, the chatbot needs to take normalized user input in form of FrameEvent, based on current transition rules, emit a response and updates the state at the same time. State chart is essentially a composite state machine, thus it is a natural fit for this reactive logic. We added support for service functions, which allow dialog manager to naturally interact with the business logic/data via APIs or database connections.
 
 On Framely, every intent is grounded to some actions, either service related or system related so bot can fulfill these intents. We make the following key independence assumption related to fulfillment here: P(action|intent, utterance) = P(action|intent)P(intent|utterance), meaning the action is independent of utterance given the intent. This is the basic assumption of schema grounded conversational user interface.
 
 ### Response Generation
-Once we have something to say, represented by the dialog act or semantic structure generated by the execution of functions, we can convert that into natural text for given language and style. For now, we are using a template, which can be defined with a style that not only delivers the content, but also promotes users collaboration and satisfaction. And best of all, this scripting can be handled by a conversational user experience team.
+Once we have something to say, represented by the dialog act or semantic structure generated by the execution of functions, we can verbalize that or convert that into natural text for required language and style. For now, we are using a template, which can be defined with a style that not only delivers the content, but also promotes users collaboration and satisfaction. And best of all, this scripting can be handled by a conversational user experience team.
 
 
 
