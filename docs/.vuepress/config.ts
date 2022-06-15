@@ -175,11 +175,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     tocPlugin({
       // options
     }),
-
-    externalLinkIconPlugin({
-      // options
-    }),
-
+      
     [
       '@vuepress/plugin-google-analytics',
       {
