@@ -7,6 +7,7 @@ import { mdEnhance } from "vuepress-plugin-md-enhance";
 
 // 
 const { tocPlugin } = require('@vuepress/plugin-toc')
+const { externalLinkIconPlugin } = require('@vuepress/plugin-external-link-icon')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -172,6 +173,10 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   plugins: [
     tocPlugin({
+      // options
+    }),
+
+    externalLinkIconPlugin({
       // options
     }),
 
