@@ -28,8 +28,8 @@ Unlike dialog annotation, provider annotations are only helpful for Framely-host
 
 ## How To Use
 Before starting, turn on **Storage Enabled** in **Frames** field to enable storing frames as tables in the database. There are two levels of provider annotations: slot level and frame level.
-- At slot level, you can configure the column properties and back office annotations in the **Schema**  - **Slots** field.
-- At frame level, you can configure table constraints in the **Annotation** field.
+- At a slot level, you can configure the column properties and back office annotations in the **Schema**  - **Slots** field.
+- At a frame level, you can configure table constraints in the **Annotation** field.
 
 ![provider-annotation](/images/annotation/providerannotation/provider-annotation.png)
 
@@ -60,8 +60,9 @@ For example, if the type of slot is *java.time.LocalDate*, you can set its defau
 Allow null is a slot annotation that is turned on by default. Allow null is a column constraint and it means the column can be null. If you turn off allow null, it indicates that the column can't be null. To learn more about it, see [Not-Null Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html#id-1.5.4.6.6).
 
 ### Unique
-Unique is a frame annotation used to constrain the table. Unique constraints ensure that the data contained in a column, or a group of columns, is unique among all the rows in the table.
-To add a set of unique constraints, in the **Annotation** field, click **Add** and select unique keys.
+Unique is a frame annotation. If there is only one slot in a group of unique constraints, unique constraints ensure the data contained in the corresponding column is unique among all the rows in the table. If not, unique constraints make sure that the combination of values in the indicated columns is unique across the table.
+
+To add one group of unique constraints, in the **Annotation** field, click **Add** and select unique keys. If there are 3 columns which should be unique individually, be sure to add 3 groups of unique constraints.
 
 ![unique](/images/annotation/providerannotation/unique.png)
 
@@ -86,7 +87,7 @@ Process of Getting Picuture URL
 
 To enable URL, select *kotlin.String* when choosing [Type](#type) and set data type as `text`. Once done, there will be a switch: URL. Turn on URL so that you can upload pictures in that column.
 
-For example, there is a slot called *catPicture* in a storage-enabled frame, and URL is enabled in this slot. Here're tips to upload pictures in back office.
+For example, there is a slot called *catPicture* in a storage-enabled frame, and URL is enabled in this slot. Here are the steps to uploading pictures in back office.
 
 1. Go to back office, find the corresponding table, click **Create**.
 2. Upload a picture in the column called *catPiture* and fill another column called catName.
