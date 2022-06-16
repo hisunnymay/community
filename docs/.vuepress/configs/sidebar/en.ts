@@ -43,6 +43,7 @@ export const en = {
         '/reference/annotations/valuerec.md',
         '/reference/annotations/confirmation.md',
         '/reference/annotations/vc.md',
+        '/reference/annotations/providerannot.md',
       ],
     },
     {

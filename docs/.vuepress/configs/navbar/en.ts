@@ -41,6 +41,11 @@ export const en = [
             text: "Value Check",
             link: '/reference/annotations/vc.html',
             icon: "/featureIcons/check-item.svg",
+          },
+          {
+            text: "Provider annotations",
+            link: '/reference/annotations/providerannot.html',
+            icon: "/featureIcons/table.svg",
           }
 
 
