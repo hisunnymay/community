@@ -13,7 +13,7 @@ export const en = [
     text: 'Reference',
     children: [
       {
-        text: 'Annotations',
+        text: 'CUI Annotations',
 
         children: [
           {
@@ -33,23 +33,20 @@ export const en = [
             icon: "/featureIcons/hotfix.svg",
           },
           {
-            text: "Confirmation",
-            link: '/reference/annotations/confirmation.html',
-            icon: "/featureIcons/declarative.svg",
-          },
-          {
             text: "Value Check",
             link: '/reference/annotations/vc.html',
             icon: "/featureIcons/check-item.svg",
           },
           {
-            text: "Provider annotations",
-            link: '/reference/annotations/providerannot.html',
-            icon: "/featureIcons/table.svg",
-          }
-
-
+            text: "Confirmation",
+            link: '/reference/annotations/confirmation.html',
+            icon: "/featureIcons/declarative.svg",
+          },
         ],
+      },
+      {
+        text: "Provider annotations",
+        link: '/reference/annotations/providerannot.html',
       },
       {
         text: 'Channels',
