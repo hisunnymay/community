@@ -45,7 +45,7 @@ export const en = [
         ],
       },
       {
-        text: "Provider annotations",
+        text: "Provider Annotations",
         link: '/reference/annotations/providerannot.html',
       },
       {
