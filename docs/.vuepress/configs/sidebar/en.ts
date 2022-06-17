@@ -47,7 +47,7 @@ export const en = {
     },
     {
       text: 'Provider Annotations',
-      link: '/reference/channels/wpa.md',
+      link: '/reference/annotations/providerannot.md',
     },
     {
       text: 'Channel Reference',
