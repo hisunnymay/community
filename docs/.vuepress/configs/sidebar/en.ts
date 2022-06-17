@@ -32,7 +32,7 @@ export const en = {
   ],
   '/reference/': [
     {
-      text: 'Annotation Reference',
+      text: 'CUI Annotations',
       icon:"/featureIcons/cui.svg",
 
       collapsible: true,
@@ -41,10 +41,13 @@ export const en = {
         '/reference/annotations/overview.md',
         '/reference/annotations/fillstrategy.md',
         '/reference/annotations/valuerec.md',
-        '/reference/annotations/confirmation.md',
         '/reference/annotations/vc.md',
-        '/reference/annotations/providerannot.md',
+        '/reference/annotations/confirmation.md',
       ],
+    },
+    {
+      text: 'Provider Annotations',
+      link: '/reference/channels/wpa.md',
     },
     {
       text: 'Channel Reference',
