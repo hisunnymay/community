@@ -103,99 +103,58 @@ If the answer is NO, the frame slot will simply be skipped (neither be asked nor
 - Pick a **frame slot**
 - Set its Fill Strategy to Gated, then configure the detail for gated strategy:
   - Prompt: boolean question that ask user whether he/she wants to or is able to provide slot value
-  - Affirmatives and Negatives: see [Affirmatives and Negatives in Confirmation](./confirmation.md#affirmatives-and-negatives)
+  - Affirmatives and Negatives: expression exemplars to help DU, see [Affirmatives and Negatives in Confirmation](./confirmation.md#affirmatives-and-negatives)
+- Provide at least one template for origin slot in its Prompt for bot to generate natural language response.
 
 ![boolean-gate](/images/annotation/fillstrategy/booleangate.png)
 
 
-## User Mentioned
+## RecoverOnly
 
-User Mentioned means bot will only ask user when he/she proactively mentions it first. 
+#### Motivation
+When a service option might only apply to a very small subset of users, like wheelchair assistance, prompt every user for their choice is not a good user experience. But when the initial value, either from user input or initialization failed value check of confirmation, bot need to prompt user for new value. 
 
-It is commonly used to support CUXs (or services, to be more accurate) that: 
+::: story
+Bot: *Two one way ticket from Beijing to New Yok on July 1st, is this all?*
 
-- Businesses have a default behaviour / choice that could satisfy most users, so they decide to sacrifice minority for majority.
+User: I need wheelchair assistance.
+
+Bot: *Do you have your own mobility device, or you want airport wheelchair service?*
+:::
+
+It is not appropriate to ask whether user have own mobility cart in general, but if user mentioned it first, we can go back and fill them.
+
+#### Analysis
+RecoverOnly strategy can be useful for the follow use cases:
+- Businesses have a default behaviour / choice that could satisfy most users, but the default value does not work out, this strategy kick in.
 - Businesses have a behaviour / choice they don't want to promote, but still need to handle if it's required.
+Like conditional strategy, this choice is also orthogonal to other annotations in the [slot filling](../../guide/slotfilling.md) pipeline. 
+
+When a slot is configured to have recovering prompt strategy, bot will not be prompt unless there are some prior effort to try to fill it.
+
+#### How to Configure
+
+- Pick a slot
+- Set its Fill Strategy to Recovering
+- Provide at least one template in Prompt for bot to generate natural language response. Users might say something bots cannot understand, or offer some slot value that fails the Value Check. In these cases, re-prompt is needed to request the slot value from user again.
 
 
-
-There are three possible behaviours under User Mentioned:
-
-- When user mentions slot value 
-  - under a Single-Valued slot: bot collects the value and moves forward
-  - under a Multi-Valued slot: bot collects this value as an entry, and proactively requests for the next entry until the Multi-Valued slot achieves maximum limitation or user doesn't want more.
-- When user mentions nothing
-  - slots will be skipped (neither be asked nor be filled), regardless of Single-Valued or Multi-Valued
-
-
-
-**[Usage Instruction]**
-
-<Badge type="warning" text="Required" vertical="top" />
-
-- Create a slot
-- Set its Fill Strategy to User Mentioned
-- [Prompts](https://www.framely.ai/reference/annotations/prompts.html): Prompts are still required as the slot value user mentioned may not be qualified. For example, users might say something bots cannot understand, or offer some slot value that fails the Value Check. In these cases, re-prompt is needed to request the slot value from user again.
-
-<Badge type="tip" text="Preferred" vertical="top" />
-
-- All annotations relate to [Slot Filling](https://www.framely.ai/reference/slotfilling.html), including: [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). You are suggested to use them based on requirements.
-
-
-
-**[Example]**
-
-Suppose most people don't want a message card when they buy flowers, so the flower shop decides to make a message card as a "hidden surprise". 
-
-To support this, they need to:
-
-- create a slot named messageCard
-- set its Fill Strategy to User Mentioned
-- add a prompt of "What message do you want to leave?"
-
-And the following conversation can be expected: 
-
-::: story
-
-**Use case 1: user mentions**
-
-Bot: *What kind of flower do you like?*
-
-User: *Rose<br/>&emsp;&emsp;Oh, can you leave a message of "How many loved your moments of glad grace..."*
-
-Bot: *Just leave the note for you.<br/>&emsp;&emsp;Your order is done.*
-
-:::
-
-::: story
-
-**Use case2: user doesn't mention**
-
-Bot: *What kind of flower do you like?*
-
-User: *Rose*
-
-Bot: *Ok, then your order is done.*
-
-:::
-
-## Repair Only
-
-
-## Never
-
-There are chances businesses want to specify slot value by themselves instead of users. Never ask offers the ability to do that.
+## Assignment
+#### Motivation
+There are many use cases that businesses want to specify value for some slot instead of asking users for their preference. Assignment strategy simple 
 
 Never Ask by itself only means never ask. If nothing else is done, the slot will be skipped (neither be asked nor be filled). This is why Framely uses it as the default choice for Fill Strategy. However, if businesses use Never Ask with SlotInit in Transition, they can then provide slot values with Code Expression, which could be a constant, a synchronous service function etc.
 
 Never Ask alters the standard [Slot Filling](https://www.framely.ai/reference/slotfilling.html) phases by ignoring Ask / Value Recommendation, Value Check and Confirmation. This basically is another way of saying Never Ask doesn't interact with users.
 
 
-
+#### Analysis
 **[Usage Instruction]**
 
 <Badge type="warning" text="Required" vertical="top" />
 
+
+#### How to Configure
 - Create a slot
 - Set its Fill Strategy to Never Ask
 - No annotations that required to interact with users should be defined, including: [Prompts](https://www.framely.ai/reference/annotations/prompts.html), [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html), [Value Check](https://www.framely.ai/reference/annotations/vc.html) and [Confirmation](https://www.framely.ai/reference/annotations/confirmation.html). Like the name implied, bot NEVER ASKs. Notice that if these annotations were added out of careless, bot will simply ignore them.
@@ -235,7 +194,7 @@ Bot: *Ok, then your order is done for 10 roses.*
 :::
 
 
-## External Event
+## External 
 
 Like Never Ask, External Event also gathers slot value from businesses, but targets a different scenario: businesses send an asynchronous client action, then BLOCKs until the the third-party resumes and updates conversation.
 
