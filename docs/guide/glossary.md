@@ -38,7 +38,7 @@ The meaning of a word, phrase, sentence, or text without context. In Framely, th
 Study of how context contributes to meaning, or meaning under context. We use the frame to express meaning under context as well.
 
 ## Cooperative principle
-This assume users are engaged in the conversation with bot for a common goal: user want to access some services that bot want to provide, thus it is user's interest to get what they want in lowest effort possible.
+This assumes users are engaged in the conversation with bot for a common goal: user want to access some services that bot want to provide, thus it is user's interest to get what they want in the lowest effort possible.
 
 ## Module
 ### Interaction logic
@@ -59,7 +59,7 @@ An end user facing application or CUI frontend, user can access information and 
 
 ### Component
 The key design goal for Framely is to support compose the chatbot out of the reusable component so that builder does not always need to start from scratch. Notice components can be used to build bigger and bigger component. And some component contains service, which defines interface to a set of functions.
-Framely assumes all chatbot functionalities can be composed from the smaller components, just like Lego system. This allows maximal reuse. In Framely, frame, or semantic structure, is center piece. It defines the common goal can be had between user and chatbot and information needed by that goal. Depending on what annotation we add to frame, they can form CUI components or backend components.
+Framely assumes all chatbot functionalities can be composed of the smaller components, just like Lego system. This allows maximal reuse. In Framely, frame, or semantic structure, is centerpiece. It defines the common goal can be had between user and chatbot and information needed by that goal. Depending on what annotation we add to frame, they can form CUI components or backend components.
 
 #### CUI component
 CUI component defines how chatbot can collect user intention for some reason so that different businesses in the same sector do not need to build the same CUI behavior over and over again. This is done by add dialog annotation to frames, which describe the dynamic behavior of frame filling. Also known as library.
@@ -75,7 +75,6 @@ Stakeholders for entire application (chatbot, backend and back office), there ar
 
 ### Project
 Chatbot and backend are all project on platform. Project also include the chatbot component (old library) and backend component.
-
 
 ## Layers
 ### Schema layer
@@ -100,36 +99,36 @@ Implementation for these functions are defined in Kotlin, some time implicitly i
 Implementation for these functions simply forward the input parameter to restful endpoints, and convert the json result back to specified data type. 
 
 #### SQL Function
-Implementation for these function are based on stored procedure supported by provider database. 
+Implementation for this function are based on stored procedure supported by provider database. 
 
 ### Provider
-Provider provide access to implementation for the services. Backend are simply a collection of providers.
+Provider provide access to implementation for the services. Backend are simply a collection of providers. Framely currently provide postgrest provider and restful provider.
 
-#### Postgrest provider
-In addition to access, Postgrest provider are used to define both application logic  (via SQL in form of stored procedure) and database schema needed by such logic declaratively on Framely. This allow builder to define reusable full stack components including both UI and backend (both data and business logic), with the dialog annotation, storage annotation as well as backoffice annotation.   
+#### Postgrest Provider
+In addition to access, Postgrest provider are used to define both application logic  (via SQL in form of stored procedure) and database schema needed by such logic declaratively on Framely. This allows builder to define reusable backend components including both UI and backend (both data and business logic), with the dialog annotation, storage annotation as well as backoffice annotation.   
 
-#### Generic restful provider
+#### Restful Provider
 Service can also be accessed via restful API, with restful provider one can describe the mapping of the collected input parameter to actual Json format needed by endpoint.
 
 
 ## Runtime 
-The core of chatbot is to build common understanding of what user want through conversation, connect user to the right service and generate the natural text for channel to rendering to user.  These core functionalities are provided by Framely runtime as APIs, so each chatbot can focus on what information to collect and leave the actually information collect to runtime. Runtime also contains session management and dispatcher.
+The core of chatbot is to build common understanding of what user want through conversation, connect user to the right service and generate the natural text for channel to rendering to user.  These core functionalities are provided by Framely runtime as APIs, so each chatbot can focus on what information to collect and leave the actual information collect to runtime. Runtime also contains session management and dispatcher.
 
-### Dialog manager(DM)
-Dialog manager is brain of the chatbot, and is responsible for calling DU with generated dialog expectation to get the frame event, and consult the dialog annotations to decide how to respond to user (in term of semantic frames and language independent way) for next turn, and use text generator to translate the frame into natural text reply in the language that user speaks. Turn by turn, dialog manger will figure out what user wants, and connect user with the service they care. Runtime is a fully decomposed system, with DM operating solely on DU output, and given DU output, DM output is entirely independent of user utterance, and given DM output, text generation is independent of DU output(DM input). This is important to make DM language independent.
+### Dialog Manager(DM)
+Dialog manager is brain of the chatbot, and is responsible for calling DU with generated dialog expectation to get the frame event, and consult the dialog annotations to decide how to respond to user (in terms of semantic frames and language independent way) for next turn, and use text generator to translate the frame into natural text reply in the language that user speaks. Turn by turn, dialog manger will figure out what user wants, and connect user with the service they care. Runtime is a fully decomposed system, with DM operating solely on DU output, and given DU output, DM output is entirely independent of user utterance, and given DM output, text generation is independent of DU output(DM input). This is important to make DM language independent.
 
-### Dialog understanding (DU)
+### Dialog Understanding (DU)
 A major part of runtime is convert what user said into semantic structure representation, or frame, given the dialog expectation. In Framely, DU is fully controlled by the context dependent expression exemplars, for both initial design and hot fix.
 
-### Dialog expectation
-Information can be used to change how user utterance be understood. For example, if DU expect a song name, then "Beijing welcome you" will be recognized as a song and "Beijing" in there will not be recognized as city; if DU does not expect a song name, "Beijing" in there should be recognized as city. Dialog is used to summarize the conversational history so far, in term of understanding, or given dialog expectation, the conversational history does not provide additional useful information toward understanding of the user input for the current turn. Dialog expectation is automatically used by DU for this purpose, and builder does not need to worry about it.
+### Dialog Expectation
+Information can be used to change how user utterance be understood. For example, if DU expect a song name, then "Beijing welcome you" will be recognized as a song and "Beijing" in there will not be recognized as city; if DU does not expect a song name, "Beijing" in there should be recognized as city. Dialog is used to summarize the conversational history so far, in terms of understanding, or given dialog expectation, the conversational history does not provide additional useful information toward understanding of the user input for the current turn. Dialog expectation is automatically used by DU for this purpose, and builder does not need to worry about it.
 
 
-### Frame event
+### Frame Event
 The semantic structure representing what user said, converted by DU under given dialog  expectation. The Frame event can be at semantic level or pragmatic level.
 
 
-### Text generation
+### Text Generation
 To be able to easily interact with users in different language, we use text generation module to translate the same semantics into different natural text. For now we focus on the template based generation.
 
 ### Session Manager
@@ -144,7 +143,7 @@ This manages the messages from channels and decide whether it is chatbot or huma
 
 ## Input on Platform
 ### Code expression Input
-Code expressions are the Kotlin expression or encoding of Kotlin expression that can be evaluated dynamically by runtime. Code expression can be used independently or embedded in templates. Since the declarative configuration of the chatbot on the platform are compiled into Kotlin source code, so it is possible to use arbitrary Kotlin code expression in some predefined places like condition definition. As more detailed example, in value recommendation, we need to use code expression to indicate which function should be called, with what parameters, and how different function is composed to provided the desired list of instances for user to choose from.
+Code expressions are the Kotlin expression or encoding of Kotlin expression that can be evaluated dynamically by runtime. Code expression can be used independently or embedded in templates. Since the declarative configuration of the chatbot on the platform are compiled into Kotlin source code, so it is possible to use arbitrary Kotlin code expression in some predefined places like condition definition. As more detailed example, in value recommendation, we need to use code expression to indicate which function should be called, with what parameters, and how different function is composed to provide the desired list of instances for user to choose from.
 
 ### SQL function body input
 On Postgrest provider, code expression with auto complete set for input parameter name, slot name, and then sql keywords.
@@ -156,19 +155,14 @@ There are couple places where Json input box are needed, for example, the source
 In both prompt and response, we need to specify what chatbot say to user. This is accomplished by template. Template is just string with code expression embedded in it. One way of encoding the embedded code expression is to surround them with $$, the code expression inside $$ will be evaluated to string and then concatenated with rest of static content to form the final message for user. Restful function body are template.
 
 
-
 ## Channel
-The same chatbot can interact with user from different channel (facebook messenger, wechat public account, etc). Conversation are conducted between chatbot and user by exchange messages in the channel. Channels come with two different capabilities: some channel can only render text messages, particularly these channel based on speakers or without a display, other channel can read media, image or video in some degree. There are two different kinds of channels, live channel and messaging channel.
+The same chatbot can interact with user from different channel (facebook messenger, WeChat public account, etc). Conversation are conducted between chatbot and user by exchange messages in the channel. Channels come with two different capabilities: some channel can only render text messages, particularly these channel based on speakers or without a display, other channel can read media, image or video in some degree. There are two different kinds of channels, live channel and messaging channel.
 
-#### Live channel
+#### Live Channel
 User on live channel can not be contacted asynchronously by chatbot, conversation session on the live channel can only be started by user, most web channels belongs to this category.
 
-#### Messaging channel
+#### Messaging Channel
 User on message channel can be reached by chatbot, or conversation session on the message channel can be started by chatbot. Example of message channel is RCS or Facebook messenger.
-
-
-#### Omnichannel support
-The ability for chatbot to continue the conversation where user switch from one channel to another.
 
 
 ## Messages
@@ -194,9 +188,9 @@ List messages render information in the list of frames.
 
 
 ### Support
-When chatbot does not know what to do or when user demand talking to a human agent, we can forward the conversation to support system, the default one is open source system chatwoot. There are two different modes of support: live chat and messaging.
+When chatbot does not know what to do or when user demand talking to a human agent, we can forward the conversation to support system, the default one is open source system Chatwoot. There are two different modes of support: live chat and messaging.
 
-### Live chat
+### Live Chat
 Under the live chat mode, it is assumed that conversation will get into a queue for human agent, where user will be waiting for the human agent become available. When human agent become available, user can expect his message will be replied in reasonable time frame before his issues is either resolved and an alternative is suggested/agreed upon.
 
 ### Messaging
@@ -207,17 +201,16 @@ Under this mode, user will send message, and expect some human agent will eventu
 ### Builder
 The people use platform to define chatbot and backend, usually hired by business.
 
-### End-user
+### End-User
 The people use chatbot to get things done.
 
-### Operator(business)
+### Operator
 The team that user the back office to deliver the information/service to end user.
 
-### Admin(business)
+### Admin
 Admin is a special kind of operator, they have full control of the data in the backend.
 
 As general rule, builder use platform, business operator and admin use backoffice. End-user use chatbot. And business admin may or may not hold the admin account on the Framely platform.
-
 
 ## Reusability
 Reusability is the one of the key design goal for Framely to help business to reduce the cost of building personalized services. There are four different mechanisms available.
@@ -228,8 +221,8 @@ Instead of build functionality from scratch, on Framely, the first choice of acq
 ### Clone
 Clone is another way of reuse. Instead of build chatbot from empty slate, one start from exist chatbot by clone it.
 
-### Inherit
-We support inherit/implementation on frames, so that we can get new behavior by adding to existing frame instead of building frame from scratch.
+### Implement
+We support inherit/implement on frames and intents, so that we can reuse behavior by adding to existing frame instead of building frame from scratch.
 
 ### Compose
 We can use frame as slot of larger frame, to get bigger and bigger behavior.
@@ -242,10 +235,10 @@ The project, chatbot or backend, defined on the Framely have two deploy options.
 When configured to be Framely hosted, there will be a button "deploy" that can trigger the new definition be deployed on the Framely cloud to serve the user traffic.
 
 ### Private Deploy
-When configured to be private deployed, there will be a button "export" that can trigger the code generated for the project. The code can then be used by your devops team to bring up the service.
+When configured to be private-deployed, there will be a button "export" that can trigger the code generated for the project. The code can then be used by your devops team to bring up the service.
 
 
-## Version control
+## Version Control
 Framely platform have a version control built in, so that it is easy for builder to collaborate on building chatbot. The version control is modeled after git for the nested structures.
 
 ### Branch
@@ -261,13 +254,13 @@ Each branch has a base.
 When master moved to new version, we need to rebase first.
 
 ### Commit
-Commit the your current change will result in a new version that can be reviewed and merged into master:
+Commit the current change will result in a new version that can be reviewed and merged into master:
 
 ### Review
-Before your change can be merged into master, it need to be reviewed by your peers.
+Before your change can be merged into master, it needs to be reviewed by your peers.
 
-### Pull request
-Pull request to indicate that you have change that you want to merge into master.
+### Pull Request
+Pull request to indicate that you want to merge commit into master.
 
 ### Approve
 Only approved change can be merged into master.
@@ -281,7 +274,6 @@ You can discard your change by close it.
 
 ### Org
 Builders belong to organization, and builders from the organization can collaborate freely. Framely charge organization instead of builder.
-
 
 
 ## Type
@@ -301,7 +293,7 @@ By default, intent, frame and entity can be claimed to be definition, in which c
 Identifiers are language independent label for semantics in Framely, that include entity type, entity instance, frames. Identifiers are denoted in the full qualified fashion in order to reduce the naming conflict.
 
 ### Intent
-Intents are simply the tasks that user accomplish through chatbot. It defines what user have to say to indicate that he/she wants some thing, and which actual function to invoke for that task.
+Intents are simply the tasks that user accomplish through chatbot. It defines what user have to say to indicate that he/she wants something, and which actual function to invoke for that task.
 
 ### System Intent
 Tasks needed by runtime to manipulate the common understanding what is user want to achieve.
@@ -310,13 +302,13 @@ Tasks needed by runtime to manipulate the common understanding what is user want
 Task that does not have expression trigger.
 
 ### Frame
-Frame captures the structure meaning that user expressed in their utterance. Intent is essentially frame with actions attached to it. Frame are understood using abstractive methods using machine learning models. Frame can contain one or more slots, with entity or frame types. There are two type of frames: language aware and language ignorant. Frame support both has-a (composition) and is-a (inheritance) relationship on frame. One can add dialog annotation to frame (then became a CUI frame), but it is not required that frame has to have dialog annotations. Similarly, one can add storage/backoffice annotation to a frame in the backend, but it is not required.
+Frame captures the structure meaning that user expressed in their utterance. Intent is essentially frame with actions attached to it. Frame are understood using abstractive methods using machine learning models. Frame can contain one or more slots, with entity or frame types. There are two type of frames: language aware and language ignorant. Frame supports both has-a (composition) and is-a (inheritance) relationship on frame. One can add dialog annotation to frame (then became a CUI frame), but it is not required that frame has to have dialog annotations. Similarly, one can add storage/backoffice annotation to a frame in the backend, but it is not required.
 
 ### Subframe
-A subframe inherits every things from parent frame.
+A subframe inherits every thing from parent frame.
 
 ### Global
-Frame can be declared as global. A global frame can occur in more than one intent/frame as the type for one of slot, just like regular frame, but we will only interact with user once to fill this frame in a session when it is first referenced (if not persisted), and all the subsequent reference via different slot of the same type will access the the same information. All slot of the global frame type should be declared as never ask (I can understand call it never ask or always ask are both problematic as we don't know whether it will be asked in the this context,  but we should NOT have conditional asking at least). The interaction on these slots are controlled by the global frame itself, not slot.
+Frame can be declared as global. A global frame can occur in more than one intent/frame as the type for one of slot, just like regular frame, but we will only interact with user once to fill this frame in a session when it is first referenced (if not persisted), and all the subsequent reference via different slot of the same type will access the same information. All slot of the global frame type should be declared as never ask (I can understand call it never ask or always ask are both problematic as we don't know whether it will be asked in the context,  but we should NOT have conditional asking at least). The interaction on these slots are controlled by the global frame itself, not slot.
 
 ### Entity linking
 Builder can map an interface frame to an entity, then have one subframe for this interface for every instance of the entity type. This reuses the expressions defined on the entity and its instances. The result is the utterance are recognized toward meaning using both dialog understanding (extractive and abstractive) methods.
@@ -324,20 +316,20 @@ Builder can map an interface frame to an entity, then have one subframe for this
 ### Entity
 In Framely, entity is a type of item and element that is relevant to the user's intent/frame, for example, city is an entity with instances like Beijing, New York, for example. Entities define typed data that can be extracted from the utterance and is essential to complete a user's required action. Entity instances are understood based on extractive methods. Entity has one or more type expressions.
 
-### Entity instance
-entity instance is an entity of that type. It has a label that is language independent, and then one more more language dependent expression (value expression).
+### Entity Instance
+entity instance is an entity of that type. It has a label that is language independent, and then one or more language dependent expressions (value expression).
   - Identifier
   - Normalized: standard output to user
   - Expression: what user say and system could understand
 
 ### Parent Entity
-If B is parent of current entity, every instances of current entity is also instance of the B.
+If B is parent of current entity, every instance of current entity is also instance of the B.
 
 ### Schema
 Schema is a static view what frame is about: common goal and information needed by that goal. Anecdotally, there are two types of frames: verb frames and noun frames. Verb frames are related to intent which describe what user wants or what provider serves (they have to agree), and noun frames are essentially composite entity. Frames commonly has slots (has-a relationship), which can be of entity or frame type, that defines some aspects of this frame.
 
 ## Annotation
-The desired dynamic behavior of component is declaratively defined in form of annotations. These are designed as "control" so builder to control the desired behavior for their chatbots.
+The desired dynamic behavior of component is declaratively defined in form of annotations. These are designed as "control" so builder to control the desired behavior for their chatbots. Annotations can be defined on the frame level which defines behavior of the entire frame, or slot level which define the slot specific behavior. 
 
 ### Dialog annotation
 It's used to define the conversational behavior of chatbot.
@@ -345,24 +337,18 @@ It's used to define the conversational behavior of chatbot.
 ### Storage annotation 
 It's used to define the database schema needed by backend component, which can then be used to create compatible database to serve needed backend.
 
-### Back office annotation 
+### Backoffice annotation 
 It's used to define the user experience of the back office for back end.
-
-### Slot annotation 
-It's used to describe the various slot behavior.
-
-### Frame annotation 
-It attached to frame, and used to define various frame behavior.
 
 
 ## CUI component
 The main purpose of CUI component is to agree on frame, what user want or the common goal, and fill the frame, or find values for the slots. This is done by two basic components: slot filling and frame filling.
 
-### Slot filling
+### Slot Filling
 Slot filling is one of core CUI component. Since the goal of the chatbot is figuring out what user want in form of frame filling. And the basic of the frame filling is to fill a slot, or find out user's preference on a slot. There are many aspects of the conversation that builder can control:
 
 ### Boolean Gate
-A slot CUI component that is used to give user control in term of whether there should be conversation about certain aspects: "Are you are a member?" can be used to safe guard a list of questions that chatbot might ask to verify users membership and go on with a different UI path for deliver service to user.  Boolean gate is specified by one or more text generation templates (which typically is chosen randomly) and multiple positive and negative expression exemplars.
+A slot CUI component that is used to give user control in terms of whether there should be conversation about certain aspects: "Are you are a member?" can be used to safeguard a list of questions that chatbot might ask to verify users membership and go on with a different UI path for deliver service to user.  Boolean gate is specified by one or more text generation templates (which typically is chosen randomly) and multiple positive and negative expression exemplars.
 
 ### Ask Strategy
 Decide how this slot should be filled.
@@ -378,13 +364,10 @@ In addition to ask user for the value, it is often helpful to give them recommen
 Before we commit to a given value, it is useful to consult the service to make sure it is valid option.
 
 ### Confirmation
-Sometime it is useful to ask user twice before we move on.
+Sometimes it is useful to ask user twice before we move on.
 
-### Frame filling
-Some time, the slot of the frame can not be filled independently, this is when use annotation on the frame to control the collective filling, but we can VR, VC and confirmation defined on the frame.
-
-### State update
-This allow one to define condition and action under the come context of this frame.
+### Transition
+This allows one to define condition and action under the come context of this frame.
 
 
 ## Expression (exemplar)
@@ -392,14 +375,12 @@ All semantics in Framely can be referenced in multiple languages, and expression
 
 These expression exemplars are used by NLU model to hotfix the understanding issues. Notice expression exemplar are normally only useful under the given context, so it is easy for Framely to convert the same utterance into different frame representation under different context. Builder can provide expression exemplar for any semantics: do-not-care, negation, positive and negative under yes-no questions, for example,  There are different kinds of expression:
 
-### Type expression (currently knowns as alias on platform)
+### Type expression (currently known as alias on platform)
 The example of how entity, frame types are mentioned in different languages.
 
 ### Value expression (currently known as expression on platform)
 The example of how entity and frame instance are mentioned in different languages.
 
-### Partial expression (experimental)
-Exemplar that specify how to find value for given slot from the conversation history, in order to full understand user utterance when there are pronoun in there, i.e. "what is the weather over there" implies user want to to know weather of the $city$?
 
 ### Pronoun Expression (experimental)
 For each slot, entity, builder can specify which pronoun is used to refer these, so that builder do not need to supply partial expression.
@@ -409,26 +390,26 @@ For each slot, entity, builder can specify which pronoun is used to refer these,
 Dialog understanding is always conducted under context, and context is simply the stack of frame that is currently active. So if we are interacting about frame A, and drill into one of its slot of type(frame) B, then the context is [A, B], with B on the top of the stack.
 
 ### Context independent expression
-Expression defined in the expression tab for intent are context independent, and they can be triggered in any context, or DU will convert the user utterances similar to the these expression exemplar into frame and send to dialog management for further processing.
+Expression defined in the expression tab for intent are context independent, and they can be triggered in any context, or DU will convert the user utterances similar to the these expression exemplars into frame and send to dialog management for further processing.
 
 ### Context dependent expression
-All other expression defined on the Framely platform are considered context dependent, where its expected context is determined by where the expression exemplar is defined.  DU will convert expressions similar to these exemplar into corresponding frames only when the current dialog context matches the context where the exemplar is defined. For example, positive expression exemplar under confirmation on the a slot will only be used to convert similar user utterance into corresponding frame when chatbot start the confirmation on that slot.
+All other expression defined on the Framely platform are considered context dependent, where its expected context is determined by where the expression exemplar is defined.  DU will convert expressions similar to these exemplars into corresponding frames only when the current dialog context matches the context where the exemplar is defined. For example, positive expression exemplar under confirmation on the slot will only be used to convert similar user utterance into corresponding frame when chatbot start the confirmation on that slot.
 
 
 ## Text generation
-To make building multi-language chatbot, builder can specify text generation templates to is create desired sentence for user to make it easy for user get to their goal quickly and effortlessly.
+To make building multi-language chatbot, builder can specify text generation templates to create desired sentence for user to make it easy for user get to their goal quickly and effortlessly.
 
 ### Prompt
 Use these templates to create question to guide user towards their goal. Examples include: "where do you want to go?", and "Are you sure you want to it to be extremely spicy?"
 
 ### Response
-The services that user want are generally accessed via some form APIs, and result from the APIs will be some structured information. Response are the template to turn these structured result into  into natural text.
+The services that user want are generally accessed via some form APIs, and result from the APIs will be some structured information. Response are the template to turn these structured result into natural text.
 
 ## System CUI components
-One of the design goal of Framely is to automatically handle many conversational issues: where user digress, how we bring them back on track, or where there are ambiguity, how we disambiguate through dynamically scheduled clarification. Ideally we want to make sure that builder can get these behavior without doing anything. And the Framely solution is based on aspect oriented programming. It does so by adding additional behavior (via system CUI components) to existing code (an advice) without modifying the code itself, instead separately specifying which code is modified via a "pointcut" specification (triggered by runtime automatically). The  common system CUI are, and as time goes by, we will surely have more of these to enrich the default chatbot behavior.
+One of the design goal of Framely is to automatically handle many conversational issues: where user digress, how we bring them back on track, or where there are ambiguity, how we disambiguate through dynamically scheduled clarification. Ideally we want to make sure that builder can get these behaviors without doing anything. And the Framely solution is based on aspect oriented programming. It does so by adding additional behavior (via system CUI components) to existing code (an advice) without modifying the code itself, instead separately specifying which code is modified via a "pointcut" specification (triggered by runtime automatically). The  common system CUI are, and as time goes by, we will surely have more of these to enrich the default chatbot behavior.
 
 ### Clarification
-Often time, user might say something that dialog understanding did not fully understand, for example, there are multiple possibilities. These are the time where we can trigger System intent to engage in the conversation for user to clarify what they really meant. There are couple variants of this:
+Often time, user might say something that dialog understanding did not fully understand, for example, there are multiple possibilities. These are the time when we can trigger System intent to engage in the conversation for user to clarify what they really meant. There are couple variants of this:
 
 #### Value clarification
 During the slot filling, particularly when we try to find value from the conversation history, there might be multiple values that can be used to fill the slot. This CUI component is used to ask user decide which one is what they want.
