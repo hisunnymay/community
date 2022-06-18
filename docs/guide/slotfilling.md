@@ -25,7 +25,7 @@ Framely CUI framework is static and strong typed since strong typing nature allo
 ## Five Stages of Slot Filling
 The general behavior of slot filling is controlled by the [prompt strategy](https://www.framely.ai/reference/annotations/fillstrategy.html), which decides whether and how we can prompt users for their preference on this slot. Prompt strategy is a required annotation on the slot level and you can select one from the following list: always, conditional, recover only and external and gated. 
 
-When slot is configured to be filled by user interaction, Framely framework uses a five stage slot filling process that is designed to help user converge on a servable service request as effortless as possible. Based on business logic, this process can be easily configured via corresponding annotations:
+When slot is configured to be filled by user interaction, Framely framework uses a five stage slot filling process that is designed to help user converge on a servable service request as effortless as possible. This filling process can be easily configured via corresponding annotations based on business logic:
 1. [Initialization]((https://www.framely.ai/reference/annotations/init.html)) try to fill the slots based on business logic first.
 2. [Prompt]() allow you to provide the template needed to request user preference for the given slot.
 3. [Value Recommendation](https://www.framely.ai/reference/annotations/vr.html) provides a list of filling candidates per business data and logic for user to choose from. This can avoid waste user effort for filling slot with an unservable value. 

@@ -4,7 +4,7 @@
 
 
 ## Overview
-Framely supports the full stack component. Frames defined on the [provider](../../guide/glossary.md#provider), which are storage enabled, can be persisted to tables in the database, and slots in each frame are inserted as columns into the corresponding table. With provider annotations, you can specify how frames are stored in PostgreSQL and how the operation team can access this stored data via [back office](../../guide/glossary.md#backoffice).
+Framely also supports the backend component in form of [postgrest provider](/guide/glossary.md#postgrest-provider). The backend component can be declaratively defined in two steps: first create database tables needed by service by adding storage annotation to frames, second provide function implementation using SQL to express business logic. Using provider annotation, including both storage annotation and backoffice annotation, you can specify how frames are stored in PostgreSQL and how the operation team can access this data via [back office](/guide/glossary.md#backoffice).
 
 ![frame-table](/images/annotation/providerannotation/frame-table.png)
 
