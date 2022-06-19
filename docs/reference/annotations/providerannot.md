@@ -4,28 +4,27 @@
 
 
 ## Overview
-Framely also supports the backend component in form of [postgrest provider](/guide/glossary.md#postgrest-provider). The backend component can be declaratively defined in two steps: first create database tables needed by service by adding storage annotation to frames, second provide function implementation using SQL to express business logic. Using provider annotation, including both storage annotation and backoffice annotation, you can specify how frames are stored in PostgreSQL and how the operation team can access this data via [back office](/guide/glossary.md#backoffice).
+Framely also supports the backend component in form of [postgrest provider](/guide/glossary.md#postgrest-provider). The backend component can be declaratively defined in two steps: first create database tables needed by service by adding storage annotation to frames, second provide function implementation using SQL to express business logic. Using backoffice annotation, you can specify the operation team can access these tables via [back office](/guide/glossary.md#backoffice).
 
+There are a couple advantage of using backend component approach to build service provider. 
+1. In addition to declaratively building database as content management system, Framely backend component allow you to implement the service declaratively too using SQL. This make it possible for the business analyst to build backend.
+2. Since table are created based on the data type in the API schema, so no explicit conversion code are needed, rows in the table or view in the database are automatically converted into object in the Framely.
 ![frame-table](/images/annotation/providerannotation/frame-table.png)
+3. The admin interface or backoffice can also be automatically created based on annotation so that operation team can use backoffice to provide service. 
+4. Backoffice components can be reused by cloning for Framely hosted solution.
 
+#### Features
 Provider annotations include [storage annotations](./overview.md#storage-annotations) and [back office annotations](./overview.md#backoffice-annotations).
-1. Storage annotations define the database schema needed by the backend component, which can then be used to create a compatible database to serve the required backend.
-2. Back office annotations are used to define the user experience of the back office for the backend.
-
-Unlike dialog annotation, provider annotations are only helpful for Framely-hosted providers. On a Framely-hosted provider, when triggering the **Deploy** button, the platform will update the table structure in the corresponding hosted database.
-
-
-## Features
-- Support storage annotations
-  - Create tables in database
+- Storage annotations define the database schema needed by the backend component, which can then be used to create the database for provider.
+  - column information for table
   - Set a default value of a column
   - Set not-null constraints
   - Set unique constraints
-- Support back office annotations
-  - Upload a picture to a cell and it will be stored as a URL
+- Back office annotations are used to define the user experience of the back office for the backend.
+  - Upload a picture to a cell, and it will be stored as a URL
   - Select a value from a dropdown list
 
-  
+#### How to Use
 Before starting, turn on **Storage Enabled** in **Frames** field to enable storing frames as tables in the database. There are two levels of provider annotations: slot level and frame level.
 - At a slot level, you can configure the column properties and back office annotations in the **Schema**  - **Slots** field.
 - At a frame level, you can configure table constraints in the **Annotation** field.
@@ -34,9 +33,9 @@ Before starting, turn on **Storage Enabled** in **Frames** field to enable stori
 
 
 ## Type
-Type is a slot annotation. When you add a slot to a frame, you need to choose a type.
+Type is a slot annotation. When you add a slot to a frame, you need to choose a database type for the corresponding column.
 
-- If the type is *kotlin.String* or customized entity(e.g. like *City* in the below picture), you need to specify the data type of the column. Supported formats are `char(n)`, `varchar(n)`, `text`. Replace "n" with a number between 1 and 10485760, e.g. `char(16)`.
+- If the type is *kotlin.String* or customized entity(e.g. like *City* in the below picture), you need to specify the database type of the column. Supported formats are `char(n)`, `varchar(n)`, `text`. Replace "n" with a number between 1 and 10485760, e.g. `char(16)`.
 
 ![type](/images/annotation/providerannotation/type.png)
 
