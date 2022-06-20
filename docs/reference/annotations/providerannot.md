@@ -33,15 +33,9 @@ Before starting, turn on **Storage Enabled** in **Frames** field to enable stori
 
 
 ## SQL Data Type
-SQL data type is a slot annotation. For given slot, when we can not decide SQL data type for it corresponding column, you need to choose a SQL data type for it.
-
-- If the type is *kotlin.String* or customized entity(e.g. like *City* in the below picture), you need to specify the database type of the column. Supported formats are `char(n)`, `varchar(n)`, `text`. Replace "n" with a number between 1 and 10485760, e.g. `char(16)`.
+To create tables to store the frame instance, we need to map each slot of frame to a column in the database. SQL data type is a slot annotation, it defines the SQL data type for corresponding column for the given slot. Normally, we will automatically decide the SQL data type for each slot. But ff the slot type is *kotlin.String* or customized entity(e.g. like *City* in the below picture), you need to specify the database type of the column. Supported formats are `char(n)`, `varchar(n)`, `text`. Replace "n" with a number between 1 and 10485760, e.g. `char(16)`.
 
 ![SQL data type](/images/annotation/providerannotation/type.png)
-
-- If not, when you deploy the provider, we will convert the type to the corresponding column database type automatically.
-
-
 
 ## Default Value
 Default value is a slot annotation. You can use a constant or an expression as a default value. When there is no value specified in the column, the column will be filled with its default value.
