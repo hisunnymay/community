@@ -33,7 +33,7 @@ Before starting, turn on **Storage Enabled** in **Frames** field to enable stori
 
 
 ## Type
-Type is a slot annotation. When you add a slot to a frame, you need to choose a database type for the corresponding column.
+Type is a slot annotation. For given slot, when we can not decide database type for the corresponding column, you need to choose a database type for it.
 
 - If the type is *kotlin.String* or customized entity(e.g. like *City* in the below picture), you need to specify the database type of the column. Supported formats are `char(n)`, `varchar(n)`, `text`. Replace "n" with a number between 1 and 10485760, e.g. `char(16)`.
 
