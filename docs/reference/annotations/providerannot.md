@@ -32,12 +32,12 @@ Before starting, turn on **Storage Enabled** in **Frames** field to enable stori
 ![provider-annotation](/images/annotation/providerannotation/provider-annotation.png)
 
 
-## Type
-Type is a slot annotation. For given slot, when we can not decide database type for the corresponding column, you need to choose a database type for it.
+## SQL Data Type
+SQL data type is a slot annotation. For given slot, when we can not decide SQL data type for it corresponding column, you need to choose a SQL data type for it.
 
 - If the type is *kotlin.String* or customized entity(e.g. like *City* in the below picture), you need to specify the database type of the column. Supported formats are `char(n)`, `varchar(n)`, `text`. Replace "n" with a number between 1 and 10485760, e.g. `char(16)`.
 
-![type](/images/annotation/providerannotation/type.png)
+![SQL data type](/images/annotation/providerannotation/type.png)
 
 - If not, when you deploy the provider, we will convert the type to the corresponding column database type automatically.
 
