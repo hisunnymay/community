@@ -69,21 +69,25 @@ Initialization is an optional slot annotation. By adding associations, you can p
 
 Association can be defined in [code expression](../../guide/glossary.md#code-expression-input) as follows. You can explore more expressions in [Kotlin docs](https://kotlinlang.org/docs/home.html).
 
-**1. Constant**
+- **Constant**
 
-For example, if the type of a slot is *kotlin.Int*, you may set its association to be `0`.
+  - For example, if the type of a slot is *kotlin.Int*, you may set its association to be `0`.
 
-**2. Slot value**
+- **Slot value**
 
-In the first scenario mentioned in [Overview](#overview), you can set a start date of hotels as `arrivalDate`, which is the arrival date of a flight. Go to [Intent: BookHotel](https://framely.naturali.io/org/622c8ff683536204fe062b55/agent/62b12e4cede53f1b65047b0f/intent/62b167ba1c33eb097abc218a) to learn more details.
+  - In the first scenario mentioned in [Overview](#overview), you can set a start date of hotels as `arrivalDate`, which is the arrival date of a flight. 
 
-**3. Function call**
+  - Go to [Intent: BookHotel](https://framely.naturali.io/org/622c8ff683536204fe062b55/agent/62b12e4cede53f1b65047b0f/intent/62b167ba1c33eb097abc218a) to learn more details.
 
-Regarding the second situation in [Overview](#overview), you can set the phone number as `getUserPhoneNumber()`, which returns the user's previous phone number.
+- **Function call**
+
+  - Regarding the second situation in [Overview](#overview), you can set the phone number as `getUserPhoneNumber()`, which returns the user's previous phone number. 
+
+  - Go to [Intent: FoodOrdering](https://framely.naturali.io/org/622c8ff683536204fe062b55/agent/62b12e4cede53f1b65047b0f/intent/62b12eacede53f1b65047b13) to learn more details.
    
-**4. If expression**
+- **If expression**
 
-If the value you try to provide is conditional, try to use if expression. The format of if expression is like `if (a > b) a else b`. To learn more about if expression, check out [If expression](https://kotlinlang.org/docs/control-flow.html).
+  - If the value you try to provide is conditional, try to use if expression. The format of if expression is like `if (a > b) a else b`. To learn more about if expression, check out [If expression](https://kotlinlang.org/docs/control-flow.html).
 
 ::: tip Tips
 1. To confirm the initial value with users, you can add [Confirmation annotation](../annotations/confirmation.md).
