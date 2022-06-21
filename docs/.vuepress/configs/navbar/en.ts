@@ -23,6 +23,11 @@ export const en = [
 
           },
           {
+            text: "Initialization",
+            link: '/reference/annotations/init.html',
+            icon: "/featureIcons/init.svg",
+          },
+          {
             text: "Prompt Strategy",
             link: '/reference/annotations/fillstrategy.html',
             icon: "/featureIcons/separate.svg",
@@ -34,7 +39,7 @@ export const en = [
           },
           {
             text: "Value Check",
-            link: '/reference/annotations/vc.html',
+            link: '/reference/annotations/valuecheck.html',
             icon: "/featureIcons/check-item.svg",
           },
           {
